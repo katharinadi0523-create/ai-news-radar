@@ -1,0 +1,309 @@
+{
+  "special_focus": [
+    {
+      "id": "palantir",
+      "name": "Palantir",
+      "keywords": [
+        "palantir",
+        "foundry",
+        "palantir aip",
+        "palantir apollo",
+        "gotham",
+        "palantir ontology",
+        "pltr"
+      ],
+      "exclude_keywords": [
+        "stock",
+        "stocks",
+        "share price",
+        "price target",
+        "analyst",
+        "earnings",
+        "options",
+        "nasdaq",
+        "nyse",
+        "finance",
+        "financial",
+        "美股",
+        "股价",
+        "股票",
+        "财报",
+        "券商",
+        "目标价",
+        "期权",
+        "投资",
+        "股市",
+        "道指",
+        "标普",
+        "纳斯达克",
+        "barron's"
+      ],
+      "domains": [
+        "palantir.com"
+      ],
+      "official_sources": [
+        {
+          "label": "Palantir Newsroom",
+          "url": "https://www.palantir.com/newsroom/",
+          "max_items": 20
+        },
+        {
+          "label": "Palantir Releases",
+          "url": "https://www.palantir.com/releases/",
+          "max_items": 20
+        },
+        {
+          "label": "Palantir Press Releases",
+          "url": "https://www.palantir.com/newsroom/press-releases/",
+          "max_items": 20
+        },
+        {
+          "label": "Palantir Blog RSS",
+          "url": "https://blog.palantir.com/feed",
+          "parser": "rss",
+          "max_items": 20
+        },
+        {
+          "label": "Palantir YouTube",
+          "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCQRc3PMlCsoodxbR4IsglKQ",
+          "parser": "rss",
+          "max_items": 15
+        }
+      ]
+    },
+    {
+      "id": "knowledge-graph",
+      "name": "知识图谱",
+      "keywords": [
+        "knowledge graph",
+        "knowledge graphs",
+        "graph rag",
+        "graph retrieval",
+        "graph database",
+        "neo4j",
+        "rdf",
+        "sparql",
+        "知识图谱",
+        "图谱",
+        "图数据库"
+      ],
+      "domains": []
+    },
+    {
+      "id": "skills",
+      "name": "Skills",
+      "keywords": [
+        "skill",
+        "skills",
+        "skillset",
+        "agent skill",
+        "tool calling",
+        "mcp",
+        "function calling",
+        "workflow",
+        "技能",
+        "工具调用"
+      ],
+      "domains": []
+    },
+    {
+      "id": "defense-agent",
+      "name": "国防类Agent",
+      "keywords": [
+        "defense",
+        "defence",
+        "military",
+        "army",
+        "navy",
+        "air force",
+        "pentagon",
+        "warfare",
+        "defense tech",
+        "agent",
+        "autonomous drone",
+        "国防",
+        "军事",
+        "五角大楼",
+        "无人机",
+        "智能体"
+      ],
+      "domains": []
+    },
+    {
+      "id": "ai-for-science",
+      "name": "AI+科研",
+      "keywords": [
+        "ai for science",
+        "ai4s",
+        "science ai",
+        "scientific ai",
+        "ai scientist",
+        "scientific discovery",
+        "scientific research",
+        "ai research",
+        "ai in science",
+        "computational science ai",
+        "drug discovery ai",
+        "drug discovery",
+        "materials discovery ai",
+        "materials discovery",
+        "protein folding ai",
+        "protein folding",
+        "computational biology",
+        "bioinformatics",
+        "molecular design",
+        "science foundation model",
+        "lab automation ai",
+        "药物发现 ai",
+        "药物发现",
+        "材料发现 ai",
+        "材料发现",
+        "蛋白质折叠 ai",
+        "蛋白质折叠",
+        "科研智能",
+        "科学智能",
+        "科学研究",
+        "ai+科研",
+        "ai for science",
+        "ai 科研"
+      ],
+      "exclude_keywords": [
+        "sports",
+        "finance",
+        "娱乐",
+        "八卦",
+        "股票"
+      ],
+      "domains": []
+    }
+  ],
+  "competitor_monitor": [
+    {
+      "id": "coze",
+      "name": "扣子",
+      "official_only": false,
+      "official_sources": [
+        {
+          "label": "扣子官方更新动态",
+          "url": "https://docs.coze.cn/guides/release_note",
+          "parser": "coze_release_note_markdown",
+          "max_items": 24,
+          "feature_items": 20
+        },
+        {
+          "label": "扣子编程更新公告",
+          "url": "https://code.coze.cn/api/playground_api/notice/get_list",
+          "parser": "coze_notice_api",
+          "method": "POST",
+          "payload": {
+            "page_num": 1,
+            "page_size": 30
+          },
+          "max_items": 20,
+          "feature_items": 12
+        }
+      ],
+      "keywords": [
+        "coze",
+        "扣子",
+        "coze studio"
+      ],
+      "domains": [
+        "coze.com"
+      ]
+    },
+    {
+      "id": "appbuilder",
+      "name": "AppBuilder",
+      "official_only": false,
+      "official_sources": [
+        {
+          "label": "百度千帆更新动态",
+          "url": "https://cloud.baidu.com/doc/qianfan/s/Mmh8l4qwj",
+          "parser": "baidu_qianfan_update_page",
+          "max_items": 24,
+          "feature_items": 20
+        }
+      ],
+      "keywords": [
+        "appbuilder",
+        "baidu appbuilder",
+        "百度 appbuilder"
+      ],
+      "domains": []
+    },
+    {
+      "id": "bailian",
+      "name": "百炼",
+      "official_only": false,
+      "official_sources": [
+        {
+          "label": "阿里云开发者社区（月报）",
+          "url": "https://developer.aliyun.com/modelstudio/article",
+          "parser": "aliyun_bailian_monthly_report",
+          "max_items": 1,
+          "feature_items": 12
+        }
+      ],
+      "keywords": [
+        "百炼",
+        "dashscope",
+        "bailian"
+      ],
+      "domains": [
+        "dashscope.aliyun.com"
+      ]
+    },
+    {
+      "id": "yuanqi",
+      "name": "腾讯",
+      "official_only": false,
+      "official_sources": [
+        {
+          "label": "元器",
+          "url": "https://yuanqi.tencent.com/"
+        },
+        {
+          "label": "腾讯云ADP",
+          "url": "https://cloud.tencent.com/document/product/1759/104191",
+          "parser": "tencent_adp_table",
+          "max_items": 20
+        }
+      ],
+      "keywords": [
+        "腾讯元器",
+        "腾讯云智能体开发平台",
+        "yuanqi",
+        "tencent yuanqi",
+        "腾讯 智能体 平台"
+      ],
+      "domains": []
+    },
+    {
+      "id": "dify",
+      "name": "Dify",
+      "official_only": false,
+      "official_sources": [
+        {
+          "label": "GitHub Releases",
+          "url": "https://github.com/langgenius/dify/releases",
+          "parser": "github_releases_features",
+          "max_items": 10,
+          "feature_items": 12
+        }
+      ],
+      "keywords": [
+        "dify",
+        "dify.ai",
+        "dify changelog"
+      ],
+      "domains": [
+        "dify.ai",
+        "docs.dify.ai"
+      ]
+    }
+  ],
+  "defaults": {
+    "max_items_per_bucket": 120
+  }
+}

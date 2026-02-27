@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent智讯</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+
+    <main class="shell">
+      <section class="top-rail">
+        <div class="board-tabs board-tabs-top" id="boardTabs">
+          <button id="tabAiBtn" class="board-tab active" type="button"><span class="tab-ico" aria-hidden="true">🧠</span><span>AI资讯</span></button>
+          <button id="tabFocusBtn" class="board-tab" type="button"><span class="tab-ico" aria-hidden="true">🎯</span><span>特别关注</span></button>
+          <button id="tabCompetitorBtn" class="board-tab" type="button"><span class="tab-ico" aria-hidden="true">🛰️</span><span>竞品更新追踪</span></button>
+        </div>
+        <button id="themeToggleBtn" class="theme-toggle" type="button" aria-label="切换主题" aria-pressed="false">
+          <span class="theme-seg">Light</span>
+          <span class="theme-seg">Dark</span>
+          <span class="theme-knob"></span>
+        </button>
+      </section>
+
+      <header class="hero">
+        <div class="hero-headline">
+          <img class="hero-logo" src="./assets/hero-ai.svg" alt="AI资讯图标" />
+          <div>
+            <p class="hero-tag" id="heroTag">AI NEWS INTELLIGENCE</p>
+            <h1 id="heroTitle">24hAI热点</h1>
+          </div>
+        </div>
+        <p class="hero-sub" id="heroSub">
+          信息爆炸时代的资讯滤纸，只滴滤最好喝的AI Coffee。
+        </p>
+
+        <section class="stats hidden" id="stats"></section>
+        <section class="watch-board hidden" id="watchBoard"></section>
+      </header>
+
+      <section class="waytoagi-wrap" id="waytoagiWrap">
+        <div class="waytoagi-head">
+          <h2>WaytoAGI 更新日志</h2>
+          <div class="waytoagi-tools">
+            <div class="waytoagi-switch">
+              <button id="waytoagiTodayBtn" class="waytoagi-btn active" type="button">近2日</button>
+              <button id="waytoagi7dBtn" class="waytoagi-btn" type="button">近7日</button>
+            </div>
+            <span id="waytoagiUpdatedAt">加载中...</span>
+          </div>
+        </div>
+        <div id="waytoagiMeta" class="waytoagi-meta"></div>
+        <div id="waytoagiList" class="waytoagi-list"></div>
+        <div id="waytoagiPager" class="waytoagi-pager"></div>
+      </section>
+
+      <section class="controls">
+        <input id="searchInput" type="search" placeholder="搜索标题 / 来源" />
+        <select id="siteSelect">
+          <option value="">全部站点</option>
+        </select>
+        <select id="competitorTimeSelect" class="competitor-time hidden">
+          <option value="latest">最近更新</option>
+          <option value="14d">近2周</option>
+          <option value="7d">近7天</option>
+        </select>
+        <span class="updated" id="updatedAt">加载中...</span>
+      </section>
+
+      <section class="site-pills" id="sitePills"></section>
+
+      <section class="list-wrap">
+        <div class="list-head">
+          <h2 id="listTitle">最近 24 小时更新</h2>
+          <div class="list-head-tools">
+            <div id="aiSortSwitchWrap" class="ai-sort-switch-wrap hidden" title="仅代表Designer本人兴趣">
+              <button id="aiSortDefaultBtn" class="ai-sort-btn" type="button">默认排序</button>
+              <button id="aiSortInterestBtn" class="ai-sort-btn active" type="button">Interest first</button>
+            </div>
+            <span id="resultCount">0 条</span>
+          </div>
+        </div>
+        <div id="newsList" class="news-list"></div>
+      </section>
+    </main>
+
+    <template id="itemTpl">
+      <article class="news-card">
+        <div class="meta-row">
+          <span class="site"></span>
+          <span class="source"></span>
+          <time class="time"></time>
+        </div>
+        <a class="title" target="_blank" rel="noopener noreferrer"></a>
+      </article>
+    </template>
+
+    <script src="./assets/app.js" defer></script>
+    <div class="credit-mark">Vibe Coded by Rowan DI</div>
+  </body>
+</html>
