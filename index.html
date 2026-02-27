@@ -17,18 +17,21 @@
     <div class="bg-orb orb-a"></div>
     <div class="bg-orb orb-b"></div>
 
-    <main class="shell">
+    <main class="shell" id="appShell">
       <section class="top-rail">
         <div class="board-tabs board-tabs-top" id="boardTabs">
           <button id="tabFocusBtn" class="board-tab active" type="button"><span class="tab-ico" aria-hidden="true">🎯</span><span>特别关注</span></button>
           <button id="tabAiBtn" class="board-tab" type="button"><span class="tab-ico" aria-hidden="true">🧠</span><span>AI资讯</span></button>
           <button id="tabCompetitorBtn" class="board-tab" type="button"><span class="tab-ico" aria-hidden="true">🛰️</span><span>竞品更新追踪</span></button>
         </div>
-        <button id="themeToggleBtn" class="theme-toggle" type="button" aria-label="切换主题" aria-pressed="false">
-          <span class="theme-seg">Light</span>
-          <span class="theme-seg">Dark</span>
-          <span class="theme-knob"></span>
-        </button>
+        <div class="top-actions">
+          <button id="themeToggleBtn" class="theme-toggle" type="button" aria-label="切换主题" aria-pressed="false">
+            <span class="theme-seg">Light</span>
+            <span class="theme-seg">Dark</span>
+            <span class="theme-knob"></span>
+          </button>
+          <button id="logoutBtn" class="logout-btn" type="button">退出登录</button>
+        </div>
       </section>
 
       <header class="hero">

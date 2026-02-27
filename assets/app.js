@@ -16,7 +16,11 @@ const state = {
   waytoagiPage: 1,
   waytoagiData: null,
   generatedAt: null,
+  overallGeneratedAt: null,
+  currentUser: null,
 };
+
+const logoutBtnEl = document.getElementById("logoutBtn");
 
 const statsEl = document.getElementById("stats");
 const siteSelectEl = document.getElementById("siteSelect");
@@ -50,6 +54,12 @@ const waytoagiPagerEl = document.getElementById("waytoagiPager");
 const waytoagiTodayBtnEl = document.getElementById("waytoagiTodayBtn");
 const waytoagi7dBtnEl = document.getElementById("waytoagi7dBtn");
 const WAYTOAGI_PAGE_SIZE = 5;
+const AUTH_STORAGE_KEY = "agent_news_accounts_v1";
+const AUTH_SESSION_KEY = "agent_news_session_v1";
+const DEFAULT_ACCOUNT = {
+  username: "AF_PM",
+  password: "AgentNewsTracker",
+};
 
 function applyTheme(mode) {
   const theme = mode === "dark" ? "dark" : "light";
@@ -68,6 +78,66 @@ function initTheme() {
     saved = localStorage.getItem("agent_news_theme") || "light";
   } catch (_) {}
   applyTheme(saved === "dark" ? "dark" : "light");
+}
+
+async function hashPassword(password) {
+  const normalized = String(password || "");
+  if (window.crypto?.subtle && window.TextEncoder) {
+    const bytes = new TextEncoder().encode(normalized);
+    const digest = await window.crypto.subtle.digest("SHA-256", bytes);
+    return Array.from(new Uint8Array(digest)).map((x) => x.toString(16).padStart(2, "0")).join("");
+  }
+  return `plain:${normalized}`;
+}
+
+function readAccounts() {
+  try {
+    const raw = localStorage.getItem(AUTH_STORAGE_KEY);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (_) {
+    return [];
+  }
+}
+
+function writeAccounts(accounts) {
+  localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(accounts));
+}
+
+async function ensureAuthStore() {
+  const accounts = readAccounts();
+  if (accounts.some((item) => item?.username === DEFAULT_ACCOUNT.username)) return accounts;
+  const nextAccounts = accounts.concat({
+    username: DEFAULT_ACCOUNT.username,
+    passwordHash: await hashPassword(DEFAULT_ACCOUNT.password),
+    createdAt: new Date().toISOString(),
+    seed: true,
+  });
+  writeAccounts(nextAccounts);
+  return nextAccounts;
+}
+
+function setSessionUser(username) {
+  state.currentUser = username || null;
+}
+
+async function restoreSession() {
+  await ensureAuthStore();
+  const username = localStorage.getItem(AUTH_SESSION_KEY);
+  if (!username) return false;
+  const account = readAccounts().find((item) => item?.username === username);
+  if (!account) {
+    localStorage.removeItem(AUTH_SESSION_KEY);
+    return false;
+  }
+  setSessionUser(username);
+  return true;
+}
+
+function logoutUser() {
+  localStorage.removeItem(AUTH_SESSION_KEY);
+  setSessionUser("");
+  window.location.assign("./login.html");
 }
 
 function fmtNumber(n) {
@@ -94,6 +164,18 @@ function fmtDate(iso) {
     month: "2-digit",
     day: "2-digit",
   }).format(d);
+}
+
+function latestIso(values) {
+  const timestamps = values
+    .map((value) => {
+      const ts = value ? new Date(value).getTime() : Number.NaN;
+      return Number.isFinite(ts) ? ts : null;
+    })
+    .filter((value) => value !== null);
+
+  if (!timestamps.length) return null;
+  return new Date(Math.max(...timestamps)).toISOString();
 }
 
 function competitorTimeFilterLabel() {
@@ -971,16 +1053,8 @@ function renderAll() {
   setStatsForCurrentSection();
   renderSiteFilters();
   renderList();
-  if (state.boardSection === "focus" && state.specialFocus?.generated_at) {
-    updatedAtEl.textContent = `更新时间：${fmtTime(state.specialFocus.generated_at)}`;
-    return;
-  }
-  if (state.boardSection === "competitor" && state.competitorMonitor?.generated_at) {
-    updatedAtEl.textContent = `更新时间：${fmtTime(state.competitorMonitor.generated_at)}`;
-    return;
-  }
-  if (state.generatedAt) {
-    updatedAtEl.textContent = `更新时间：${fmtTime(state.generatedAt)}`;
+  if (state.overallGeneratedAt) {
+    updatedAtEl.textContent = `整体更新时间：${fmtTime(state.overallGeneratedAt)}`;
   }
 }
 
@@ -1019,6 +1093,12 @@ async function init() {
   if (competitorResult.status === "fulfilled") {
     state.competitorMonitor = competitorResult.value;
   }
+
+  state.overallGeneratedAt = latestIso([
+    state.generatedAt,
+    state.specialFocus?.generated_at,
+    state.competitorMonitor?.generated_at,
+  ]);
 
   renderAll();
 }
@@ -1122,5 +1202,20 @@ if (aiSortInterestBtnEl) {
   });
 }
 
-initTheme();
-init();
+if (logoutBtnEl) {
+  logoutBtnEl.addEventListener("click", () => {
+    logoutUser();
+  });
+}
+
+async function bootstrap() {
+  initTheme();
+  const authed = await restoreSession();
+  if (!authed) {
+    window.location.replace("./login.html");
+    return;
+  }
+  await init();
+}
+
+bootstrap();

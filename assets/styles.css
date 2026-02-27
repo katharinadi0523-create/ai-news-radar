@@ -18,6 +18,10 @@
   box-sizing: border-box;
 }
 
+.hidden {
+  display: none !important;
+}
+
 html,
 body {
   margin: 0;
@@ -89,6 +93,13 @@ body::before {
   align-items: center;
 }
 
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
 .board-tabs-top {
   margin: 0;
   padding: 6px;
@@ -133,8 +144,8 @@ body::before {
 
 .theme-toggle {
   position: relative;
-  border: 1px solid rgba(65, 127, 187, 0.26);
-  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(65, 127, 187, 0.18);
+  background: rgba(255, 255, 255, 0.52);
   border-radius: 999px;
   width: 140px;
   height: 40px;
@@ -144,6 +155,27 @@ body::before {
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
+}
+
+.logout-btn {
+  min-height: 40px;
+  border: 1px solid rgba(65, 127, 187, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.74);
+  color: #1f4d77;
+  padding: 0 15px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 10px 26px rgba(54, 109, 165, 0.12);
+}
+
+.logout-btn:hover {
+  border-color: rgba(47, 135, 214, 0.34);
+  background: rgba(255, 255, 255, 0.88);
+  color: #143f64;
 }
 
 .theme-seg {
@@ -890,6 +922,12 @@ select:focus {
     align-self: flex-end;
   }
 
+  .top-actions {
+    width: 100%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
   .hero {
     padding: 18px;
     border-radius: 20px;
@@ -973,8 +1011,12 @@ html[data-theme="dark"] .board-tab:hover {
 }
 
 html[data-theme="dark"] .theme-toggle {
-  background: rgba(15, 29, 44, 0.9);
+  background: rgba(15, 29, 44, 0.72);
   border-color: rgba(113, 170, 226, 0.42);
+}
+
+html[data-theme="dark"] .top-actions {
+  background: transparent;
 }
 
 html[data-theme="dark"] .theme-seg {
@@ -1044,6 +1086,13 @@ html[data-theme="dark"] .detail-toggle {
 html[data-theme="dark"] .pill.active,
 html[data-theme="dark"] .board-tab.active {
   color: #fff;
+}
+
+html[data-theme="dark"] .logout-btn {
+  color: #dcecff;
+  background: rgba(16, 30, 45, 0.78);
+  border-color: rgba(119, 174, 230, 0.34);
+  box-shadow: 0 10px 22px rgba(4, 10, 18, 0.24);
 }
 
 html[data-theme="dark"] .mode-btn {

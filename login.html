@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登录 | Agent智讯</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/login.css" />
+  </head>
+  <body>
+    <div class="login-noise" aria-hidden="true"></div>
+    <main class="login-shell">
+      <section class="login-showcase">
+        <div class="hero-badge">AI INTELLIGENCE DASHBOARD</div>
+        <h1>AI News Rader</h1>
+        <p class="login-copy">聚合重要 AI 资讯、重点主题与竞品动态，帮助你用更少时间完成更高质量的信息判断。</p>
+        <div class="hero-grid" aria-hidden="true">
+          <div class="hero-card">
+            <span>24H</span>
+            <strong>实时追踪</strong>
+          </div>
+          <div class="hero-card">
+            <span>Focus</span>
+            <strong>精选主题</strong>
+          </div>
+          <div class="hero-card">
+            <span>Radar</span>
+            <strong>竞品监测</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="login-panel">
+        <p class="panel-kicker">SIGN IN</p>
+        <h2>登录后进入看板</h2>
+        <form id="authForm" class="login-form">
+          <label class="field">
+            <span>账号</span>
+            <input id="authUsername" name="username" type="text" autocomplete="username" placeholder="例如 AF_PM" required />
+          </label>
+          <label class="field">
+            <span>密码</span>
+            <input id="authPassword" name="password" type="password" autocomplete="current-password" placeholder="输入密码" required />
+          </label>
+
+          <button id="authSubmitBtn" class="submit-btn" type="submit">登录</button>
+          <p id="authMessage" class="message" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="./assets/login.js" defer></script>
+  </body>
+</html>
