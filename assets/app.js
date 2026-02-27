@@ -9,7 +9,7 @@ const state = {
   competitorTimeFilter: "latest",
   query: "",
   aiSortMode: "interest",
-  boardSection: "ai",
+  boardSection: "focus",
   specialFocus: { sections: [], total_items: 0 },
   competitorMonitor: { sections: [], total_items: 0 },
   waytoagiMode: "2d",
@@ -349,8 +349,9 @@ function renderBoardTabs() {
 
 function renderModeSwitch() {
   const isAi = state.boardSection === "ai";
+  const isFocus = state.boardSection === "focus";
   const isCompetitor = state.boardSection === "competitor";
-  waytoagiWrapEl.classList.toggle("hidden", !isAi);
+  waytoagiWrapEl.classList.toggle("hidden", !isFocus);
   if (competitorTimeSelectEl) {
     competitorTimeSelectEl.classList.toggle("hidden", !isCompetitor);
     competitorTimeSelectEl.value = state.competitorTimeFilter || "latest";
