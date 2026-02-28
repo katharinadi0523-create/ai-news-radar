@@ -1,19 +1,21 @@
 {
-  "generated_at": "2026-02-28T01:21:47.698775Z",
+  "generated_at": "2026-02-28T03:26:50.063440Z",
   "window_days": 3,
-  "source_generated_at": "2026-02-28T01:20:50.170499Z",
+  "source_generated_at": "2026-02-28T03:25:54.674810Z",
   "source_window_hours": 24,
   "source_topic_filter": "ai_tech_robotics",
   "output_name": "special-focus",
   "section_count": 5,
-  "total_items": 230,
-  "official_error_count": 0,
-  "official_errors": [],
+  "total_items": 228,
+  "official_error_count": 1,
+  "official_errors": [
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UCQRc3PMlCsoodxbR4IsglKQ: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCQRc3PMlCsoodxbR4IsglKQ"
+  ],
   "sections": [
     {
       "id": "palantir",
       "name": "Palantir",
-      "count": 6,
+      "count": 5,
       "items": [
         {
           "id": "0908210112638c86198b11b8ec389bfb1ab0ac4d",
@@ -24,7 +26,7 @@
           "url": "https://www.woshipm.com/?p=6345645",
           "published_at": null,
           "first_seen_at": "2026-02-27T08:14:56.201660Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "palantir"
@@ -99,28 +101,11 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "04ded68ec32bc8637c77d1e0c1ebb9daf2739252",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "Techmeme",
-          "title": "OpenAI hires Arvind KC as chief people officer, replacing Julia Villagra who left in August 2025; KC has held senior roles at Roblox, Google, Palantir, and Meta (Agnee Ghosh/Bloomberg)",
-          "url": "http://www.techmeme.com/260224/p55",
-          "published_at": "2026-02-25T02:45:01Z",
-          "first_seen_at": "2026-02-25T04:31:22.831509Z",
-          "last_seen_at": "2026-02-25T08:51:15.868345Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "palantir"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 6
+      "other_count": 5
     },
     {
       "id": "knowledge-graph",
@@ -240,7 +225,7 @@
     {
       "id": "skills",
       "name": "Skills",
-      "count": 79,
+      "count": 78,
       "items": [
         {
           "id": "999cc1eaad410c7be5743d01a35e5b30ebf097c5",
@@ -261,19 +246,52 @@
           "monitor_class_label": "其他来源"
         },
         {
-          "id": "9dbf191fda4c5e27dd84053c356d36b7b5492d02",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "人人都是产品经理 · 日榜",
-          "title": "从零到一，打造能赚钱的AI技能！Coze Skills大赛系列直播手把手带教",
-          "url": "https://www.woshipm.com/?p=6338528",
-          "published_at": null,
-          "first_seen_at": "2026-02-25T02:10:47.265343Z",
-          "last_seen_at": "2026-02-26T02:27:19.958016Z",
-          "watch_score": 2,
+          "id": "6081fa0d4641db323ed214a76d6b414cc535ec91",
+          "site_id": "newsnow",
+          "site_name": "NewsNow",
+          "source": "juejin",
+          "title": "前端开发者的 AI 时代生存指南：大模型如何重塑岗位要求与技能",
+          "url": "https://juejin.cn/post/7610718217906208814",
+          "published_at": "2026-02-28T03:26:11.936000Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
           "watch_matched_terms": [
-            "skills",
             "技能"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "3f18afe8fa610f4d4592282defe44261a7d95dd9",
+          "site_id": "aibase",
+          "site_name": "AIbase",
+          "source": "AIbase",
+          "title": "周访问破百万!OpenAI Codex 深度注入 Figma，开启 UI 自动化的“MCP 时代”",
+          "url": "https://www.aibase.com/news/25777",
+          "published_at": "2026-02-28T03:25:54.674810Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "mcp"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "6621061c363302a7dfe0e62b218fafebe26e0b29",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "虎嗅 (Huxiu)",
+          "title": "强烈推荐：OpenClaw必装的9个Skill",
+          "url": "https://www.huxiu.com/article/4837679.html?f=rss",
+          "published_at": "2026-02-28T02:21:08Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skill"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -389,7 +407,7 @@
           "url": "https://dev.to/meimakes/the-agent-skills-gold-rush-has-a-malware-problem-2jai",
           "published_at": "2026-02-27T16:15:13.098000Z",
           "first_seen_at": "2026-02-27T16:34:35.902433Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -644,7 +662,7 @@
           "url": "https://www.woshipm.com/?p=6345601",
           "published_at": null,
           "first_seen_at": "2026-02-27T08:14:56.201660Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -661,7 +679,7 @@
           "url": "https://juejin.cn/post/7608214035264241718",
           "published_at": null,
           "first_seen_at": "2026-02-27T08:14:56.201660Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -678,7 +696,7 @@
           "url": "https://juejin.cn/post/7608382961723555890",
           "published_at": null,
           "first_seen_at": "2026-02-27T08:14:56.201660Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -712,7 +730,7 @@
           "url": "https://juejin.cn/post/7611069767160840246",
           "published_at": "2026-02-27T08:01:55.923000Z",
           "first_seen_at": "2026-02-27T08:14:56.201660Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -848,7 +866,7 @@
           "url": "https://www.woshipm.com/?p=6344788",
           "published_at": null,
           "first_seen_at": "2026-02-27T02:44:18.357706Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -984,7 +1002,7 @@
           "url": "https://www.producthunt.com/r/3W3EFS3VFAEIRR",
           "published_at": "2026-02-26T12:40:04.951000Z",
           "first_seen_at": "2026-02-27T02:44:18.357706Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -1535,62 +1553,11 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "205c42cb5985b27bbc262fcd2d65015376fbd928",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "CSDN博客 · 综合热榜",
-          "title": "Agent Skills：构建可扩展AI代理能力的模块化架构指南",
-          "url": "https://blog.csdn.net/yang2330648064/article/details/158314724",
-          "published_at": null,
-          "first_seen_at": "2026-02-25T02:10:47.265343Z",
-          "last_seen_at": "2026-02-26T02:27:19.958016Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "skills"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "ae938bbdffd8ae485d51e587aaad4688bc778d13",
-          "site_id": "newsnow",
-          "site_name": "NewsNow",
-          "source": "v2ex",
-          "title": "SkillDeck: 让你可视化的在本地管理多个 Coding Agent Skills 的发现、安装、更新",
-          "url": "https://www.v2ex.com/t/1193878",
-          "published_at": "2026-02-25T01:41:23Z",
-          "first_seen_at": "2026-02-25T02:10:47.265343Z",
-          "last_seen_at": "2026-02-25T06:01:32.656175Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "skills"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "84164a92cdf07161e0a63551fb8e5915ed1450a6",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "V2EX (创意工作者社区)",
-          "title": "[分享创造] SkillDeck: 让你可视化的在本地管理多个 Coding Agent Skills 的发现、安装、更新",
-          "url": "https://www.v2ex.com/t/1193878",
-          "published_at": "2026-02-25T01:41:23Z",
-          "first_seen_at": "2026-02-25T02:10:47.265343Z",
-          "last_seen_at": "2026-02-25T02:10:47.265343Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "skills"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 79
+      "other_count": 78
     },
     {
       "id": "defense-agent",
@@ -1606,7 +1573,7 @@
           "url": "https://www.businessinsider.com/defense-secretary-says-scouts-america-must-end-woke-merit-badges-2026-2",
           "published_at": "2026-02-27T23:42:29.886000Z",
           "first_seen_at": "2026-02-28T01:20:50.170499Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "国防",
@@ -1624,7 +1591,7 @@
           "url": "https://www.businessinsider.com/defense-secretary-says-scouts-america-must-end-woke-merit-badges-2026-2",
           "published_at": "2026-02-27T23:30:26Z",
           "first_seen_at": "2026-02-28T01:20:50.170499Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "defense",
@@ -1660,7 +1627,7 @@
           "url": "http://www.techmeme.com/260227/p33",
           "published_at": "2026-02-27T22:30:00Z",
           "first_seen_at": "2026-02-27T22:49:14.711935Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "defense",
@@ -1948,7 +1915,7 @@
           "url": "https://www.woshipm.com/?p=6344876",
           "published_at": null,
           "first_seen_at": "2026-02-27T02:44:18.357706Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "agent",
@@ -2192,6 +2159,227 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "0354dbe40f9be16371c09af4586ac3ea3354758d",
+          "site_id": "newsnow",
+          "site_name": "NewsNow",
+          "source": "juejin",
+          "title": "OpenClaw + Codex/Claude Code 智能体集群：一人开发团队的完整搭建方案",
+          "url": "https://juejin.cn/post/7610676768316145714",
+          "published_at": "2026-02-28T03:26:11.936000Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "a4fa8579923025d4fa111863428de8e267e569d1",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "CSDN博客 · 综合热榜",
+          "title": "OpenClaw 搭建全流程实战：从 0 部署到可控 AI Agent（附避坑与安全建议）",
+          "url": "https://blog.csdn.net/m0_73054711/article/details/158394309",
+          "published_at": null,
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "4ea7d201b22f059c585615c8d1583468d9cb2362",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "Readhub · AI",
+          "title": "3800亿美元AI独角兽硬刚五角大楼 遭特朗普政府封杀",
+          "url": "https://www.163.com/dy/article/KMRNRDJD0512B07B.html",
+          "published_at": null,
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "25785df35a6707c5b0b6a76d728175ecbaf9fe2a",
+          "site_id": "newsnow",
+          "site_name": "NewsNow",
+          "source": "hackernews",
+          "title": "Anthropic says it will challenge Pentagon supply chain risk designation in court",
+          "url": "https://news.ycombinator.com/item?id=47189441",
+          "published_at": "2026-02-28T03:14:05.879000Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "95379f0c590520a5740d6b008101bdf793cebba2",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.bloomberg.com",
+          "title": "五角大楼对Anthropic的人工智能业务提出质疑",
+          "url": "https://www.bloomberg.com/news/articles/2026-02-28/pentagon-casts-cloud-of-doubt-over-anthropic-s-ai-business",
+          "published_at": "2026-02-28T03:09:41.326000Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "ec5d110e368b66c20cbb031b2ad6ceac9534fed8",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "reut.rs",
+          "title": "特朗普下令美国政府机构弃用Anthropic人工智能，五角大楼称该初创企业构成供应链风险",
+          "url": "https://reut.rs/4r5NHS9",
+          "published_at": "2026-02-28T02:53:25.991000Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "e9024a2dec844fba9cf7844fe4dadc5125b2c70f",
+          "site_id": "zeli",
+          "site_name": "Zeli",
+          "source": "Hacker News · 24h最热",
+          "title": "Anthropic says it will challenge Pentagon supply chain risk designation in court",
+          "url": "https://www.reuters.com/world/us/anthropic-says-it-will-challenge-pentagons-supply-chain-risk-designation-court-2026-02-28",
+          "published_at": "2026-02-28T02:36:46Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "97adc200733783b8b4d99259b19cb4d99ad28b13",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "BBC News (世界新闻)",
+          "title": "At least 11 killed after military plane carrying banknotes crashes in Bolivia",
+          "url": "https://www.bbc.com/news/articles/c0rjpxxpp49o?at_medium=RSS&at_campaign=rss",
+          "published_at": "2026-02-28T02:21:31Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "military"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "4afc281ec1c9f71d7bedb272214a3b719403049c",
+          "site_id": "newsnow",
+          "site_name": "NewsNow",
+          "source": "36kr",
+          "title": "五角大楼抛弃Anthropic后 批准OpenAI的AI安全红线",
+          "url": "https://www.36kr.com/newsflashes/3702288673910919",
+          "published_at": "2026-02-28T02:16:32.127000Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "818a4c7d7f7e22870e195546a3651dbf837bf69b",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "36氪 (36Kr)",
+          "title": "五角大楼抛弃Anthropic后 批准OpenAI的AI安全红线",
+          "url": "https://36kr.com/newsflashes/3702288673910919?f=rss",
+          "published_at": "2026-02-28T02:15:41Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "b90ff26aa9cb70e306479037260192aaedae178c",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.reuters.com",
+          "title": "Anthropic公司表示将就五角大楼对其供应链风险的认定提起诉讼",
+          "url": "https://www.reuters.com/world/us/anthropic-says-it-will-challenge-pentagons-supply-chain-risk-designation-court-2026-02-28",
+          "published_at": "2026-02-28T01:49:34.109000Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "91fe00d981c353f9a5374267723d6da956a4cae1",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Mashable",
+          "title": "Trump orders Pentagon to stop using woke Anthropic in fiery Truth social post",
+          "url": "https://mashable.com/article/anthropic-trump-pentagon",
+          "published_at": "2026-02-28T01:33:35Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "18fd06795d3b8efda097aa2a817af92919bb36d9",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "俄乌战争第1465天——俄军在乌克兰的伤亡情况 - Defense Express",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSUdtbHhSdlNwb20tNm4zV2M1TWN0TEVtcTZiTnFRVzhTT0U2UmtHaE5kdnFNRGJUeTZIUFBVdVQwdmRJZFZxNVZIaVRnX1ZBM2xfVkRfV0V6TnZSRWdYbVpSTXg3U0w3Z2d2SXVELU9SMmFuY2dBTnJfZ0JiUEFucHFtNktIQ0NzUDlJWEZjbHpZWXJuMnJtSk1HR2JRRE1iWTFsUm13?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-02-28T01:33:28.530000Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "defense"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "e5139c75330c18f54d9be49cbebcf53d1c5c21dd",
           "site_id": "aibase",
           "site_name": "AIbase",
@@ -2200,7 +2388,7 @@
           "url": "https://www.aibase.com/news/25774",
           "published_at": "2026-02-28T01:20:50.170499Z",
           "first_seen_at": "2026-02-28T01:20:50.170499Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2226,6 +2414,23 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "ceb4cea293e78c2fc39f488de3ebfdb04395b9a9",
+          "site_id": "zeli",
+          "site_name": "Zeli",
+          "source": "Hacker News · 24h最热",
+          "title": "OpenAI is negotiating a deal with The Pentagon",
+          "url": "https://fortune.com/2026/02/27/openai-in-talks-with-pentagon-after-anthropic-blowup",
+          "published_at": "2026-02-28T01:20:11Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "675f5a13322a7a3900d74e33b718bb6d14402e51",
           "site_id": "buzzing",
           "site_name": "Buzzing",
@@ -2234,7 +2439,7 @@
           "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNWF8wXzRfX0s4a1BjdXFQeWpfa1ppNE1oNEZPVzNMSXdZWnJCUjFqREtPR1Jva081SmNKenh5eTdCZ3QybHRRTURVYkdYVjBKNU9WMTB1Y0VocXU1NkNJcGc0VG5NZmtPeGota0lKSmhNZm13MWxLNTc2dER5SFk5Vl9nWjE3a2xyQnZaMmM0S2wwdlIxS0RtQQ?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-02-28T01:01:38.397000Z",
           "first_seen_at": "2026-02-28T01:20:50.170499Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2268,7 +2473,7 @@
           "url": "https://arstechnica.com/space/2026/02/the-air-forces-new-icbm-is-nearly-ready-to-fly-but-theres-nowhere-to-put-them",
           "published_at": "2026-02-28T00:32:24Z",
           "first_seen_at": "2026-02-28T01:20:50.170499Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "air force"
@@ -2302,7 +2507,7 @@
           "url": "https://reut.rs/3ZXO0DJ",
           "published_at": "2026-02-28T00:14:31.763000Z",
           "first_seen_at": "2026-02-28T01:20:50.170499Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -2319,7 +2524,7 @@
           "url": "https://www.ithome.com/0/924/407.htm",
           "published_at": "2026-02-28T00:09:59Z",
           "first_seen_at": "2026-02-28T01:20:50.170499Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2336,7 +2541,92 @@
           "url": "https://slashdot.org/story/26/02/27/2151236/perplexity-announces-computer-an-ai-agent-that-assigns-work-to-other-ai-agent",
           "published_at": "2026-02-28T00:02:00Z",
           "first_seen_at": "2026-02-28T01:20:50.170499Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "e2360a3f50924de215f8cc7d827b9624f0d42495",
+          "site_id": "aihubtoday",
+          "site_name": "AI HubToday",
+          "source": "Daily Digest",
+          "title": "美国防部威胁Anthropic拆安全墙。",
+          "url": "https://newshacker.me/story?id=47186677",
+          "published_at": "2026-02-28T00:00:00Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "40d12fc0f54b9c64f1d20ac43fa927101fae4319",
+          "site_id": "aihubtoday",
+          "site_name": "AI HubToday",
+          "source": "Daily Digest",
+          "title": "LLM智能体曝隐式注入致命漏洞。",
+          "url": "https://arxiv.org/abs/2602.22450",
+          "published_at": "2026-02-28T00:00:00Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "3a3f8cc76feebe6d61d9334ef4548ee247443638",
+          "site_id": "aihubtoday",
+          "site_name": "AI HubToday",
+          "source": "Daily Digest",
+          "title": "AI智能体正进化为协作团队。",
+          "url": "http://x.com/i/article/2027359882756927489",
+          "published_at": "2026-02-28T00:00:00Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "1e6c4a2b92476ab627c5157e366dd92ba7ca4ccb",
+          "site_id": "aihubtoday",
+          "site_name": "AI HubToday",
+          "source": "Daily Digest",
+          "title": "生产级Agent操作系统OpenFang开源。",
+          "url": "https://github.com/RightNow-AI/openfang",
+          "published_at": "2026-02-28T00:00:00Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "161c71b6af567220519fe4247646adc83f1aca1c",
+          "site_id": "aihubtoday",
+          "site_name": "AI HubToday",
+          "source": "Daily Digest",
+          "title": "Agent时代将引爆商业模式巨变。",
+          "url": "https://m.okjike.com/originalPosts/69a0ff8425bae5661292fc60",
+          "published_at": "2026-02-28T00:00:00Z",
+          "first_seen_at": "2026-02-28T03:25:54.674810Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2353,7 +2643,7 @@
           "url": "https://www.theguardian.com/us-news/2026/feb/27/trump-iran-war-evidence",
           "published_at": "2026-02-27T23:58:54.513000Z",
           "first_seen_at": "2026-02-28T01:20:50.170499Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2370,7 +2660,7 @@
           "url": "https://thehill.com/policy/technology/5758898-altman-backs-anthropic-pentagon-stand",
           "published_at": "2026-02-27T23:28:31Z",
           "first_seen_at": "2026-02-28T01:20:50.170499Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -2387,7 +2677,7 @@
           "url": "https://github.com/selfradiance/agentgate",
           "published_at": "2026-02-27T23:27:09.207000Z",
           "first_seen_at": "2026-02-27T23:45:07.953920Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2438,7 +2728,7 @@
           "url": "https://nyti.ms/4tYnFD9",
           "published_at": "2026-02-27T22:55:15.542000Z",
           "first_seen_at": "2026-02-27T23:19:26.722632Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -2472,7 +2762,7 @@
           "url": "https://news.google.com/read/CBMinwFBVV95cUxQcjdWNVUyb3pfcjZ4dHBPZDhxYk9DVWt1eExnV3RDRHRocW1fM1dVazF2aHd6STNjaFp6VGd5bmMtbE96b1ZXcUxQOG9BX2RZTkdUd3RXaVNaSDZWRldhbk0yV2NfUzhUelp2NURTWVZyTk51dFd0U1U1c0NhaTh3czhuenpnOVFULXNHVzRtRUM2ajNVRWpUcmdSWFJRWWc?hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-02-27T22:42:00Z",
           "first_seen_at": "2026-02-27T23:19:26.722632Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -2489,7 +2779,7 @@
           "url": "https://www.businessinsider.com/pentagon-hegseth-order-cancels-military-attendance-more-top-universities-2026-2",
           "published_at": "2026-02-27T22:39:24.016000Z",
           "first_seen_at": "2026-02-27T22:49:14.711935Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -2506,7 +2796,7 @@
           "url": "https://www.businessinsider.com/pentagon-hegseth-order-cancels-military-attendance-more-top-universities-2026-2",
           "published_at": "2026-02-27T22:23:16Z",
           "first_seen_at": "2026-02-28T01:20:50.170499Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -2540,7 +2830,7 @@
           "url": "https://www.engadget.com/ai/trump-orders-federal-agencies-to-drop-anthropic-services-amid-pentagon-feud-222029306.html?src=rss",
           "published_at": "2026-02-27T22:20:29Z",
           "first_seen_at": "2026-02-27T22:49:14.711935Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -2557,7 +2847,7 @@
           "url": "https://index.e.kuaishou.com/rank/hotDetail?keyword=%E7%BE%8E%E5%86%9B%E6%BF%80%E5%85%89%E8%AF%AF%E5%87%BB%E5%8F%8B%E5%86%9B%E6%97%A0%E4%BA%BA%E6%9C%BA&rankType=1",
           "published_at": null,
           "first_seen_at": "2026-02-27T22:17:52.395392Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2574,7 +2864,7 @@
           "url": "https://tech.slashdot.org/story/26/02/27/2133209/us-military-accidentally-shoots-down-border-protection-drone-with-laser",
           "published_at": "2026-02-27T22:02:00Z",
           "first_seen_at": "2026-02-27T22:49:14.711935Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "military"
@@ -2591,7 +2881,7 @@
           "url": "https://news.ycombinator.com/item?id=47181316",
           "published_at": "2026-02-27T22:01:16.774000Z",
           "first_seen_at": "2026-02-27T22:17:52.395392Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2608,7 +2898,7 @@
           "url": "https://techcrunch.com/2026/02/27/pentagon-moves-to-designate-anthropic-as-a-supply-chain-risk",
           "published_at": "2026-02-27T21:53:14Z",
           "first_seen_at": "2026-02-28T01:20:50.170499Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -2625,7 +2915,7 @@
           "url": "https://techcrunch.com/2026/02/27/president-trump-orders-federal-agencies-to-stop-using-anthropic-after-pentagon-dispute",
           "published_at": "2026-02-27T21:53:14Z",
           "first_seen_at": "2026-02-27T22:49:14.711935Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -2659,7 +2949,7 @@
           "url": "https://www.theguardian.com/us-news/2026/feb/27/scouting-america-transgender-ban-pentagon",
           "published_at": "2026-02-27T21:51:03.796000Z",
           "first_seen_at": "2026-02-27T22:17:52.395392Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -2676,7 +2966,7 @@
           "url": "https://nyti.ms/46yvIwx",
           "published_at": "2026-02-27T21:51:03.777000Z",
           "first_seen_at": "2026-02-27T22:17:52.395392Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -2744,7 +3034,7 @@
           "url": "https://www.nytimes.com/2026/02/27/us/politics/anthropic-military-ai.html",
           "published_at": "2026-02-27T21:30:08Z",
           "first_seen_at": "2026-02-27T21:50:41.443902Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -2778,7 +3068,7 @@
           "url": "https://www.bloomberg.com/news/articles/2026-02-27/trump-orders-us-government-to-drop-anthropic-after-pentagon-feud",
           "published_at": "2026-02-27T21:12:22Z",
           "first_seen_at": "2026-02-27T22:49:14.711935Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -2829,7 +3119,7 @@
           "url": "https://www.axios.com/2026/02/27/anthropic-pentagon-supply-chain-risk-claude",
           "published_at": "2026-02-27T20:56:49Z",
           "first_seen_at": "2026-02-27T22:49:14.711935Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -2846,7 +3136,7 @@
           "url": "https://arstechnica.com/tech-policy/2026/02/whoops-us-military-laser-strike-takes-down-cbp-drone-near-mexican-border",
           "published_at": "2026-02-27T20:31:19.658000Z",
           "first_seen_at": "2026-02-27T20:51:01.577886Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2880,7 +3170,7 @@
           "url": "https://on.wsj.com/4aURRXb",
           "published_at": "2026-02-27T20:31:17.848000Z",
           "first_seen_at": "2026-02-27T20:51:01.577886Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2914,7 +3204,7 @@
           "url": "https://www.politico.com/news/2026/02/27/senators-urge-ceasefire-in-pentagons-fight-with-anthropic-00804166",
           "published_at": "2026-02-27T20:15:31.320000Z",
           "first_seen_at": "2026-02-27T20:51:01.577886Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -2948,7 +3238,7 @@
           "url": "https://www.bbc.com/news/articles/cn48jj3y8ezo?at_medium=RSS&at_campaign=rss",
           "published_at": "2026-02-27T19:51:59Z",
           "first_seen_at": "2026-02-27T20:51:01.577886Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -3033,7 +3323,7 @@
           "url": "https://arstechnica.com/tech-policy/2026/02/whoops-us-military-laser-strike-takes-down-cbp-drone-near-mexican-border",
           "published_at": "2026-02-27T19:14:51Z",
           "first_seen_at": "2026-02-27T20:51:01.577886Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "military"
@@ -3050,7 +3340,7 @@
           "url": "https://techcrunch.com/2026/02/27/anthropic-vs-the-pentagon-whats-actually-at-stake",
           "published_at": "2026-02-27T19:11:04Z",
           "first_seen_at": "2026-02-27T19:52:26.875251Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -3118,7 +3408,7 @@
           "url": "https://apnews.com/article/anthropic-pentagon-ai-hegseth-dario-amodei-b72d1894bc842d9acf026df3867bee8a",
           "published_at": "2026-02-27T18:39:05Z",
           "first_seen_at": "2026-02-27T21:50:41.443902Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -3169,7 +3459,7 @@
           "url": "https://minimaxir.com/2026/02/ai-agent-coding",
           "published_at": "2026-02-27T18:09:11Z",
           "first_seen_at": "2026-02-27T23:45:07.953920Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3186,7 +3476,7 @@
           "url": "https://www.ft.com/content/7c01cb03-1638-44b0-ae60-2adb8572ed6c",
           "published_at": "2026-02-27T18:07:18.482000Z",
           "first_seen_at": "2026-02-27T19:08:21.565048Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -3203,7 +3493,7 @@
           "url": "https://blog.csdn.net/matlab_dingdang/article/details/158382367",
           "published_at": null,
           "first_seen_at": "2026-02-27T18:02:58.363841Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -3254,7 +3544,7 @@
           "url": "https://www.nytimes.com/2026/02/27/technology/defense-department-anthropic-ai-safety.html",
           "published_at": "2026-02-27T17:44:00Z",
           "first_seen_at": "2026-02-27T18:02:58.363841Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -3271,7 +3561,7 @@
           "url": "https://www.understandingai.org/p/the-pentagon-is-making-a-mistake",
           "published_at": "2026-02-27T17:35:08.938000Z",
           "first_seen_at": "2026-02-27T18:02:58.363841Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -3288,7 +3578,7 @@
           "url": "https://www.businessinsider.com/anthropic-deal-pentagon-openai-sam-altman-dario-amodei-pete-hegseth-2026-2",
           "published_at": "2026-02-27T17:19:24.287000Z",
           "first_seen_at": "2026-02-27T17:30:01.482362Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -3305,7 +3595,7 @@
           "url": "https://www.theverge.com/ai-artificial-intelligence/886082/ai-vs-the-pentagon-killer-robots-mass-surveillance-and-red-lines",
           "published_at": "2026-02-27T17:16:53Z",
           "first_seen_at": "2026-02-27T18:02:58.363841Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -3322,7 +3612,7 @@
           "url": "https://news.google.com/read/CBMiuAFBVV95cUxNTFFoLUpmR0s1VkpvVmZabzU4YkZHbVJsamVWWjM3YWlKRktlMnVZUkZubDFBZEwybXBpdXJmVXJOcFpkbHFPdXVyalVLR2JlWEFab3FPMUpMRTZyU0VnTE9xeEFBWmRjS0N5WmRucFJKXzVkcTA1NGRwLWtFSkU5Rm1zbHhrMHBBaEV4T2ZncVZZaFA1SFBIQzZqWDIwMDJWLWh6ZFJVa3Atc1U2M0RIODhlSVpwSjV0?hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-02-27T17:15:16Z",
           "first_seen_at": "2026-02-27T18:02:58.363841Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -3343,329 +3633,6 @@
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "843917fc5d07d9ef87230f3c282a8892afd77e36",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "phys.org",
-          "title": "无人机激光雷达对废弃道路的勘测揭示了长期泥石流灾害风险",
-          "url": "https://phys.org/news/2026-02-drone-lidar-surveys-abandoned-roads.html",
-          "published_at": "2026-02-27T17:03:08.154000Z",
-          "first_seen_at": "2026-02-27T17:30:01.482362Z",
-          "last_seen_at": "2026-02-27T21:50:41.443902Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "7a976965b788952f5ebe780b64fc143900438cdf",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "巴基斯坦国防部长称该国与阿富汗处于\"公开战争\"状态，此前巴方发动空袭 - BBC",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE80X0s1X2dDTU1WdW9oaE1ENzIxWk1zOTZxYlQ3RkNPZEIxaGtPaVpaWFBSNnI4eEpUTEhpN0ZWdm5hNWFycTA5djNVUTlqRTlmNTZhdER0bnV5Zw?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-02-27T17:03:07.250000Z",
-          "first_seen_at": "2026-02-27T17:30:01.482362Z",
-          "last_seen_at": "2026-02-27T22:17:52.395392Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "4a652db274a5f036d1ed7fa897ee73326d0bc4ea",
-          "site_id": "newsnow",
-          "site_name": "NewsNow",
-          "source": "jin10",
-          "title": "联合国人权高级专员：对伊朗局势可能出现军事升级深感忧虑，希望理性占上风。",
-          "url": "https://flash.jin10.com/detail/20260227164830688800",
-          "published_at": "2026-02-27T16:48:30Z",
-          "first_seen_at": "2026-02-27T09:04:23.466026Z",
-          "last_seen_at": "2026-02-27T09:04:23.466026Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "cd5e918c8bf81d78a8674f06832110227c2bb38e",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "Slashdot (科技资讯)",
-          "title": "Sam Altman Says OpenAI Shares Anthropic's Red Lines in Pentagon Fight",
-          "url": "https://slashdot.org/story/26/02/27/1530218/sam-altman-says-openai-shares-anthropics-red-lines-in-pentagon-fight",
-          "published_at": "2026-02-27T16:40:00Z",
-          "first_seen_at": "2026-02-27T17:30:01.482362Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "pentagon"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "9412c039677bb534debc4c49f77a99ce55117f46",
-          "site_id": "newsnow",
-          "site_name": "NewsNow",
-          "source": "hackernews",
-          "title": "The Pentagon is making a mistake by threatening Anthropic",
-          "url": "https://news.ycombinator.com/item?id=47181380",
-          "published_at": "2026-02-27T16:34:52.909000Z",
-          "first_seen_at": "2026-02-27T16:34:35.902433Z",
-          "last_seen_at": "2026-02-27T19:08:21.565048Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "pentagon"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "7cd1aa7c876cad04844fc41e018d85f42ad9d2c5",
-          "site_id": "newsnow",
-          "site_name": "NewsNow",
-          "source": "juejin",
-          "title": "聊一下很火的 AI Agent",
-          "url": "https://juejin.cn/post/7610604117631615022",
-          "published_at": "2026-02-27T16:34:52.909000Z",
-          "first_seen_at": "2026-02-27T16:34:35.902433Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "fa0cdeeef346bbc170ae3bc905ad45d93c589eb2",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "百度 · 实时热点",
-          "title": "五角大楼“披萨指数”到底靠不靠谱",
-          "url": "https://www.baidu.com/s?wd=%E4%BA%94%E8%A7%92%E5%A4%A7%E6%A5%BC%E2%80%9C%E6%8A%AB%E8%90%A8%E6%8C%87%E6%95%B0%E2%80%9D%E5%88%B0%E5%BA%95%E9%9D%A0%E4%B8%8D%E9%9D%A0%E8%B0%B1",
-          "published_at": null,
-          "first_seen_at": "2026-02-27T16:34:35.902433Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "五角大楼"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "72fd9f91be82d7b0814d765ca4061eb276c3e7f7",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "TechCrunch",
-          "title": "Employees at Google and OpenAI support Anthropic’s Pentagon stand in open letter",
-          "url": "https://techcrunch.com/2026/02/27/employees-at-google-and-openai-support-anthropics-pentagon-stand-in-open-letter",
-          "published_at": "2026-02-27T16:23:58Z",
-          "first_seen_at": "2026-02-27T17:30:01.482362Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "pentagon"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "ca83951864fb83c89230f5a704e964ccbc5dc267",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.bloomberg.com",
-          "title": "五角大楼正在对美国天才宣战",
-          "url": "https://www.bloomberg.com/opinion/articles/2026-02-27/anthropic-vs-pentagon-trump-administration-is-hurting-innovation",
-          "published_at": "2026-02-27T16:15:14.522000Z",
-          "first_seen_at": "2026-02-27T16:34:35.902433Z",
-          "last_seen_at": "2026-02-27T16:34:35.902433Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "五角大楼"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "bae64f59b630cd7e39b2a950c37704a0ca2a6b40",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.bloomberg.com",
-          "title": "人类中心主义公司在与五角大楼的争端中获得其他科技从业者的支持",
-          "url": "https://www.bloomberg.com/news/articles/2026-02-27/anthropic-s-feud-with-pentagon-mushrooms-into-broader-battle",
-          "published_at": "2026-02-27T15:59:38.519000Z",
-          "first_seen_at": "2026-02-27T16:34:35.902433Z",
-          "last_seen_at": "2026-02-27T16:34:35.902433Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "五角大楼"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "1b6cb1719aa41029df08a392293b00099c061889",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "IT之家 (ITHome)",
-          "title": "俄罗斯联邦通信监督局称其官网及国防部网站遭 DDoS 网络攻击",
-          "url": "https://www.ithome.com/0/924/393.htm",
-          "published_at": "2026-02-27T15:46:59Z",
-          "first_seen_at": "2026-02-27T16:34:35.902433Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "d3d579c4c81e2a28a30d3314982a874be5d8f24b",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "The Verge",
-          "title": "The US military reportedly shot down a CBP drone with a laser",
-          "url": "https://www.theverge.com/policy/886021/us-military-cbp-drone-laser-texas",
-          "published_at": "2026-02-27T15:43:43Z",
-          "first_seen_at": "2026-02-27T17:30:01.482362Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "military"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "df6ba5a34c3458e0e32d31960de318525993aa2b",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "北大未名 · 全站热门话题",
-          "title": "【出】小米智能体重秤s200",
-          "url": "https://bbs.pku.edu.cn/v2/post-read.php?bid=71&threadid=18991320",
-          "published_at": null,
-          "first_seen_at": "2026-02-27T15:33:37.526353Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "e0130ac926d8c86f81947e420d9dd52038c73cae",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "Techmeme",
-          "title": "Sam Altman says OpenAI shares Anthropic's red lines with respect to AI use by the military, which are \"an issue for the whole industry\" (Axios)",
-          "url": "http://www.techmeme.com/260227/p15",
-          "published_at": "2026-02-27T15:20:07Z",
-          "first_seen_at": "2026-02-27T16:34:35.902433Z",
-          "last_seen_at": "2026-02-27T20:21:58.032000Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "military"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "bcb18533f993dfa2c54be580382a1379f630e725",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "Hacker News (黑客新闻)",
-          "title": "The Pentagon is making a mistake by threatening Anthropic",
-          "url": "https://www.understandingai.org/p/the-pentagon-is-making-a-mistake",
-          "published_at": "2026-02-27T15:08:29Z",
-          "first_seen_at": "2026-02-27T16:34:35.902433Z",
-          "last_seen_at": "2026-02-27T18:02:58.363841Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "pentagon"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "fadda50e3089ccf09f2f4ab1f0b471fa0a639e61",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "Hacker News (黑客新闻)",
-          "title": "Building secure, scalable agent sandbox infrastructure",
-          "url": "https://browser-use.com/posts/two-ways-to-sandbox-agents",
-          "published_at": "2026-02-27T15:03:12Z",
-          "first_seen_at": "2026-02-27T21:50:41.443902Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "4284d8f81bdbf2fcbe6a28c90662d9d082e81c36",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "Hacker News (黑客新闻)",
-          "title": "We Built Secure, Scalable Agent Sandbox Infrastructure",
-          "url": "https://browser-use.com/posts/two-ways-to-sandbox-agents",
-          "published_at": "2026-02-27T15:03:12Z",
-          "first_seen_at": "2026-02-27T19:52:26.875251Z",
-          "last_seen_at": "2026-02-27T21:24:11.254158Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "206ceb7a779c47011451aa762a5adf94321c6a4d",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "finance.yahoo.com",
-          "title": "今日科技股：OpenAI融资1100亿美元，Anthropic拒绝国防部人工智能要求",
-          "url": "https://finance.yahoo.com/news/live/tech-stocks-today-openai-raises-110-billion-anthropic-rejects-defense-department-ai-demands-143452536.html",
-          "published_at": "2026-02-27T14:55:34.407000Z",
-          "first_seen_at": "2026-02-27T15:33:37.526353Z",
-          "last_seen_at": "2026-02-27T15:33:37.526353Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "4496ac4ba93f171dbeb76e460d52d71ca004c756",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "V2EX (创意工作者社区)",
-          "title": "[分享创造] [送码] OpenTIL：为 AI Agent 而建的博客平台",
-          "url": "https://www.v2ex.com/t/1194665",
-          "published_at": "2026-02-27T14:41:19Z",
-          "first_seen_at": "2026-02-27T15:33:37.526353Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -3963,7 +3930,7 @@
           "url": "https://arstechnica.com/space/2026/02/a-non-public-document-reveals-that-science-may-not-be-prioritized-on-next-mars-mission",
           "published_at": "2026-02-26T16:03:48.052000Z",
           "first_seen_at": "2026-02-27T02:44:18.357706Z",
-          "last_seen_at": "2026-02-28T01:20:50.170499Z",
+          "last_seen_at": "2026-02-28T03:25:54.674810Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "科学研究"
