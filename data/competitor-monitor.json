@@ -1,15 +1,17 @@
 {
-  "generated_at": "2026-02-28T07:47:20.502644Z",
+  "generated_at": "2026-02-28T08:32:55.740585Z",
   "window_days": 7,
-  "source_generated_at": "2026-02-28T07:45:55.637258Z",
+  "source_generated_at": "2026-02-28T08:21:40.804853Z",
   "source_window_hours": 24,
   "source_topic_filter": "ai_tech_robotics",
   "output_name": "competitor-monitor",
   "section_count": 5,
-  "total_items": 61,
-  "official_error_count": 1,
+  "total_items": 52,
+  "official_error_count": 3,
   "official_errors": [
-    "https://code.coze.cn/api/playground_api/notice/get_list: 登录认证失败"
+    "https://code.coze.cn/api/playground_api/notice/get_list: 登录认证失败",
+    "https://yuanqi.tencent.com/: HTTPSConnectionPool(host='yuanqi.tencent.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='yuanqi.tencent.com', port=443) at 0x7f294de7c890>, 'Connection to yuanqi.tencent.com timed out. (connect timeout=20)'))",
+    "https://cloud.tencent.com/document/product/1759/104191: HTTPSConnectionPool(host='cloud.tencent.com', port=443): Max retries exceeded with url: /document/product/1759/104191 (Caused by NewConnectionError(\"HTTPSConnection(host='cloud.tencent.com', port=443): Failed to establish a new connection: [Errno 101] Network is unreachable\"))"
   ],
   "sections": [
     {
@@ -25,7 +27,7 @@
           "title": "扣子更新动态【2026 年 01 月 28 日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2026---01---28",
           "published_at": "2026-01-28T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -47,7 +49,7 @@
           "title": "扣子更新动态【2026 年 01 月 19 日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2026---01---19",
           "published_at": "2026-01-19T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -70,7 +72,7 @@
           "title": "扣子更新动态【2026 年 01 月 15 日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2026---01---15",
           "published_at": "2026-01-15T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -94,7 +96,7 @@
           "title": "扣子更新动态【2025 年 12 月 17 日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025---12---17",
           "published_at": "2025-12-17T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -123,7 +125,7 @@
           "title": "扣子更新动态【2025年11月28日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-11-28",
           "published_at": "2025-11-28T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -145,7 +147,7 @@
           "title": "扣子更新动态【2025年11月25日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-11-25",
           "published_at": "2025-11-25T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -168,7 +170,7 @@
           "title": "扣子更新动态【2025年11月21日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-11-21",
           "published_at": "2025-11-21T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -190,7 +192,7 @@
           "title": "扣子更新动态【2025年11月13日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-11-13",
           "published_at": "2025-11-13T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -213,7 +215,7 @@
           "title": "扣子更新动态【2025年11月11日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-11-11",
           "published_at": "2025-11-11T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -235,7 +237,7 @@
           "title": "扣子更新动态【2025年11月6日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-11-6",
           "published_at": "2025-11-06T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -257,7 +259,7 @@
           "title": "扣子更新动态【2025年11月5日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-11-5",
           "published_at": "2025-11-05T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -280,7 +282,7 @@
           "title": "扣子更新动态【2025年11月4日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-11-4",
           "published_at": "2025-11-04T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -302,7 +304,7 @@
           "title": "扣子更新动态【2025年10月21日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-10-21",
           "published_at": "2025-10-21T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -326,7 +328,7 @@
           "title": "扣子更新动态【2025年10月20日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-10-20",
           "published_at": "2025-10-20T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -348,7 +350,7 @@
           "title": "扣子更新动态【2025年10月16日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-10-16",
           "published_at": "2025-10-16T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -370,7 +372,7 @@
           "title": "扣子更新动态【2025年10月15日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-10-15",
           "published_at": "2025-10-15T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -395,7 +397,7 @@
           "title": "扣子更新动态【2025年9月29日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-9-29",
           "published_at": "2025-09-29T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -417,7 +419,7 @@
           "title": "扣子更新动态【2025年9月25日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-9-25",
           "published_at": "2025-09-25T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -440,7 +442,7 @@
           "title": "扣子更新动态【2025年9月22日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-9-22",
           "published_at": "2025-09-22T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -463,7 +465,7 @@
           "title": "扣子更新动态【2025年9月19日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-9-19",
           "published_at": "2025-09-19T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -490,7 +492,7 @@
           "title": "扣子更新动态【2025年9月18日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-9-18",
           "published_at": "2025-09-18T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -512,7 +514,7 @@
           "title": "扣子更新动态【2025年9月11日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-9-11",
           "published_at": "2025-09-11T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -534,7 +536,7 @@
           "title": "扣子更新动态【2025年9月1日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-9-1",
           "published_at": "2025-09-01T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -559,7 +561,7 @@
           "title": "扣子更新动态【2025年8月29日】",
           "url": "https://docs.coze.cn/guides/release_note#coze-update-2025-8-29",
           "published_at": "2025-08-29T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:51.026481Z",
+          "first_seen_at": "2026-02-28T08:31:36.614343Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -584,7 +586,7 @@
           "url": "https://www.woshipm.com/?p=6345176",
           "published_at": null,
           "first_seen_at": "2026-02-28T03:25:54.674810Z",
-          "last_seen_at": "2026-02-28T07:45:55.637258Z",
+          "last_seen_at": "2026-02-28T08:21:40.804853Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "coze"
@@ -635,7 +637,7 @@
           "url": "https://www.woshipm.com/?p=6334679",
           "published_at": null,
           "first_seen_at": "2026-02-24T02:09:04.923961Z",
-          "last_seen_at": "2026-02-28T07:45:55.637258Z",
+          "last_seen_at": "2026-02-28T08:21:40.804853Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "coze"
@@ -661,7 +663,7 @@
           "title": "AppBuilder 更新动态【2026年2月5日】",
           "url": "https://cloud.baidu.com/doc/qianfan/s/Mmh8l4qwj#appbuilder-update-1",
           "published_at": "2026-02-05T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:55.949803Z",
+          "first_seen_at": "2026-02-28T08:31:42.253269Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -684,7 +686,7 @@
           "title": "AppBuilder 更新动态【2026年1月30日】",
           "url": "https://cloud.baidu.com/doc/qianfan/s/Mmh8l4qwj#appbuilder-update-2",
           "published_at": "2026-01-30T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:55.949803Z",
+          "first_seen_at": "2026-02-28T08:31:42.253269Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -713,7 +715,7 @@
           "title": "AppBuilder 更新动态【2026年1月23日】",
           "url": "https://cloud.baidu.com/doc/qianfan/s/Mmh8l4qwj#appbuilder-update-3",
           "published_at": "2026-01-23T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:55.949803Z",
+          "first_seen_at": "2026-02-28T08:31:42.253269Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -741,7 +743,7 @@
           "title": "AppBuilder 更新动态【2026年1月16日】",
           "url": "https://cloud.baidu.com/doc/qianfan/s/Mmh8l4qwj#appbuilder-update-4",
           "published_at": "2026-01-16T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:55.949803Z",
+          "first_seen_at": "2026-02-28T08:31:42.253269Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -767,7 +769,7 @@
           "title": "AppBuilder 更新动态【2026年1月9日】",
           "url": "https://cloud.baidu.com/doc/qianfan/s/Mmh8l4qwj#appbuilder-update-5",
           "published_at": "2026-01-09T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:55.949803Z",
+          "first_seen_at": "2026-02-28T08:31:42.253269Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -795,7 +797,7 @@
           "title": "AppBuilder 更新动态【2025年12月26日】",
           "url": "https://cloud.baidu.com/doc/qianfan/s/Mmh8l4qwj#appbuilder-update-6",
           "published_at": "2025-12-26T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:55.949803Z",
+          "first_seen_at": "2026-02-28T08:31:42.253269Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -824,7 +826,7 @@
           "title": "AppBuilder 更新动态【2025年12月19日】",
           "url": "https://cloud.baidu.com/doc/qianfan/s/Mmh8l4qwj#appbuilder-update-7",
           "published_at": "2025-12-19T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:55.949803Z",
+          "first_seen_at": "2026-02-28T08:31:42.253269Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -858,7 +860,7 @@
           "title": "AppBuilder 更新动态【2025年12月12日】",
           "url": "https://cloud.baidu.com/doc/qianfan/s/Mmh8l4qwj#appbuilder-update-8",
           "published_at": "2025-12-12T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:55.949803Z",
+          "first_seen_at": "2026-02-28T08:31:42.253269Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -884,7 +886,7 @@
           "title": "AppBuilder 更新动态【2025年12月05日】",
           "url": "https://cloud.baidu.com/doc/qianfan/s/Mmh8l4qwj#appbuilder-update-9",
           "published_at": "2025-12-05T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:55.949803Z",
+          "first_seen_at": "2026-02-28T08:31:42.253269Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -918,7 +920,7 @@
           "title": "AppBuilder 更新动态【2025年11月28日】",
           "url": "https://cloud.baidu.com/doc/qianfan/s/Mmh8l4qwj#appbuilder-update-10",
           "published_at": "2025-11-28T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:55.949803Z",
+          "first_seen_at": "2026-02-28T08:31:42.253269Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -943,7 +945,7 @@
           "title": "AppBuilder 更新动态【2025年11月21日】",
           "url": "https://cloud.baidu.com/doc/qianfan/s/Mmh8l4qwj#appbuilder-update-11",
           "published_at": "2025-11-21T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:55.949803Z",
+          "first_seen_at": "2026-02-28T08:31:42.253269Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -971,7 +973,7 @@
           "title": "AppBuilder 更新动态【2025年11月14日】",
           "url": "https://cloud.baidu.com/doc/qianfan/s/Mmh8l4qwj#appbuilder-update-12",
           "published_at": "2025-11-14T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:55.949803Z",
+          "first_seen_at": "2026-02-28T08:31:42.253269Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -1003,7 +1005,7 @@
           "title": "AppBuilder 更新动态【2025年10月24日】",
           "url": "https://cloud.baidu.com/doc/qianfan/s/Mmh8l4qwj#appbuilder-update-13",
           "published_at": "2025-10-24T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:46:55.949803Z",
+          "first_seen_at": "2026-02-28T08:31:42.253269Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -1048,7 +1050,7 @@
           "title": "阿里云百炼产品月报【2026年1月】",
           "url": "https://developer.aliyun.com/article/1709938",
           "published_at": "2026-02-02T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:47:08.118160Z",
+          "first_seen_at": "2026-02-28T08:31:46.299312Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -1145,7 +1147,7 @@
           "url": "https://blog.csdn.net/jllion/article/details/158386583",
           "published_at": null,
           "first_seen_at": "2026-02-25T22:34:47.365237Z",
-          "last_seen_at": "2026-02-28T07:45:55.637258Z",
+          "last_seen_at": "2026-02-28T08:21:40.804853Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "百炼"
@@ -1178,259 +1180,10 @@
     {
       "id": "yuanqi",
       "name": "腾讯",
-      "count": 9,
-      "items": [
-        {
-          "id": "21a2bc8ff53242683ff03c7e1d067031a37d8d21",
-          "site_id": "official",
-          "site_name": "Official",
-          "source": "官方渠道: 【腾讯云ADP】 cloud.tencent.com",
-          "title": "腾讯云ADP更新动态【2026年01月】",
-          "url": "https://cloud.tencent.com/document/product/1759/104191#adp-update-202601",
-          "published_at": "2026-01-01T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:47:12.638858Z",
-          "watch_score": 90,
-          "watch_matched_terms": [
-            "official-source",
-            "table-update"
-          ],
-          "hover_description": "2026年01月 官方更新",
-          "detail_points": [
-            "计费方案调整：计划于北京时间 2026 年01 月 09 日（星期五）开始分批灰度上线，启用订阅类套餐的收费方式，届时将停止对外售卖此前提供的 Token 资源包、专属并发包、知识库扩容包等预付费资源。 使用老计费项的用户，仍可以继续使用，购买套餐包的用户参考套餐订阅相关文档",
-            "新增资源看板：对购买套餐包的用户开放，支持查看模型、插件、知识库、平台服务使用资源的数据统计"
-          ],
-          "auto_expand_details": true,
-          "monitor_class": "official",
-          "monitor_class_label": "官方公告"
-        },
-        {
-          "id": "e90b436e6fe39d22f9e031c258d2eaa69c593685",
-          "site_id": "official",
-          "site_name": "Official",
-          "source": "官方渠道: 【腾讯云ADP】 cloud.tencent.com",
-          "title": "腾讯云ADP更新动态【2025年12月】",
-          "url": "https://cloud.tencent.com/document/product/1759/104191#adp-update-202512",
-          "published_at": "2025-12-01T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:47:12.638858Z",
-          "watch_score": 90,
-          "watch_matched_terms": [
-            "official-source",
-            "table-update"
-          ],
-          "hover_description": "2025年12月 官方更新",
-          "detail_points": [
-            "新增 Widget：新增 Widget 功能，以更为直观的方式呈现复杂的输出内容。 创建方式支持： 从模板创建 自然语言创建 从代码创建 导入 Widget 同时支持在Multi-Agent模式和工作流内使用Widget",
-            "新增导入文档类型：支持导入三种文档类型，其中 Keynote，Pages 支持文档生成问答，限制50MB；Numbers 不支持文档生成问答，限制20MB",
-            "默认知识库取消发布能力：知识库支持通过设置“生效范围”，实现知识检索的生效范围，不再通过发布应用实现",
-            "Multi-Agent 模式，新增 Agent流转策略配置：Agent 高级设置支持配置：新对话由主 Agent 接管，还是由上一轮承接会话的 Agent 接管",
-            "应用评测报告支持图表：应用评测报告支持图表输出",
-            "插件状态回显：已删除的自定义插件，在Multi-Agent 模式应用内会显示提示“已失效”。 插件删除时，提示插件被哪些应用引用",
-            "工作流：异常处理新增支持超时异常时间自定义。 代码节点新增“AI 代码生成”功能，辅助代码编写。 工作流节点/循环节点/批处理节点调试时支持查看所选工作流的运行详情。 回复节点支持设置斜体、高亮、字号、颜色、标题等功能。 优化部分功能，例如选项卡支持重复选择、优化object 变量的默认值配置等",
-            "知识管理-数据库：数据库新增支持 PostgreSQL 和 Oracle",
-            "应用调试窗口新增对话调用树及调试详情：调试信息新增对话调用树及各步骤运行详情",
-            "应用调试窗口新增提示词对比调试：原模型对比调试与新提示词对比调试整合为一个「对比调试」入口。应用开发标准模式下及 Multi-Agent 模式单 Agent 场景下，支持多模型/多提示词的对比调试，用于比较不同模型或不同提示词在相同问题下的回答表现",
-            "RAG 模型收费：调用知识检索API，使用智能体开发平台内置的embedding 和 rerank 模型，将在2025年12月10日20时进行收费。可在2025年12月4日-9日期间开启后付费设置内的“应用服务-RAG 模型后付费”开关使用",
-            "空间与权限优化：支持设置空间描述。 添加空间用户支持模糊搜索用户名称。 被删除的腾讯云子账号无法在空间内移除的问题优化"
-          ],
-          "auto_expand_details": true,
-          "monitor_class": "official",
-          "monitor_class_label": "官方公告"
-        },
-        {
-          "id": "9b57a79b205036f226f3c1c85a7a16d29c4b40f0",
-          "site_id": "official",
-          "site_name": "Official",
-          "source": "官方渠道: 【腾讯云ADP】 cloud.tencent.com",
-          "title": "腾讯云ADP更新动态【2025年11月】",
-          "url": "https://cloud.tencent.com/document/product/1759/104191#adp-update-202511",
-          "published_at": "2025-11-01T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:47:12.638858Z",
-          "watch_score": 90,
-          "watch_matched_terms": [
-            "official-source",
-            "table-update"
-          ],
-          "hover_description": "2025年11月 官方更新",
-          "detail_points": [
-            "Multi-Agent 模式，支持添加工作流：Multi-Agent 模式，支持添加同应用内的工作流",
-            "插件广场新增「基于已发布应用创建插件」：插件广场新增「基于已发布应用创建插件」，可以选择应用创建插件。创建完成后，与其他工具一致，支持在 Agent 或者工作流中使用",
-            "变量与记忆-“应用变量”调整：“应用变量”由“Session隔离”调整为“非Session隔离”，支持用户跨 Session 读取、写入“应用变量”",
-            "工作流部分功能优化：工具节点支持腾讯云签名、支持配置轮询调用。 大模型相关节点的提示词输入上限调整为所选大模型支持的上下文上限。 知识检索节点、大模型知识问答节点支持检索数据库。 数据库节点 sql 语句中支持输入常规时间格式",
-            "新增“操作日志”功能：新增“运维管理”-“操作日志”功能，支持审计用户在 ADP平台上的各类操作行为",
-            "网页文件支持批量导入：1. 知识库中，选择文档类型为“网页文件”后，支持选择逐条上传和批量上传。 2. 支持设置文档更新频率",
-            "向量模型及重排序模型支持第三方模型：向量模型及重排序模型支持第三方模型",
-            "新增提示词版本：支持将当前提示词草稿保存为一个版本，已保存的版本可以在版本记录里查看和复制，支持在内容对比中选择两个版本查看它们的提示词内容差异"
-          ],
-          "auto_expand_details": true,
-          "monitor_class": "official",
-          "monitor_class_label": "官方公告"
-        },
-        {
-          "id": "40c4cc692140394341685b7a949bd556ebfdbe43",
-          "site_id": "official",
-          "site_name": "Official",
-          "source": "官方渠道: 【腾讯云ADP】 cloud.tencent.com",
-          "title": "腾讯云ADP更新动态【2025年09月】",
-          "url": "https://cloud.tencent.com/document/product/1759/104191#adp-update-202509",
-          "published_at": "2025-09-01T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:47:12.638858Z",
-          "watch_score": 90,
-          "watch_matched_terms": [
-            "official-source",
-            "table-update"
-          ],
-          "hover_description": "2025年09月 官方更新",
-          "detail_points": [
-            "Multi-Agent 模式，Agent 增加高级配置：Agent 增加高级配置，新增支持以下配置： 澄清询问：控制 Agent 是否与用户沟通以收集信息的开关。 思考模式：配置 Agent 的思考过程时长，支持选择效果优先或速度优先。效果优先模式，Agent 会先进行充分思考再调用工具，表现更稳健；速度优先模式下，Agent 将直接执行任务，适合处理简单任务",
-            "Multi-Agent 模式，Agent 模型选择支持第三方模型：Multi-Agent 模式，Agent 模型选择支持第三方模型",
-            "工作流部分功能优化：选项卡支持移动选项卡顺序。 循环节点支持自定义是否携带历史。 知识检索节点检索策略设置优化。 插件节点支持选择插件广场中的自定义代码插件。 代码节点支持 JavaScript、支持查看运行日志。 工作流画布中支持“注释”功能，便于备注节点功能。 部分交互优化，如变量在工作流中的显示优化"
-          ],
-          "auto_expand_details": true,
-          "monitor_class": "official",
-          "monitor_class_label": "官方公告"
-        },
-        {
-          "id": "b84c0f2b2bd656670c1f921f3cdc1dfe64e01acf",
-          "site_id": "official",
-          "site_name": "Official",
-          "source": "官方渠道: 【腾讯云ADP】 cloud.tencent.com",
-          "title": "腾讯云ADP更新动态【2025年08月】",
-          "url": "https://cloud.tencent.com/document/product/1759/104191#adp-update-202508",
-          "published_at": "2025-08-01T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:47:12.638858Z",
-          "watch_score": 90,
-          "watch_matched_terms": [
-            "official-source",
-            "table-update"
-          ],
-          "hover_description": "2025年08月 官方更新",
-          "detail_points": [
-            "模型列表选项新增 DeepSeek-V3.1：在标准模式、Multi-agent 模式、工作流中新增 DeepSeek-V3.1 模型选项",
-            "应用设置-预置模型更名：标准模式/单工作流模式精调知识大模型更名： 精调知识大模型高级版更名为 youtu-mrc-pro；精调知识大模型标准版更名为 youtu-mrc-standard 。该模型是由腾讯优图实验室提供的精调大模型，在多模态知识问答、无关知识拒答等方面具备优势效果。 意图识别大模型高级版更名为 youtu-intent。 标准模式/单工作流模式混元大模型更名： 混元大模型标准版更名为 hunyuan-standard；混元大模型高级版更名为 hunyuan-pro；混元大模型长文本版更名为 hunyuan-standard-256k；混元大模型角色扮演版更名为 hunyuan-role。 Multi-agent 模式预置模型精调 function-call 模型更名： 精调 Function-Call 模型更名为 youtu-agent 。该模型是由腾讯优图实验室提供的精调工具调用模型",
-            "应用调试窗口新增模型对比调试：应用开发 标准模式下及 Multi-agent 模式单 Agent 场景 下，支持“多模型对比调试”，可以同时对比不同模型对于相同问题的应用回答效果",
-            "应用设置-知识-高级设置升级：应用设置-知识下支持 回显该应用下默认知识库、及引用的所有外部知识库 。并支持对每个知识库分别设置：检索召回策略、检索范围、知识库模型。 其中检索召回设置中， 新增支持结果重排序开关、结果重排序模型选项 。重排序模型提供两个预置模型，当模型广场中配置第三方重排序模型后，也可在重排序模型列表中支持选择",
-            "新增“变量与记忆”模块：全面整合了智能体开发平台中的各类变量，统一在“变量与记忆”中维护，分为 “系统变量”、“环境变量”、“ API 参数”和“应用变量” 四种。 新增 长期记忆 功能，实现个性化对话体验，支持通过 SYS.Memory 调用长期记忆内容",
-            "知识管理-知识库设置升级：支持对每个知识库分别设置： 检索召回策略、检索范围、知识库模型 。 其中知识库模型支持分别设置“问答生成模型”、“知识库 schema 生成模型 ”",
-            "知识管理-新增“设置文档切分”功能：文档切分的规则支持 默认切分规则 和 自定义切分规则： 1. 默认切分规则 ：产品使用模型能力进行切分，默认切分规则不支持用户干预。 2. 自定义切分规则 ：提供3种切分规则支持用户选择，包括通用标识符切分、父子标识符切分、及按行切分",
-            "工作流新增节点：新增 数据库节点 ：支持对应用中已经接入的数据库进行增删改查等 SQL 操作，便于用户在工作流中执行数据操作。 新增 Agent 节点 ：支持引用本应用内的 Agent，在工作流中复用并编排其能力。 新增 变量转换节点 ：支持 JSON 字符串的序列化与反序列化、列表数据的取值与排序以及字符串变量的拼接与分隔操作。 新增 变量赋值节点 ：支持对全局类型的变量（例如应用级变量、工作流级变量）赋值",
-            "工作流功能升级：大模型节点区分开 system prompt 和 user prompt 、支持自定义输出格式、支持 prompt 模板。 参数提取节点支持提取 object 、array < object > 等复杂数据结构。 选项卡节点支持自定义提示词。 大模型类节点（大模型节点、大模型知识问答节点、大模型意图识别节点、大模型标签提取节点）增加“中间消息”功能。 工具节点 支持 path 动态传参、增加调用方式、自动解析输出变量 。 知识检索节点、大模型知识问答节点支持展示“参考来源”。 调整工作流状态， 去掉“待调试”状态 ，不再强制“调试”后才能在测试环境测试、被作为子工作流引用等限制。 异常处理功能中新增“ 执行异常流程 ”逻辑",
-            "Multi-Agent 模式新增工作流编排协同方式：支持通过工作流画布实现多 Agent 执行过程的流程编排，确保任务执行稳定可控",
-            "Multi-Agent 模式新增工作流编排和 Plan-and-Execute 协同方式：Plan-and-Execute 协同 支持将任务分解给负责规划（Plan）与执行（Execute）的多个独立 Agent，适用于生成复杂报告和网页等复杂任务",
-            "应用评测功能升级：应用评测全面升级： 评测集增强 ：支持多评测集评测，且评测集可添加自定义列，灵活适配不同测试需求。 评分方式丰富 ：新增裁判模型评分、规则评分和代码评分三种方式，满足多样化评测场景。 对比评测新增 ：可对多个模型或多个提示词进行效果对比，快速评估不同配置在相同任务下的表现差异。 评测报告生成 ：生成全面的效果和性能评测报告",
-            "应用发布-新增“微信小程序”发布渠道：将搭建的智能体发布到微信小程序中。发布后，支持在小程序中使用智能体回复用户消息",
-            "应用运营-对话记录支持智能分类：应用运营中，支持对未分类的对话记录进行智能分类。基于应用发布后的生产环境实际交互日志产生，包含网页体验链接、微信服务号/订阅号、企业微信等多个渠道",
-            "新增模型广场：新增 模型广场 ，支持集中发现、配置、管理模型并在应用开发中使用。 在预置模型如腾讯混元大模型、腾讯优图精调大模型和 DeepSeek 模型以外，还支持用户 通过配置 API Key 的方式，灵活接入多种主流第三方大模型服务 。 对于已在腾讯云 TI-One 平台拥有模型资源的用户， 只需在 TI-One 平台上完成相应授权，即可将模型同步至模型广场",
-            "体验中心升级为应用模板：体验中心升级为 应用模板，支持展示应用的关键配置要点，便于快速复用和参考",
-            "提示词模板升级：支持自定义模板，并可在填写提示词时直接选择已有模板或提交到模板库",
-            "新增“设置文档切分”功能：文档切分的规则支持 默认切分规则 和 自定义切分规则： 1. 默认切分规则 ：产品使用模型能力进行切分，默认切分规则不支持用户干预。 2. 自定义切分规则 ：提供3种切分规则支持用户选择，包括通用标识符切分、父子标识符切分、及按行切分",
-            "新增“企业管理”：产品上提供企业管理、空间管理、平台端用户权限3个功能。可以满足集团型企业、多项目并行场景下的权限分层需求，实现团队内协同合作，团队之间数据隔离与权限自治。通过 企业、工作空间与权限概述 了解基本概念",
-            "新增“工作空间”"
-          ],
-          "auto_expand_details": true,
-          "monitor_class": "official",
-          "monitor_class_label": "官方公告"
-        },
-        {
-          "id": "9f84afc35556503b01b36aec33d2b579457a1b96",
-          "site_id": "official",
-          "site_name": "Official",
-          "source": "官方渠道: 【腾讯云ADP】 cloud.tencent.com",
-          "title": "腾讯云ADP更新动态【2025年06月】",
-          "url": "https://cloud.tencent.com/document/product/1759/104191#adp-update-202506",
-          "published_at": "2025-06-01T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:47:12.638858Z",
-          "watch_score": 90,
-          "watch_matched_terms": [
-            "official-source",
-            "table-update"
-          ],
-          "hover_description": "2025年06月 官方更新",
-          "detail_points": [
-            "腾讯云智能体开发平台变更英文缩写：腾讯云智能体开发平台原英文缩写\"TCADP\"变更为\"Tencent Cloud ADP\"",
-            "新增提示词模板：平台内置了多种类型的提示词模板，包括文本创作、角色扮演、代码编程等多个领域，帮助开发者快速构建和优化智能体应用，提升开发效率和应用质量",
-            "新增知识库检索 Agent：通过 Agentic RAG 方式自主规划与拆解任务，结合多次工具调用，为用户提供精准回答，适用于复杂的知识库问答场景",
-            "知识库支持接入第三方数据库：知识库中，可使用连接数据库方式，接入第三方数据库。适用于需要和已有的数据库系统进行数据同步或实时更新的场景",
-            "新增发布渠道功能：支持对接微信服务号、微信订阅号、企业微信应用等",
-            "效果调优功能升级：原效果调优功能全新升级为应用运营，支持查看应用发布后对话数据、对话记录",
-            "新增共享知识库：1、新增“共享知识库”模块，支持创建、管理共享知识库。1个共享知识库支持被多个应用引用使用，1个应用可以引用多个共享知识库。 2、原有应用中的知识库作为应用内的默认知识库，1个应用下有1个默认知识库，默认知识库仅在当前应用下使用，不支持被其他应用引用",
-            "新增解析切分干预：应用下默认知识库与共享知识库内的文档中，提供解析切分干预功能，支持人工干预文档解析切分后的切片",
-            "计费调整：产品上支持对接自定义模型，增加自定义模型周边模型收费标准",
-            "工作流新增节点：新增 批处理节点 ，用于批量并行的执行任务，提高运行效率。 新增 消息队列节点 ，支持对接 Kafka、RocketMQ 两种消息队列并发送消息",
-            "工作流功能优化：单工作流应用支持配置同义词、应用端用户权限。 更新工作流召回模型和策略 ，提高召回准确率。 所有节点 输入变量数量上限调整为50个 ，满足多输入变量场景需求。 所有节点输出变量 新增Error字段 ，当节点运行失败时返回报错信息。 大模型类节点、插件节点、工具节点、代码节点、工作流节点和消息队列节点新增 异常处理机制 ，支持异常重试和异常情况的输出内容配置。 工作流节点最多支持嵌套 5层 子工作流。 意图识别节点支持的 意图数量调整为20个 。 工具节点/插件节点 支持 SSE 调用 ，支持增量或覆盖解析返回结果。 开始节点输入变量、API 参数支持填写默认值。 回复节点的富文本输入框支持内容加粗；支持配置输出变量",
-            "工作流体验优化：收窄节点配置页面宽度，降低调试时遮挡画布风险。 优化变量类型的显示，采用缩写减少页面宽度。 优化多行文本输入框，支持拉高输入框高度、全尺寸展开输入框"
-          ],
-          "auto_expand_details": true,
-          "monitor_class": "official",
-          "monitor_class_label": "官方公告"
-        },
-        {
-          "id": "24b0644c893f5dbf8a4718b2ed0c4bf03690f1a8",
-          "site_id": "official",
-          "site_name": "Official",
-          "source": "官方渠道: 【腾讯云ADP】 cloud.tencent.com",
-          "title": "腾讯云ADP更新动态【2025年05月】",
-          "url": "https://cloud.tencent.com/document/product/1759/104191#adp-update-202505",
-          "published_at": "2025-05-01T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:47:12.638858Z",
-          "watch_score": 90,
-          "watch_matched_terms": [
-            "official-source",
-            "table-update"
-          ],
-          "hover_description": "2025年05月 官方更新",
-          "detail_points": [
-            "产品升级：“腾讯云大模型知识引擎（LKE）”全新升级为“腾讯云智能体开发平台（TCADP）”",
-            "应用配置支持语音和数智人：新增语音播报、语音通话、数智人配置项，适用于标准模式、单工作流模式、Multi-agent 模式",
-            "计费调整：在大模型 tokens 资源包收费模式下，取消共享并发收费方式，支持按照 TPM 和 QPM 做限流。 调用统计>并发统计 中支持查看 TPM 和 QPM 指标，详情查看 调用统计",
-            "新增工作流异步调用功能：单工作流模式应用（不包含信息收集类节点）新增支持异步调用， 适用于耗时长、非实时的任务处理场景 ，例如视频内容分析、会议转写总结等"
-          ],
-          "auto_expand_details": true,
-          "monitor_class": "official",
-          "monitor_class_label": "官方公告"
-        },
-        {
-          "id": "e7dfe7833f5b7ef590bdd37c1c49dd6e7b18bffe",
-          "site_id": "official",
-          "site_name": "Official",
-          "source": "官方渠道: 【腾讯云ADP】 cloud.tencent.com",
-          "title": "腾讯云ADP更新动态【2025年04月】",
-          "url": "https://cloud.tencent.com/document/product/1759/104191#adp-update-202504",
-          "published_at": "2025-04-01T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:47:12.638858Z",
-          "watch_score": 90,
-          "watch_matched_terms": [
-            "official-source",
-            "table-update"
-          ],
-          "hover_description": "2025年04月 官方更新",
-          "detail_points": [
-            "Agent 模式升级为 Multi-Agent 模式：Agent 模式升级：支持 多 Agent 配置 ，通过灵活 转交 与协同处理复杂需求",
-            "新增支持 MCP：新增 腾讯位置服务、腾讯云 EdgeOne Pages、Fetch、Airbnb 等 MCP 生态的优质工具，支持并在 Agent 模式应用和工作流中一键使用。 插件中心新增支持通过 MCP SSE 方式，快速接入已部署的 MCP Server",
-            "工作流新增变量聚合节点：变量聚合节点支持将多个工作流分支中的变量聚合成一个变量，并向后续节点传递第一个不为空的变量值"
-          ],
-          "auto_expand_details": true,
-          "monitor_class": "official",
-          "monitor_class_label": "官方公告"
-        },
-        {
-          "id": "aeeb45694e09dff463a66ce7c094d0ba7deb7cf4",
-          "site_id": "official",
-          "site_name": "Official",
-          "source": "官方渠道: 【元器】 yuanqi.tencent.com",
-          "title": "腾讯元器",
-          "url": "https://yuanqi.tencent.com/#/app",
-          "published_at": "2024-05-24T00:00:00Z",
-          "first_seen_at": "2026-02-28T07:47:12.638858Z",
-          "watch_score": 90,
-          "watch_matched_terms": [
-            "official-source"
-          ],
-          "monitor_class": "official",
-          "monitor_class_label": "官方公告"
-        }
-      ],
+      "count": 0,
+      "items": [],
       "source_mode": "mixed",
-      "official_count": 9,
+      "official_count": 0,
       "other_count": 0
     },
     {
@@ -1446,7 +1199,7 @@
           "title": "1.14.0-rc1",
           "url": "https://github.com/langgenius/dify/releases/tag/1.14.0-rc1",
           "published_at": "2026-02-14T09:28:47Z",
-          "first_seen_at": "2026-02-28T07:47:17.412958Z",
+          "first_seen_at": "2026-02-28T08:32:52.851259Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -1478,7 +1231,7 @@
           "title": "1.13.0",
           "url": "https://github.com/langgenius/dify/releases/tag/1.13.0",
           "published_at": "2026-02-11T09:24:39Z",
-          "first_seen_at": "2026-02-28T07:47:17.412958Z",
+          "first_seen_at": "2026-02-28T08:32:52.851259Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -1510,7 +1263,7 @@
           "title": "1.12.1",
           "url": "https://github.com/langgenius/dify/releases/tag/1.12.1",
           "published_at": "2026-02-04T12:15:15Z",
-          "first_seen_at": "2026-02-28T07:47:17.412958Z",
+          "first_seen_at": "2026-02-28T08:32:52.851259Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -1529,7 +1282,7 @@
           "title": "1.12.0",
           "url": "https://github.com/langgenius/dify/releases/tag/1.12.0",
           "published_at": "2026-02-03T14:38:13Z",
-          "first_seen_at": "2026-02-28T07:47:17.412958Z",
+          "first_seen_at": "2026-02-28T08:32:52.851259Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -1552,7 +1305,7 @@
           "title": "1.11.4",
           "url": "https://github.com/langgenius/dify/releases/tag/1.11.4",
           "published_at": "2026-01-15T07:15:40Z",
-          "first_seen_at": "2026-02-28T07:47:17.412958Z",
+          "first_seen_at": "2026-02-28T08:32:52.851259Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -1576,7 +1329,7 @@
           "url": "https://www.woshipm.com/?p=6342443",
           "published_at": null,
           "first_seen_at": "2026-02-23T09:56:26.885305Z",
-          "last_seen_at": "2026-02-28T07:45:55.637258Z",
+          "last_seen_at": "2026-02-28T08:21:40.804853Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "dify",
@@ -1594,7 +1347,7 @@
           "url": "https://www.woshipm.com/?p=6343657",
           "published_at": null,
           "first_seen_at": "2026-02-24T02:09:04.923961Z",
-          "last_seen_at": "2026-02-28T07:45:55.637258Z",
+          "last_seen_at": "2026-02-28T08:21:40.804853Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "dify"
