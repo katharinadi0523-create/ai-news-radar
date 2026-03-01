@@ -18,6 +18,18 @@ const state = {
   generatedAt: null,
   overallGeneratedAt: null,
   currentUser: null,
+  loading: {
+    ai: false,
+    focus: false,
+    competitor: false,
+    waytoagi: false,
+  },
+  loadErrors: {
+    ai: null,
+    focus: null,
+    competitor: null,
+    waytoagi: null,
+  },
 };
 
 const logoutBtnEl = document.getElementById("logoutBtn");
@@ -299,6 +311,13 @@ function activeBaseItems() {
   return activeWatchSections().flatMap((s) => s.items || []);
 }
 
+function hasItemsForSection(section) {
+  if (section === "ai") return activeAiItems().length > 0;
+  if (section === "focus") return (state.specialFocus.sections || []).some((s) => (s.items || []).length > 0);
+  if (section === "competitor") return (state.competitorMonitor.sections || []).some((s) => (s.items || []).length > 0);
+  return false;
+}
+
 function currentSiteStats() {
   return computeSiteStats(activeBaseItems());
 }
@@ -428,6 +447,37 @@ function renderBoardTabs() {
   tabAiBtnEl.classList.toggle("active", state.boardSection === "ai");
   tabFocusBtnEl.classList.toggle("active", state.boardSection === "focus");
   tabCompetitorBtnEl.classList.toggle("active", state.boardSection === "competitor");
+}
+
+function currentSectionLoadingMessage() {
+  if (state.boardSection === "ai") {
+    return "AI 资讯主数据较大，首次进入可能需要几秒，内容到达后会自动显示。";
+  }
+  if (state.boardSection === "focus") {
+    return "正在整理特别关注内容。系统会同时拉取多份数据，其中 AI 资讯主数据较大，但当前内容会优先显示。";
+  }
+  return "正在加载竞品更新追踪，内容到达后会自动显示。";
+}
+
+function currentSectionErrorMessage() {
+  const err = state.loadErrors[state.boardSection];
+  if (!err) return "当前内容加载失败，请稍后刷新重试。";
+  return err.message || "当前内容加载失败，请稍后刷新重试。";
+}
+
+function renderSectionStatusIfNeeded() {
+  const section = state.boardSection;
+  if (state.loading[section] && !hasItemsForSection(section)) {
+    resultCountEl.textContent = "加载中";
+    newsListEl.innerHTML = `<div class="empty">${currentSectionLoadingMessage()}</div>`;
+    return true;
+  }
+  if (state.loadErrors[section] && !hasItemsForSection(section)) {
+    resultCountEl.textContent = "加载失败";
+    newsListEl.innerHTML = `<div class="empty">${currentSectionErrorMessage()}</div>`;
+    return true;
+  }
+  return false;
 }
 
 function renderModeSwitch() {
@@ -867,6 +917,7 @@ function renderList() {
   }
   newsListEl.innerHTML = "";
   if (resultCountEl) resultCountEl.style.display = "";
+  if (renderSectionStatusIfNeeded()) return;
 
   if (state.boardSection === "ai") {
     const filteredRaw = getFilteredAiItems();
@@ -1023,6 +1074,22 @@ function renderWaytoagi(waytoagi) {
   }
 }
 
+function renderWaytoagiStatus() {
+  if (!waytoagiListEl) return;
+  if (waytoagiPagerEl) waytoagiPagerEl.innerHTML = "";
+  if (state.loading.waytoagi && !state.waytoagiData) {
+    waytoagiUpdatedAtEl.textContent = "加载中...";
+    waytoagiMetaEl.innerHTML = "";
+    waytoagiListEl.innerHTML = '<div class="waytoagi-empty">WaytoAGI 更新日志加载中，稍后会自动补齐。</div>';
+    return;
+  }
+  if (state.loadErrors.waytoagi && !state.waytoagiData) {
+    waytoagiUpdatedAtEl.textContent = "加载失败";
+    waytoagiMetaEl.innerHTML = "";
+    waytoagiListEl.innerHTML = `<div class="waytoagi-error">${state.loadErrors.waytoagi.message || "WaytoAGI 数据加载失败"}</div>`;
+  }
+}
+
 async function loadNewsData() {
   const res = await fetch(`./data/latest-24h.json?t=${Date.now()}`);
   if (!res.ok) throw new Error(`加载 latest-24h.json 失败: ${res.status}`);
@@ -1076,40 +1143,115 @@ function recomputeOverallGeneratedAt() {
 }
 
 async function refreshAllData({ silent = false } = {}) {
-  const [newsResult, waytoagiResult, specialResult, competitorResult] = await Promise.allSettled([
-    loadNewsData(),
-    loadWaytoagiData(),
-    loadSpecialFocusData(),
-    loadCompetitorData(),
-  ]);
+  if (silent) {
+    const [newsResult, waytoagiResult, specialResult, competitorResult] = await Promise.allSettled([
+      loadNewsData(),
+      loadWaytoagiData(),
+      loadSpecialFocusData(),
+      loadCompetitorData(),
+    ]);
 
-  if (newsResult.status !== "fulfilled") {
-    if (!silent) {
-      updatedAtEl.textContent = "新闻数据加载失败";
-      newsListEl.innerHTML = `<div class="empty">${newsResult.reason.message}</div>`;
+    if (newsResult.status === "fulfilled") {
+      applyNewsPayload(newsResult.value);
+      state.loadErrors.ai = null;
+    } else {
+      state.loadErrors.ai = newsResult.reason;
     }
-    throw newsResult.reason;
+
+    if (waytoagiResult.status === "fulfilled") {
+      applyWaytoagiPayload(waytoagiResult.value);
+      state.loadErrors.waytoagi = null;
+    } else {
+      state.loadErrors.waytoagi = waytoagiResult.reason;
+    }
+
+    if (specialResult.status === "fulfilled") {
+      applySpecialFocusPayload(specialResult.value);
+      state.loadErrors.focus = null;
+    } else {
+      state.loadErrors.focus = specialResult.reason;
+    }
+
+    if (competitorResult.status === "fulfilled") {
+      applyCompetitorPayload(competitorResult.value);
+      state.loadErrors.competitor = null;
+    } else {
+      state.loadErrors.competitor = competitorResult.reason;
+    }
+
+    recomputeOverallGeneratedAt();
+    renderAll();
+    return;
   }
 
-  applyNewsPayload(newsResult.value);
-
-  if (waytoagiResult.status === "fulfilled") {
-    applyWaytoagiPayload(waytoagiResult.value);
-  } else if (!silent) {
-    waytoagiUpdatedAtEl.textContent = "加载失败";
-    waytoagiListEl.innerHTML = `<div class="waytoagi-error">${waytoagiResult.reason.message}</div>`;
-  }
-
-  if (specialResult.status === "fulfilled") {
-    applySpecialFocusPayload(specialResult.value);
-  }
-
-  if (competitorResult.status === "fulfilled") {
-    applyCompetitorPayload(competitorResult.value);
-  }
-
-  recomputeOverallGeneratedAt();
+  state.loading.ai = true;
+  state.loading.focus = true;
+  state.loading.competitor = true;
+  state.loading.waytoagi = true;
+  state.loadErrors.ai = null;
+  state.loadErrors.focus = null;
+  state.loadErrors.competitor = null;
+  state.loadErrors.waytoagi = null;
   renderAll();
+
+  const rerender = () => {
+    recomputeOverallGeneratedAt();
+    renderAll();
+  };
+
+  const newsPromise = loadNewsData()
+    .then((payload) => {
+      applyNewsPayload(payload);
+      state.loadErrors.ai = null;
+    })
+    .catch((err) => {
+      state.loadErrors.ai = err;
+    })
+    .finally(() => {
+      state.loading.ai = false;
+      rerender();
+    });
+
+  const waytoagiPromise = loadWaytoagiData()
+    .then((payload) => {
+      applyWaytoagiPayload(payload);
+      state.loadErrors.waytoagi = null;
+    })
+    .catch((err) => {
+      state.loadErrors.waytoagi = err;
+    })
+    .finally(() => {
+      state.loading.waytoagi = false;
+      rerender();
+    });
+
+  const specialPromise = loadSpecialFocusData()
+    .then((payload) => {
+      applySpecialFocusPayload(payload);
+      state.loadErrors.focus = null;
+    })
+    .catch((err) => {
+      state.loadErrors.focus = err;
+    })
+    .finally(() => {
+      state.loading.focus = false;
+      rerender();
+    });
+
+  const competitorPromise = loadCompetitorData()
+    .then((payload) => {
+      applyCompetitorPayload(payload);
+      state.loadErrors.competitor = null;
+    })
+    .catch((err) => {
+      state.loadErrors.competitor = err;
+    })
+    .finally(() => {
+      state.loading.competitor = false;
+      rerender();
+    });
+
+  await Promise.allSettled([newsPromise, waytoagiPromise, specialPromise, competitorPromise]);
 }
 
 async function pollForFreshData() {
@@ -1135,6 +1277,9 @@ function renderAll() {
   setStatsForCurrentSection();
   renderSiteFilters();
   renderList();
+  if (!state.waytoagiData || state.loading.waytoagi || state.loadErrors.waytoagi) {
+    renderWaytoagiStatus();
+  }
   if (state.overallGeneratedAt) {
     updatedAtEl.textContent = `整体更新时间：${fmtTime(state.overallGeneratedAt)}`;
   }

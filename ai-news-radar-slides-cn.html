@@ -203,8 +203,8 @@
       }
 
       .hero-grid {
-        grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
-        align-items: end;
+        grid-template-columns: minmax(0, 0.98fr) minmax(420px, 1.02fr);
+        align-items: stretch;
       }
 
       .hero-card,
@@ -222,6 +222,9 @@
 
       .hero-card {
         padding: clamp(1rem, 2vw, 1.6rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
 
       .title-mark {
@@ -246,7 +249,7 @@
       }
 
       .hero-subtitle {
-        max-width: 26ch;
+        max-width: 20ch;
         color: var(--text-secondary);
       }
 
@@ -273,6 +276,7 @@
       .hero-side {
         display: grid;
         gap: 0.8rem;
+        grid-template-rows: 1fr auto;
       }
 
       .hero-side .panel {
@@ -281,6 +285,7 @@
 
       .hero-carousel {
         overflow: hidden;
+        padding: 1rem 1rem 0.8rem;
       }
 
       .hero-carousel-head {
@@ -312,6 +317,7 @@
         background:
           linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
           rgba(7, 9, 11, 0.35);
+        padding: 0.7rem;
       }
 
       .carousel-track {
@@ -322,18 +328,38 @@
 
       .carousel-slide {
         min-width: 100%;
-        padding: 0.65rem;
         display: grid;
         gap: 0.55rem;
       }
 
+      .device-frame {
+        position: relative;
+        border-radius: 22px;
+        padding: 0.8rem;
+        background:
+          linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+          rgba(10, 12, 14, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      }
+
+      .device-frame::before {
+        content: "";
+        display: block;
+        width: 4.4rem;
+        height: 0.3rem;
+        margin: 0 auto 0.7rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+      }
+
       .carousel-shot {
         width: 100%;
-        height: min(29vh, 260px);
+        height: min(38vh, 365px);
         object-fit: contain;
         object-position: center top;
         border-radius: 14px;
-        background: rgba(255, 255, 255, 0.04);
+        background: rgba(255, 255, 255, 0.03);
       }
 
       .carousel-meta {
@@ -364,6 +390,17 @@
 
       .carousel-dots button.active {
         background: var(--accent-3);
+      }
+
+      .hero-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin-top: 0.9rem;
+      }
+
+      .hero-tags .tag {
+        background: rgba(255, 255, 255, 0.05);
       }
 
       .tag-row {
@@ -406,13 +443,40 @@
 
       .product-shot {
         width: 100%;
-        height: min(23vh, 215px);
+        height: min(31vh, 295px);
         object-fit: contain;
         object-position: center top;
         border-radius: 16px;
         border: 1px solid rgba(255, 255, 255, 0.14);
         background: rgba(255, 255, 255, 0.05);
         box-shadow: 0 12px 28px rgba(0, 0, 0, 0.26);
+      }
+
+      .product-panel {
+        padding: 0.85rem;
+        gap: 0.8rem;
+      }
+
+      .product-copy {
+        color: var(--text-secondary);
+      }
+
+      .product-kickers {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+
+      .product-kickers span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 1.8rem;
+        padding: 0.16rem 0.65rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--text-secondary);
+        font-size: var(--small-size);
       }
 
       .panel.accent {
@@ -664,6 +728,14 @@
         .roadmap-card {
           padding: 0.8rem;
         }
+
+        .carousel-shot {
+          height: min(33vh, 280px);
+        }
+
+        .product-shot {
+          height: min(25vh, 220px);
+        }
       }
 
       @media (max-height: 600px) {
@@ -748,6 +820,12 @@
                 <strong>11 / 133</strong>
               </div>
             </div>
+            <div class="hero-tags">
+              <span class="tag">静态部署</span>
+              <span class="tag">自动更新</span>
+              <span class="tag">主题聚焦</span>
+              <span class="tag">竞品监测</span>
+            </div>
           </div>
 
           <div class="hero-side">
@@ -765,21 +843,27 @@
               <div class="carousel-viewport">
                 <div class="carousel-track" id="heroCarouselTrack">
                   <figure class="carousel-slide">
-                    <img class="carousel-shot" src="./assets/slide-ai-news.png" alt="AI资讯界面截图" />
+                    <div class="device-frame">
+                      <img class="carousel-shot" src="./assets/slide-ai-news.png" alt="AI资讯界面截图" />
+                    </div>
                     <figcaption class="carousel-caption">AI资讯：24h 热点与兴趣优先排序</figcaption>
                   </figure>
                   <figure class="carousel-slide">
-                    <img class="carousel-shot" src="./assets/slide-special-focus.png" alt="特别关注界面截图" />
+                    <div class="device-frame">
+                      <img class="carousel-shot" src="./assets/slide-special-focus.png" alt="特别关注界面截图" />
+                    </div>
                     <figcaption class="carousel-caption">特别关注：主题聚焦与 WaytoAGI 更新日志</figcaption>
                   </figure>
                   <figure class="carousel-slide">
-                    <img class="carousel-shot" src="./assets/slide-competitor-monitor.png" alt="竞品更新追踪界面截图" />
+                    <div class="device-frame">
+                      <img class="carousel-shot" src="./assets/slide-competitor-monitor.png" alt="竞品更新追踪界面截图" />
+                    </div>
                     <figcaption class="carousel-caption">竞品更新追踪：官方公告与产品节奏观察</figcaption>
                   </figure>
                 </div>
               </div>
               <div class="carousel-meta">
-                <span class="tiny">点击左右按钮切换，截图完整展示</span>
+                <span class="tiny">把产品界面直接作为封面主视觉，而不是角落里的小缩略图。</span>
                 <div class="carousel-dots" id="heroCarouselDots">
                   <button class="active" type="button" data-carousel-dot="0" aria-label="第 1 张"></button>
                   <button type="button" data-carousel-dot="1" aria-label="第 2 张"></button>
@@ -789,6 +873,7 @@
             </div>
             <div class="panel accent reveal delay-2">
               <p class="eyebrow">本次演示</p>
+              <p class="product-copy">产品价值、数据规模、系统架构与后续演进，会围绕真实界面和真实数据展开。</p>
               <div class="tag-row">
                 <span class="tag">产品价值</span>
                 <span class="tag">数据规模</span>
@@ -856,31 +941,37 @@
         </div>
 
         <div class="split-grid">
-          <article class="panel reveal delay-1">
+          <article class="panel product-panel reveal delay-1">
             <img class="product-shot" src="./assets/slide-ai-news.png" alt="AI资讯界面截图" />
             <h3>AI资讯</h3>
-            <ul class="bullet-list">
-              <li>聚焦近 24 小时 AI / 科技强相关内容。</li>
-              <li>支持站点筛选与 Interest first 排序。</li>
-            </ul>
+            <p class="product-copy">面向日常扫读与热点发现，保留搜索、站点筛选与兴趣优先排序。</p>
+            <div class="product-kickers">
+              <span>24h 热点</span>
+              <span>站点筛选</span>
+              <span>Interest first</span>
+            </div>
           </article>
 
-          <article class="panel reveal delay-2">
+          <article class="panel product-panel reveal delay-2">
             <img class="product-shot" src="./assets/slide-special-focus.png" alt="特别关注界面截图" />
             <h3>特别关注</h3>
-            <ul class="bullet-list">
-              <li>把 Palantir、知识图谱、Skills 等主题单独拉出。</li>
-              <li>内含 WaytoAGI 更新日志，适合长期观察和专题沉淀。</li>
-            </ul>
+            <p class="product-copy">把长期主题重新组织成专题工作台，并内置 WaytoAGI 更新日志。</p>
+            <div class="product-kickers">
+              <span>主题聚合</span>
+              <span>WaytoAGI</span>
+              <span>长期观察</span>
+            </div>
           </article>
 
-          <article class="panel accent reveal delay-3">
+          <article class="panel product-panel accent reveal delay-3">
             <img class="product-shot" src="./assets/slide-competitor-monitor.png" alt="竞品更新追踪界面截图" />
             <h3>竞品更新追踪</h3>
-            <ul class="bullet-list">
-              <li>追踪扣子、AppBuilder、百炼、腾讯、Dify。</li>
-              <li>适合做产品节奏判断和官方更新扫描。</li>
-            </ul>
+            <p class="product-copy">把官方公告和产品节奏放进同一视图，直接用于横向对比与市场扫描。</p>
+            <div class="product-kickers">
+              <span>官方更新</span>
+              <span>竞品观察</span>
+              <span>节奏判断</span>
+            </div>
           </article>
         </div>
       </div>
