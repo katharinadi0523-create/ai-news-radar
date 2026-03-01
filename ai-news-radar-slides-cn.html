@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI News Radar 中文演示稿</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-primary: #111315;
+        --bg-secondary: #1b2024;
+        --bg-panel: rgba(255, 247, 238, 0.08);
+        --bg-soft: rgba(17, 111, 127, 0.12);
+        --text-primary: #fffaf4;
+        --text-secondary: rgba(255, 250, 244, 0.72);
+        --text-tertiary: rgba(255, 250, 244, 0.52);
+        --accent: #ff6b3d;
+        --accent-2: #1ca1b7;
+        --accent-3: #ffd27d;
+        --accent-glow: rgba(255, 107, 61, 0.25);
+        --line: rgba(255, 255, 255, 0.12);
+        --shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+        --font-display: "Bricolage Grotesque", "Noto Sans SC", sans-serif;
+        --font-body: "Noto Sans SC", sans-serif;
+        --title-size: clamp(2rem, 5vw, 4.8rem);
+        --h2-size: clamp(1.35rem, 3vw, 2.8rem);
+        --h3-size: clamp(1rem, 1.9vw, 1.4rem);
+        --body-size: clamp(0.82rem, 1.3vw, 1.08rem);
+        --small-size: clamp(0.68rem, 1vw, 0.88rem);
+        --slide-padding: clamp(1rem, 3.8vw, 3.5rem);
+        --content-gap: clamp(0.75rem, 1.6vw, 1.5rem);
+        --element-gap: clamp(0.4rem, 1vw, 0.85rem);
+        --radius-xl: 32px;
+        --radius-lg: 22px;
+        --radius-md: 16px;
+        --duration: 0.65s;
+        --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        overflow-x: hidden;
+      }
+
+      html {
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background:
+          radial-gradient(circle at 15% 20%, rgba(255, 107, 61, 0.18), transparent 24%),
+          radial-gradient(circle at 80% 15%, rgba(28, 161, 183, 0.18), transparent 22%),
+          linear-gradient(145deg, #101214 0%, #161b20 45%, #0d1013 100%);
+        color: var(--text-primary);
+      }
+
+      .progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.08);
+        z-index: 50;
+      }
+
+      .progress-bar span {
+        display: block;
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        box-shadow: 0 0 18px var(--accent-glow);
+        transition: width 0.35s ease;
+      }
+
+      .nav-dots {
+        position: fixed;
+        right: clamp(0.5rem, 2vw, 1.25rem);
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 0.55rem;
+        z-index: 40;
+      }
+
+      .nav-dots button {
+        width: 0.78rem;
+        height: 0.78rem;
+        border-radius: 999px;
+        border: 0;
+        background: rgba(255, 255, 255, 0.22);
+        cursor: pointer;
+        transition: transform 0.25s ease, background 0.25s ease;
+      }
+
+      .nav-dots button.active {
+        transform: scale(1.28);
+        background: linear-gradient(180deg, var(--accent), var(--accent-2));
+      }
+
+      .slide {
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        overflow: hidden;
+        scroll-snap-align: start;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .slide::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(120deg, rgba(255, 255, 255, 0.03), transparent 30%),
+          linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.12) 100%);
+        pointer-events: none;
+      }
+
+      .slide-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-height: 100%;
+        overflow: hidden;
+        padding: var(--slide-padding);
+        gap: var(--content-gap);
+        position: relative;
+        z-index: 1;
+      }
+
+      .eyebrow {
+        font-size: var(--small-size);
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--accent-3);
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: var(--font-display);
+        line-height: 1.02;
+      }
+
+      h1 {
+        font-size: var(--title-size);
+        max-width: 11ch;
+      }
+
+      h2 {
+        font-size: var(--h2-size);
+      }
+
+      h3 {
+        font-size: var(--h3-size);
+      }
+
+      p,
+      li,
+      .metric-value,
+      .tag,
+      .caption {
+        font-size: var(--body-size);
+        line-height: 1.45;
+      }
+
+      .muted,
+      .caption {
+        color: var(--text-secondary);
+      }
+
+      .tiny {
+        font-size: var(--small-size);
+        color: var(--text-tertiary);
+      }
+
+      .hero-grid,
+      .split-grid,
+      .architecture-grid,
+      .value-grid,
+      .roadmap-grid {
+        display: grid;
+        gap: clamp(0.7rem, 1.5vw, 1rem);
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+        align-items: end;
+      }
+
+      .hero-card,
+      .panel,
+      .metric-card,
+      .topic-card,
+      .flow-card,
+      .roadmap-card {
+        background: var(--bg-panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(18px);
+      }
+
+      .hero-card {
+        padding: clamp(1rem, 2vw, 1.6rem);
+      }
+
+      .title-mark {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .title-mark img {
+        width: clamp(3.2rem, 8vw, 5.6rem);
+        height: auto;
+        border-radius: 24px;
+        background: rgba(248, 246, 241, 0.95);
+        padding: 0.45rem;
+      }
+
+      .title-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+      }
+
+      .hero-subtitle {
+        max-width: 26ch;
+        color: var(--text-secondary);
+      }
+
+      .hero-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.7rem;
+        margin-top: 1.2rem;
+      }
+
+      .mini-metric {
+        padding: 0.85rem 0.95rem;
+        border-radius: var(--radius-md);
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .mini-metric strong {
+        display: block;
+        font-size: clamp(1.1rem, 2vw, 1.9rem);
+        font-family: var(--font-display);
+      }
+
+      .hero-side {
+        display: grid;
+        gap: 0.8rem;
+      }
+
+      .hero-side .panel {
+        padding: 1rem 1.05rem;
+      }
+
+      .hero-carousel {
+        overflow: hidden;
+      }
+
+      .hero-carousel-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.8rem;
+      }
+
+      .hero-carousel-controls {
+        display: inline-flex;
+        gap: 0.45rem;
+      }
+
+      .carousel-btn {
+        width: 2rem;
+        height: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--text-primary);
+        cursor: pointer;
+      }
+
+      .carousel-viewport {
+        overflow: hidden;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+          rgba(7, 9, 11, 0.35);
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.35s ease;
+        will-change: transform;
+      }
+
+      .carousel-slide {
+        min-width: 100%;
+        padding: 0.65rem;
+        display: grid;
+        gap: 0.55rem;
+      }
+
+      .carousel-shot {
+        width: 100%;
+        height: min(29vh, 260px);
+        object-fit: contain;
+        object-position: center top;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .carousel-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.8rem;
+      }
+
+      .carousel-caption {
+        font-size: var(--small-size);
+        color: var(--text-secondary);
+      }
+
+      .carousel-dots {
+        display: inline-flex;
+        gap: 0.35rem;
+      }
+
+      .carousel-dots button {
+        width: 0.5rem;
+        height: 0.5rem;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.25);
+        cursor: pointer;
+      }
+
+      .carousel-dots button.active {
+        background: var(--accent-3);
+      }
+
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2rem;
+        padding: 0.25rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .section-head p {
+        max-width: 34ch;
+      }
+
+      .split-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .panel {
+        padding: clamp(1rem, 1.8vw, 1.3rem);
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .product-shot {
+        width: 100%;
+        height: min(23vh, 215px);
+        object-fit: contain;
+        object-position: center top;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.26);
+      }
+
+      .panel.accent {
+        background:
+          linear-gradient(145deg, rgba(255, 107, 61, 0.2), rgba(28, 161, 183, 0.12)),
+          rgba(255, 255, 255, 0.05);
+      }
+
+      .icon-badge {
+        width: 3.2rem;
+        height: 3.2rem;
+        padding: 0.55rem;
+        border-radius: 18px;
+        background: rgba(255, 250, 244, 0.92);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .icon-badge img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .bullet-list {
+        display: grid;
+        gap: 0.5rem;
+        padding-left: 1.1rem;
+      }
+
+      .bullet-list li::marker {
+        color: var(--accent-3);
+      }
+
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.8rem;
+      }
+
+      .metric-card {
+        padding: 1rem;
+        min-height: min(26vh, 215px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .metric-value {
+        font-family: var(--font-display);
+        font-size: clamp(1.6rem, 3vw, 3rem);
+        line-height: 1;
+      }
+
+      .metric-card strong {
+        font-family: var(--font-display);
+        font-size: 1rem;
+      }
+
+      .architecture-grid {
+        grid-template-columns: 1fr minmax(90px, 0.13fr) 1fr minmax(90px, 0.13fr) 1fr;
+        align-items: stretch;
+      }
+
+      .flow-card {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        justify-content: center;
+      }
+
+      .flow-card ul {
+        list-style: none;
+        display: grid;
+        gap: 0.45rem;
+      }
+
+      .flow-card li {
+        padding: 0.55rem 0.7rem;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-display);
+        font-size: clamp(1.6rem, 2vw, 2.3rem);
+        color: var(--accent-3);
+      }
+
+      .topic-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.8rem;
+      }
+
+      .topic-card {
+        padding: 1rem 1.05rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .topic-card ul {
+        list-style: none;
+        display: grid;
+        gap: 0.45rem;
+      }
+
+      .topic-card li {
+        padding: 0.48rem 0.68rem;
+        border-left: 3px solid rgba(255, 210, 125, 0.7);
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .workflow-row {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 0.7rem;
+      }
+
+      .workflow-step {
+        padding: 0.95rem;
+        border-radius: var(--radius-md);
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .value-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .roadmap-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .roadmap-card {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+      }
+
+      .roadmap-card .step {
+        font-family: var(--font-display);
+        font-size: clamp(1.4rem, 2vw, 2rem);
+        color: var(--accent-3);
+      }
+
+      .closing {
+        align-items: center;
+        text-align: center;
+      }
+
+      .closing .slide-content {
+        align-items: center;
+      }
+
+      .closing-card {
+        width: min(900px, 88vw);
+        padding: clamp(1.4rem, 3vw, 2rem);
+        border-radius: var(--radius-xl);
+        background:
+          linear-gradient(145deg, rgba(255, 107, 61, 0.18), rgba(28, 161, 183, 0.14)),
+          rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: var(--shadow);
+      }
+
+      .closing-card img {
+        width: clamp(4rem, 8vw, 5.2rem);
+        height: auto;
+        margin-bottom: 0.8rem;
+        background: rgba(248, 246, 241, 0.95);
+        border-radius: 26px;
+        padding: 0.35rem;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity var(--duration) var(--ease-out),
+          transform var(--duration) var(--ease-out);
+      }
+
+      .in-view .reveal,
+      .reveal.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .delay-1 {
+        transition-delay: 0.08s;
+      }
+
+      .delay-2 {
+        transition-delay: 0.16s;
+      }
+
+      .delay-3 {
+        transition-delay: 0.24s;
+      }
+
+      .delay-4 {
+        transition-delay: 0.32s;
+      }
+
+      .slide-no {
+        position: absolute;
+        right: var(--slide-padding);
+        bottom: clamp(0.7rem, 2vw, 1.2rem);
+        color: var(--text-tertiary);
+        font-size: var(--small-size);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .keyboard-hint {
+        position: fixed;
+        left: clamp(0.6rem, 2vw, 1.2rem);
+        bottom: clamp(0.6rem, 2vw, 1.2rem);
+        z-index: 40;
+        padding: 0.5rem 0.75rem;
+        border-radius: 999px;
+        background: rgba(10, 12, 14, 0.55);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--text-secondary);
+        font-size: var(--small-size);
+        backdrop-filter: blur(10px);
+      }
+
+      @media (max-height: 700px) {
+        :root {
+          --slide-padding: clamp(0.75rem, 3vw, 2rem);
+          --content-gap: clamp(0.45rem, 1.2vw, 0.85rem);
+          --title-size: clamp(1.55rem, 4.2vw, 3rem);
+          --h2-size: clamp(1.1rem, 2.3vw, 2rem);
+        }
+
+        .metric-card,
+        .panel,
+        .topic-card,
+        .flow-card,
+        .roadmap-card {
+          padding: 0.8rem;
+        }
+      }
+
+      @media (max-height: 600px) {
+        :root {
+          --slide-padding: clamp(0.55rem, 2vw, 1.2rem);
+          --body-size: clamp(0.7rem, 1vw, 0.9rem);
+        }
+
+        .nav-dots,
+        .keyboard-hint {
+          display: none;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .hero-grid,
+        .split-grid,
+        .metrics-grid,
+        .architecture-grid,
+        .topic-grid,
+        .workflow-row,
+        .value-grid,
+        .roadmap-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-metrics {
+          grid-template-columns: 1fr;
+        }
+
+        .arrow {
+          transform: rotate(90deg);
+          min-height: 2rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.2s !important;
+        }
+
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress-bar" aria-hidden="true"><span id="progressFill"></span></div>
+    <div class="nav-dots" id="navDots" aria-label="幻灯片导航"></div>
+    <div class="keyboard-hint">方向键 / 空格 / 滚轮</div>
+
+    <section class="slide in-view" id="slide-1" data-title="封面">
+      <div class="slide-content">
+        <div class="hero-grid">
+          <div class="hero-card reveal">
+            <div class="title-mark">
+              <img src="./assets/logo.svg" alt="AI News Radar 标识" />
+              <div class="title-stack">
+                <span class="eyebrow">AI NEWS RADAR</span>
+                <p class="tiny">面向 AI / 科技团队的情报雷达</p>
+              </div>
+            </div>
+            <h1>把 AI 资讯流量，变成可行动的情报资产</h1>
+            <p class="hero-subtitle">
+              一套静态部署、自动更新、可按主题聚焦的 AI 新闻聚合与竞品监测看板。
+            </p>
+            <div class="hero-metrics">
+              <div class="mini-metric">
+                <span class="tiny">近 24h AI 条目</span>
+                <strong>817</strong>
+              </div>
+              <div class="mini-metric">
+                <span class="tiny">归档规模</span>
+                <strong>69,325</strong>
+              </div>
+              <div class="mini-metric">
+                <span class="tiny">站点 / 来源</span>
+                <strong>11 / 133</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-side">
+            <div class="panel hero-carousel reveal delay-1">
+              <div class="hero-carousel-head">
+                <div>
+                  <p class="eyebrow">界面预览</p>
+                  <h3>三种视图，一套统一交互</h3>
+                </div>
+                <div class="hero-carousel-controls">
+                  <button class="carousel-btn" type="button" data-carousel-prev aria-label="上一张">‹</button>
+                  <button class="carousel-btn" type="button" data-carousel-next aria-label="下一张">›</button>
+                </div>
+              </div>
+              <div class="carousel-viewport">
+                <div class="carousel-track" id="heroCarouselTrack">
+                  <figure class="carousel-slide">
+                    <img class="carousel-shot" src="./assets/slide-ai-news.png" alt="AI资讯界面截图" />
+                    <figcaption class="carousel-caption">AI资讯：24h 热点与兴趣优先排序</figcaption>
+                  </figure>
+                  <figure class="carousel-slide">
+                    <img class="carousel-shot" src="./assets/slide-special-focus.png" alt="特别关注界面截图" />
+                    <figcaption class="carousel-caption">特别关注：主题聚焦与 WaytoAGI 更新日志</figcaption>
+                  </figure>
+                  <figure class="carousel-slide">
+                    <img class="carousel-shot" src="./assets/slide-competitor-monitor.png" alt="竞品更新追踪界面截图" />
+                    <figcaption class="carousel-caption">竞品更新追踪：官方公告与产品节奏观察</figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="carousel-meta">
+                <span class="tiny">点击左右按钮切换，截图完整展示</span>
+                <div class="carousel-dots" id="heroCarouselDots">
+                  <button class="active" type="button" data-carousel-dot="0" aria-label="第 1 张"></button>
+                  <button type="button" data-carousel-dot="1" aria-label="第 2 张"></button>
+                  <button type="button" data-carousel-dot="2" aria-label="第 3 张"></button>
+                </div>
+              </div>
+            </div>
+            <div class="panel accent reveal delay-2">
+              <p class="eyebrow">本次演示</p>
+              <div class="tag-row">
+                <span class="tag">产品价值</span>
+                <span class="tag">数据规模</span>
+                <span class="tag">系统架构</span>
+                <span class="tag">演进方向</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="caption reveal delay-3">数据快照时间：2026-02-27 08:16 UTC 附近，取自当前仓库 `data/*.json`。</p>
+      </div>
+      <div class="slide-no">01 / 09</div>
+    </section>
+
+    <section class="slide" id="slide-2" data-title="为什么做">
+      <div class="slide-content">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Why Now</p>
+            <h2>为什么团队需要 AI News Radar</h2>
+          </div>
+          <p class="muted">信息量已经不是优势，能否快速提炼出“与我相关”的变化，才是竞争力。</p>
+        </div>
+
+        <div class="split-grid">
+          <article class="panel reveal delay-1">
+            <h3>痛点 01｜源很多，噪音更大</h3>
+            <ul class="bullet-list">
+              <li>多站点更新节奏不同，靠手刷极易漏掉重点。</li>
+              <li>通用热榜混杂大量非 AI 内容，时间成本被稀释。</li>
+              <li>同一事件反复转载，团队难以快速形成判断。</li>
+            </ul>
+          </article>
+
+          <article class="panel reveal delay-2">
+            <h3>痛点 02｜“看见资讯”不等于“获得情报”</h3>
+            <ul class="bullet-list">
+              <li>产品经理关心竞品节奏，研究团队关心技术脉络。</li>
+              <li>重要主题需要持续跟踪，而不是一次性搜索。</li>
+              <li>没有结构化归档，就无法做二次分析与复盘。</li>
+            </ul>
+          </article>
+
+          <article class="panel accent reveal delay-3">
+            <h3>解决思路｜把新闻流改造成工作流输入</h3>
+            <ul class="bullet-list">
+              <li>统一抓取与标准化，输出稳定 JSON 数据层。</li>
+              <li>按 AI / 特别关注 / 竞品追踪拆成三种决策视图。</li>
+              <li>用自动化定时刷新，让信息系统自己保持新鲜。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+      <div class="slide-no">02 / 09</div>
+    </section>
+
+    <section class="slide" id="slide-3" data-title="产品结构">
+      <div class="slide-content">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Product Surface</p>
+            <h2>一个前端，看三种不同的情报视图</h2>
+          </div>
+          <p class="muted">前端直接读取 `data/*.json`，静态部署友好，展示层和抓取层清晰解耦。</p>
+        </div>
+
+        <div class="split-grid">
+          <article class="panel reveal delay-1">
+            <img class="product-shot" src="./assets/slide-ai-news.png" alt="AI资讯界面截图" />
+            <h3>AI资讯</h3>
+            <ul class="bullet-list">
+              <li>聚焦近 24 小时 AI / 科技强相关内容。</li>
+              <li>支持站点筛选与 Interest first 排序。</li>
+            </ul>
+          </article>
+
+          <article class="panel reveal delay-2">
+            <img class="product-shot" src="./assets/slide-special-focus.png" alt="特别关注界面截图" />
+            <h3>特别关注</h3>
+            <ul class="bullet-list">
+              <li>把 Palantir、知识图谱、Skills 等主题单独拉出。</li>
+              <li>内含 WaytoAGI 更新日志，适合长期观察和专题沉淀。</li>
+            </ul>
+          </article>
+
+          <article class="panel accent reveal delay-3">
+            <img class="product-shot" src="./assets/slide-competitor-monitor.png" alt="竞品更新追踪界面截图" />
+            <h3>竞品更新追踪</h3>
+            <ul class="bullet-list">
+              <li>追踪扣子、AppBuilder、百炼、腾讯、Dify。</li>
+              <li>适合做产品节奏判断和官方更新扫描。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+      <div class="slide-no">03 / 09</div>
+    </section>
+
+    <section class="slide" id="slide-4" data-title="实时快照">
+      <div class="slide-content">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Live Snapshot</p>
+            <h2>当前项目已经形成的情报规模</h2>
+          </div>
+          <p class="muted">不是概念验证，而是已经跑出稳定数据的聚合系统。</p>
+        </div>
+
+        <div class="metrics-grid">
+          <article class="metric-card reveal delay-1">
+            <span class="tiny">近 24h AI 条目</span>
+            <div class="metric-value">817</div>
+            <strong>AI / Tech / Robotics 过滤后</strong>
+            <p class="tiny">全量 24h 原始视图为 4,751 条。</p>
+          </article>
+
+          <article class="metric-card reveal delay-2">
+            <span class="tiny">抓取规模</span>
+            <div class="metric-value">6,238</div>
+            <strong>原始抓取记录</strong>
+            <p class="tiny">主题过滤前保留 5,425 条候选内容。</p>
+          </article>
+
+          <article class="metric-card reveal delay-3">
+            <span class="tiny">归档与专题</span>
+            <div class="metric-value">69,325</div>
+            <strong>历史归档总量</strong>
+            <p class="tiny">特别关注 249 条，竞品监控 54 条。</p>
+          </article>
+
+          <article class="metric-card reveal delay-4">
+            <span class="tiny">更新覆盖</span>
+            <div class="metric-value">37</div>
+            <strong>WaytoAGI 近 7 日更新</strong>
+            <p class="tiny">今日新增 1 条；有效站点 9 个，异常源已单独记录。</p>
+          </article>
+        </div>
+      </div>
+      <div class="slide-no">04 / 09</div>
+    </section>
+
+    <section class="slide" id="slide-5" data-title="系统架构">
+      <div class="slide-content">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">System Design</p>
+            <h2>从抓取到看板的轻量化架构</h2>
+          </div>
+          <p class="muted">Python 负责数据生产，静态前端负责消费，GitHub Actions 负责持续刷新。</p>
+        </div>
+
+        <div class="architecture-grid">
+          <article class="flow-card reveal delay-1">
+            <h3>多源输入</h3>
+            <ul>
+              <li>站点抓取</li>
+              <li>可选 OPML RSS</li>
+              <li>WaytoAGI 历史页</li>
+            </ul>
+          </article>
+
+          <div class="arrow reveal delay-1">→</div>
+
+          <article class="flow-card reveal delay-2">
+            <h3>数据处理</h3>
+            <ul>
+              <li>`update_news.py` 标准化</li>
+              <li>24h 窗口 + 45 天归档</li>
+              <li>失败源、状态、翻译缓存</li>
+            </ul>
+          </article>
+
+          <div class="arrow reveal delay-2">→</div>
+
+          <article class="flow-card reveal delay-3">
+            <h3>前端消费</h3>
+            <ul>
+              <li>`latest-24h.json`</li>
+              <li>`special-focus.json`</li>
+              <li>`competitor-monitor.json`</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="workflow-row">
+          <div class="workflow-step reveal delay-1">
+            <span class="tiny">01</span>
+            <p>每 30 分钟 GitHub Actions 定时触发。</p>
+          </div>
+          <div class="workflow-step reveal delay-2">
+            <span class="tiny">02</span>
+            <p>安装依赖并拉取私有 OPML（如存在）。</p>
+          </div>
+          <div class="workflow-step reveal delay-2">
+            <span class="tiny">03</span>
+            <p>生成主数据、归档和源状态。</p>
+          </div>
+          <div class="workflow-step reveal delay-3">
+            <span class="tiny">04</span>
+            <p>构建专题 watchlist 与竞品更新数据。</p>
+          </div>
+          <div class="workflow-step reveal delay-4">
+            <span class="tiny">05</span>
+            <p>提交 JSON 更新，并可选部署到 Vercel。</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-no">05 / 09</div>
+    </section>
+
+    <section class="slide" id="slide-6" data-title="专题情报">
+      <div class="slide-content">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Focused Intelligence</p>
+            <h2>专题和竞品，是这套系统最有价值的第二层</h2>
+          </div>
+          <p class="muted">同一套源数据，被重新组织成更接近业务问题的情报面板。</p>
+        </div>
+
+        <div class="topic-grid">
+          <article class="topic-card reveal delay-1">
+            <h3>特别关注主题</h3>
+            <ul>
+              <li>Palantir</li>
+              <li>知识图谱</li>
+              <li>Skills</li>
+              <li>国防类 Agent</li>
+              <li>AI + 科研</li>
+            </ul>
+            <p class="tiny">近 3 天窗口，共 249 条内容，适合长期主题跟踪。</p>
+          </article>
+
+          <article class="topic-card reveal delay-2">
+            <h3>竞品追踪对象</h3>
+            <ul>
+              <li>扣子</li>
+              <li>AppBuilder</li>
+              <li>百炼</li>
+              <li>腾讯</li>
+              <li>Dify</li>
+            </ul>
+            <p class="tiny">聚焦官方更新与产品动向，共 54 条内容。</p>
+          </article>
+        </div>
+      </div>
+      <div class="slide-no">06 / 09</div>
+    </section>
+
+    <section class="slide" id="slide-7" data-title="差异化">
+      <div class="slide-content">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Differentiation</p>
+            <h2>相较普通资讯聚合器，它真正多做了什么</h2>
+          </div>
+          <p class="muted">重点不在“能抓”，而在“抓完以后还能用于决策”。</p>
+        </div>
+
+        <div class="value-grid">
+          <article class="panel reveal delay-1">
+            <h3>主题过滤</h3>
+            <p class="muted">把 24h 全量内容压缩为 AI 强相关视图，减少无效浏览。</p>
+          </article>
+
+          <article class="panel reveal delay-2">
+            <h3>可解释的 watchlist</h3>
+            <p class="muted">通过 `config/watchlists.json` 显式定义关注对象，而不是黑盒推荐。</p>
+          </article>
+
+          <article class="panel reveal delay-3">
+            <h3>静态部署友好</h3>
+            <p class="muted">前端只读 JSON，不依赖在线数据库或复杂后端服务。</p>
+          </article>
+
+          <article class="panel accent reveal delay-4">
+            <h3>便于二次开发</h3>
+            <p class="muted">同一份数据层可以继续接告警、周报、LLM 摘要、企业知识库。</p>
+          </article>
+        </div>
+      </div>
+      <div class="slide-no">07 / 09</div>
+    </section>
+
+    <section class="slide" id="slide-8" data-title="下一步">
+      <div class="slide-content">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Next Milestones</p>
+            <h2>下一阶段，建议把它从“看板”推进到“情报产品”</h2>
+          </div>
+          <p class="muted">现阶段基础设施已经够用，接下来可以继续放大复用价值。</p>
+        </div>
+
+        <div class="roadmap-grid">
+          <article class="roadmap-card reveal delay-1">
+            <span class="step">01</span>
+            <h3>摘要与告警</h3>
+            <p class="muted">为特别关注和竞品更新追加 AI 摘要、异动提醒、每日简报输出。</p>
+          </article>
+
+          <article class="roadmap-card reveal delay-2">
+            <span class="step">02</span>
+            <h3>质量与信号评分</h3>
+            <p class="muted">加入来源权重、重复内容折叠、主题置信度和重要性排序。</p>
+          </article>
+
+          <article class="roadmap-card reveal delay-3">
+            <span class="step">03</span>
+            <h3>组织级分发</h3>
+            <p class="muted">接入飞书、Slack、邮件或 Notion，让情报进入团队日常协作链路。</p>
+          </article>
+        </div>
+      </div>
+      <div class="slide-no">08 / 09</div>
+    </section>
+
+    <section class="slide closing" id="slide-9" data-title="结尾">
+      <div class="slide-content">
+        <div class="closing-card reveal">
+          <img src="./assets/logo.svg" alt="AI News Radar 标识" />
+          <p class="eyebrow">AI News Radar</p>
+          <h2>让 AI 资讯从“刷到了”变成“用得上”</h2>
+          <p class="muted">
+            当前版本已经具备稳定抓取、专题重组、竞品追踪与静态部署能力，
+            适合作为团队级 AI 情报底座继续演进。
+          </p>
+          <p class="caption">Deck 形式基于已安装的 `frontend-slides` skill 思路生成。</p>
+        </div>
+      </div>
+      <div class="slide-no">09 / 09</div>
+    </section>
+
+    <script>
+      const slides = Array.from(document.querySelectorAll(".slide"));
+      const progressFill = document.getElementById("progressFill");
+      const navDots = document.getElementById("navDots");
+      const heroCarouselTrack = document.getElementById("heroCarouselTrack");
+      const heroCarouselViewport = document.querySelector(".carousel-viewport");
+      const heroCarouselDots = Array.from(document.querySelectorAll("[data-carousel-dot]"));
+      const heroCarouselPrev = document.querySelector("[data-carousel-prev]");
+      const heroCarouselNext = document.querySelector("[data-carousel-next]");
+      let activeIndex = 0;
+      let heroCarouselIndex = 0;
+      let heroCarouselTouchStartX = 0;
+
+      slides.forEach((slide, index) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.setAttribute("aria-label", slide.dataset.title || `第 ${index + 1} 页`);
+        btn.addEventListener("click", () => {
+          slide.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        navDots.appendChild(btn);
+      });
+
+      const dots = Array.from(navDots.querySelectorAll("button"));
+
+      function setActive(index) {
+        activeIndex = index;
+        dots.forEach((dot, dotIndex) => {
+          dot.classList.toggle("active", dotIndex === index);
+        });
+        const progress = ((index + 1) / slides.length) * 100;
+        progressFill.style.width = `${progress}%`;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+              const index = slides.indexOf(entry.target);
+              if (index >= 0) setActive(index);
+            }
+          });
+        },
+        { threshold: 0.55 }
+      );
+
+      slides.forEach((slide) => observer.observe(slide));
+      setActive(0);
+
+      function setHeroCarousel(index) {
+        if (!heroCarouselTrack) return;
+        const total = heroCarouselDots.length || 0;
+        if (!total) return;
+        heroCarouselIndex = (index + total) % total;
+        heroCarouselTrack.style.transform = `translateX(-${heroCarouselIndex * 100}%)`;
+        heroCarouselDots.forEach((dot, dotIndex) => {
+          dot.classList.toggle("active", dotIndex === heroCarouselIndex);
+        });
+      }
+
+      heroCarouselDots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          setHeroCarousel(Number(dot.dataset.carouselDot || 0));
+        });
+      });
+
+      if (heroCarouselPrev) {
+        heroCarouselPrev.addEventListener("click", () => setHeroCarousel(heroCarouselIndex - 1));
+      }
+
+      if (heroCarouselNext) {
+        heroCarouselNext.addEventListener("click", () => setHeroCarousel(heroCarouselIndex + 1));
+      }
+
+      if (heroCarouselViewport) {
+        heroCarouselViewport.addEventListener("touchstart", (event) => {
+          heroCarouselTouchStartX = event.changedTouches[0]?.clientX || 0;
+        }, { passive: true });
+
+        heroCarouselViewport.addEventListener("touchend", (event) => {
+          const endX = event.changedTouches[0]?.clientX || 0;
+          const deltaX = endX - heroCarouselTouchStartX;
+          if (Math.abs(deltaX) < 30) return;
+          if (deltaX < 0) setHeroCarousel(heroCarouselIndex + 1);
+          if (deltaX > 0) setHeroCarousel(heroCarouselIndex - 1);
+        }, { passive: true });
+      }
+
+      setHeroCarousel(0);
+
+      function goToSlide(index) {
+        const next = slides[Math.max(0, Math.min(slides.length - 1, index))];
+        if (!next) return;
+        next.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      window.addEventListener("keydown", (event) => {
+        if (["ArrowDown", "PageDown", " ", "ArrowRight"].includes(event.key)) {
+          event.preventDefault();
+          goToSlide(activeIndex + 1);
+        }
+        if (["ArrowUp", "PageUp", "ArrowLeft"].includes(event.key)) {
+          event.preventDefault();
+          goToSlide(activeIndex - 1);
+        }
+        if (event.key === "Home") {
+          event.preventDefault();
+          goToSlide(0);
+        }
+        if (event.key === "End") {
+          event.preventDefault();
+          goToSlide(slides.length - 1);
+        }
+      });
+    </script>
+  </body>
+</html>

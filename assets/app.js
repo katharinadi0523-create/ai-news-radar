@@ -54,6 +54,7 @@ const waytoagiPagerEl = document.getElementById("waytoagiPager");
 const waytoagiTodayBtnEl = document.getElementById("waytoagiTodayBtn");
 const waytoagi7dBtnEl = document.getElementById("waytoagi7dBtn");
 const WAYTOAGI_PAGE_SIZE = 5;
+const DATA_REFRESH_POLL_MS = 20000;
 const AUTH_STORAGE_KEY = "agent_news_accounts_v1";
 const AUTH_SESSION_KEY = "agent_news_session_v1";
 const DEFAULT_ACCOUNT = {
@@ -1046,6 +1047,87 @@ async function loadCompetitorData() {
   return res.json();
 }
 
+function applyNewsPayload(payload) {
+  state.itemsAi = payload.items_ai || payload.items || [];
+  state.statsAi = payload.site_stats || [];
+  state.totalAi = payload.total_items || state.itemsAi.length;
+  state.generatedAt = payload.generated_at;
+}
+
+function applyWaytoagiPayload(payload) {
+  state.waytoagiData = payload;
+  renderWaytoagi(state.waytoagiData);
+}
+
+function applySpecialFocusPayload(payload) {
+  state.specialFocus = payload;
+}
+
+function applyCompetitorPayload(payload) {
+  state.competitorMonitor = payload;
+}
+
+function recomputeOverallGeneratedAt() {
+  state.overallGeneratedAt = latestIso([
+    state.generatedAt,
+    state.specialFocus?.generated_at,
+    state.competitorMonitor?.generated_at,
+  ]);
+}
+
+async function refreshAllData({ silent = false } = {}) {
+  const [newsResult, waytoagiResult, specialResult, competitorResult] = await Promise.allSettled([
+    loadNewsData(),
+    loadWaytoagiData(),
+    loadSpecialFocusData(),
+    loadCompetitorData(),
+  ]);
+
+  if (newsResult.status !== "fulfilled") {
+    if (!silent) {
+      updatedAtEl.textContent = "新闻数据加载失败";
+      newsListEl.innerHTML = `<div class="empty">${newsResult.reason.message}</div>`;
+    }
+    throw newsResult.reason;
+  }
+
+  applyNewsPayload(newsResult.value);
+
+  if (waytoagiResult.status === "fulfilled") {
+    applyWaytoagiPayload(waytoagiResult.value);
+  } else if (!silent) {
+    waytoagiUpdatedAtEl.textContent = "加载失败";
+    waytoagiListEl.innerHTML = `<div class="waytoagi-error">${waytoagiResult.reason.message}</div>`;
+  }
+
+  if (specialResult.status === "fulfilled") {
+    applySpecialFocusPayload(specialResult.value);
+  }
+
+  if (competitorResult.status === "fulfilled") {
+    applyCompetitorPayload(competitorResult.value);
+  }
+
+  recomputeOverallGeneratedAt();
+  renderAll();
+}
+
+async function pollForFreshData() {
+  try {
+    const payload = await loadNewsData();
+    const nextGeneratedAt = payload?.generated_at || null;
+    if (nextGeneratedAt && nextGeneratedAt !== state.generatedAt) {
+      await refreshAllData({ silent: true });
+    }
+  } catch (_) {}
+}
+
+function startDataPolling() {
+  window.setInterval(() => {
+    pollForFreshData();
+  }, DATA_REFRESH_POLL_MS);
+}
+
 function renderAll() {
   renderHeroBySection();
   renderBoardTabs();
@@ -1059,48 +1141,8 @@ function renderAll() {
 }
 
 async function init() {
-  const [newsResult, waytoagiResult, specialResult, competitorResult] = await Promise.allSettled([
-    loadNewsData(),
-    loadWaytoagiData(),
-    loadSpecialFocusData(),
-    loadCompetitorData(),
-  ]);
-
-  if (newsResult.status === "fulfilled") {
-    const payload = newsResult.value;
-    state.itemsAi = payload.items_ai || payload.items || [];
-    state.statsAi = payload.site_stats || [];
-    state.totalAi = payload.total_items || state.itemsAi.length;
-    state.generatedAt = payload.generated_at;
-  } else {
-    updatedAtEl.textContent = "新闻数据加载失败";
-    newsListEl.innerHTML = `<div class="empty">${newsResult.reason.message}</div>`;
-    return;
-  }
-
-  if (waytoagiResult.status === "fulfilled") {
-    state.waytoagiData = waytoagiResult.value;
-    renderWaytoagi(state.waytoagiData);
-  } else {
-    waytoagiUpdatedAtEl.textContent = "加载失败";
-    waytoagiListEl.innerHTML = `<div class="waytoagi-error">${waytoagiResult.reason.message}</div>`;
-  }
-
-  if (specialResult.status === "fulfilled") {
-    state.specialFocus = specialResult.value;
-  }
-
-  if (competitorResult.status === "fulfilled") {
-    state.competitorMonitor = competitorResult.value;
-  }
-
-  state.overallGeneratedAt = latestIso([
-    state.generatedAt,
-    state.specialFocus?.generated_at,
-    state.competitorMonitor?.generated_at,
-  ]);
-
-  renderAll();
+  await refreshAllData();
+  startDataPolling();
 }
 
 searchInputEl.addEventListener("input", (e) => {

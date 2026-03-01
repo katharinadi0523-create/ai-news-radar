@@ -70,11 +70,19 @@ python scripts/build_watchlists.py --env-file .env
 
 ### 3) 本地预览前端
 
+推荐直接使用本地启动脚本。它会先启动静态服务，再在后台刷新新闻数据；页面打开后会继续轮询最新数据，抓取完成后会自动显示新的更新时间：
+
 ```bash
-python -m http.server 8080
+python scripts/serve_local.py --port 8080
 ```
 
 打开 [http://localhost:8080](http://localhost:8080)
+
+如果你只想单纯预览现有静态文件，不刷新数据：
+
+```bash
+python -m http.server 8080
+```
 
 ## 常用命令
 

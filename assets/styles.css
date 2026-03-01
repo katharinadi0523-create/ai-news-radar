@@ -100,6 +100,32 @@ body::before {
   margin-left: auto;
 }
 
+.intro-link-btn {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(65, 127, 187, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.74);
+  color: #1f4d77;
+  padding: 0 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 10px 26px rgba(54, 109, 165, 0.12);
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.intro-link-btn:hover {
+  border-color: rgba(47, 135, 214, 0.34);
+  background: rgba(255, 255, 255, 0.88);
+  color: #143f64;
+  transform: translateY(-1px);
+}
+
 .board-tabs-top {
   margin: 0;
   padding: 6px;
