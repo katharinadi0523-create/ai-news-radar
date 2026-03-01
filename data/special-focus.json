@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-02-28T23:43:22.737872Z",
+  "generated_at": "2026-03-01T01:49:46.701695Z",
   "window_days": 3,
-  "source_generated_at": "2026-02-28T23:42:32.298095Z",
+  "source_generated_at": "2026-03-01T01:48:52.868804Z",
   "source_window_hours": 24,
   "source_topic_filter": "ai_tech_robotics",
   "output_name": "special-focus",
   "section_count": 5,
-  "total_items": 216,
+  "total_items": 218,
   "official_error_count": 0,
   "official_errors": [],
   "sections": [
@@ -41,7 +41,7 @@
           "url": "https://www.woshipm.com/?p=6345645",
           "published_at": null,
           "first_seen_at": "2026-02-27T08:14:56.201660Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "palantir"
@@ -108,7 +108,7 @@
     {
       "id": "knowledge-graph",
       "name": "知识图谱",
-      "count": 6,
+      "count": 7,
       "items": [
         {
           "id": "68a0e838df2b67d8658c368fc6e8fc7ba1ea0719",
@@ -141,6 +141,23 @@
           "watch_score": 2,
           "watch_matched_terms": [
             "知识图谱",
+            "图谱"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "f064c14594ae2bc1e2ee4f9e013224bd03c94194",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "phys.org",
+          "title": "水稻蝽的基因图谱绘制助力作物害虫防治",
+          "url": "https://phys.org/news/2026-02-genetic-rice-bug-aids-crop.html",
+          "published_at": "2026-03-01T01:01:02.168000Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
             "图谱"
           ],
           "monitor_class": "other",
@@ -217,7 +234,7 @@
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 6
+      "other_count": 7
     },
     {
       "id": "skills",
@@ -233,7 +250,7 @@
           "url": "https://www.v2ex.com/t/1194908",
           "published_at": "2026-02-28T14:24:37Z",
           "first_seen_at": "2026-02-28T14:45:22.450876Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "skill",
@@ -251,7 +268,7 @@
           "url": "https://blog.csdn.net/zxc18344522713/article/details/158501212",
           "published_at": null,
           "first_seen_at": "2026-02-28T12:32:59.658928Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "mcp",
@@ -261,19 +278,69 @@
           "monitor_class_label": "其他来源"
         },
         {
-          "id": "999cc1eaad410c7be5743d01a35e5b30ebf097c5",
+          "id": "a50e9becd9e8910e1c9798c83f95fad09fcdfa6a",
           "site_id": "newsnow",
           "site_name": "NewsNow",
-          "source": "v2ex-share",
-          "title": "[开源] 新 Agent Skill： deck —— 用 AI Agent 直接生成演示 Deck（HTML Slides / 现已支持导出 PPTX）",
-          "url": "https://www.v2ex.com/t/1194147",
-          "published_at": "2026-02-26T01:44:47Z",
-          "first_seen_at": "2026-02-26T02:27:19.958016Z",
-          "last_seen_at": "2026-02-26T02:27:19.958016Z",
-          "watch_score": 2,
+          "source": "hackernews",
+          "title": "MCP server that reduces Claude Code context consumption by 98%",
+          "url": "https://news.ycombinator.com/item?id=47193064",
+          "published_at": "2026-03-01T01:49:13.105000Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
           "watch_matched_terms": [
-            "skill",
-            "agent skill"
+            "mcp"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "12f567d8cfbdf37b139bfde9cb825f00a96405e9",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "github.com",
+          "title": "Show HN: Quizz MCP – 将克劳德代码对话转化为测验",
+          "url": "https://github.com/ThoBustos/quizz-mcp",
+          "published_at": "2026-03-01T01:16:57.799000Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "mcp"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "79650e55aae277ec7fb33cd9fbc9e2bab7d9f61c",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "github.com",
+          "title": "Show HN: KiboUP – 通过单一代码库，经由HTTP、A2A和MCP部署AI智能体",
+          "url": "https://github.com/tu-usuario/kiboserve",
+          "published_at": "2026-03-01T00:12:57.446000Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "mcp"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "9483e243cfa9da27f360d9a9cd858f0bb263e8bb",
+          "site_id": "aihubtoday",
+          "site_name": "AI HubToday",
+          "source": "Daily Digest",
+          "title": "AI编程背后认知债与技能退化。",
+          "url": "https://newshacker.me/story?id=47194847",
+          "published_at": "2026-03-01T00:00:00Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "技能"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -321,7 +388,7 @@
           "url": "https://mksg.lu/blog/context-mode",
           "published_at": "2026-02-28T19:25:10.788000Z",
           "first_seen_at": "2026-02-28T19:40:42.289457Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -338,7 +405,7 @@
           "url": "https://blog.csdn.net/qq_35082030/article/details/158510164",
           "published_at": null,
           "first_seen_at": "2026-02-28T18:25:00.684184Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -389,7 +456,7 @@
           "url": "https://github.com/datagouv/datagouv-mcp",
           "published_at": "2026-02-28T11:14:36.874000Z",
           "first_seen_at": "2026-02-28T11:14:14.368923Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -406,7 +473,7 @@
           "url": "https://github.com/datagouv/datagouv-mcp",
           "published_at": null,
           "first_seen_at": "2026-02-28T10:45:47.035103Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -424,6 +491,23 @@
           "published_at": "2026-02-28T10:01:20Z",
           "first_seen_at": "2026-02-28T16:19:50.960950Z",
           "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "mcp"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "d37884a69234e81ce8f67eea70ca75ee6a6c54a3",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "Hacker News (黑客新闻)",
+          "title": "MCP server that reduces Claude Code context consumption by 98%",
+          "url": "https://mksg.lu/blog/context-mode",
+          "published_at": "2026-02-28T10:01:20Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -457,7 +541,7 @@
           "url": "https://www.aibase.com/news/25796",
           "published_at": "2026-02-28T07:45:55.637258Z",
           "first_seen_at": "2026-02-28T07:45:55.637258Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -542,7 +626,7 @@
           "url": "https://juejin.cn/post/7610718217906208814",
           "published_at": "2026-02-28T03:26:11.936000Z",
           "first_seen_at": "2026-02-28T03:25:54.674810Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -695,7 +779,7 @@
           "url": "https://dev.to/meimakes/the-agent-skills-gold-rush-has-a-malware-problem-2jai",
           "published_at": "2026-02-27T16:15:13.098000Z",
           "first_seen_at": "2026-02-27T16:34:35.902433Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -950,7 +1034,7 @@
           "url": "https://www.woshipm.com/?p=6345601",
           "published_at": null,
           "first_seen_at": "2026-02-27T08:14:56.201660Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -1018,7 +1102,7 @@
           "url": "https://juejin.cn/post/7611069767160840246",
           "published_at": "2026-02-27T08:01:55.923000Z",
           "first_seen_at": "2026-02-27T08:14:56.201660Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -1154,7 +1238,7 @@
           "url": "https://www.woshipm.com/?p=6344788",
           "published_at": null,
           "first_seen_at": "2026-02-27T02:44:18.357706Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -1290,7 +1374,7 @@
           "url": "https://www.producthunt.com/r/3W3EFS3VFAEIRR",
           "published_at": "2026-02-26T12:40:04.951000Z",
           "first_seen_at": "2026-02-27T02:44:18.357706Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -1331,74 +1415,6 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "8420d864743a486fe807256219236c78495d5cd4",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "Hacker News",
-          "title": "通过CLI降低MCP成本",
-          "url": "https://news.ycombinator.com/item?id=47157398",
-          "published_at": "2026-02-26T01:46:24.151000Z",
-          "first_seen_at": "2026-02-26T02:27:19.958016Z",
-          "last_seen_at": "2026-02-26T02:27:19.958016Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "mcp"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "afafa137b34a7d5b8320adac9c89d95b7ed435b4",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "github.com",
-          "title": "Show HN: OpenTrace – 自托管可观测性服务器，集成75种MCP工具",
-          "url": "https://github.com/adham90/opentrace",
-          "published_at": "2026-02-26T00:43:19.273000Z",
-          "first_seen_at": "2026-02-26T02:27:19.958016Z",
-          "last_seen_at": "2026-02-26T02:27:19.958016Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "mcp"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "e89a851a199ac2cf0238a5da7ebd6844d212a5d2",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "kanyilmaz.me",
-          "title": "通过命令行界面降低MCP成本",
-          "url": "https://kanyilmaz.me/2026/02/23/cli-vs-mcp.html",
-          "published_at": "2026-02-26T00:43:19.269000Z",
-          "first_seen_at": "2026-02-26T02:27:19.958016Z",
-          "last_seen_at": "2026-02-26T02:27:19.958016Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "mcp"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "05635839634bbd298d3227a49278acd34050e960",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.ycombinator.com",
-          "title": "Show HN: 开源MCP服务器，适用于自主托管的家庭实验室人工智能系统",
-          "url": "https://news.ycombinator.com/item?id=47160130",
-          "published_at": "2026-02-26T00:27:24.339000Z",
-          "first_seen_at": "2026-02-26T02:27:19.958016Z",
-          "last_seen_at": "2026-02-26T02:27:19.958016Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "mcp"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
@@ -1419,7 +1435,7 @@
           "url": "https://www.businessinsider.com/new-us-military-force-used-cheap-attack-drones-first-time-2026-2",
           "published_at": "2026-02-28T19:09:05.923000Z",
           "first_seen_at": "2026-02-28T19:17:04.035043Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "军事",
@@ -1869,7 +1885,7 @@
           "url": "https://www.woshipm.com/?p=6344876",
           "published_at": null,
           "first_seen_at": "2026-02-27T02:44:18.357706Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "agent",
@@ -1951,37 +1967,426 @@
           "monitor_class_label": "其他来源"
         },
         {
-          "id": "96ea4040ea1685b0a12d02f48d8869f07fafe1ef",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.reuters.com",
-          "title": "五角大楼询问国防承包商对Anthropic人工智能服务的依赖程度，消息人士称",
-          "url": "https://www.reuters.com/business/aerospace-defense/pentagon-asks-boeing-lockheed-martin-about-their-exposure-anthropic-axios-2026-02-25",
-          "published_at": "2026-02-26T01:31:20.914000Z",
-          "first_seen_at": "2026-02-26T02:27:19.958016Z",
-          "last_seen_at": "2026-02-26T02:27:19.958016Z",
-          "watch_score": 2,
+          "id": "53cfc5e222e6fe348680fde2c90fa06a5f406b29",
+          "site_id": "newsnow",
+          "site_name": "NewsNow",
+          "source": "hackernews",
+          "title": "Pentagon chief blocks officers from Ivy League schools and top universities",
+          "url": "https://news.ycombinator.com/item?id=47201882",
+          "published_at": "2026-03-01T01:49:13.105000Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
           "watch_matched_terms": [
-            "国防",
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "2b9585e97f53bc21996d9b61e68402c5552830fb",
+          "site_id": "newsnow",
+          "site_name": "NewsNow",
+          "source": "hackernews",
+          "title": "Show HN: Xmloxide – an agent made rust replacement for libxml2",
+          "url": "https://news.ycombinator.com/item?id=47201816",
+          "published_at": "2026-03-01T01:49:13.105000Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "f6499c0d608b7464310c551e9e896931ebeb782a",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "腾讯新闻 · 热问",
+          "title": "以媒称伊朗革命卫队总司令和国防部长在空袭中身亡，真实性如何？若属实对伊朗的影响有多大？",
+          "url": "https://new.qq.com/rain/a/20260301Q003AG00",
+          "published_at": null,
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "c70cae2f67cd9f372245a492d40f49ddce78a063",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "华尔街见闻 · 日排行",
+          "title": "美国五角大楼“拉黑”AI巨头Anthropic，双方争议焦点：核战争",
+          "url": "https://wallstreetcn.com/articles/3766420",
+          "published_at": null,
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
             "五角大楼"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
         },
         {
-          "id": "ea510797d67abdddeea3cd1b5ebfe5f3ef4d704d",
-          "site_id": "newsnow",
-          "site_name": "NewsNow",
-          "source": "sputniknewscn",
-          "title": "美媒：五角大楼将斥资126亿美元监控中国军事活动",
-          "url": "https://sputniknews.cn/20260226/1069932750.html",
-          "published_at": "2026-02-26T00:54:52Z",
-          "first_seen_at": "2026-02-26T02:27:19.958016Z",
-          "last_seen_at": "2026-02-26T02:27:19.958016Z",
-          "watch_score": 2,
+          "id": "c7007cfd02df6ecd816640b4a24c6dd92fa08035",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "懂球帝 · 今日头条",
+          "title": "丹布：我被困在迪拜一处楼梯间，三架无人机几乎在头顶上爆炸",
+          "url": "https://www.dongqiudi.com/article/5689917",
+          "published_at": null,
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
           "watch_matched_terms": [
-            "军事",
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "656e771974445be21ae5cf29a53523f816e028f7",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "快手 · 实时热榜",
+          "title": "新华社评美以军事打击伊朗",
+          "url": "https://index.e.kuaishou.com/rank/hotDetail?keyword=%E6%96%B0%E5%8D%8E%E7%A4%BE%E8%AF%84%E7%BE%8E%E4%BB%A5%E5%86%9B%E4%BA%8B%E6%89%93%E5%87%BB%E4%BC%8A%E6%9C%97&rankType=1",
+          "published_at": null,
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "军事"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "433df1ff0a2dc242d6033ec2fb3542815b58792f",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "新浪财经新闻 · 点击量排行",
+          "title": "谷歌与OpenAI员工发表公开信，支持Anthropic在五角大楼事件中的立场",
+          "url": "https://finance.sina.com.cn/7x24/2026-02-28/doc-inhpiwhk6037362.shtml",
+          "published_at": null,
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
             "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "19ab1b7d257afa2f3f4bba7b4e984e676d32880d",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "IT之家 (ITHome)",
+          "title": "OpenAI 为美国国防部协议辩护：设置三条红线",
+          "url": "https://www.ithome.com/0/924/734.htm",
+          "published_at": "2026-03-01T01:47:14Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "dafd937bd3ae62229effa905e69eb551a305bfe8",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Business Insider",
+          "title": "5 big takeaways from Sam Altman's Saturday night AMA on OpenAI's Pentagon deal",
+          "url": "https://www.businessinsider.com/takeaways-sam-altman-openai-pentagon-deal-ask-me-anything-2026-3",
+          "published_at": "2026-03-01T01:36:49Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "dba445c23f5bdb1b846aa0764e9ba8fcf4b0d143",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "finance.yahoo.com",
+          "title": "金穹奖得主：五角大楼SHIELD供应商名单上的股票",
+          "url": "https://finance.yahoo.com/news/golden-dome-winners-stocks-pentagons-190031192.html",
+          "published_at": "2026-03-01T01:33:04.011000Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "0a1f33d6e630c84d898ab6386ce0746d1b040ed9",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "36氪 (36Kr)",
+          "title": "我国海上油田首次实现无人机规模化作业",
+          "url": "https://36kr.com/newsflashes/3703688489333124?f=rss",
+          "published_at": "2026-03-01T01:26:40Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "71091b3b414627147a0be97f5cbc05cc0c850078",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "IT之家 (ITHome)",
+          "title": "我国海上油田首次实现无人机规模化作业，1 小时完成过去 1 天的巡检工作量",
+          "url": "https://www.ithome.com/0/924/723.htm",
+          "published_at": "2026-03-01T00:55:04Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "a0664bf3926268c3d4abdb62ab767f2f4ec61325",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "New York Times",
+          "title": "At the Pentagon, OpenAI is In and Anthropic Is Out",
+          "url": "https://www.nytimes.com/2026/02/28/podcasts/hardfork-pentagon-anthropic-openai.html",
+          "published_at": "2026-03-01T00:18:15Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "a6ca6b4af25aab08f4d36bc867979b9d4b3ce9ae",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.businessinsider.com",
+          "title": "克劳德应用登顶App Store榜首，ChatGPT用户纷纷转投以示支持Anthropic对五角大楼的立场",
+          "url": "https://www.businessinsider.com/anthropic-claude-hits-number-one-app-store-openai-chatgpt-2026-2",
+          "published_at": "2026-03-01T00:12:57.870000Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "79650e55aae277ec7fb33cd9fbc9e2bab7d9f61c",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "github.com",
+          "title": "Show HN: KiboUP – 通过单一代码库，经由HTTP、A2A和MCP部署AI智能体",
+          "url": "https://github.com/tu-usuario/kiboserve",
+          "published_at": "2026-03-01T00:12:57.446000Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "50ac20bbe68a77d8e9155b28d1f5972d09f49b7b",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Techmeme",
+          "title": "OpenAI says it does not think Anthropic should be designated as a supply chain risk and it has made its position on this clear to the Pentagon (@openai)",
+          "url": "http://www.techmeme.com/260228/p19",
+          "published_at": "2026-03-01T00:05:00Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "f8e786afd2dd92c42841a1c09132d73c3770a38c",
+          "site_id": "aihubtoday",
+          "site_name": "AI HubToday",
+          "source": "Daily Digest",
+          "title": "Ruflo：Claude多智能体编排平台。",
+          "url": "https://github.com/ruvnet/ruflo",
+          "published_at": "2026-03-01T00:00:00Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "e85ba16982351c8b4c1e12eaeead2bb31070b67f",
+          "site_id": "aihubtoday",
+          "site_name": "AI HubToday",
+          "source": "Daily Digest",
+          "title": "Anthropic硬刚五角大楼封杀令。",
+          "url": "https://youtu.be/MPTNHrq_4LU",
+          "published_at": "2026-03-01T00:00:00Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "d8d4d53394207a307cad6ece69692caff468ac52",
+          "site_id": "aihubtoday",
+          "site_name": "AI HubToday",
+          "source": "Daily Digest",
+          "title": "Superset：多智能体本地IDE。",
+          "url": "https://github.com/superset-sh/superset",
+          "published_at": "2026-03-01T00:00:00Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "943256a9e265c054a24cebcab79c7b8a69654f06",
+          "site_id": "aihubtoday",
+          "site_name": "AI HubToday",
+          "source": "Daily Digest",
+          "title": "Anthropic硬刚五角大楼封杀令。",
+          "url": "https://www.reddit.com/r/artificial/comments/1rha87x/exclusive_interview_anthropic_ceo_dario_amodei_on",
+          "published_at": "2026-03-01T00:00:00Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "7eca63b23f9d2903cfa3af1c6415c7d7dcd4d70a",
+          "site_id": "aihubtoday",
+          "site_name": "AI HubToday",
+          "source": "Daily Digest",
+          "title": "MobileAgent：阿里手机智能体。",
+          "url": "https://github.com/X-PLUG/MobileAgent",
+          "published_at": "2026-03-01T00:00:00Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "5f9a4bea750a10edf8410f6f360b373113c6e592",
+          "site_id": "aihubtoday",
+          "site_name": "AI HubToday",
+          "source": "Daily Digest",
+          "title": "AI智能体记忆新突破：因果依赖。",
+          "url": "https://x.com/omarsar0/status/2027784003017748550",
+          "published_at": "2026-03-01T00:00:00Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "9371423edb9882332ca7202b83ac00e2f0e4edd0",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Business Insider",
+          "title": "Claude hits No. 1 on App Store as ChatGPT users defect in show of support for Anthropic's Pentagon stance",
+          "url": "https://www.businessinsider.com/anthropic-claude-hits-number-one-app-store-openai-chatgpt-2026-2",
+          "published_at": "2026-02-28T23:54:22Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "b7436e8363f98d9cca6c421f03a6d433cfbb4d73",
+          "site_id": "zeli",
+          "site_name": "Zeli",
+          "source": "Hacker News · 24h最热",
+          "title": "Pentagon chief blocks officers from Ivy League schools and top universities",
+          "url": "https://fortune.com/2026/02/28/pentagon-officer-education-ivy-league-schools-universities-partners-ai-space",
+          "published_at": "2026-02-28T23:51:04Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "f84474621646cd774704cd8db9714109ed76f40e",
+          "site_id": "zeli",
+          "site_name": "Zeli",
+          "source": "Hacker News · 24h最热",
+          "title": "Show HN: Xmloxide – an agent made rust replacement for libxml2",
+          "url": "https://github.com/jonwiggins/xmloxide",
+          "published_at": "2026-02-28T23:44:41Z",
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -2012,7 +2417,7 @@
           "url": "https://news.sky.com/story/starmer-is-cautious-on-iran-because-he-knows-the-chaos-trumps-strikes-could-trigger-13513689",
           "published_at": "2026-02-28T23:24:58.926000Z",
           "first_seen_at": "2026-02-28T23:42:32.298095Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2046,7 +2451,7 @@
           "url": "https://www.bloomberg.com/news/articles/2026-02-28/openai-gives-pentagon-access-to-models-after-anthropic-dustup",
           "published_at": "2026-02-28T22:52:55.956000Z",
           "first_seen_at": "2026-02-28T23:16:05.854166Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -2063,7 +2468,7 @@
           "url": "https://www.ithome.com/0/924/704.htm",
           "published_at": "2026-02-28T22:49:59Z",
           "first_seen_at": "2026-02-28T23:16:05.854166Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
@@ -2097,7 +2502,7 @@
           "url": "https://techcrunch.com/2026/02/28/anthropics-claude-rises-to-no-2-in-the-app-store-following-pentagon-dispute",
           "published_at": "2026-02-28T22:33:09Z",
           "first_seen_at": "2026-02-28T23:42:32.298095Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -2114,7 +2519,7 @@
           "url": "https://nyti.ms/472Z32e",
           "published_at": "2026-02-28T22:04:57.711000Z",
           "first_seen_at": "2026-02-28T22:17:24.131658Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -2131,7 +2536,7 @@
           "url": "https://www.reddit.com/r/pics/comments/1rhehy0/president_trump_monitors_us_military_operations",
           "published_at": "2026-02-28T21:25:28Z",
           "first_seen_at": "2026-02-28T23:42:32.298095Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "military"
@@ -2182,7 +2587,7 @@
           "url": "https://techcrunch.com/2026/02/28/anthropics-claude-rises-to-no-2-in-the-app-store-following-pentagon-dispute",
           "published_at": "2026-02-28T21:05:06Z",
           "first_seen_at": "2026-02-28T22:17:24.131658Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -2216,7 +2621,7 @@
           "url": "https://www.bbc.com/news/articles/cg5nm6v2p4no?at_medium=RSS&at_campaign=rss",
           "published_at": "2026-02-28T20:13:09.512000Z",
           "first_seen_at": "2026-02-28T20:19:12.510438Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
@@ -2250,7 +2655,7 @@
           "url": "https://www.politico.com/news/2026/02/28/iran-votes-congress-war-powers-00805732",
           "published_at": "2026-02-28T19:57:11.580000Z",
           "first_seen_at": "2026-02-28T20:19:12.510438Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2284,7 +2689,7 @@
           "url": "https://reut.rs/4l4K3Xw",
           "published_at": "2026-02-28T19:41:07.263000Z",
           "first_seen_at": "2026-02-28T20:19:12.510438Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2318,7 +2723,7 @@
           "url": "https://blog.csdn.net/xinkuaile/article/details/158509191",
           "published_at": null,
           "first_seen_at": "2026-02-28T18:54:38.545014Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2335,7 +2740,7 @@
           "url": "https://www.businessinsider.com/new-us-military-force-used-cheap-attack-drones-first-time-2026-2",
           "published_at": "2026-02-28T18:50:49Z",
           "first_seen_at": "2026-02-28T20:19:12.510438Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "military"
@@ -2403,7 +2808,7 @@
           "url": "https://reut.rs/40CK1ws",
           "published_at": "2026-02-28T18:21:02.598000Z",
           "first_seen_at": "2026-02-28T18:54:38.545014Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
@@ -2437,7 +2842,7 @@
           "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPaC1oS2dlLW9JOXNRaEhIX2dzZTg3amZEWnV3d2N6dmVhSVAyblhaUnVaQ3lmbENLNUItOWxtdGU1Mk5ZWEdOZ0VNOHlvbXJaVlRUTkV0cVMtOEItQUdzYUxoR1VWbzN2WHRWWEpYRkdIMUtYRTZJZUJLUzZseUU0cExyUkwyMjVFb0pvMDVEd2Zhc3JXTTNOUlpQbktEYzFqaFp2VjZNODRONmpRa3pzaFdXWEVuYVI5b0xlTVI2WFg1MjZrUVJWRm9GeC1UQmppYWVoR1dXS0VwVlgzQUluOTFTSQ?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-02-28T17:49:13.070000Z",
           "first_seen_at": "2026-02-28T18:25:00.684184Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2454,7 +2859,7 @@
           "url": "http://www.techmeme.com/260228/p11",
           "published_at": "2026-02-28T17:35:01Z",
           "first_seen_at": "2026-02-28T18:25:00.684184Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "military"
@@ -2539,7 +2944,7 @@
           "url": "https://s.weibo.com/weibo?q=%E4%BC%8A%E5%AA%92%E6%9B%9D%E6%97%A0%E4%BA%BA%E6%9C%BA%E5%87%BB%E4%B8%AD%E7%BE%8E%E5%86%9B%E5%9F%BA%E5%9C%B0%E7%94%BB%E9%9D%A2",
           "published_at": null,
           "first_seen_at": "2026-02-28T17:15:22.626376Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2556,7 +2961,7 @@
           "url": "https://www.warner.senate.gov/public/index.cfm/2026/2/statement-of-sen-warner-on-military-action-in-iran",
           "published_at": "2026-02-28T16:58:43Z",
           "first_seen_at": "2026-02-28T20:19:12.510438Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "military"
@@ -2590,7 +2995,7 @@
           "url": "https://news.ycombinator.com/item?id=47197243",
           "published_at": "2026-02-28T16:45:05.304000Z",
           "first_seen_at": "2026-02-28T17:15:22.626376Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
@@ -2624,7 +3029,7 @@
           "url": "https://techcrunch.com/2026/02/28/openais-sam-altman-announces-pentagon-deal-with-technical-safeguards",
           "published_at": "2026-02-28T16:17:36Z",
           "first_seen_at": "2026-02-28T17:15:22.626376Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -2641,7 +3046,7 @@
           "url": "https://on.wsj.com/40GDwIZ",
           "published_at": "2026-02-28T16:13:10.485000Z",
           "first_seen_at": "2026-02-28T16:47:32.978164Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2709,7 +3114,7 @@
           "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOMDN2Rml5dTFaM0taU01hOVkwamtCbDVQX1VXMm1RTjBULTFHRGM4TnRaTmVRbGEwODZjRVhzaFhNVUozVndaRng2Yy1aa3M3S2syWXFBQlg3a2NwcEktQUcxcjZuTEx4U0N4Vy1rYUJpTE5ieVFIMEk2aXZLMFkzZ29PZ0Nua0FEVXgtV0YzVGZvSUM2VEpxSGprNWM3dw?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-02-28T15:41:14.606000Z",
           "first_seen_at": "2026-02-28T16:19:50.960950Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2726,7 +3131,7 @@
           "url": "http://www.techmeme.com/260228/p9",
           "published_at": "2026-02-28T15:35:01Z",
           "first_seen_at": "2026-02-28T16:19:50.960950Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -2760,7 +3165,7 @@
           "url": "https://www.reddit.com/r/news/comments/1rh5cho/iran_strikes_us_military_bases_in_qatar_kuwait",
           "published_at": "2026-02-28T15:24:20Z",
           "first_seen_at": "2026-02-28T19:17:04.035043Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "military"
@@ -2811,7 +3216,7 @@
           "url": "https://www.oschina.net/news/406374",
           "published_at": null,
           "first_seen_at": "2026-02-28T14:45:22.450876Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2862,7 +3267,7 @@
           "url": "https://www.baidu.com/s?wd=%E5%9B%BD%E9%98%B2%E9%83%A8%EF%BC%9A%E7%BE%8E%E6%98%AF%E5%85%A8%E7%90%83%E6%88%98%E7%95%A5%E7%A8%B3%E5%AE%9A%E6%9C%80%E5%A4%A7%E4%B9%B1%E6%BA%90",
           "published_at": null,
           "first_seen_at": "2026-02-28T14:17:02.936303Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
@@ -2896,7 +3301,7 @@
           "url": "https://github.com/nocodemf/werld",
           "published_at": "2026-02-28T14:05:27Z",
           "first_seen_at": "2026-02-28T15:42:38.737353Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2930,7 +3335,7 @@
           "url": "https://www.businessinsider.com/dario-amodei-pentagon-free-speech-patriots-american-values-2026-2",
           "published_at": "2026-02-28T14:05:19.008000Z",
           "first_seen_at": "2026-02-28T14:17:02.936303Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -3066,7 +3471,7 @@
           "url": "https://www.youtube.com/watch?v=MPTNHrq_4LU",
           "published_at": "2026-02-28T13:16:22Z",
           "first_seen_at": "2026-02-28T18:25:00.684184Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -3090,397 +3495,6 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "2e8259360df6266839f8f535c4e0f5584e99381b",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "BBC News (世界新闻)",
-          "title": "At least 20 killed after military plane carrying banknotes crashes in Bolivia",
-          "url": "https://www.bbc.com/news/articles/c0rjpxxpp49o?at_medium=RSS&at_campaign=rss",
-          "published_at": "2026-02-28T13:00:39Z",
-          "first_seen_at": "2026-02-28T13:32:50.873827Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "military"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "bf28351bf023304e7e232636eef7087e50640a14",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "TechRadar",
-          "title": "There's no such thing as 'military-grade encryption'",
-          "url": "https://www.techradar.com/vpn/theres-no-such-thing-as-military-grade-encryption",
-          "published_at": "2026-02-28T13:00:00Z",
-          "first_seen_at": "2026-02-28T14:17:02.936303Z",
-          "last_seen_at": "2026-02-28T16:47:32.978164Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "military"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "f5d8139c2a8f2de9400b13c11d2729c37956577a",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "腾讯新闻 · 热问",
-          "title": "特朗普称美军已开始对伊朗进行军事打击，美军这次出动了哪些“大杀器”？ 伊朗拿什么反击？",
-          "url": "https://new.qq.com/rain/a/20260228Q070HI00",
-          "published_at": null,
-          "first_seen_at": "2026-02-28T12:32:59.658928Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "506484811e7fb3be1e6a9ee5cb1e044015bf0082",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "快手 · 实时热榜",
-          "title": "美国军事基地遭导弹袭击画面曝光",
-          "url": "https://index.e.kuaishou.com/rank/hotDetail?keyword=%E7%BE%8E%E5%9B%BD%E5%86%9B%E4%BA%8B%E5%9F%BA%E5%9C%B0%E9%81%AD%E5%AF%BC%E5%BC%B9%E8%A2%AD%E5%87%BB%E7%94%BB%E9%9D%A2%E6%9B%9D%E5%85%89&rankType=1",
-          "published_at": null,
-          "first_seen_at": "2026-02-28T12:32:59.658928Z",
-          "last_seen_at": "2026-02-28T14:17:02.936303Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "4b9da027ecb6df94201a3cc0a1a326cd59b2a643",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "百度 · 实时热点",
-          "title": "伊朗打击美国军事基地",
-          "url": "https://www.baidu.com/s?wd=%E4%BC%8A%E6%9C%97%E6%89%93%E5%87%BB%E7%BE%8E%E5%9B%BD%E5%86%9B%E4%BA%8B%E5%9F%BA%E5%9C%B0",
-          "published_at": null,
-          "first_seen_at": "2026-02-28T12:32:59.658928Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "699f7898405e46ba8788eb23e9e534439c999839",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.reuters.com",
-          "title": "西班牙首相佩德罗·桑切斯表示，他反对美国和以色列在伊朗采取军事行动。",
-          "url": "https://www.reuters.com/es/mundo/EYBKLT7XZBIJ3PWVUR4UR3RHWE-2026-02-28",
-          "published_at": "2026-02-28T12:13:17.244000Z",
-          "first_seen_at": "2026-02-28T12:32:59.658928Z",
-          "last_seen_at": "2026-02-28T13:32:50.873827Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "3255a2e51d101a3c66d242b7479d87eef915a16b",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "瑞典证实俄方无人机在法国航母附近被拦截 - Al Jazeera",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQaHhjUUJCVVd5ZmVKNmJzbnl4dk85TUJ0TjllVXUtRlUzdHI0ZTdDOFJzN1R6SnUtUWhKTjV0clpnMklVbzc4Q0hVSFlfd0k1VVZ5M1NKMzZXLU8xUXRYZUlDd2tYcUNtYVBsM3FhQXNRNDlmR0hlWEQ5UFR5ZjNyQUMzZUl5MUZfLU0xX0h6VTFjd203MmdHUGh3WjhmNFZ5WTlndkN3WGtXbnh6aGNSYtIBtgFBVV95cUxNeTdRLXJiZ0JsQjl0N05JdVVRUkx2ZWRKeEdaeXVkbkFGNERVQVRrWGZnSnEybUNBQTY5a2JLWjdqN2wycFRGa3g4MGtoTEU4OXNXNDJadkhZM2VHV2Z1clR0ekJvSDJIa01aajhQbE1OOWJoWDFUV1Z1Mkx4RUJhMzgzeXZ1UGFBbWlhdndRRG1aN2cyc0VEUVg5YzVhb2lVSWxLQWFtbVRrdTJhZm5MN29DTXNwUQ?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-02-28T12:13:17.084000Z",
-          "first_seen_at": "2026-02-28T12:32:59.658928Z",
-          "last_seen_at": "2026-02-28T15:42:38.737353Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "e397a7531bc8aec7f2be70b5d586da7ba5f86aa3",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.businessinsider.com",
-          "title": "凯蒂·佩里分享克劳德·普罗订阅截图，五角大楼放弃Anthropic后她在图上画了颗爱心",
-          "url": "https://www.businessinsider.com/katy-perry-anthropic-department-of-defense-spat-claude-subscription-2026-2",
-          "published_at": "2026-02-28T11:41:29.277000Z",
-          "first_seen_at": "2026-02-28T12:32:59.658928Z",
-          "last_seen_at": "2026-02-28T17:42:48.460503Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "五角大楼"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "f7dd6cc651059dc9b01fefe79aec8ba731e740a0",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "微博 · 热搜榜",
-          "title": "伊朗正在打击美国军事基地",
-          "url": "https://s.weibo.com/weibo?q=%E4%BC%8A%E6%9C%97%E6%AD%A3%E5%9C%A8%E6%89%93%E5%87%BB%E7%BE%8E%E5%9B%BD%E5%86%9B%E4%BA%8B%E5%9F%BA%E5%9C%B0",
-          "published_at": null,
-          "first_seen_at": "2026-02-28T11:40:18.863958Z",
-          "last_seen_at": "2026-02-28T22:45:48.505098Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "32b7b0eb867bf6c80624cc24b1ac0c004b8cd3a4",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "百度 · 实时热点",
-          "title": "国防部：奉劝日方不要开历史倒车",
-          "url": "https://www.baidu.com/s?wd=%E5%9B%BD%E9%98%B2%E9%83%A8%EF%BC%9A%E5%A5%89%E5%8A%9D%E6%97%A5%E6%96%B9%E4%B8%8D%E8%A6%81%E5%BC%80%E5%8E%86%E5%8F%B2%E5%80%92%E8%BD%A6",
-          "published_at": null,
-          "first_seen_at": "2026-02-28T11:40:18.863958Z",
-          "last_seen_at": "2026-02-28T16:47:32.978164Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "327009db6c22dc75f7c5fb50c3141fa01d906a05",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "Readhub · AI",
-          "title": "上海语音Agent团队融资近亿，浙大校友创办",
-          "url": "https://www.zhidx.com/p/536894.html",
-          "published_at": null,
-          "first_seen_at": "2026-02-28T11:40:18.863958Z",
-          "last_seen_at": "2026-02-28T11:40:18.863958Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "cd75555f77899c02c802bc27e37fc5ef8217c119",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "虎嗅 (Huxiu)",
-          "title": "8个月后，再次开战，美国发动空袭，伊朗打击美方军事基地，市场人士：若伊朗封锁霍尔木兹海峡，油价将飙升10到20美元",
-          "url": "https://www.huxiu.com/article/4837864.html?f=rss",
-          "published_at": "2026-02-28T11:33:26Z",
-          "first_seen_at": "2026-02-28T11:40:18.863958Z",
-          "last_seen_at": "2026-02-28T11:40:18.863958Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "067d45226297396135a156b43c00376309cfcb86",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "Business Insider",
-          "title": "Katy Perry shares Claude Pro subscription screenshot with heart drawn on after Pentagon drops Anthropic",
-          "url": "https://www.businessinsider.com/katy-perry-anthropic-department-of-defense-spat-claude-subscription-2026-2",
-          "published_at": "2026-02-28T11:29:33Z",
-          "first_seen_at": "2026-02-28T13:32:50.873827Z",
-          "last_seen_at": "2026-02-28T15:42:38.737353Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "pentagon"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "6f60680564d8fb9e3a928f17091b6a123d4bd7f0",
-          "site_id": "newsnow",
-          "site_name": "NewsNow",
-          "source": "github",
-          "title": "NousResearch /      hermes-agent",
-          "url": "https://github.com/NousResearch/hermes-agent",
-          "published_at": "2026-02-28T11:14:36.874000Z",
-          "first_seen_at": "2026-02-28T11:14:14.368923Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "d58cb35aba5e21e9614755cb8f41a8523e68f8d0",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "微博 · 热搜榜",
-          "title": "伊朗正在打击美国军事基地",
-          "url": "https://m.weibo.cn/search?containerid=100103type%3D1%26q%3D%25E4%25BC%258A%25E6%259C%2597%25E6%25AD%25A3%25E5%259C%25A8%25E6%2589%2593%25E5%2587%25BB%25E7%25BE%258E%25E5%259B%25BD%25E5%2586%259B%25E4%25BA%258B%25E5%259F%25BA%25E5%259C%25B0",
-          "published_at": null,
-          "first_seen_at": "2026-02-28T11:14:14.368923Z",
-          "last_seen_at": "2026-02-28T18:25:00.684184Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "c754df41ceeac1b8032a280a46f16a5a6a99dc54",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "百度 · 实时热点",
-          "title": "国防部：奉劝日方不要开历史倒车",
-          "url": "https://m.baidu.com/s?wd=%E5%9B%BD%E9%98%B2%E9%83%A8%EF%BC%9A%E5%A5%89%E5%8A%9D%E6%97%A5%E6%96%B9%E4%B8%8D%E8%A6%81%E5%BC%80%E5%8E%86%E5%8F%B2%E5%80%92%E8%BD%A6",
-          "published_at": null,
-          "first_seen_at": "2026-02-28T11:14:14.368923Z",
-          "last_seen_at": "2026-02-28T13:32:50.873827Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "8e58a371b2f0cdda0e65a94b00f848e1a6486693",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "百度 · 实时热点",
-          "title": "伊朗正在打击美国军事基地",
-          "url": "https://m.baidu.com/s?wd=%E4%BC%8A%E6%9C%97%E6%AD%A3%E5%9C%A8%E6%89%93%E5%87%BB%E7%BE%8E%E5%9B%BD%E5%86%9B%E4%BA%8B%E5%9F%BA%E5%9C%B0",
-          "published_at": null,
-          "first_seen_at": "2026-02-28T11:14:14.368923Z",
-          "last_seen_at": "2026-02-28T11:14:14.368923Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "39977cd4fc90a6dcccc7a7f1316aa75b6ec1edd4",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "百度 · 实时热点",
-          "title": "国防部：绝不让任何祸乱南海图谋得逞",
-          "url": "https://m.baidu.com/s?wd=%E5%9B%BD%E9%98%B2%E9%83%A8%EF%BC%9A%E7%BB%9D%E4%B8%8D%E8%AE%A9%E4%BB%BB%E4%BD%95%E7%A5%B8%E4%B9%B1%E5%8D%97%E6%B5%B7%E5%9B%BE%E8%B0%8B%E5%BE%97%E9%80%9E",
-          "published_at": null,
-          "first_seen_at": "2026-02-28T11:14:14.368923Z",
-          "last_seen_at": "2026-02-28T13:32:50.873827Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "5fa32766169efbf0d77640f04afbf06d65e55038",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.theatlantic.com",
-          "title": "以色列为何要摆脱对美国军事援助的依赖",
-          "url": "https://www.theatlantic.com/national-security/2026/02/us-israel-financial-military-support/686162",
-          "published_at": "2026-02-28T11:09:29.815000Z",
-          "first_seen_at": "2026-02-28T11:40:18.863958Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "b30316b3ea6a1f76bb1bf8bd5cf9a7f5c5456565",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "虎嗅 (Huxiu)",
-          "title": "驯服“龙虾”，Agent也要服从基本法",
-          "url": "https://www.huxiu.com/article/4837843.html?f=rss",
-          "published_at": "2026-02-28T10:49:27Z",
-          "first_seen_at": "2026-02-28T11:14:14.368923Z",
-          "last_seen_at": "2026-02-28T15:42:38.737353Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "feed7daae42cc25ede76cdf0d9b90a4ad5dd2de9",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "GitHub · Trending Today",
-          "title": "NousResearch / hermes-agent",
-          "url": "https://github.com/NousResearch/hermes-agent",
-          "published_at": null,
-          "first_seen_at": "2026-02-28T10:45:47.035103Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "599aeda59da0f6ece73cd91229a6957cd3b82b36",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "nyti.ms",
-          "title": "美国对伊朗的打击行动初期重点是军事目标",
-          "url": "https://nyti.ms/4kX8ru2",
-          "published_at": "2026-02-28T10:21:20.854000Z",
-          "first_seen_at": "2026-02-28T10:45:47.035103Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "1b7730dfc6cf5bc887849ee733741ba47ebe7a3d",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "百度 · 实时热点",
-          "title": "伊朗正在打击美国军事基地",
-          "url": "https://www.baidu.com/s?wd=%E4%BC%8A%E6%9C%97%E6%AD%A3%E5%9C%A8%E6%89%93%E5%87%BB%E7%BE%8E%E5%9B%BD%E5%86%9B%E4%BA%8B%E5%9F%BA%E5%9C%B0",
-          "published_at": null,
-          "first_seen_at": "2026-02-28T10:17:33.581588Z",
-          "last_seen_at": "2026-02-28T11:40:18.863958Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
@@ -3490,7 +3504,7 @@
     {
       "id": "ai-for-science",
       "name": "AI+科研",
-      "count": 16,
+      "count": 17,
       "items": [
         {
           "id": "ade5bae3f1237032cd391f4ad69cb96d2ef442a6",
@@ -3511,6 +3525,23 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "72b28b7893b3245f41fdbd66cc1d5940169a2b86",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "Readhub · AI",
+          "title": "AI+小分子药物开发｜曲欣生物完成8500万美元B轮融资",
+          "url": "https://bydrug.pharmcube.com/news/detail/60da162ee14b3d0f6ea7fbcb2e8bcbf2",
+          "published_at": null,
+          "first_seen_at": "2026-03-01T01:48:52.868804Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
+          "watch_score": 3,
+          "watch_matched_terms": [
+            "combo:ai+science"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "e7e42af1ac1eb93a89454ed3a2677b77238f6fca",
           "site_id": "iris",
           "site_name": "Info Flow",
@@ -3519,7 +3550,7 @@
           "url": "https://dl.acm.org/doi/10.1145/3624725",
           "published_at": "2026-02-28T18:46:40Z",
           "first_seen_at": "2026-02-28T19:40:42.289457Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3536,7 +3567,7 @@
           "url": "https://github.com/NousResearch/hermes-agent",
           "published_at": "2026-02-28T11:14:36.874000Z",
           "first_seen_at": "2026-02-28T11:14:14.368923Z",
-          "last_seen_at": "2026-02-28T23:42:32.298095Z",
+          "last_seen_at": "2026-03-01T01:48:52.868804Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3768,7 +3799,7 @@
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 16
+      "other_count": 17
     }
   ]
 }
