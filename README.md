@@ -6,6 +6,7 @@
 
 - 多源聚合：抓取站点源 + 可选 OPML RSS 订阅源
 - 24 小时快照：输出 AI 强相关与全量数据视图
+- 新增看板 Tab：`AI hotpot`（调用订阅接口，支持分页）
 - WaytoAGI 更新日志：支持近 2 日 / 近 7 日展示
 - 主题看板构建：从归档数据生成
   - `special-focus.json`（特别关注）
@@ -144,6 +145,33 @@ cp .env.example .env
 - `COZE_NOTICE_X_CSRF_TOKEN`
 
 未配置时脚本会按可用公开源继续构建，不会中断主流程。
+
+### AI hotpot（前端直连接口）
+
+页面新增了 `AI hotpot` Tab，会请求：
+
+- `POST https://api-public.lingowhale.com/api/feed/v2/feed/subscription`
+
+默认读取前端内置配置；你也可以在浏览器 `localStorage` 覆盖鉴权配置（推荐）：
+
+- key: `lingowhale_feed_auth_v1`
+- value 示例：
+
+```json
+{
+  "headers": {
+    "accessToken": "<ACCESS_TOKEN>",
+    "authToken": "<AUTH_TOKEN>",
+    "uId": "<U_ID>",
+    "bId": "<B_ID>",
+    "guestId": "<GUEST_ID>"
+  },
+  "channelIds": ["699fe88daffba3b7ded9a486"],
+  "sortType": 2,
+  "limit": 10,
+  "filterUnread": false
+}
+```
 
 ## GitHub Actions 自动更新
 

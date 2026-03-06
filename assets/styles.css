@@ -578,6 +578,15 @@ select:focus {
   display: grid;
 }
 
+.list-pager {
+  padding: 14px 16px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-top: 1px solid rgba(57, 121, 181, 0.11);
+}
+
 .site-group,
 .source-group,
 .watch-section {
@@ -681,8 +690,23 @@ select:focus {
   font-weight: 400;
 }
 
+.wechat-abstract {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #4f6f8d;
+}
+
 .title:hover {
   color: #1d7dc6;
+}
+
+.title.no-link {
+  cursor: default;
+}
+
+.title.no-link:hover {
+  color: #153f62;
 }
 
 .hover-desc {
@@ -932,7 +956,7 @@ select:focus {
 
   .board-tabs-top {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     width: 100%;
     border-radius: 16px;
     gap: 6px;
@@ -1163,9 +1187,14 @@ html[data-theme="dark"] .site {
   color: #dcecff;
 }
 
+html[data-theme="dark"] .title.no-link:hover {
+  color: #dcecff;
+}
+
 html[data-theme="dark"] .title-sub,
 html[data-theme="dark"] .waytoagi-item .d,
 html[data-theme="dark"] .waytoagi-item .s,
+html[data-theme="dark"] .wechat-abstract,
 html[data-theme="dark"] .empty,
 html[data-theme="dark"] .waytoagi-empty {
   color: #c2d8ee;

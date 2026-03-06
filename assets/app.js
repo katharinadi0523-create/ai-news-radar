@@ -12,6 +12,12 @@ const state = {
   boardSection: "focus",
   specialFocus: { sections: [], total_items: 0 },
   competitorMonitor: { sections: [], total_items: 0 },
+  wechatFeed: {
+    pages: [],
+    pageIndex: 0,
+    initialized: false,
+    lastFetchedAt: 0,
+  },
   waytoagiMode: "2d",
   waytoagiPage: 1,
   waytoagiData: null,
@@ -22,12 +28,14 @@ const state = {
     ai: false,
     focus: false,
     competitor: false,
+    wechat: false,
     waytoagi: false,
   },
   loadErrors: {
     ai: null,
     focus: null,
     competitor: null,
+    wechat: null,
     waytoagi: null,
   },
 };
@@ -39,6 +47,7 @@ const siteSelectEl = document.getElementById("siteSelect");
 const competitorTimeSelectEl = document.getElementById("competitorTimeSelect");
 const sitePillsEl = document.getElementById("sitePills");
 const newsListEl = document.getElementById("newsList");
+const listPagerEl = document.getElementById("listPager");
 const updatedAtEl = document.getElementById("updatedAt");
 const searchInputEl = document.getElementById("searchInput");
 const resultCountEl = document.getElementById("resultCount");
@@ -55,6 +64,7 @@ const watchBoardEl = document.getElementById("watchBoard");
 
 const tabAiBtnEl = document.getElementById("tabAiBtn");
 const tabFocusBtnEl = document.getElementById("tabFocusBtn");
+const tabWechatBtnEl = document.getElementById("tabWechatBtn");
 const tabCompetitorBtnEl = document.getElementById("tabCompetitorBtn");
 const themeToggleBtnEl = document.getElementById("themeToggleBtn");
 
@@ -67,8 +77,31 @@ const waytoagiTodayBtnEl = document.getElementById("waytoagiTodayBtn");
 const waytoagi7dBtnEl = document.getElementById("waytoagi7dBtn");
 const WAYTOAGI_PAGE_SIZE = 5;
 const DATA_REFRESH_POLL_MS = 20000;
+const WECHAT_REFRESH_POLL_MS = 5 * 60 * 1000;
 const AUTH_STORAGE_KEY = "agent_news_accounts_v1";
 const AUTH_SESSION_KEY = "agent_news_session_v1";
+const LINGOWHALE_AUTH_STORAGE_KEY = "lingowhale_feed_auth_v1";
+const WECHAT_FEED_DEFAULT_CONFIG = {
+  endpoint: "https://api-public.lingowhale.com/api/feed/v2/feed/subscription",
+  detailEndpoint: "https://api.lingowhale.com/api/entry/detail",
+  channelIds: ["699fe88daffba3b7ded9a486"],
+  sortType: 2,
+  limit: 10,
+  filterUnread: false,
+  webSite: "web",
+  origin: "https://lingowhale.com",
+  referer: "https://lingowhale.com/",
+  headers: {
+    accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJCdWZmZXJUaW1lIjo2MDQ4MDAsImlzcyI6ImFjY2Vzc190b2tlbiIsImV4cCI6MTc3MzI5NjcyNiwibmJmIjoxNzcyMDg3MTI2LCJVaWQiOiIwMWViNmM4NDllMTQ0YWY2OTNjNzg2NDYyY2MwMTM4NiIsIlBpZCI6IjBlNDRlMjMzOTFkMjQ4Y2VhODc1NWNlNTJmMTA0OTk4IiwiR2lkIjozLCJTdWJHaWQiOjMwMiwiUGhvbmUiOiIiLCJVc2VyTmFtZSI6IueUqOaIt18xNzcyMDg3MTI2NDcxIn0.WTVJPBCRPxCz0CbPuLvRsrlQwY3guBvuaUlWnMnUi3E",
+    authToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJCdWZmZXJUaW1lIjo2MDQ4MDAsImlzcyI6ImF1dGhfdG9rZW4iLCJleHAiOjE3NzQ2NzkxMjYsIm5iZiI6MTc3MjA4NzEyNiwiVWlkIjoiMDFlYjZjODQ5ZTE0NGFmNjkzYzc4NjQ2MmNjMDEzODYiLCJQaWQiOiIwZTQ0ZTIzMzkxZDI0OGNlYTg3NTVjZTUyZjEwNDk5OCIsIkdpZCI6MywiU3ViR2lkIjozMDIsIlBob25lIjoiIiwiVXNlck5hbWUiOiLnlKjmiLdfMTc3MjA4NzEyNjQ3MSJ9.NWHZdVgQNizaOBYsj4cXw5tzXN6SEx318Hcw5Ra7Uk4",
+    uId: "0e44e23391d248cea8755ce52f104998",
+    bId: "2887445415554ae396c7e650af8be732",
+    guestId: "3d5ec084808368e39a787076f2bbcf70",
+  },
+};
+const WECHAT_FEED_AUTH_MISSING_MSG = "AI HOTPOT🔥 鉴权缺失，请在浏览器 localStorage 的 lingowhale_feed_auth_v1 中配置 accessToken/authToken/uId/bId/guestId。";
+const WECHAT_DETAIL_URL_CACHE = new Map();
+const HERO_INBOX_FALLBACK_DATA = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none"><rect x="4" y="4" width="56" height="56" rx="14" fill="#E9F6FF" stroke="#9BCBEE"/><path d="M16 22a4 4 0 0 1 4-4h24a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4h-8l-4-5-4 5h-8a4 4 0 0 1-4-4V22z" fill="#5CB8F7" stroke="#2F87D6" stroke-width="2"/><path d="M22 34h8l2 3h0l2-3h8" stroke="#1F6FB5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 16v14" stroke="#2F87D6" stroke-width="3" stroke-linecap="round"/><path d="M27 25l5 5 5-5" stroke="#2F87D6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>')}`;
 const DEFAULT_ACCOUNT = {
   username: "AF_PM",
   password: "AgentNewsTracker",
@@ -191,6 +224,380 @@ function latestIso(values) {
   return new Date(Math.max(...timestamps)).toISOString();
 }
 
+function safeParseJson(raw) {
+  if (!raw) return null;
+  try {
+    return JSON.parse(raw);
+  } catch (_) {
+    return null;
+  }
+}
+
+function getWechatFeedConfig() {
+  const override = safeParseJson(localStorage.getItem(LINGOWHALE_AUTH_STORAGE_KEY)) || {};
+  const overrideHeaders = (override && typeof override === "object" && override.headers && typeof override.headers === "object")
+    ? override.headers
+    : {};
+  return {
+    ...WECHAT_FEED_DEFAULT_CONFIG,
+    ...override,
+    headers: {
+      ...WECHAT_FEED_DEFAULT_CONFIG.headers,
+      ...overrideHeaders,
+    },
+  };
+}
+
+function hasWechatFeedAuth(cfg) {
+  const h = cfg?.headers || {};
+  return Boolean(h.accessToken && h.authToken && h.uId && h.bId && h.guestId);
+}
+
+function getWechatAuthHeaders(cfg) {
+  return {
+    Accept: "application/json, text/plain, */*",
+    "Content-Type": "application/json",
+    "Access-Token": cfg?.headers?.accessToken || "",
+    "Auth-Token": cfg?.headers?.authToken || "",
+    "U-Id": cfg?.headers?.uId || "",
+    "B-Id": cfg?.headers?.bId || "",
+    "Guest-Id": cfg?.headers?.guestId || "",
+    "Web-Site": cfg?.webSite || "web",
+    Origin: cfg?.origin || "https://lingowhale.com",
+    Referer: cfg?.referer || "https://lingowhale.com/",
+  };
+}
+
+function normalizeUrlish(raw) {
+  const value = String(raw || "").trim();
+  if (!value) return "";
+  if (/^https?:\/\//i.test(value)) return value;
+  if (/^[a-z]+:\/\//i.test(value)) return "";
+  return `https://${value.replace(/^\/+/, "")}`;
+}
+
+function trimUrlToken(value) {
+  return String(value || "")
+    .trim()
+    .replace(/^[<("'`]+/, "")
+    .replace(/[>"')`.,;!?，。；！）】]+$/, "");
+}
+
+function decodeURIComponentSafe(value) {
+  try {
+    return decodeURIComponent(value);
+  } catch (_) {
+    return String(value || "");
+  }
+}
+
+function extractUrlsFromText(text) {
+  const raw = String(text || "");
+  if (!raw) return [];
+  const normalizedText = raw
+    .replace(/\\\//g, "/")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, "\"");
+  const directMatches = normalizedText.match(/https?:\/\/[^\s"'<>)\]}]+/gi) || [];
+  const encodedMatches = normalizedText.match(/https%3A%2F%2F[A-Za-z0-9%._~!$&'()*+,;=:/?-]+/gi) || [];
+  return directMatches.concat(encodedMatches.map((part) => decodeURIComponentSafe(part)));
+}
+
+function expandedWechatUrlCandidates(raw) {
+  const normalized = normalizeUrlish(trimUrlToken(raw));
+  if (!normalized) return [];
+  const candidates = [normalized];
+  try {
+    const parsed = new URL(normalized);
+    ["url", "u", "target", "target_url", "link", "redirect", "redirect_url", "dest", "destination", "continue", "to"]
+      .forEach((key) => {
+        const val = parsed.searchParams.get(key);
+        if (!val) return;
+        const decoded = decodeURIComponentSafe(val);
+        const extracted = normalizeUrlish(trimUrlToken(decoded));
+        if (extracted) candidates.push(extracted);
+      });
+  } catch (_) {}
+  return candidates;
+}
+
+function isLikelyWechatArticleUrl(raw) {
+  const normalized = normalizeUrlish(trimUrlToken(raw));
+  if (!normalized) return false;
+  try {
+    const parsed = new URL(normalized);
+    if (!/^https?:$/i.test(parsed.protocol)) return false;
+    const host = parsed.hostname.toLowerCase();
+    if (host === "lingowhale.com" || host === "www.lingowhale.com" || host === "api.lingowhale.com" || host === "api-public.lingowhale.com") {
+      return false;
+    }
+    if (host.endsWith("aliyuncs.com")) return false;
+    if ((parsed.pathname === "" || parsed.pathname === "/") && !parsed.search) return false;
+    if (/\.(png|jpe?g|gif|webp|svg|ico|bmp|pdf)$/i.test(parsed.pathname)) return false;
+    return true;
+  } catch (_) {
+    return false;
+  }
+}
+
+function scoreWechatArticleUrl(raw) {
+  const normalized = normalizeUrlish(trimUrlToken(raw));
+  if (!normalized) return Number.NEGATIVE_INFINITY;
+  try {
+    const parsed = new URL(normalized);
+    const host = parsed.hostname.toLowerCase();
+    let score = 0;
+    if (host === "mp.weixin.qq.com") score += 120;
+    if (host.endsWith("weixin.qq.com")) score += 80;
+    if (parsed.pathname.startsWith("/s")) score += 20;
+    if (parsed.search.includes("__biz=") && parsed.search.includes("mid=")) score += 20;
+    if (parsed.hash.includes("wechat_redirect")) score += 5;
+    return score;
+  } catch (_) {
+    return Number.NEGATIVE_INFINITY;
+  }
+}
+
+function pickBestWechatArticleUrl(rawCandidates) {
+  const seen = new Set();
+  let bestUrl = "";
+  let bestScore = Number.NEGATIVE_INFINITY;
+  rawCandidates.forEach((raw) => {
+    expandedWechatUrlCandidates(raw).forEach((candidate) => {
+      const normalized = normalizeUrlish(trimUrlToken(candidate));
+      if (!normalized || seen.has(normalized)) return;
+      seen.add(normalized);
+      if (!isLikelyWechatArticleUrl(normalized)) return;
+      const score = scoreWechatArticleUrl(normalized);
+      if (!bestUrl || score > bestScore) {
+        bestUrl = normalized;
+        bestScore = score;
+      }
+    });
+  });
+  return bestUrl;
+}
+
+function resolveWechatTargetUrl(item) {
+  const seeds = [
+    item?.url,
+    item?.source_url,
+    item?.origin_url,
+    item?.share_url,
+    item?.original_url,
+  ];
+  [item?.description, item?.content, item?.abstract].forEach((text) => {
+    extractUrlsFromText(text).forEach((url) => seeds.push(url));
+  });
+
+  return pickBestWechatArticleUrl(seeds);
+}
+
+function resolveWechatDetailTargetUrl(detail) {
+  const urlInfo = detail?.url_info || {};
+  const htmlContent = String(urlInfo?.html_content || "");
+  const seeds = [];
+
+  const hrefMatches = htmlContent.matchAll(/href=["']([^"']+)["']/gi);
+  for (const match of hrefMatches) {
+    seeds.push(match[1]);
+  }
+
+  extractUrlsFromText(urlInfo?.content).forEach((url) => seeds.push(url));
+  extractUrlsFromText(urlInfo?.html_content).forEach((url) => seeds.push(url));
+  return pickBestWechatArticleUrl(seeds);
+}
+
+async function fetchWechatDetailTargetUrl(item, cfg) {
+  const entryId = String(item?.entry_id || "").trim();
+  const entryType = Number(item?.entry_type);
+  if (!entryId || !Number.isFinite(entryType)) return "";
+
+  const cacheKey = `${entryType}:${entryId}`;
+  const cached = WECHAT_DETAIL_URL_CACHE.get(cacheKey);
+  if (typeof cached === "string") return cached;
+  if (cached && typeof cached.then === "function") return cached;
+
+  const requestPromise = (async () => {
+    try {
+      const endpoint = String(cfg?.detailEndpoint || WECHAT_FEED_DEFAULT_CONFIG.detailEndpoint || "").trim();
+      if (!endpoint) return "";
+      const params = new URLSearchParams({
+        entry_id: entryId,
+        entry_type: String(entryType),
+      });
+      const res = await fetch(`${endpoint}?${params.toString()}`, {
+        method: "GET",
+        headers: getWechatAuthHeaders(cfg),
+      });
+      if (!res.ok) return "";
+      const json = await res.json();
+      if (!json || Number(json.code) !== 0) return "";
+      return resolveWechatDetailTargetUrl(json.data || "");
+    } catch (_) {
+      return "";
+    }
+  })();
+
+  WECHAT_DETAIL_URL_CACHE.set(cacheKey, requestPromise);
+  const resolved = await requestPromise;
+  WECHAT_DETAIL_URL_CACHE.set(cacheKey, resolved || "");
+  return resolved || "";
+}
+
+function normalizeWechatFeedItem(item) {
+  const channelName = String(item?.channel?.name || "未知频道");
+  const sourceName = String(
+    item?.info_source?.info_source_name
+    || item?.channel?.info_sources?.[0]?.info_source_name
+    || item?.info_source?.info_source_root
+    || "未知来源"
+  );
+  const pubTs = Number(item?.pub_time);
+  const pubIso = Number.isFinite(pubTs) && pubTs > 0 ? new Date(pubTs * 1000).toISOString() : "";
+  const abstractText = String(item?.abstract || item?.description || item?.content || "").trim();
+  const snippet = abstractText ? abstractText.slice(0, 220) : "暂无摘要";
+  return {
+    ...item,
+    title: String(item?.title || "无标题"),
+    channel_name: channelName,
+    source_name: sourceName,
+    abstract_text: snippet,
+    target_url: resolveWechatTargetUrl(item),
+    published_at: pubIso,
+    site_name: channelName,
+    site_id: String(item?.channel?.channel_id || "wechat"),
+    source: sourceName,
+  };
+}
+
+async function fetchWechatFeedPage(cursor = "") {
+  const cfg = getWechatFeedConfig();
+  if (!hasWechatFeedAuth(cfg)) throw new Error(WECHAT_FEED_AUTH_MISSING_MSG);
+
+  const payload = {
+    cursor: String(cursor || ""),
+    sort_type: Number(cfg.sortType || 2),
+    limit: Number(cfg.limit || 10),
+    filter_unread: Boolean(cfg.filterUnread),
+    channel_ids: Array.isArray(cfg.channelIds) ? cfg.channelIds : WECHAT_FEED_DEFAULT_CONFIG.channelIds,
+  };
+  const res = await fetch(cfg.endpoint, {
+    method: "POST",
+    headers: getWechatAuthHeaders(cfg),
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`AI HOTPOT🔥 请求失败：HTTP ${res.status} ${text.slice(0, 180)}`);
+  }
+
+  const json = await res.json();
+  if (!json || Number(json.code) !== 0) {
+    const code = json && Object.prototype.hasOwnProperty.call(json, "code") ? json.code : "unknown";
+    const msg = json?.msg || "unknown";
+    throw new Error(`AI HOTPOT🔥 接口返回错误：code=${code}, msg=${msg}`);
+  }
+
+  const data = json.data || {};
+  const list = Array.isArray(data.feed_list) ? data.feed_list : [];
+  const normalizedItems = list.map(normalizeWechatFeedItem);
+  const items = await Promise.all(normalizedItems.map(async (item) => {
+    if (item.target_url) return item;
+    const recovered = await fetchWechatDetailTargetUrl(item, cfg);
+    if (!recovered) return item;
+    return { ...item, target_url: recovered };
+  }));
+  return {
+    items,
+    cursor: String(data.cursor || ""),
+    hasMore: Boolean(data.has_more),
+  };
+}
+
+function wechatFeedRefreshStale() {
+  if (!state.wechatFeed.initialized) return true;
+  const lastFetchedAt = Number(state.wechatFeed.lastFetchedAt || 0);
+  if (!Number.isFinite(lastFetchedAt) || lastFetchedAt <= 0) return true;
+  return (Date.now() - lastFetchedAt) >= WECHAT_REFRESH_POLL_MS;
+}
+
+async function refreshWechatFirstPage({ silent = false, allowUninitialized = false, force = false } = {}) {
+  if (state.loading.wechat) return false;
+  if (!allowUninitialized && !state.wechatFeed.initialized) return false;
+  if (!force && !wechatFeedRefreshStale()) return false;
+
+  state.loading.wechat = true;
+  state.loadErrors.wechat = null;
+  if (!silent) renderAll();
+
+  try {
+    const page = await fetchWechatFeedPage("");
+    state.wechatFeed.pages = [page];
+    state.wechatFeed.pageIndex = 0;
+    state.wechatFeed.initialized = true;
+    state.wechatFeed.lastFetchedAt = Date.now();
+    state.loadErrors.wechat = null;
+    return true;
+  } catch (err) {
+    state.loadErrors.wechat = err;
+    return false;
+  } finally {
+    state.loading.wechat = false;
+    if (!silent || state.boardSection === "wechat" || state.loadErrors.wechat) {
+      renderAll();
+    }
+  }
+}
+
+async function loadWechatInitialPage() {
+  await refreshWechatFirstPage({ silent: false, allowUninitialized: true, force: true });
+}
+
+async function loadWechatNextPage() {
+  if (state.loading.wechat) return;
+  const pages = state.wechatFeed.pages || [];
+  const current = pages[state.wechatFeed.pageIndex];
+  if (!current) return;
+  if (!current.hasMore || !current.cursor) return;
+
+  state.loading.wechat = true;
+  state.loadErrors.wechat = null;
+  renderAll();
+  try {
+    const page = await fetchWechatFeedPage(current.cursor);
+    state.wechatFeed.pages.push(page);
+    state.wechatFeed.pageIndex = state.wechatFeed.pages.length - 1;
+    state.wechatFeed.lastFetchedAt = Date.now();
+    state.loadErrors.wechat = null;
+  } catch (err) {
+    state.loadErrors.wechat = err;
+  } finally {
+    state.loading.wechat = false;
+    renderAll();
+  }
+}
+
+function gotoWechatPrevPage() {
+  if (state.wechatFeed.pageIndex <= 0) return;
+  state.wechatFeed.pageIndex -= 1;
+  renderAll();
+}
+
+function gotoWechatNextPage() {
+  const pages = state.wechatFeed.pages || [];
+  const idx = state.wechatFeed.pageIndex;
+  if (idx < pages.length - 1) {
+    state.wechatFeed.pageIndex += 1;
+    renderAll();
+    return;
+  }
+  const current = pages[idx];
+  if (!current || !current.hasMore) return;
+  loadWechatNextPage();
+}
+
 function competitorTimeFilterLabel() {
   if (state.competitorTimeFilter === "14d") return "近2周";
   if (state.competitorTimeFilter === "7d") return "近7天";
@@ -227,6 +634,7 @@ function competitorApplyTimeFilter(items) {
 
 function currentSectionTitle() {
   if (state.boardSection === "focus") return "特别关注（近3天）";
+  if (state.boardSection === "wechat") return "AI HOTPOT🔥";
   if (state.boardSection === "competitor") return `竞品更新追踪（${competitorTimeFilterLabel()}）`;
   return "最近 24 小时更新";
 }
@@ -253,6 +661,7 @@ function setStatsForCurrentSection() {
 function renderHeroBySection() {
   if (state.boardSection === "ai") {
     if (heroLogoEl) {
+      heroLogoEl.onerror = null;
       heroLogoEl.src = "./assets/hero-ai.svg";
       heroLogoEl.alt = "AI资讯图标";
     }
@@ -264,6 +673,7 @@ function renderHeroBySection() {
 
   if (state.boardSection === "focus") {
     if (heroLogoEl) {
+      heroLogoEl.onerror = null;
       heroLogoEl.src = "./assets/hero-focus.svg";
       heroLogoEl.alt = "特别关注图标";
     }
@@ -274,7 +684,23 @@ function renderHeroBySection() {
     return;
   }
 
+  if (state.boardSection === "wechat") {
+    if (heroLogoEl) {
+      heroLogoEl.onerror = () => {
+        heroLogoEl.onerror = null;
+        heroLogoEl.src = HERO_INBOX_FALLBACK_DATA;
+      };
+      heroLogoEl.src = "./assets/hero-inbox.svg";
+      heroLogoEl.alt = "AI HOTPOT🔥图标";
+    }
+    heroTagEl.textContent = "AI HOTPOT";
+    heroTitleEl.textContent = "AI HOTPOT🔥";
+    heroSubEl.textContent = "精选WX公众号的AI相关内容，二手的消息也很香！";
+    return;
+  }
+
   if (heroLogoEl) {
+    heroLogoEl.onerror = null;
     heroLogoEl.src = "./assets/hero-competitor.svg";
     heroLogoEl.alt = "竞品更新追踪图标";
   }
@@ -308,6 +734,10 @@ function activeWatchSections() {
 
 function activeBaseItems() {
   if (state.boardSection === "ai") return activeAiItems();
+  if (state.boardSection === "wechat") {
+    const page = state.wechatFeed.pages[state.wechatFeed.pageIndex];
+    return Array.isArray(page?.items) ? page.items : [];
+  }
   return activeWatchSections().flatMap((s) => s.items || []);
 }
 
@@ -315,6 +745,7 @@ function hasItemsForSection(section) {
   if (section === "ai") return activeAiItems().length > 0;
   if (section === "focus") return (state.specialFocus.sections || []).some((s) => (s.items || []).length > 0);
   if (section === "competitor") return (state.competitorMonitor.sections || []).some((s) => (s.items || []).length > 0);
+  if (section === "wechat") return (state.wechatFeed.pages || []).some((p) => (p.items || []).length > 0);
   return false;
 }
 
@@ -341,6 +772,12 @@ function siteLabel(siteId, siteName) {
 function renderSiteFilters() {
   sitePillsEl.innerHTML = "";
   siteSelectEl.innerHTML = "";
+
+  if (state.boardSection === "wechat") {
+    siteSelectEl.innerHTML = '<option value="">AI HOTPOT🔥</option>';
+    siteSelectEl.value = "";
+    return;
+  }
 
   if (state.boardSection === "ai") {
     const stats = currentSiteStats();
@@ -446,6 +883,7 @@ function renderSiteFilters() {
 function renderBoardTabs() {
   tabAiBtnEl.classList.toggle("active", state.boardSection === "ai");
   tabFocusBtnEl.classList.toggle("active", state.boardSection === "focus");
+  if (tabWechatBtnEl) tabWechatBtnEl.classList.toggle("active", state.boardSection === "wechat");
   tabCompetitorBtnEl.classList.toggle("active", state.boardSection === "competitor");
 }
 
@@ -455,6 +893,9 @@ function currentSectionLoadingMessage() {
   }
   if (state.boardSection === "focus") {
     return "正在整理特别关注内容。系统会同时拉取多份数据，其中 AI 资讯主数据较大，但当前内容会优先显示。";
+  }
+  if (state.boardSection === "wechat") {
+    return "AI HOTPOT🔥 正在慢慢炖煮中，可能会稍微久一点点（10-30 秒），先喝口水，内容回来会自动出现～";
   }
   return "正在加载竞品更新追踪，内容到达后会自动显示。";
 }
@@ -484,12 +925,15 @@ function renderModeSwitch() {
   const isAi = state.boardSection === "ai";
   const isFocus = state.boardSection === "focus";
   const isCompetitor = state.boardSection === "competitor";
+  const isWechat = state.boardSection === "wechat";
   waytoagiWrapEl.classList.toggle("hidden", !isFocus);
   if (competitorTimeSelectEl) {
     competitorTimeSelectEl.classList.toggle("hidden", !isCompetitor);
     competitorTimeSelectEl.value = state.competitorTimeFilter || "latest";
   }
 
+  siteSelectEl.classList.toggle("hidden", isWechat);
+  sitePillsEl.classList.toggle("hidden", isWechat);
   if (aiSortSwitchWrapEl) aiSortSwitchWrapEl.classList.toggle("hidden", !(isAi && !state.siteFilter));
   if (aiSortDefaultBtnEl) aiSortDefaultBtnEl.classList.toggle("active", state.aiSortMode === "default");
   if (aiSortInterestBtnEl) aiSortInterestBtnEl.classList.toggle("active", state.aiSortMode === "interest");
@@ -498,7 +942,7 @@ function renderModeSwitch() {
 function itemMatchesQuery(item) {
   const q = state.query.trim().toLowerCase();
   if (!q) return true;
-  const hay = `${item.title || ""} ${item.title_zh || ""} ${item.title_en || ""} ${item.site_name || ""} ${item.source || ""}`.toLowerCase();
+  const hay = `${item.title || ""} ${item.title_zh || ""} ${item.title_en || ""} ${item.site_name || ""} ${item.source || ""} ${item.channel_name || ""} ${item.abstract_text || ""}`.toLowerCase();
   return hay.includes(q);
 }
 
@@ -732,6 +1176,97 @@ function renderItemNode(item) {
   return node;
 }
 
+function currentWechatPage() {
+  return state.wechatFeed.pages[state.wechatFeed.pageIndex] || null;
+}
+
+function renderWechatItemNode(item) {
+  const node = itemTpl.content.firstElementChild.cloneNode(true);
+  node.classList.add("wechat-card");
+  const siteEl = node.querySelector(".site");
+  if (siteEl) siteEl.remove();
+  node.querySelector(".source").textContent = `来源: ${item.source_name || "未知来源"}`;
+  node.querySelector(".time").textContent = fmtTime(item.published_at);
+
+  const titleEl = node.querySelector(".title");
+  titleEl.textContent = item.title || "无标题";
+  if (item.target_url) {
+    titleEl.href = item.target_url;
+    titleEl.target = "_blank";
+    titleEl.rel = "noopener noreferrer";
+    titleEl.classList.remove("no-link");
+  } else {
+    titleEl.removeAttribute("href");
+    titleEl.removeAttribute("target");
+    titleEl.removeAttribute("rel");
+    titleEl.classList.add("no-link");
+  }
+
+  const abstractEl = document.createElement("p");
+  abstractEl.className = "wechat-abstract";
+  abstractEl.textContent = item.abstract_text || "暂无摘要";
+  node.appendChild(abstractEl);
+  return node;
+}
+
+function renderWechatPager(page) {
+  if (!listPagerEl) return;
+  listPagerEl.innerHTML = "";
+  listPagerEl.classList.remove("hidden");
+  if (!page) return;
+
+  const prevBtn = document.createElement("button");
+  prevBtn.className = "waytoagi-page-btn";
+  prevBtn.type = "button";
+  prevBtn.textContent = "上一页";
+  prevBtn.disabled = state.wechatFeed.pageIndex <= 0 || state.loading.wechat;
+  prevBtn.addEventListener("click", () => {
+    gotoWechatPrevPage();
+  });
+
+  const pageInfo = document.createElement("span");
+  pageInfo.className = "waytoagi-page-info";
+  pageInfo.textContent = `${state.wechatFeed.pageIndex + 1} / ${state.wechatFeed.pages.length || 1}`;
+
+  const hasCacheNext = state.wechatFeed.pageIndex < state.wechatFeed.pages.length - 1;
+  const canFetchNext = Boolean(page.hasMore && page.cursor);
+  const nextBtn = document.createElement("button");
+  nextBtn.className = "waytoagi-page-btn";
+  nextBtn.type = "button";
+  nextBtn.textContent = state.loading.wechat ? "加载中..." : (hasCacheNext ? "下一页" : (canFetchNext ? "加载下一页" : "下一页"));
+  nextBtn.disabled = state.loading.wechat || (!hasCacheNext && !canFetchNext);
+  nextBtn.addEventListener("click", () => {
+    gotoWechatNextPage();
+  });
+
+  listPagerEl.appendChild(prevBtn);
+  listPagerEl.appendChild(pageInfo);
+  listPagerEl.appendChild(nextBtn);
+}
+
+function renderWechatPage() {
+  const page = currentWechatPage();
+  if (!page) {
+    resultCountEl.textContent = "0 条";
+    newsListEl.innerHTML = '<div class="empty">暂无公众号内容，可稍后重试。</div>';
+    renderWechatPager(null);
+    return;
+  }
+
+  const filtered = (page.items || []).filter((item) => itemMatchesQuery(item));
+  resultCountEl.textContent = `${fmtNumber(filtered.length)} 条`;
+  if (!filtered.length) {
+    newsListEl.innerHTML = '<div class="empty">当前筛选条件下没有结果。</div>';
+    renderWechatPager(page);
+    return;
+  }
+
+  const frag = document.createDocumentFragment();
+  filtered.forEach((item) => frag.appendChild(renderWechatItemNode(item)));
+  newsListEl.appendChild(frag);
+  renderWechatPager(page);
+}
+
 function buildSourceGroupNode(source, items) {
   const section = document.createElement("section");
   section.className = "source-group";
@@ -916,6 +1451,10 @@ function renderList() {
     listTitleEl.textContent = currentSectionTitle();
   }
   newsListEl.innerHTML = "";
+  if (listPagerEl) {
+    listPagerEl.innerHTML = "";
+    listPagerEl.classList.add("hidden");
+  }
   if (resultCountEl) resultCountEl.style.display = "";
   if (renderSectionStatusIfNeeded()) return;
 
@@ -943,6 +1482,11 @@ function renderList() {
       return;
     }
     renderGroupedBySiteFlat(filtered);
+    return;
+  }
+
+  if (state.boardSection === "wechat") {
+    renderWechatPage();
     return;
   }
 
@@ -1255,12 +1799,21 @@ async function refreshAllData({ silent = false } = {}) {
 }
 
 async function pollForFreshData() {
+  let newsDataUpdated = false;
   try {
     const payload = await loadNewsData();
     const nextGeneratedAt = payload?.generated_at || null;
     if (nextGeneratedAt && nextGeneratedAt !== state.generatedAt) {
+      newsDataUpdated = true;
       await refreshAllData({ silent: true });
     }
+  } catch (_) {}
+
+  if (!state.wechatFeed.initialized) return;
+  if (!newsDataUpdated && !wechatFeedRefreshStale()) return;
+
+  try {
+    await refreshWechatFirstPage({ silent: true, force: newsDataUpdated });
   } catch (_) {}
 }
 
@@ -1298,6 +1851,8 @@ searchInputEl.addEventListener("input", (e) => {
 siteSelectEl.addEventListener("change", (e) => {
   if (state.boardSection === "ai") {
     state.siteFilter = e.target.value;
+  } else if (state.boardSection === "wechat") {
+    return;
   } else if (state.boardSection === "competitor") {
     state.competitorSourceFilter = e.target.value || "official";
   } else {
@@ -1335,6 +1890,23 @@ if (tabFocusBtnEl) {
     state.competitorProductFilter = "";
     state.competitorTimeFilter = "latest";
     renderAll();
+  });
+}
+
+if (tabWechatBtnEl) {
+  tabWechatBtnEl.addEventListener("click", () => {
+    state.boardSection = "wechat";
+    state.siteFilter = "";
+    state.watchFilter = "";
+    state.competitorSourceFilter = "official";
+    state.competitorProductFilter = "";
+    state.competitorTimeFilter = "latest";
+    renderAll();
+    if (!state.wechatFeed.initialized || !(state.wechatFeed.pages || []).length) {
+      loadWechatInitialPage();
+      return;
+    }
+    if (wechatFeedRefreshStale()) refreshWechatFirstPage({ silent: true, force: true });
   });
 }
 
