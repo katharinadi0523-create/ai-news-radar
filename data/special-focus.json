@@ -1,23 +1,59 @@
 {
-  "generated_at": "2026-03-05T14:43:10.736573Z",
+  "generated_at": "2026-03-06T08:36:18.967609Z",
   "window_days": 3,
-  "source_generated_at": "2026-03-05T14:39:01.828675Z",
+  "source_generated_at": "2026-03-06T08:35:24.974443Z",
   "source_window_hours": 24,
   "source_topic_filter": "ai_tech_robotics",
   "output_name": "special-focus",
   "section_count": 5,
-  "total_items": 146,
+  "total_items": 168,
   "official_error_count": 0,
   "official_errors": [],
   "sections": [
     {
       "id": "palantir",
       "name": "Palantir",
-      "count": 0,
-      "items": [],
+      "count": 2,
+      "items": [
+        {
+          "id": "069e333d400b89c271efeecbebb034962d9a82b0",
+          "site_id": "official",
+          "site_name": "Official",
+          "source": "官方渠道: 【Palantir Blog RSS】 blog.palantir.com",
+          "title": "Maven Smart System: Innovating for the Alliance",
+          "url": "https://blog.palantir.com/maven-smart-system-innovating-for-the-alliance-5ebc31709eea?source=rss----3c87dc14372f---4",
+          "published_at": "2026-03-05T18:40:29Z",
+          "first_seen_at": "2026-03-06T08:36:15.741514Z",
+          "watch_score": 90,
+          "watch_matched_terms": [
+            "official-source",
+            "rss-feed"
+          ],
+          "hover_description": "<figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*rDDZDcEQP011rQj5uPCuwA.png\" /></figure><h3>Delivering Immediate Capability to the Warfighter</h3><p>In November 2025, NATO’s Task Force Maven <a href=\"https://www.linkedin.com/posts/task-force-maven-shape-aco-nato_warfighting-innovation-week-2025-wrapped-activity-7399470293313851392-8GsC?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAACe4bEABGLDC58Y_uVZiW_X1SPZQ1Ivo6Uc\">hosted an Industry Day</a> as a part of their Warfighting Innovation Week. The goal was to highlight how Maven Smart System’s (MSS) open, extensible architecture enables integration with third-party solutions, thereby powering rapid fielding of new technology combinations and enabling cutting-edge outcomes for the warfighter. NATO first <a href=\"https://palantir.quip.com/PydSA6U1caov?tracking_code=19muNSIpnGrXT#UWSADAU5UJP:~:text=https%3A//shape.nato.int/news%2Dreleases/nato%2Dacquires%2Daienabled%2Dwarfighting%2Dsystem%2D\">acquired MSS</a>, an AI-powered data integration and decision support system built by Palantir, in 2025.</p><p><a href=\"https://www.linkedin.com/posts/task-force-maven-shape-aco-nato_industry-day-announcement-task-force-activity-7368287361740197888-9Uyv/\">A call to industry was released</a>, and over 80 vendors applied for the Industry Day. Four were selected. Over the course of three weeks, teams from Germany’s <a href=\"https://quantum-systems.com/\">Quantum Systems</a>, France’s <a href=\"https://www.safran-group.com/companies/safran-ai\">Safran.AI</a>, and the UK’s <a href=\"https://hadean.com/\">Hadean</a> integrated with an unclassified, cloud-based deployment of Palantir’s MSS software, hosted out of Amazon Web Services (AWS)’s Stockholm region.</p><p>The results are a testament to the power of the trans-Atlantic Defense Industrial Base and what is possible when members come together to make NATO stronger using the best technology available across the West. In this blog, we’ll explore three of those vendor integrations.</p><h3>Exploiting the Power of AI Detections with Safran.AI 🇫🇷</h3><p>Safran.AI develops AI solutions for aerospace and defense. Their pre-trained AI algorithms perform automatic detection, classification, and identification of objects of military interest, enabling analysts to leverage the large amount of satellite data they receive into accurate insights in a matter of minutes.</p><p>NATO intelligence officers are often required to analyze hundreds of satellite images. For NATO’s MSS Industry Day, the teams explored how deploying Safran.AI detectors into MSS can deliver a more efficient, data-driven process. The end result was a suite of tools to empower analysts to extract high-value signal from high volumes of data when monitoring specific sites and performing temporal comparisons of those sites.</p><p>To begin, satellite data enriched with Safran.AI detections were ingested into MSS. This data were then transformed into backing datasets that comprised the core Safran.AI Ontology within MSS. The Ontology objects — like a Satellite Image object or Detection object — were the foundation of data-rich applications where analysts could conduct workflows. The Ontology also provided AIP Agents with the semantic, structured information they need to reason and act in the platform. The operational result of this technical integration work was a suite of AI-powered applications for imagery exploration and exploitation.</p><p>In one tool, users could view all imagery associated with an Area of Interest, and for each image, conduct comprehensive analysis and activity monitoring. For example, when an analyst clicked into Port of Baltiysk and selected two different Synthetic Aperture Radar (SAR) images captured only a short time apart, they could dynamically apply a layer to highlight the differences between these images, quickly surfacing the movement of assets that may contribute to important indications and warnings. Such insights can allow analysts to respond quickly, such as requesting further satellite data collection. (See the demo in Figure 1.)</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*qpXBn8mRFTgqiPBk6-CO4w.gif\" /></figure><p><em>Fig. 1 Viewing and comparing Safran.AI detections on an Area of Interest in MSS</em></p><p>In another application, a user could leverage an AIP Agent to quickly identify detections of interest across all detections on all available satellite imagery. For example, a user could ask a seemingly simple question in natural language, such as <em>“Show me detections of tum22s,” </em>a specific type of Russian airframe. The AIP agent would then query an object set of all 12,000 Safran.AI detection objects over all Areas of Interest and search for matches for any level classification that indicated this airframe. Within seconds, the application would automatically surface the detections directly to the analyst — of which there were only two — presenting them directly on the most recent satellite capture available in platform. (See demo in Figure 2.)</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*AZMXpI5ZXjyumwrbKNpqYg.gif\" /></figure><p><em>Fig. 2 Leveraging an AIP Agent to surface key detections from a pool of thousands across multiple satellite images.</em></p><p>NATO must leverage the ever-increasing amount of commercial satellite imagery available to power critical military workflows. The Alliance Persistent Surveillance from Space (APSS) program launched in 2023 and has already secured over $1B in commitments from 17 member nations over five years. The program <a href=\"https://spacenews.com/planet-signs-deal-with-nato-to-supply-satellite-imagery/\">recently contracted with Planet Labs and ICEYE</a> to provide high-resolution optical and radar imagery for tracking military capabilities. But to fully exploit this space-based information — whether in support of monitoring critical infrastructure or filling intelligence gaps — AI tools are required. As Nicolas David, Safran.AI sales lead for NATO and Europe, <a href=\"https://www.linkedin.com/posts/palantir-technologies_ai-enabled-istar-activity-7415396716662685696-k47w\">remarked</a>, “AI is gaining traction in operational Imagery workflows, and our work with Palantir can directly accelerate its adoption and deployment. Together, we are enabling faster accreditation, smoother integration, and the scaled rollout of AI capabilities across NATO MSS.”</p><h3>Tasking Drones at the Tactical Edge with Quantum Systems 🇩🇪</h3><p><a href=\"https://quantum-systems.com/\">Quantum Systems</a> is a German aerial data intelligence and drone company that develops and deploys multi-sensor data collection products to government agencies and commercial customers. With their commercial, dual-use approach — serving both commercial and defense customers — Quantum has the unusual advantage of applying commercial development speed to the defense industry. Through their MOSAIC Unmanned Systems (UXS) software, they deliver seamlessly integrated command and control of unmanned systems with AI-powered planning, real-time evaluation, and universal scalability for multi-domain operations.</p><p>Modern battlefields require the ability to translate theater-level objectives into immediate drone tasking. This has been starkly demonstrated in Ukraine, where both Palantir and Quantum Systems have deployed their technologies. At NATO’s Industry Day, Quantum’s teams successfully integrated <a href=\"https://quantum-systems.com/mosaic-uxs/\">Quantum’s MOSAIC UXS</a> with Palantir MSS to connect strategic intent with tactical execution, generating mission plans in MSS, sending those plans to MOSAIC for execution, and then receiving key insights back in MSS.</p><p>At the center of the integration was the “maneuver task” created in MSS and then sent to MOSAIC. The “maneuver” was an object in the Quantum Ontology and represented the area of interest for a drone mission, the type of detections that were of interest, and the mission priority. For example, a user monitoring the overall picture of the battlefield in MSS could create a new “maneuver task” and define armored vehicles and personnel as desired detections. By applying an Ontology Action on top of the “maneuver task” object, MSS was then able to execute dedicated logic using the Ontology. In this case, MSS sent out the tasking request to the external system, MOSAIC. (See the demo in Figure 3.)</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*eIp1H7IplglzkIdkaolqjA.gif\" /></figure><p><em>Fig. 3: Defining and sending the maneuver task request from MSS to MOSAIC.</em></p><p>Once it received the request, MOSAIC generated a complete mission plan with an optimal flight path based on mission targets, priorities, altitude, and vegetation — including waypoints, sensor angles, and zoom levels. Each drone could then be individually armed and sent on the mission. As the drones began flying, location data and live video was synced in real-time back to MSS. Detections of objects of interest — e.g., personnel or armored vehicles — were generated via optical, acoustic, and radio spectrum sensors and also synced back into MSS. With the Quantum Ontology, each detection was connected with a detection image as well as bounding boxes, which were immediately available for investigation through the common operating picture and AI-enabled tools in MSS. (See the demo in Figure 4.)</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*AdtApJeOTo-ZHLzKpbihyQ.gif\" /></figure><p><em>Fig 4: MSS and MOSIAC side by side. The Ontology object of a drone in MSS is powered live by stream data, enabling users to watch the mission in sync across systems.</em></p><p>Once the reconnaissance mission finished and all detections were available in MSS, a user could select a particularly interesting set of detections — like a group of vehicles — and load them into the Quantum AIP Agent to ask for assistance with their analysis. The AIP Agent would leverage the detections as well as specifically provided documents, like Russian Order of Battle protocols, to generate insights and recommendations on what action a user might take next. (See the demo in Figure 5.)</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*8_ZpOE4DdXsjnN2AKkCvqg.gif\" /></figure><p><em>Fig. 5 MSS processing MOSAIC detections with an AIP Agent.</em></p><p>For NATO Allied Command Operations (ACO) to coordinate multinational operations effectively in a high-intensity conflict, it must replicate this connectivity architecture, ensuring tactical drone intelligence from dispersed national and multinational units flows rapidly to higher headquarters. Operational directives must also reach frontline drone operators in real time, as Ukraine’s combat experience shows. Through the integration of MSS and MOSAIC, the teams demonstrated this capability can be accomplished — and fielded — today.</p><h3>Creating Flexibility through Course of Action Generation with Hadean 🇬🇧</h3><p>Hadean is a UK-based defense technology company that develops and fields next-generation software solutions. For NATO MSS Industry Day, its team integrated Hadean’s “<a href=\"https://hadean.com/dominai/\">dominAI</a>” tool with MSS. The result was a comprehensive, data-driven AI and simulation product suite that empowers users to achieve decision superiority in contested environments where adversaries adapt quickly and exploit delays.</p><p>DominAI is an AI-powered planning tool that generates, simulates, and validates multiple Courses of Action (COAs) to identify the optimal COA based on risk, logistics, and doctrine. It does this by fusing live, historical, and synthetic data to help military commanders make faster, better-informed decisions across all operational levels. For the Industry Day event, MSS served as an authoritative data feed to power Course of Action development in dominAI, and ingested dominAI-developed COAs back into MSS to ensure commanders could act with all available information.</p><p>MSS integrated with Hadean’s dominAI via open APIs to create a powerful military planning and analysis system that leverages both the data and AI models hosted in MSS. As an example, live tracks from MSS were ingested directly into dominAI in real time. From there, a user could configure mission planning parameters, including force laydown, equipment data pulled from MSS, operational objectives, and relevant doctrine such as Allied Joint Publications. DominAI would then call LLMs hosted in MSS to generate unique and feasible COAs based on these comprehensive inputs. Once generated, these COAs could be visualized alongside synchronization matrices, with the ability to step through each sequence of a plan in detail. During COA simulation, dominAI’s agentic solution ran parallelized simulations of each course of action simultaneously and performed a comparative analysis across all options. (See the demo in Figure 6.)</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*gllWU0XhL5Rsl-PHlALvzQ.gif\" /></figure><p><em>Fig. 6 Live picture of Red &amp; Blue forces in MSS synced to dominAI.</em></p><p>The integration of Hadean’s dominAI with MSS model hub represents a significant advancement in military AI capabilities. By enabling dominAI to call upon multiple LLMs hosted within MSS’s model hub, the system could gain access to a diverse ecosystem of specialized AI models, each potentially fine-tuned for different aspects of military operations — from tactical planning and logistics optimization to threat assessment and strategic analysis. This multi-model approach allows dominAI to select the most appropriate AI capability for each specific task within the planning and simulation workflow, rather than relying on a single model that may not excel across all domains. Leveraging MSS’s centralized model hub also ensures that all AI models are operating within a secure, accredited environment that meets stringent defense and intelligence community standards. (See the demo in Figure 7.)</p><p>NATO’s shift toward multi-domain operations requires cross-national intelligence sharing and detailed knowledge of each ally’s capabilities, along with transformed command and control arrangements. The Maven-dominAI integration addressed this challenge by providing a unified platform where commanders can visualize force laydown data, doctrine, and operational constraints from across the Alliance and then generate and simulate multiple courses of action using AI-powered analysis.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*_ZYZ6Qc7u-c77IDJQgP7DA.gif\" /></figure><p><em>Fig. 7 dominAI leveraging an AIP integration to call LLMs hosted in MSS to power bespoke COA generation.</em></p><h3>Making Rapid Innovation a Reality with Cloud Infrastructure</h3><p>To power truly rapid adoption and delivery of new capabilities to the warfighter, like what was demonstrated during this Industry Day event, hyperscale cloud computing infrastructure is needed. For this event, the ability to come together to deploy, integrate, and field new tools in a matter of weeks was made possible by the donation of Cloud infrastructure by AWS. The NATO MSS Industry Day stack was hosted out of AWS’s Stockholm region, so all development work took place on the Cloud in Europe.</p><p>Looking to the future, establishing hyperscale infrastructure on NATO Secret will enable NATO to further compress software release cycles from months to days, while maintaining security standards. It will also allow multiple teams to develop and deploy capabilities simultaneously without infrastructure constraints. This transforms software development from a periodic activity into a sustained operational capability, ensuring allied forces maintain technological superiority through failing forward and continuous development.</p><p>As Liz Martin, Managing Director and General Manager, Global Defense at AWS, said: “As global defense requirements evolve, AWS continues to invest in infrastructure to support modern military operations. AWS operates 12 Regions across NATO territories offering NATO the resilient and scalable digital backbone on which NATO can execute on its vision of interoperable, multi-domain operations. AWS and our strategic partners like Palantir provide the foundation for next-generation defense systems that can process and act on mission-critical data at the speed of relevance to the warfighter.”</p><h3>What’s Next?</h3><p>The tools built for Task Force Maven’s Industry Day event are not just concepts. They represent active, real-life integrations between Palantir Technologies, Quantum Systems, Hadean, and Safran.AI, built in just a few weeks. Achieving capability delivery at this pace is possible, but it requires deep partnership between companies. Industry is ready and willing. NATO must continue to create opportunities — both in exercise and event formats as well as via new, rapid procurement models — to let the power of the trans-Atlantic Defense Industrial Base shine through.</p><img alt=\"\" height=\"1\" src=\"https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=5ebc31709eea\" width=\"1\" /><hr /><p><a href=\"https://blog.palantir.com/maven-smart-system-innovating-for-the-alliance-5ebc31709eea\">Maven Smart System: Innovating for the Alliance</a> was originally published in <a href=\"https://blog.palantir.com\">Palantir Blog</a> on Medium, where people are continuing the conversation by highlighting and responding to this story.</p>",
+          "monitor_class": "official",
+          "monitor_class_label": "官方公告"
+        },
+        {
+          "id": "1af4fb12f72d4df96422baede83af09d87ed5430",
+          "site_id": "zeli",
+          "site_name": "Zeli",
+          "source": "Hacker News · 24h最热",
+          "title": "Palantir and other tech companies are stocking offices with tobacco products",
+          "url": "https://fortune.com/2026/03/04/palantir-tech-companies-offices-vending-machines-tobacco-worker-productivity",
+          "published_at": "2026-03-05T15:16:23Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "palantir"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        }
+      ],
       "source_mode": "mixed",
-      "official_count": 0,
-      "other_count": 0
+      "official_count": 1,
+      "other_count": 1
     },
     {
       "id": "knowledge-graph",
@@ -67,8 +103,44 @@
     {
       "id": "skills",
       "name": "Skills",
-      "count": 25,
+      "count": 39,
       "items": [
+        {
+          "id": "bb5145d2d731ce0990bb0199fe303eeac28cb235",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "Readhub · AI",
+          "title": "网易有道 LobsterAI 推出技能商店并支持 MCP 协议",
+          "url": "https://36kr.com/newsflashes/3711197233115528?f=rss",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 2,
+          "watch_matched_terms": [
+            "mcp",
+            "技能"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "0b7a2c6c22d1201ccd99ded6f8ede2794a5d938d",
+          "site_id": "newsnow",
+          "site_name": "NewsNow",
+          "source": "36kr",
+          "title": "网易有道 LobsterAI 推出技能商店并支持 MCP 协议",
+          "url": "https://www.36kr.com/newsflashes/3711197233115528",
+          "published_at": "2026-03-06T08:25:09.001000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 2,
+          "watch_matched_terms": [
+            "mcp",
+            "技能"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
         {
           "id": "f7718af887f1cedd43bc85d07ab3692989e76f4d",
           "site_id": "tophub",
@@ -78,7 +150,7 @@
           "url": "https://www.uisdc.com/skills-3",
           "published_at": null,
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "skills",
@@ -132,10 +204,248 @@
           "url": "https://www.producthunt.com/r/FEIQ6UX3QV5AW5",
           "published_at": "2026-03-04T08:09:50.241000Z",
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "skills",
+            "mcp"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "ed866f409d5e672de8f86b40491dc9ada1863d17",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "掘金 · 人工智能本周最热",
+          "title": "公众号躺更神器！OpenClaw+Claude Skill 实现自动读对标 + 写文 + 配图 + 存入草稿箱",
+          "url": "https://juejin.cn/post/7612572336241901602",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skill"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "a4ef4d016c107049f2dcc52475714c56c77b44ae",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "先知社区 · 精华推荐",
+          "title": "【AI供应链威胁】Unicode隐藏指令Skills后门的实践与思考",
+          "url": "https://xz.aliyun.com/news/91656",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skills"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "9afb572bedd566f04c162689d5b09587d93dcbaf",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "FreeBuf · 最新",
+          "title": "深度揭秘：OpenClaw Skill市场的火爆、风险与防御",
+          "url": "https://www.freebuf.com/articles/472572.html",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skill"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "48d077e6763b2ca95f9d492f1d5693fa7cabff5a",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "CSDN博客 · 综合热榜",
+          "title": "OpenClaw飞书文件传输Skill",
+          "url": "https://blog.csdn.net/zhin001/article/details/158616235",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skill"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "43c95a6153d6b7fb8da90359a0ab6fb5d0d36047",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "先知社区 · 精华推荐",
+          "title": "Cursor 代码审计 Skill 编写指南",
+          "url": "https://xz.aliyun.com/news/91667",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skill"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "3ef59b7d9739e5254755597632382752f0e97ae3",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "CSDN博客 · 综合热榜",
+          "title": "AI编程：MCP配置",
+          "url": "https://blog.csdn.net/2301_79111712/article/details/158657844",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "mcp"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "280e36396556122b6165d294c99b052cfd1ed1f2",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "人人都是产品经理 · 日榜",
+          "title": "视频分镜提示词Skill，详细制作过程分享！",
+          "url": "https://www.woshipm.com/?p=6349297",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skill"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "04cf33b81cefa7362e3a180d907aac49e42655cc",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "人人都是产品经理 · 日榜",
+          "title": "终于，我把 Openclaw 加 Seed2.0 Skills 做 AI 漫剧搞定了",
+          "url": "https://www.woshipm.com/?p=6349441",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skills"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "2d1e078e2801ecc2240aa08837d4a851ed30d516",
+          "site_id": "newsnow",
+          "site_name": "NewsNow",
+          "source": "juejin",
+          "title": "为 AI Agent 编写高质量 Skill：Claude 官方指南",
+          "url": "https://juejin.cn/post/7612486041334136842",
+          "published_at": "2026-03-06T08:12:59.482000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skill"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "1b8547324e60c16328c72edd884c593899c278b4",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "github.com",
+          "title": "Show HN: 使远程MCP服务器处理本地文件和生成的工件",
+          "url": "https://github.com/aakashh242/remote-mcp-adapter",
+          "published_at": "2026-03-06T07:57:12.741000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "mcp"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "6730003bdba56e8f9c55d5c73c763531038948dc",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.ycombinator.com",
+          "title": "Ask HN: 是否有用于申报美国税款的命令行界面（CLI）或管理控制台（MCP）工具？",
+          "url": "https://news.ycombinator.com/item?id=47270081",
+          "published_at": "2026-03-06T02:41:45.887000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "mcp"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "bba313f6edb47aa190c81981c87e76e432884917",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "dev.to",
+          "title": "克劳德·科德的秘密生活：技能并非你所想的那样",
+          "url": "https://dev.to/aaron_rose_0787cc8b4775a0/the-secret-life-of-claude-code-skill-is-not-what-you-think-it-is-5045",
+          "published_at": "2026-03-05T17:51:04.368000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "技能"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "9ebbc43ca5c99c7ab1b084cb48a49bfc7a9b7fa3",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.producthunt.com",
+          "title": "Golf - 企业MCP控制平面",
+          "url": "https://www.producthunt.com/r/7RWZG7JZC6OJL4",
+          "published_at": "2026-03-05T15:47:55.472000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "mcp"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "cd5a362499cce882c253bfcf3450a5bbe4606c7c",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "dev.to",
+          "title": "SQLite作为MCP上下文保存器：停止将原始API数据塞进你的LLM",
+          "url": "https://dev.to/richardbaxter/sqlite-as-an-mcp-context-saver-stop-cramming-raw-api-data-into-your-llm-2oj4",
+          "published_at": "2026-03-05T14:44:00.847000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
             "mcp"
           ],
           "monitor_class": "other",
@@ -159,23 +469,6 @@
           "monitor_class_label": "其他来源"
         },
         {
-          "id": "f14ed637779d2a28a7a7998997c3ce23dc53ba4b",
-          "site_id": "newsnow",
-          "site_name": "NewsNow",
-          "source": "juejin",
-          "title": "公众号躺更神器！OpenClaw+Claude Skill 实现自动读对标 + 写文 + 配图 + 存入草稿箱",
-          "url": "https://juejin.cn/post/7612572336241901602",
-          "published_at": "2026-03-05T13:18:25.100000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "skill"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
           "id": "45cf387c6fd185b38bd519a30cdbf7da78b208f5",
           "site_id": "newsnow",
           "site_name": "NewsNow",
@@ -184,7 +477,7 @@
           "url": "https://juejin.cn/post/7612455273806463022",
           "published_at": "2026-03-05T13:18:25.100000Z",
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -201,7 +494,7 @@
           "url": "https://juejin.cn/post/7613318336118882323",
           "published_at": "2026-03-05T13:18:25.100000Z",
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -269,7 +562,7 @@
           "url": "https://juejin.cn/post/7611069767160840246",
           "published_at": null,
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -320,7 +613,7 @@
           "url": "https://xz.aliyun.com/news/91642",
           "published_at": null,
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -337,7 +630,7 @@
           "url": "https://blog.csdn.net/zxc18344522713/article/details/158614734",
           "published_at": null,
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -354,7 +647,7 @@
           "url": "https://juejin.cn/post/7612218579228770340",
           "published_at": null,
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -371,7 +664,7 @@
           "url": "https://github.com/microsoft/mcp-for-beginners",
           "published_at": "2026-03-05T13:06:16.310000Z",
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -456,7 +749,7 @@
           "url": "https://readwrite.com/virginia-house-advances-bill-regulating-skill-games-machines",
           "published_at": "2026-03-04T12:35:57Z",
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -473,24 +766,7 @@
           "url": "https://dev.to/anthonymax/i-created-an-enterprise-mcp-gateway-bg",
           "published_at": "2026-03-04T10:33:48.296000Z",
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "mcp"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "c7b9b98d7d50edcd2322fdf4d65f7c40f8558063",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "dev.to",
-          "title": "我用Claude和MCP构建了AI视频广告生成器——架构详解",
-          "url": "https://dev.to/qays_kadhim_c3fea1c94957f/i-built-an-ai-video-ad-generator-with-claude-mcp-heres-the-architecture-1kei",
-          "published_at": "2026-03-03T06:04:21.720000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -501,13 +777,49 @@
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 25
+      "other_count": 39
     },
     {
       "id": "defense-agent",
       "name": "国防类Agent",
-      "count": 115,
+      "count": 120,
       "items": [
+        {
+          "id": "0214aa581c46ad31aff5fc589aba40075e823167",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "以色列国防军计划至少再执行1-2周的伊朗军事行动；已投下逾5000枚炸弹 - The Times of Israel",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNVGdwV0dqNDVqLXdjWndsMzMwQXF3UmZuMUFSRms4cEVoUjFpSnlaY1VFaUp6YXlCMWNVOW1yVERSTUtadUJ1TDRjTkVGRnFpR25fdTJzRF9FRTVYUWsxWmNuVjIxT0lJTGkwQmVsU0FxOFpxd2dqVVpHNGlKVzhOLUpvZkQzSE41V2xpM2xtN1RTZTY4eU5ZRno3T3FvWGZTWnlUamM1VURjZlHSAbABQVVfeXFMT3Iwc2lrRWc2TkdkZS1VSklJUUtOQTlQQmxLTGtGMXY3dGllcmZaRHZFbURMRUo0QW1DMUZBd1JkZGFfbm9TN0RNdGZOZVgzbkttR2YweDRKdXpqZjVTY3dCaVZZVi1XTnBZQ0t3YV9naUlYSWU2RTE0VWY1Y2Z1MDB3aWw2OUhxNnhBaU1Cb2h0SHRxNlJFRUpBVkNjLU1WbUl1RG5NYVVualFpaXVZNGw?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-03-06T04:48:29.854000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 2,
+          "watch_matched_terms": [
+            "国防",
+            "军事"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "cd5577ed945dfd4a986a025be5a3b7856c37e4ed",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Wired",
+          "title": "OpenAI Had Banned Military Use. The Pentagon Tested Its Models Through Microsoft Anyway",
+          "url": "https://www.wired.com/story/openai-defense-department-ban-military-use-microsoft",
+          "published_at": "2026-03-05T22:00:00Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 2,
+          "watch_matched_terms": [
+            "military",
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
         {
           "id": "941734a448ed4d5b014e5502e81192ccc75946b9",
           "site_id": "opmlrss",
@@ -581,6 +893,1111 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "e122b294e0e3d93f58efc83f58109ec1a3432685",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "CSDN博客 · 综合热榜",
+          "title": "【参数辨识】基于遗传算法和系统辨识的无人机自动驾驶仪参数优化框架matlab实现",
+          "url": "https://blog.csdn.net/m0_57702748/article/details/158704425",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "c59c5051589288c2de5458f087ae558f64abdddb",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "腾讯新闻 · 热问",
+          "title": "美国承认伊朗无人机难以对付，为何这么多年了还没找到应对的好办法？未来可能在哪些方向有望突破？",
+          "url": "https://new.qq.com/rain/a/20260306Q058DN00",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "a995ded67c101c427e02c347f0138b3dfccb2b2c",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "知乎 · 热榜",
+          "title": "美国承认「伊朗无人机攻势比想象中难对付」，为什么这么说？为此美国将付出多大代价、美国还能打多久？",
+          "url": "https://www.zhihu.com/question/2012978514974963211",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "a527bbed04ffc6ecfbf48200206d5dbbcea58146",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "知乎 · 热榜",
+          "title": "如何评价伊朗军方称使用无人机击中美军「林肯」号航母？「航母被击中」到底意味着什么？",
+          "url": "https://www.zhihu.com/question/2013150821387359764",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "a1e7dfa6b2f8233dc2180172ba61607abaa71696",
+          "site_id": "aibase",
+          "site_name": "AIbase",
+          "source": "AIbase",
+          "title": "​Anthropic 提起法律诉讼，回击美国国防部“供应链风险”认定",
+          "url": "https://www.aibase.com/news/25990",
+          "published_at": "2026-03-06T08:35:24.974443Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "9ca430c5d4c8056521ffdc902122f0f003485849",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "百度贴吧 · 热议榜",
+          "title": "无人机发威,伊朗称击中林肯号",
+          "url": "http://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28351439&topic_name=%E6%97%A0%E4%BA%BA%E6%9C%BA%E5%8F%91%E5%A8%81%2C%E4%BC%8A%E6%9C%97%E7%A7%B0%E5%87%BB%E4%B8%AD%E6%9E%97%E8%82%AF%E5%8F%B7",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "9c64411acda181cb931306cde801d7ec3eb6fae4",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "人人都是产品经理 · 日榜",
+          "title": "80%的App会消失！后App时代：AI智能体重构人机交互与数字商业新秩序",
+          "url": "https://www.woshipm.com/?p=6349060",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "7574ee2a1b6a617b52335583618daf143ee6cb3c",
+          "site_id": "aibase",
+          "site_name": "AIbase",
+          "source": "AIbase",
+          "title": "五角大楼将Anthropic列为供应链风险企业，引发AI行业动荡",
+          "url": "https://www.aibase.com/news/25983",
+          "published_at": "2026-03-06T08:35:24.974443Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "70966499723f3dca0231fb69c22a5c183c5e5b2e",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "腾讯新闻 · 热问",
+          "title": "伊朗军方称使用无人机击中美军“林肯”号航母，可信度有多大？无人机对航母能构成多大威胁？",
+          "url": "https://new.qq.com/rain/a/20260306Q02ZOC00",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "6af95e41dbe5d6ba9e35a3dd04330aabfa668461",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "微信 · 24h热文榜",
+          "title": "伊朗抵抗美以的只有革命卫队，国防军去哪了？聊一聊伊朗奇葩的两套军队体系。",
+          "url": "https://mp.weixin.qq.com/s?__biz=Mzk5MDc1MDA5NQ%3D%3D&mid=2247485220&idx=1&sn=4591ac3ff65b8f7412cb302e2afaa4a9",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "69f1265710474c64cc9264d002637a08a8ca6c66",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "知乎 · 热榜",
+          "title": "最好用的 Agent 框架是什么？",
+          "url": "https://www.zhihu.com/question/1962250618908410064",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "694099158139b415d3025903b012f345e6c761c9",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "先知社区 · 精华推荐",
+          "title": "CVE-2026-27966 Langflow CSV Agent RCE 复现及原理分析",
+          "url": "https://xz.aliyun.com/news/91664",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "57b698a7f52a419eea224a0fb37fb9581fa72c2a",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "快手 · 实时热榜",
+          "title": "伊朗称用无人机击中林肯号航母",
+          "url": "https://index.e.kuaishou.com/rank/hotDetail?keyword=%E4%BC%8A%E6%9C%97%E7%A7%B0%E7%94%A8%E6%97%A0%E4%BA%BA%E6%9C%BA%E5%87%BB%E4%B8%AD%E6%9E%97%E8%82%AF%E5%8F%B7%E8%88%AA%E6%AF%8D&rankType=1",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "3ae6bfddeb03e7356f8264940d436468c7a44e14",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "先知社区 · 精华推荐",
+          "title": "Langflow CSV Agent 远程代码执行漏洞（CVE-2026-27966）代码层面深度分析",
+          "url": "https://xz.aliyun.com/news/91649",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "38c75e85d63a50a363c858b96ac481b68af4439e",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "FreeBuf · 最新",
+          "title": "安全运营 Agent 落地：让 LLM 亲手把自己「炼」成规则",
+          "url": "https://www.freebuf.com/articles/es/472355.html",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "33f88d2e7bf8333fc70a211f4c2ea068b06c726c",
+          "site_id": "aibase",
+          "site_name": "AIbase",
+          "source": "AIbase",
+          "title": "小米发布首款移动端Agent产品Xiaomi miclaw，基于MiMo大模型开启邀请制内测",
+          "url": "https://www.aibase.com/news/25984",
+          "published_at": "2026-03-06T08:35:24.974443Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "2872699dc7c769437b6a18d43f12792e51a0e162",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "FreeBuf · 最新",
+          "title": "FreeBuf早报 | MS-Agent漏洞使攻击者可劫持AI Agent；Silver Dragon组织利用Cobalt Strike攻击政府目标",
+          "url": "https://www.freebuf.com/news/472427.html",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "1b6b85acfa29ad181659b54ecc74d9a62196218d",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "新浪财经新闻 · 点击量排行",
+          "title": "伊朗：无人机击中美军“林肯”号航母，已做好应对美军地面入侵的准备，比亚迪发布第二代刀片电池",
+          "url": "https://finance.sina.com.cn/roll/2026-03-06/doc-inhpyyhz2711698.shtml",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "1a7cd861b100baf5ec8108a7b0419e6d1a544c61",
+          "site_id": "aibase",
+          "site_name": "AIbase",
+          "source": "AIbase",
+          "title": "小米 AI Agent“龙虾”Xiaomi miclaw低调现身：承诺不使用用户数据训练",
+          "url": "https://www.aibase.com/news/25997",
+          "published_at": "2026-03-06T08:35:24.974443Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "185e65307851f2e7e26cdc376516710d7cf38e67",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "开源中国 · 热门资讯",
+          "title": "🔥 VTJ.PRO 四弹连发，核心架构全公开：从设计稿到代码，揭秘 AI 智能体与增量更新底层实践",
+          "url": "https://www.oschina.net/news/408102",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "029e4d5e444e920c5a419451ca9318c56acc15a3",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "Readhub · AI",
+          "title": "小米移动端Agent开启小范围封测：提供系统级AI能力，首批支持小米17系列机型",
+          "url": "https://finance.sina.com.cn/tech/2026-03-06/doc-inhpzvnk2520746.shtml",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "02072288456c90663f1dca251057c6970175fcb1",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "华尔街见闻 · 日排行",
+          "title": "现货黄金短线下挫70美元，报道：波兰拟售黄金储备为国防融资",
+          "url": "https://wallstreetcn.com/articles/3766831",
+          "published_at": null,
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "ebdb7e95b366df206e9d5452891a6caef8afc4c0",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "V2EX (创意工作者社区)",
+          "title": "[程序员] Agent 在传统企业的尝试与阻碍",
+          "url": "https://www.v2ex.com/t/1196366",
+          "published_at": "2026-03-06T08:34:51Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "fec7c3459b35971bc0c8e1df6d6434892544eb70",
+          "site_id": "newsnow",
+          "site_name": "NewsNow",
+          "source": "hackernews",
+          "title": "Show HN: PageAgent, A GUI agent that lives inside your web app",
+          "url": "https://news.ycombinator.com/item?id=47264138",
+          "published_at": "2026-03-06T08:24:36.189000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "7ab77cbfbd0f05ea9339051ad063986818a22a33",
+          "site_id": "newsnow",
+          "site_name": "NewsNow",
+          "source": "hackernews",
+          "title": "Show HN: Jido 2.0, Elixir Agent Framework",
+          "url": "https://news.ycombinator.com/item?id=47263036",
+          "published_at": "2026-03-06T08:24:36.189000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "957f64d0fd999826e873fab3fe2736aea1d3d747",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.producthunt.com",
+          "title": "Projekt - BYOK设计与开发工具：基于智能体构建系统",
+          "url": "https://www.producthunt.com/r/7HFOB4ZZCQW456",
+          "published_at": "2026-03-06T08:13:17.979000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "fa40515a49b6ff5181b31a81ec77f877d1c3bf40",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "以色列国防军进入以伊战争新阶段 - The Jerusalem Post",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9MclJjbm1kUmF3SUN1UElxVUY2NThQdlN0UWN1bGZ6ZHdQZUFmNnVic2NFbEt0VGJlTWRabkFpMTNJM1VwSVNlSmhNUnFEamFTU0NEVHUwQWlnU2I5OVp4V1Fwc0ttMlk5TGpiczRR?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-03-06T08:13:17.971000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "2d1e078e2801ecc2240aa08837d4a851ed30d516",
+          "site_id": "newsnow",
+          "site_name": "NewsNow",
+          "source": "juejin",
+          "title": "为 AI Agent 编写高质量 Skill：Claude 官方指南",
+          "url": "https://juejin.cn/post/7612486041334136842",
+          "published_at": "2026-03-06T08:12:59.482000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "30ba0468df890ec4feb1625920e78f9fc0f33b9c",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "reut.rs",
+          "title": "台湾国防部长驳斥反对党提出的低价预算案及美国武器交付期限",
+          "url": "https://reut.rs/4bs3A0M",
+          "published_at": "2026-03-06T07:41:13.683000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "a2aaffdd3cd27e53d441582d160839b1e2ca2377",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "reut.rs",
+          "title": "伊朗实时动态：以色列袭击德黑兰基础设施；沙特称击落三架无人机",
+          "url": "https://reut.rs/4lc4bqP",
+          "published_at": "2026-03-06T07:26:18.478000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "0cd643099f834ffc1c00af335ea88ebaeeae81ee",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "V2EX (创意工作者社区)",
+          "title": "[Claude Code] agentserver —— 把 AI Coding Agent 搬到云上，浏览器打开就能用",
+          "url": "https://www.v2ex.com/t/1196332",
+          "published_at": "2026-03-06T07:04:13Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "727eba83d8e96a6580b1f142b4afa3091047e275",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "以色列国防军空袭贝鲁特、德黑兰恐怖目标，以军与伊朗交战进入第七日 - The Jerusalem Post",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE03YV9WS2JCa3VnMzV0RnoyN1dCaWp6eDFHRkhoR3ZOSC0yZUE4YkJGWi12R3Bya0FuN2o5UDJaZ1l2ekFtclh4N2lHTUJ3N0R6dlM1MVpvang3bGZYbHZLMUM1OFRXaERLb3lONDZn?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-03-06T06:38:17.890000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "543d8174d5f7b1bfb11b0650c799c62d01108a0b",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Engadget",
+          "title": "Anthropic says it will challenge Defense Department's supply chain risk designation in court",
+          "url": "https://www.engadget.com/ai/anthropic-says-it-will-challenge-defense-departments-supply-chain-risk-designation-in-court-054459618.html?src=rss",
+          "published_at": "2026-03-06T05:44:59Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "defense"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "165a87ed467d1e7a50586f4d3b07f4521e7d218b",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "\"更多惊喜在前方\"：以色列国防军总参谋长扎米尔暗示战事升级，战争进入新阶段 - ynetnews",
+          "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9zck5HdTBhYmVhYUZfYjJzWERIYWhvSUhUZ3gtb0JidndlNVViNWRRZVJfdHdGVVVHT1QtdWhSWkR0RkNUNGUwRGVmeHAzazlFUW5nQ1ZkMA?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-03-06T05:36:13.198000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "5461ff0e87a6a8426d9d8ac3f38d622a1122f305",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.businessinsider.com",
+          "title": "微软表示，在律师\"研究\"了五角大楼的供应链风险认定后，Anthropic的产品仍可保留在其平台上。",
+          "url": "https://www.businessinsider.com/microsoft-anthropic-claude-pentagon-designation-supply-chain-risk-lawyers-2026-3",
+          "published_at": "2026-03-06T05:20:13.875000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "fd28e9bf82e916b45884e773d8b77cad042d504b",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.businessinsider.com",
+          "title": "泽连斯基表示，美国请求乌克兰协助对抗伊朗的\"沙赫德\"无人机，因此他正派遣专家前往美国。",
+          "url": "https://www.businessinsider.com/zelenskyy-us-support-fight-iran-shahed-drones-2026-3",
+          "published_at": "2026-03-06T05:20:13.867000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "10cf5b806103e712a91fa07ef0bd7db34d4fac17",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Business Insider",
+          "title": "Microsoft says Anthropic's products can stay on its platforms after lawyers 'studied' the Pentagon supply chain risk designation",
+          "url": "https://www.businessinsider.com/microsoft-anthropic-claude-pentagon-designation-supply-chain-risk-lawyers-2026-3",
+          "published_at": "2026-03-06T05:03:09Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "2b6733d019b74733092d3be16c81246a6eae23a9",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.bbc.com",
+          "title": "人类主义组织誓言就风险认定起诉五角大楼",
+          "url": "https://www.bbc.com/news/articles/cn5g3z3xe65o?at_medium=RSS&at_campaign=rss",
+          "published_at": "2026-03-06T04:48:31.219000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "c1de594b2b08f3579b1c0daab7e02f38c278161f",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "泰国女子嫁给两名男子，中国竹纤维无人机：七大亮点 - South China Morning Post",
+          "url": "https://news.google.com/read/CBMiugFBVV95cUxNcnZyTlBGNUJ0MFQ0Yk9aaWRGSEUxZjdqcGhOeEhRZWY3eGtRdUVoMFpIWDlJSzFJMzlaaC1MV1VlaVB1MjZUWXY4aC1MSVB0MVVITmNfeVZHYmg1Ri15eDBJRGJiSnhkTUJ4WXhkX2NSQXloalplREJEOXh0RklMYVZCYXN4SVVTNk1aQk81aXN0Q1o2WkZUZmxpWmFWLWkwWUt6UnpoSzREN3VhWG42MHE1Y1lEYTdZY1HSAboBQVVfeXFMT1I4emZBRm1GTW9ib21qeHhGaVJvTDI0ZnNuel9ucVJuRWowVVpkNTFTYXdSTlZNWHJ0TmNYcUxHY0VMaVZRczdPMHJEVmRKRzI1ajBnOWdJZlFXSm1Wc1JvZy1xNkdDV1hRTTA5b1ltS3RqNUozejAwek5xWUx0dlZTb1JheDRVTHlHYTB3aXk3ckFTRHU3VjRtXzRUMDZHTFhsdHIyMmx2UGpzaVpDcDBFQ003RUZTUFFB?hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-03-06T04:12:07Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "f60a9642e5c1d0c9058ecaf2242da3e6caa760da",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.economist.com",
+          "title": "Anthropic公司老板道歉但誓言起诉五角大楼",
+          "url": "https://www.economist.com/business/2026/03/06/anthropics-boss-apologises-but-vows-to-sue-the-pentagon",
+          "published_at": "2026-03-06T03:13:11.718000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "afb64fd56cbb9cc3f3ad78fb16011c03620e2e08",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Techmeme",
+          "title": "Sources: OpenAI employees claim the DOD tested Microsoft's Azure version of OpenAI models before OpenAI lifted its blanket ban on military use in January 2024 (Maxwell Zeff/Wired)",
+          "url": "http://www.techmeme.com/260305/p62",
+          "published_at": "2026-03-06T03:05:01Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "military"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "835f0e36ad3b31b45654fd32468fa09e31871acc",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "econ.st",
+          "title": "Anthropic公司老板道歉但誓言起诉五角大楼",
+          "url": "https://econ.st/3N7isIH",
+          "published_at": "2026-03-06T02:57:57.197000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "b16628ce77f87df9d6a9a6deb24f992ca3938630",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "BBC News (世界新闻)",
+          "title": "Anthropic vows to sue Pentagon over supply chain risk label",
+          "url": "https://www.bbc.com/news/articles/cn5g3z3xe65o?at_medium=RSS&at_campaign=rss",
+          "published_at": "2026-03-06T02:46:30Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "00ef4b21d6f06243311a11f2f6df74987d718f23",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.businessinsider.com",
+          "title": "达里奥·阿莫代表示，尽管Anthropic公司实际上已被列入黑名单，但该公司仍与五角大楼进行了\"富有成效的对话\"。",
+          "url": "https://www.businessinsider.com/anthropic-ceo-dario-amodei-pentagon-lawsuit-conversations-2026-3",
+          "published_at": "2026-03-06T02:41:46.571000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "0846e3656147fa6d97a1c1e21ff8bfa3814faf9d",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.ycombinator.com",
+          "title": "Ask HN: 您在日常工作中如何运用多智能体人工智能系统？",
+          "url": "https://news.ycombinator.com/item?id=47270020",
+          "published_at": "2026-03-06T02:25:58.065000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "ba787064706d9d8e61c309f0d63c6bf155cbade9",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Business Insider",
+          "title": "Dario Amodei says Anthropic is having 'productive conversations' with the Pentagon despite being effectively blacklisted",
+          "url": "https://www.businessinsider.com/anthropic-ceo-dario-amodei-pentagon-lawsuit-conversations-2026-3",
+          "published_at": "2026-03-06T02:25:26Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "bbde77e1a7afb3253ecd82bb8674fd1b6fc8db34",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Slashdot",
+          "title": "Pentagon Formally Designates Anthropic a Supply-Chain Risk",
+          "url": "https://slashdot.org/story/26/03/05/2233247/pentagon-formally-designates-anthropic-a-supply-chain-risk",
+          "published_at": "2026-03-06T01:00:00Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "7d5aa76b443b7aec391a83da6d14b1dd0c2accb0",
+          "site_id": "aihubtoday",
+          "site_name": "AI HubToday",
+          "source": "Daily Digest",
+          "title": "Google专家重新定义Agent优先CLI。",
+          "url": "https://justin.poehnelt.com/posts/rewrite-your-cli-for-ai-agents",
+          "published_at": "2026-03-06T00:00:00Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "68ddebc1134f609534d0ad882dec31aca2dc96ee",
+          "site_id": "aihubtoday",
+          "site_name": "AI HubToday",
+          "source": "Daily Digest",
+          "title": "五角大楼将Anthropic列入风险名单。",
+          "url": "https://newshacker.me/story?id=47266084",
+          "published_at": "2026-03-06T00:00:00Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "4f976dd0c992f9e30cfd5e465894eafa78384992",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.businessinsider.com",
+          "title": "美国驻中东最高将领称美军已击中伊朗无人机母舰，并表示\"该舰正在燃烧\"。",
+          "url": "https://www.businessinsider.com/us-struck-iranian-drone-carrier-vessel-on-fire-top-admiral-2026-3",
+          "published_at": "2026-03-05T23:46:02.516000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "49235d74bbd4c80bd66dbf166cc9e0713d8ddc89",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "on.wsj.com",
+          "title": "五角大楼争分夺秒为伊朗行动筹措资金和军火",
+          "url": "https://on.wsj.com/3PkkllR",
+          "published_at": "2026-03-05T23:46:02.472000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "fdc5cbc967bbbf01b85ef1e62317f80260f8a98f",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "New York Times",
+          "title": "The Pentagon Officially Notifies Anthropic That It Is a ‘Supply Chain Risk’",
+          "url": "https://www.nytimes.com/2026/03/05/technology/anthropic-supply-chain-risk-defense-department.html",
+          "published_at": "2026-03-05T23:03:40Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "e54a5105ecae53b02272d9db24da4460f51fe0f5",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.theatlantic.com",
+          "title": "为何无人询问乌克兰如何摧毁无人机？",
+          "url": "https://www.theatlantic.com/national-security/2026/03/iran-war-drones-ukraine-pentagon/686249",
+          "published_at": "2026-03-05T22:09:49.461000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "b49a9bebe348ec8c35874fc085b8ad5000378466",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "TechCrunch",
+          "title": "AWS launches a new AI agent platform specifically for health care",
+          "url": "https://techcrunch.com/2026/03/05/aws-amazon-connect-health-ai-agent-platform-health-care-providers",
+          "published_at": "2026-03-05T21:54:37Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "9c26e64e229886a887ad5b71240d764b70e9c6f5",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "BBC News",
+          "title": "Anthropic labelled a supply chain risk by Pentagon",
+          "url": "https://www.bbc.com/news/articles/cn5g3z3xe65o?at_medium=RSS&at_campaign=rss",
+          "published_at": "2026-03-05T20:58:51Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "29d7b794c9bbcdd1046384459abb1e3258289018",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Business Insider",
+          "title": "Missiles are flying across the Middle East — and the air defense price tag is getting heavier",
+          "url": "https://www.businessinsider.com/missiles-flying-across-middle-east-air-defense-price-tag-grows-2026-3",
+          "published_at": "2026-03-05T20:40:20Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "defense"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "25902ff2381fe0d306f025ba75b976422412a1dc",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.wsj.com",
+          "title": "五角大楼正式将人类学供应链风险列为风险类别",
+          "url": "https://www.wsj.com/politics/national-security/pentagon-formally-labels-anthropic-supply-chain-risk-escalating-conflict-ebdf0523",
+          "published_at": "2026-03-05T20:33:48.600000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "2baa6790cb9060edb49fe02ae78e4f9f5d669d04",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "TechCrunch",
+          "title": "It’s official: The Pentagon has labeled Anthropic a supply chain risk",
+          "url": "https://techcrunch.com/2026/03/05/its-official-the-pentagon-has-labeled-anthropic-a-supply-chain-risk",
+          "published_at": "2026-03-05T20:24:25Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "a001b3b6232201d1d97da9042b000201efbf876a",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.bbc.com",
+          "title": "泽连斯基称美国请求乌克兰协助打击伊朗无人机",
+          "url": "https://www.bbc.com/news/articles/cr5llg0e9g9o",
+          "published_at": "2026-03-05T20:17:56.053000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "626f0473aec2ae3f1f20b447da2448d172fd5c93",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "on.wsj.com",
+          "title": "五角大楼正式将人类学供应链风险列为升级冲突因素",
+          "url": "https://on.wsj.com/3NkFoUP",
+          "published_at": "2026-03-05T19:35:52.074000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "a1dcfdeb8364cbe3a9f14c9525ce025fc34e3a0a",
+          "site_id": "zeli",
+          "site_name": "Zeli",
+          "source": "Hacker News · 24h最热",
+          "title": "Pentagon formally labels Anthropic supply-chain risk",
+          "url": "https://www.wsj.com/politics/national-security/pentagon-formally-labels-anthropic-supply-chain-risk-escalating-conflict-ebdf0523",
+          "published_at": "2026-03-05T19:24:35Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "c07a5e934fbf74d95223a0ee5006393256df54d6",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.politico.com",
+          "title": "五角大楼正式将Anthropic列为供应链风险企业",
+          "url": "https://www.politico.com/news/2026/03/05/pentagon-tells-anthropic-it-has-designated-the-company-a-supply-chain-risk-00814758",
+          "published_at": "2026-03-05T19:09:56.550000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "ce35dd6215c22719d02dc2e544bd8ecccaaaae98",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.sky.com",
+          "title": "国防大臣两次拒绝排除英国参与对伊朗空袭的可能性",
+          "url": "https://news.sky.com/story/defence-secretary-twice-declines-to-rule-out-britain-joining-strikes-on-iran-13515754",
+          "published_at": "2026-03-05T18:13:00.007000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "c3a6b9ca8c39bbd6e8542ea0a0f644ede604b6f0",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.bbc.com",
+          "title": "泽连斯基称美国请求乌克兰协助对抗伊朗无人机",
+          "url": "https://www.bbc.com/news/articles/cr5llg0e9g9o?at_medium=RSS&at_campaign=rss",
+          "published_at": "2026-03-05T17:51:08.096000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "862353276cb950d1a62ded545d2ef2dd9ef21897",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "on.wsj.com",
+          "title": "无人机时代，美国仍倚重空军与海军力量",
+          "url": "https://on.wsj.com/4aREkRt",
+          "published_at": "2026-03-05T17:29:15.805000Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "5ee3c67c108c7b35f5b1658ad04da91e3e4de96a",
           "site_id": "opmlrss",
           "site_name": "OPML RSS",
@@ -590,6 +2007,74 @@
           "published_at": "2026-03-05T17:11:04Z",
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
           "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "771cf943d39fcd33c18eda0638063461fd1b9ec4",
+          "site_id": "zeli",
+          "site_name": "Zeli",
+          "source": "Hacker News · 24h最热",
+          "title": "Show HN: PageAgent, A GUI agent that lives inside your web app",
+          "url": "https://alibaba.github.io/page-agent",
+          "published_at": "2026-03-05T17:01:47Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "fc9c394d0d4f36b148b5e2c3d8dc03b04d58704a",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "Slashdot (科技资讯)",
+          "title": "Anthropic CEO Dario Amodei Calls OpenAI's Messaging Around Military Deal 'Straight Up Lies'",
+          "url": "https://tech.slashdot.org/story/26/03/05/1619253/anthropic-ceo-dario-amodei-calls-openais-messaging-around-military-deal-straight-up-lies",
+          "published_at": "2026-03-05T17:00:00Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "military"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "abd592be50e90c09fa718ddbf12ed71cc5175dbf",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Slashdot",
+          "title": "Amazon's Bahrain Data Center Targeted By Iran For US Military Support",
+          "url": "https://tech.slashdot.org/story/26/03/05/0548253/amazons-bahrain-data-center-targeted-by-iran-for-us-military-support",
+          "published_at": "2026-03-05T16:00:00Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "military"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "f8edc39d16d0659a03a9630afb2ed57d45268092",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "Hacker News (黑客新闻)",
+          "title": "Show HN: Jido 2.0, Elixir Agent Framework",
+          "url": "https://jido.run/blog/jido-2-0-is-here",
+          "published_at": "2026-03-05T15:48:52Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -878,7 +2363,7 @@
           "url": "https://juejin.cn/post/7612129754633633819",
           "published_at": "2026-03-05T13:18:25.100000Z",
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -895,7 +2380,7 @@
           "url": "https://juejin.cn/post/7612624423943405595",
           "published_at": "2026-03-05T13:18:25.100000Z",
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -980,7 +2465,7 @@
           "url": "https://www.qbitai.com/2026/03/384307.html",
           "published_at": null,
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1065,7 +2550,7 @@
           "url": "https://www.woshipm.com/?p=6348135",
           "published_at": null,
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1099,7 +2584,7 @@
           "url": "https://juejin.cn/post/7611814182954516480",
           "published_at": null,
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1116,7 +2601,7 @@
           "url": "https://www.woshipm.com/?p=6348902",
           "published_at": null,
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1133,7 +2618,7 @@
           "url": "https://blog.csdn.net/qq_44866828/article/details/158661946",
           "published_at": null,
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -1167,7 +2652,7 @@
           "url": "https://mp.weixin.qq.com/s/KLGYntFSiYKZycs50ZBM1A",
           "published_at": null,
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
@@ -1201,7 +2686,7 @@
           "url": "https://new.qq.com/rain/a/20260304Q091WN00",
           "published_at": null,
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -1252,7 +2737,7 @@
           "url": "https://juejin.cn/post/7611703214610579475",
           "published_at": null,
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1269,7 +2754,7 @@
           "url": "https://new.qq.com/rain/a/20260305Q021OE00",
           "published_at": null,
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -1303,7 +2788,7 @@
           "url": "https://www.freebuf.com/articles/web/472391.html",
           "published_at": null,
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1344,1138 +2829,16 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "07fb87c573ea7635bcfbe78a0738eea0cc3e3d72",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "安全客 · 最新",
-          "title": "MS-Agent存在未修复漏洞（CVE-2026-2256），攻击者可劫持AI助手",
-          "url": "https://www.anquanke.com/post/id/314985",
-          "published_at": null,
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "01b9620f5dae0e1dc269f623095a7cc9cb48def9",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "CSDN博客 · 综合热榜",
-          "title": "基于YOLO26深度学习的无人机视角河道水面垃圾检测系统【python源码+Pyqt5界面+数据集+训练代码】",
-          "url": "https://blog.csdn.net/qq_42589613/article/details/158618829",
-          "published_at": null,
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "a00fd9210064d3e5bf4311385f64fd1edecf61f3",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "Hacker News",
-          "title": "达里奥·阿莫代称OpenAI关于军事交易的言论是“彻头彻尾的谎言”",
-          "url": "https://news.ycombinator.com/item?id=47255662",
-          "published_at": "2026-03-05T12:54:29.167000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "d3c070ea8a2bd7cf963a2b9d4550e84443e9be74",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "Hacker News",
-          "title": "智能体工程模式",
-          "url": "https://news.ycombinator.com/item?id=47243272",
-          "published_at": "2026-03-05T12:54:29.166000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "577639c80c1876ce51f15e9109f5aa5ee33ec7e1",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "Hacker News",
-          "title": "你需要为AI智能体重写你的命令行界面",
-          "url": "https://news.ycombinator.com/item?id=47252459",
-          "published_at": "2026-03-05T12:54:29.166000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "650f22f0d1d8fab8eeafce924e9dad42c921913b",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.reuters.com",
-          "title": "据消息人士称，英国石油公司外籍员工从伊拉克油田撤离，此前有无人机降落在该油田区域。",
-          "url": "https://www.reuters.com/world/middle-east/bps-foreign-staff-evacuated-iraq-oilfield-after-drones-landed-field-sources-say-2026-03-05",
-          "published_at": "2026-03-05T12:51:43.641000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T13:15:36.454254Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "fe7c47ef2941d1e64c07fd5a9121b91ae4da7456",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.reuters.com",
-          "title": "阿塞拜疆承诺将作出回应，此前4人遭伊朗无人机袭击受伤",
-          "url": "https://www.reuters.com/pt/mundo/EY4PFE2ZRJKZFBIWHJ5ZF7JBKI-2026-03-05",
-          "published_at": "2026-03-05T12:51:43.610000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T13:15:36.454254Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "889a7f573b2762aeb576021df6c6176610c11d90",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "Engadget",
-          "title": "Anthropic is reportedly back in talks with the Defense Department",
-          "url": "https://www.engadget.com/ai/anthropic-is-reportedly-back-in-talks-with-the-defense-department-125045017.html?src=rss",
-          "published_at": "2026-03-05T12:50:45Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "defense"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "a8957375ec2b9e5ca458160db2be9905bf1d8c6d",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "CNBC",
-          "title": "国防板块波动：加贝利基金的托尼·班克罗夫特谈伊朗战争影响",
-          "url": "https://www.cnbc.com/video/2026/03/05/defense-sector-volatility-gabelli-fundas-tony-bancroft-on-impact-of-iran-war.html",
-          "published_at": "2026-03-05T12:46:24.709000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "2d93efad24864f7579330740a532d243e8a1af69",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "美以联军持续对伊朗境内目标实施空袭，伊朗无人机袭击阿塞拜疆 - NPR",
-          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNaGw2STZqblltcGZHVURJd2s0dEdFNWpEYnFYU01sNHNJc1QwVTEtYTc2SUg2UWhPRjZtM1FIX3djR2Zwa0l6dzZnSjhiaHY0MHdnMG9ZZW9ieXFjdm9OTXZLS0p0enNQUEphaE1pU3lZMEUxbUxiSmMyQVR3RS1MTWtiQVlRZlgySFZyQWgxZFM5bUNJTjRyUEtpUS0xLXlrUWZqenU2ekxWYXlxWi04dm9CdlJaZw?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-03-05T12:35:45.111000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "50dc2b3bae78737563c971b92ed4b6ee6769d515",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "econ.st",
-          "title": "俄罗斯的Starlink服务中断对俄军士兵和无人机造成打击",
-          "url": "https://econ.st/47hjtEP",
-          "published_at": "2026-03-05T12:20:06.313000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "4264de80f66a0d770c6b7daacfab3e464aa13068",
-          "site_id": "newsnow",
-          "site_name": "NewsNow",
-          "source": "36kr",
-          "title": "广安爱众：参与设立投资基金，投资于低空无人机领域、自动驾驶领域等",
-          "url": "https://www.36kr.com/newsflashes/3709995913671048",
-          "published_at": "2026-03-05T12:03:51.194000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "c69e9b53417a5eadcb6f51e480fc0af895df088e",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "量子位",
-          "title": "One Command to Master OpenClaw! PPClaw Redefines Agent Cloud Hosting",
-          "url": "https://www.qbitai.com/2026/03/384307.html",
-          "published_at": "2026-03-05T11:55:27.999000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "9295bec7d643aa92d777279041fa1495e9299b34",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.economist.com",
-          "title": "俄罗斯的Starlink服务中断对俄军士兵和无人机造成打击",
-          "url": "https://www.economist.com/europe/2026/03/05/russias-starlink-shutdown-is-a-blow-to-its-soldiers-and-drones",
-          "published_at": "2026-03-05T11:47:58.580000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "125433cbff3fc320d0748e03dce942bd72b5b683",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.ft.com",
-          "title": "英国防大臣飞赴塞浦路斯，此前英国应对袭击事件的措施遭到批评",
-          "url": "https://www.ft.com/content/f2f07fb2-9ce5-4a5b-acc3-17f332355269",
-          "published_at": "2026-03-05T11:47:57.999000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "c46a25dfe09c03c36d0fdce7f9d40bdda7b63d2d",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "来自伊朗的导弹和无人机落在了阿塞拜疆境内。 - The Jerusalem Post",
-          "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9TcVdGWEtZYXkxMmNqQnN5OU9vV0xiMzdaWUlEYVNVcDd4UDJHQ0xyYTB5WDc2YWJXdzVoNVVxNWFrd2JDY25XWUNkcHRpV2NlMkFNT1dMTGFnQUxQbGk0N052VjZnOUUyYlE?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-03-05T11:47:57.251000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T13:15:36.454254Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "9291b42a0616d419419bc2c9902a20a870183645",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "The Verge",
-          "title": "Anthropic makes last-ditch effort to salvage deal with Pentagon after blowup",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/889782/anthropic-pentagon-discussions-ai-deal",
-          "published_at": "2026-03-05T11:46:46Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "pentagon"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "7ae40d875436c97cb7c8e67217270f1afa7a7c79",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "阿塞拜疆称两人遭伊朗无人机袭击受伤 - Reuters",
-          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOX2FhQzRLOW4xZVRmN1pXY0hJbGo3bFFUeFd2YjdnbVB2RzlvSlE4VDZjMzBPRGRIV0pDN3VsWWpPc0pCRUoxMktUZDBCTmt6Ym53RXlUZDNWQlBGZVdUejdZRldiYk5DRHRyVWhueDFibGRuRVd3SGNBRUhhUUMwYlVNeEhRV3FVVVg2aDJnSzBSWVN3UDVmX1dzNy1PZGNMeUhITWNHN0lyWkJGS0tzelh4dGhDbFRrUHc?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-03-05T11:31:41.685000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T13:15:36.454254Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "48e0cd2b5c1c1ed8a756494925587c958562e633",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "36Kr",
-          "title": "Without writing a single line of code, the Lobster Army works day and night to make money for me.",
-          "url": "https://36kr.com/p/3709827497668738",
-          "published_at": "2026-03-05T11:23:06.443000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "army"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "3269d850e3c01b1482eb5a5d44a2eb6a426f219c",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.newyorker.com",
-          "title": "无解释战争——特朗普政府已决定无需为军事行动辩护。在当前的媒体环境下，这种做法竟显得合情合理，令人不安。",
-          "url": "https://www.newyorker.com/news/fault-lines/the-no-explanation-war",
-          "published_at": "2026-03-05T11:15:57.436000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "3b0a6f7cb89abd8b3d14e4c41d335e836ba27a47",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "CNBC",
-          "title": "国防专家向国会力挺Anthropic，抨击国防部开“危险先例”",
-          "url": "https://www.cnbc.com/2026/03/05/defense-experts-defend-anthropic-to-congress-slams-pentagons-move.html",
-          "published_at": "2026-03-05T11:13:21.469000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "4dedb09d923681e9e7c4bae66e74123f5b00487c",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "reut.rs",
-          "title": "阿塞拜疆称两人遭伊朗无人机袭击受伤",
-          "url": "https://reut.rs/4bpB0Nt",
-          "published_at": "2026-03-05T10:44:01.056000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T13:15:36.454254Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "be0ca5384183f43e461bf44497a6595470f74c93",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "reut.rs",
-          "title": "俄罗斯无人机袭击乌克兰黑海港口附近一艘外国货轮",
-          "url": "https://reut.rs/4ssKLAh",
-          "published_at": "2026-03-05T10:12:07.433000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T13:15:36.454254Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "1d93f2b0650e27f1af7ce2055666e77ac6399c4e",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "TechInAsia",
-          "title": "据报道Anthropic重启与五角大楼关于Claude使用的谈判",
-          "url": "http://www.techinasia.com/news/anthropic-reportedly-back-in-talks-with-pentagon-on-claude-use",
-          "published_at": "2026-03-05T06:47:11.609000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "五角大楼"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "e8574b1169b0ba57d10767e056fa59ff1b50c031",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "CNBC",
-          "title": "据英国《金融时报》报道，Anthropic公司与五角大楼重回谈判桌",
-          "url": "https://www.cnbc.com/2026/03/05/anthropic-pentagon-ai-deal-department-of-defense-openai-.html",
-          "published_at": "2026-03-05T06:04:41.158000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "五角大楼"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "1b89e253e80ef2742702f4f45bc4be4ae099d506",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "36Kr",
-          "title": "Fraud Hunter: The Endgame of AI Anti-Fraud is Agent Security",
-          "url": "https://36kr.com/p/3709459900576260",
-          "published_at": "2026-03-05T05:09:58.584000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T13:15:36.454254Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "bf6f495cd2b5144b16ffb37efe75ae121f44e2ba",
-          "site_id": "zeli",
-          "site_name": "Zeli",
-          "source": "Hacker News · 24h最热",
-          "title": "Iran says targeted AWS Data Centers for support of U.S. military",
-          "url": "https://www.cnbc.com/2026/03/04/amazon-bahrain-data-centers-targeted-iran-drone-strike.html",
-          "published_at": "2026-03-05T04:07:13Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "military"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "a810eb7a939e00f667568505aaded1fda573fd63",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.nytimes.com",
-          "title": "美军及盟军遭遇伊朗无人机军火库",
-          "url": "https://www.nytimes.com/2026/03/03/us/politics/us-iran-drones.html",
-          "published_at": "2026-03-05T03:34:11.555000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "b0e894772658f847174ed94126b4d0d85268b1bf",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "arXiv - LLM",
-          "title": "$$τ$-知识：在非结构化知识上评估对话智能体",
-          "url": "https://arxiv.org/abs/2603.04370",
-          "published_at": "2026-03-05T03:29:46.984000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "9dbae78589c8bf4ec8c822ee48afed595a7b374a",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "arXiv - LLM",
-          "title": "通过对抗对齐雅可比正则化提升智能体AI系统的鲁棒性",
-          "url": "https://arxiv.org/abs/2603.04378",
-          "published_at": "2026-03-05T03:29:46.984000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "3af0814caf0c26c18cfc2c3d7fd0429c399bb1fe",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "arXiv - LLM",
-          "title": "面向可靠WebGIS开发智能体的双螺旋治理方法",
-          "url": "https://arxiv.org/abs/2603.04390",
-          "published_at": "2026-03-05T03:29:46.984000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "db80ede469f19667fd5400e3235719cdfa0e5eeb",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "arXiv - LLM",
-          "title": "Agentics 2.0：用于智能体数据工作流的逻辑转换代数",
-          "url": "https://arxiv.org/abs/2603.04241",
-          "published_at": "2026-03-05T03:29:46.983000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "976a9a4d053221f8b302b23ec33500cb5dfcf12c",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "arXiv - LLM",
-          "title": "Memex(RL)：通过索引经验记忆扩展长视野LLM智能体",
-          "url": "https://arxiv.org/abs/2603.04257",
-          "published_at": "2026-03-05T03:29:46.983000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "273cb5c9884592d10e0534a146364c5dcf884181",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "arXiv - LLM",
-          "title": "用于自主无人机系统操作中有限决策的认知包络",
-          "url": "https://arxiv.org/abs/2510.26905",
-          "published_at": "2026-03-05T03:29:46.983000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "0f429686731e8f238a0de728850abae31d09f7a9",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "arXiv - LLM",
-          "title": "面向法律关键型软件的大语言模型智能体方法：以税务准备软件为例",
-          "url": "https://arxiv.org/abs/2509.13471",
-          "published_at": "2026-03-05T03:29:46.982000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "a18f25569ffea06e590a5f684f999f997e2c3707",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "dev.to",
-          "title": "祝贺Algolia Agent Studio挑战赛的获奖者！",
-          "url": "https://dev.to/devteam/congrats-to-the-algolia-agent-studio-challenge-winners-3ocn",
-          "published_at": "2026-03-05T03:18:03.981000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "2faae809b7d89c66e4f8048794e0cd077e4d1ee3",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "dlvr.it",
-          "title": "哈佛绕开赫格塞斯对军事学生的禁令",
-          "url": "http://dlvr.it/TRJGWc",
-          "published_at": "2026-03-05T02:46:04.541000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "0329319af361879996f7b3023a3b85e428b0f14d",
-          "site_id": "zeli",
-          "site_name": "Zeli",
-          "source": "Hacker News · 24h最热",
-          "title": "Anthropic chief back in talks with Pentagon about AI deal",
-          "url": "https://www.ft.com/content/97bda2ef-fc06-40b3-a867-f61a711b148b",
-          "published_at": "2026-03-05T01:48:31Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "pentagon"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "9cc9a8abb1277f1a91527accfc07c014c09461f9",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "techcrunch.com",
-          "title": "达里奥·阿莫代称OpenAI关于军事协议的声明是\"彻头彻尾的谎言\"",
-          "url": "https://techcrunch.com/2026/03/04/anthropic-ceo-dario-amodei-calls-openais-messaging-around-military-deal-straight-up-lies-report-says",
-          "published_at": "2026-03-05T01:26:23.414000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "ddcb671124560a016aefdf5c3578ca429c009073",
-          "site_id": "aihubtoday",
-          "site_name": "AI HubToday",
-          "source": "Daily Digest",
-          "title": "MCP协议与Agent技能之争。",
-          "url": "https://x.com/dotey/status/2029277201250631784",
-          "published_at": "2026-03-05T00:00:00Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "da1c89c75699c96950408028787fc55a0dfcd479",
-          "site_id": "aihubtoday",
-          "site_name": "AI HubToday",
-          "source": "Daily Digest",
-          "title": "MIT发布脑机接口智能体。",
-          "url": "https://arxiv.org/abs/2603.03212",
-          "published_at": "2026-03-05T00:00:00Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "a6153ba04437df1fd8e9a0a787d3a1350b9adb5d",
-          "site_id": "aihubtoday",
-          "site_name": "AI HubToday",
-          "source": "Daily Digest",
-          "title": "上海实验室破解多智能体黑盒。",
-          "url": "https://arxiv.org/pdf/2601.20538",
-          "published_at": "2026-03-05T00:00:00Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "1a60693380efb2d0f7048180dfe7cbf3195e7b8c",
-          "site_id": "aihubtoday",
-          "site_name": "AI HubToday",
-          "source": "Daily Digest",
-          "title": "AI时代打工人变智能体经理。",
-          "url": "https://creatoreconomy.so/p/your-new-job-is-to-onboard-ai-agents",
-          "published_at": "2026-03-05T00:00:00Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "07aa6063f6152eecfdf9deed15e1e5e6d3e43852",
-          "site_id": "aihubtoday",
-          "site_name": "AI HubToday",
-          "source": "Daily Digest",
-          "title": "全球首个自主科研智能体挑战赛。",
-          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw%3D%3D&mid=2652680064&idx=2&sn=ae8c0439f07ed73e8ae998de8d5d58f4",
-          "published_at": "2026-03-05T00:00:00Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "73e836c32c9a49c588da191b8ff2327a1d3126a7",
-          "site_id": "zeli",
-          "site_name": "Zeli",
-          "source": "Hacker News · 24h最热",
-          "title": "Dario Amodei calls OpenAI’s messaging around military deal ‘straight up lies’",
-          "url": "https://techcrunch.com/2026/03/04/anthropic-ceo-dario-amodei-calls-openais-messaging-around-military-deal-straight-up-lies-report-says",
-          "published_at": "2026-03-04T23:51:10Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "military"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "234d0d2dbb4daa13019a343c6187d06f80a91103",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "TechCrunch",
-          "title": "报告称：Anthropic CEO Dario Amodei 称 OpenAI 围绕军事合同的言论是“彻头彻尾的谎言”",
-          "url": "https://techcrunch.com/2026/03/04/anthropic-ceo-dario-amodei-calls-openais-messaging-around-military-deal-straight-up-lies-report-says",
-          "published_at": "2026-03-04T23:00:29.698000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "72cc925e75f6a89be8a515fd09f7a64edd01357b",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "TechCrunch",
-          "title": "Anthropic CEO Dario Amodei calls OpenAI’s messaging around military deal ‘straight up lies,’ report says",
-          "url": "https://techcrunch.com/2026/03/04/anthropic-ceo-dario-amodei-calls-openais-messaging-around-military-deal-straight-up-lies-report-says",
-          "published_at": "2026-03-04T22:40:05Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "military"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "e9df49923508ffe5a63050584f48d0e07bee0d7b",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.bbc.com",
-          "title": "俄罗斯指责乌克兰海军无人机导致油轮在地中海沉没",
-          "url": "https://www.bbc.com/news/articles/cr5ll27z52do?at_medium=RSS&at_campaign=rss",
-          "published_at": "2026-03-04T18:48:00.950000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "a5630acc682deacb6dfceea8ef62e839b5d02cc1",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "TechCrunch",
-          "title": "美军仍在继续使用Claude——但国防科技客户正在流失",
-          "url": "https://techcrunch.com/2026/03/04/the-us-military-is-still-using-claude-but-defense-tech-clients-are-fleeing",
-          "published_at": "2026-03-04T17:49:57.483000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "444ead09c53fd3ba88465551b65e7f2d21af9e9a",
-          "site_id": "opmlrss",
-          "site_name": "OPML RSS",
-          "source": "InfoQ CN",
-          "title": "谷歌将其开发者文档带入AI智能体时代",
-          "url": "https://www.infoq.cn/article/ydyggRjpZUGwEZAAdtTF",
-          "published_at": "2026-03-04T17:00:00Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "4194b152919fc9082af3b96da7350865f625580f",
-          "site_id": "opmlrss",
-          "site_name": "OPML RSS",
-          "source": "InfoQ CN",
-          "title": "超22万OpenClaw部署实例暴露公网，Agent在大规模“裸奔”",
-          "url": "https://www.infoq.cn/article/Z2FAr6DW70sq4tU9q6hv",
-          "published_at": "2026-03-04T16:14:07Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "e9646364b1781c367c4d575b0f1b859f7f8bda77",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.economist.com",
-          "title": "为何战争对国防类股票未必总是利好",
-          "url": "https://www.economist.com/finance-and-economics/2026/03/03/why-war-isnt-always-good-for-defence-stocks",
-          "published_at": "2026-03-03T21:15:59.762000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T13:15:36.454254Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "8440ab71badbe4d99a9a419e97a6bba86250dd5e",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "MakeUseOf",
-          "title": "ChatGPT is trying to win back the users it just lost by rewriting its Pentagon deal",
-          "url": "https://www.makeuseof.com/chatgpt-trying-to-win-back-the-users-it-lost-by-rewriting-its-pentagon-deal",
-          "published_at": "2026-03-03T19:16:30Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "pentagon"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "95cfbe56f32f89b43b06a0bdfe5b22356412ca8a",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "CNBC",
-          "title": "FCC主席：Anthropic与五角大楼会谈是“错误”，应“纠正路线”",
-          "url": "https://www.cnbc.com/2026/03/03/anthropic-pentagon-department-of-defense-ai-fcc-chair.html",
-          "published_at": "2026-03-03T17:49:14.732000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "五角大楼"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "7125e8713ec86b31281d291e226626cf1bac8925",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "CNBC",
-          "title": "国防部首席技术官埃米尔·迈克尔：我们不能再依赖任何单一的人工智能供应商",
-          "url": "https://www.cnbc.com/video/2026/03/03/defense-department-cto-emil-michael-we-cant-be-reliant-on-any-one-ai-provider-anymore.html",
-          "published_at": "2026-03-03T16:15:40.970000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "df3d98eed77c8e19e2660851551e299c0bbb5ea6",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "CNBC",
-          "title": "伊朗战争与Anthropic风波中，谷歌员工呼吁限制军事AI应用",
-          "url": "https://www.cnbc.com/2026/03/03/anthropic-fallout-iran-war-tech-military-ai.html",
-          "published_at": "2026-03-03T16:15:40.969000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "6237d09c61c543508069b9b5d3f7d7f33c1b3cbd",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "Recode",
-          "title": "The one question everyone should be asking after OpenAI’s deal with the Pentagon",
-          "url": "https://www.vox.com/future-perfect/481322/pentagon-anthropic-openai-surveillance-china",
-          "published_at": "2026-03-03T15:20:00Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "pentagon"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "57bc779fa56820b9791d0d4d171798708b190eda",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "BBC News",
-          "title": "OpenAI changes deal with US military after backlash",
-          "url": "https://www.bbc.com/news/articles/c3rz1nd0egro?at_medium=RSS&at_campaign=rss",
-          "published_at": "2026-03-03T11:51:31Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "military"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "17984e5db7047ad110718dda87bd678b89252e42",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "量子位",
-          "title": "AI Agent Completes Formalization of First-Ever Fields Medal Achievement! Done Independently in a Week, 200K Lines of Code Now Public",
-          "url": "https://www.qbitai.com/2026/03/383368.html",
-          "published_at": "2026-03-03T10:46:05.064000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "b5eead6afda906ece87e6fc956a94c3c1d43eb64",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "CNBC",
-          "title": "舍弗勒CEO：人形机器人和国防是关键的成长驱动力",
-          "url": "https://www.cnbc.com/video/2026/03/03/schaeffler-ceo-humanoid-robots-and-defence-are-key-growth-drivers.html",
-          "published_at": "2026-03-03T09:33:00.786000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "f88f601470964afd0bd922bd891d471076d475a6",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.producthunt.com",
-          "title": "Agent Commune - 领英面向个人及企业代理",
-          "url": "https://www.producthunt.com/r/7EMFKXFCXCJPXE",
-          "published_at": "2026-03-03T08:12:14.357000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T13:15:36.454254Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "066c9160d7029433cc1b43a59563314e457b9aa8",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "量子位",
-          "title": "DingTalk Pioneers Smart Table \"Pivot Table View\", AI Table Agent Integrated into DingTalk Groups",
-          "url": "https://www.qbitai.com/2026/03/383349.html",
-          "published_at": "2026-03-03T07:08:38.814000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "1f3f1d235448a644116bd97750b6393d8808bb8a",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "CNBC",
-          "title": "OpenAI的阿尔特曼承认国防协议\"看起来投机取巧且草率\"，引发强烈反对",
-          "url": "https://www.cnbc.com/2026/03/03/openai-sam-altman-pentagon-deal-amended-surveillance-limits.html",
-          "published_at": "2026-03-03T05:57:59.543000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T13:15:36.454254Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "7108ff57d0cd93734f06bd55998eab0044ac0e93",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "New York Times",
-          "title": "OpenAI Amends A.I. Deal With the Pentagon",
-          "url": "https://www.nytimes.com/2026/03/02/technology/openai-pentagon-deal-amended-surveillance.html",
-          "published_at": "2026-03-03T03:25:31Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "pentagon"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "b09f90eb600d1d92a24c7379a65fca864e8823e4",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "TechCrunch",
-          "title": "国防部交易后，ChatGPT卸载量激增295%",
-          "url": "https://techcrunch.com/2026/03/02/chatgpt-uninstalls-surged-by-295-after-dod-deal",
-          "published_at": "2026-03-03T00:23:10.593000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T14:39:01.828675Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "c6e88cab217807773ba2173c9c2e82149d1361c6",
-          "site_id": "aihot",
-          "site_name": "AI今日热榜",
-          "source": "TechCrunch",
-          "title": "科技工作者敦促国防部和国会撤销对Anthropic的供应链风险认定",
-          "url": "https://techcrunch.com/2026/03/02/tech-workers-urge-dod-congress-to-withdraw-anthropic-label-as-a-supply-chain-risk",
-          "published_at": "2026-03-02T20:45:49.360000Z",
-          "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-05T13:15:36.454254Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 115
+      "other_count": 120
     },
     {
       "id": "ai-for-science",
       "name": "AI+科研",
-      "count": 4,
+      "count": 5,
       "items": [
         {
           "id": "07aa6063f6152eecfdf9deed15e1e5e6d3e43852",
@@ -2490,6 +2853,23 @@
           "watch_score": 4,
           "watch_matched_terms": [
             "科研智能",
+            "combo:ai+science"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "a8e698231b2c4f2fa96f1e2c08fba63add5452c3",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "TechCrunch",
+          "title": "DiligenceSquared uses AI, voice agents to make M&A research affordable",
+          "url": "https://techcrunch.com/2026/03/05/diligencesquared-uses-ai-voice-agents-to-make-ma-research-affordable",
+          "published_at": "2026-03-05T23:14:04Z",
+          "first_seen_at": "2026-03-06T08:35:24.974443Z",
+          "last_seen_at": "2026-03-06T08:35:24.974443Z",
+          "watch_score": 3,
+          "watch_matched_terms": [
             "combo:ai+science"
           ],
           "monitor_class": "other",
@@ -2549,7 +2929,7 @@
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 4
+      "other_count": 5
     }
   ]
 }
