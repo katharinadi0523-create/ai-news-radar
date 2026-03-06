@@ -1012,18 +1012,105 @@ select:focus {
     width: 100%;
     justify-content: space-between;
   }
+
+  .credit-mark {
+    right: 10px;
+    bottom: 10px;
+    --credit-expand-width: 320px;
+  }
+
+  .credit-label {
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+
+  .credit-text {
+    font-size: 10px;
+  }
 }
 
 .credit-mark {
   position: fixed;
   right: 14px;
-  bottom: 10px;
+  bottom: 12px;
+  --credit-expand-width: 360px;
   z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(53, 116, 172, 0.28);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(232, 245, 255, 0.88));
+  box-shadow: 0 8px 22px rgba(44, 95, 145, 0.16);
+  backdrop-filter: blur(6px);
+  color: rgba(20, 61, 94, 0.82);
   font-size: 11px;
-  color: rgba(26, 68, 103, 0.46);
-  letter-spacing: 0.02em;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  overflow: hidden;
+  cursor: default;
   user-select: none;
-  pointer-events: none;
+  pointer-events: auto;
+  transition: width 220ms ease, padding 220ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.credit-mark:hover,
+.credit-mark:focus-visible {
+  width: min(var(--credit-expand-width), calc(100vw - 20px));
+  padding: 0 12px;
+  justify-content: flex-start;
+}
+
+.credit-initial {
+  flex: 0 0 auto;
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(19, 61, 95, 0.84);
+  transition: opacity 180ms ease, transform 220ms ease;
+}
+
+.credit-expanded {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateX(6px);
+  white-space: nowrap;
+  transition: max-width 240ms ease, opacity 160ms ease, transform 240ms ease;
+}
+
+.credit-mark:hover .credit-initial,
+.credit-mark:focus-visible .credit-initial {
+  opacity: 0.24;
+  transform: translateX(-3px);
+}
+
+.credit-mark:hover .credit-expanded,
+.credit-mark:focus-visible .credit-expanded {
+  max-width: 320px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.credit-label {
+  border: 1px solid rgba(53, 116, 172, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  color: rgba(21, 66, 102, 0.7);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 4px 7px;
+}
+
+.credit-text {
+  white-space: nowrap;
 }
 
 html[data-theme="dark"] body {
@@ -1224,7 +1311,20 @@ html[data-theme="dark"] .detail-group-title {
 }
 
 html[data-theme="dark"] .credit-mark {
-  color: rgba(180, 208, 235, 0.45);
+  border-color: rgba(119, 174, 230, 0.35);
+  background: linear-gradient(145deg, rgba(17, 32, 48, 0.88), rgba(14, 28, 43, 0.88));
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+  color: rgba(208, 228, 248, 0.84);
+}
+
+html[data-theme="dark"] .credit-initial {
+  color: rgba(208, 228, 248, 0.86);
+}
+
+html[data-theme="dark"] .credit-label {
+  border-color: rgba(119, 174, 230, 0.3);
+  background: rgba(40, 66, 93, 0.5);
+  color: rgba(197, 221, 245, 0.76);
 }
 
 @keyframes fade-up {

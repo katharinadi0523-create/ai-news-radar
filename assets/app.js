@@ -48,7 +48,6 @@ const competitorTimeSelectEl = document.getElementById("competitorTimeSelect");
 const sitePillsEl = document.getElementById("sitePills");
 const newsListEl = document.getElementById("newsList");
 const listPagerEl = document.getElementById("listPager");
-const updatedAtEl = document.getElementById("updatedAt");
 const searchInputEl = document.getElementById("searchInput");
 const resultCountEl = document.getElementById("resultCount");
 const listTitleEl = document.getElementById("listTitle");
@@ -1832,9 +1831,6 @@ function renderAll() {
   renderList();
   if (!state.waytoagiData || state.loading.waytoagi || state.loadErrors.waytoagi) {
     renderWaytoagiStatus();
-  }
-  if (state.overallGeneratedAt) {
-    updatedAtEl.textContent = `整体更新时间：${fmtTime(state.overallGeneratedAt)}`;
   }
 }
 
