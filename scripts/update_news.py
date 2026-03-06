@@ -677,6 +677,94 @@ def fetch_waytoagi_recent_7d(session: requests.Session, now_utc: datetime, root_
     }
 
 
+def load_cached_waytoagi_payload(path: Path) -> dict[str, Any] | None:
+    if not path.exists():
+        return None
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+    if not isinstance(payload, dict):
+        return None
+    return payload
+
+
+def is_usable_waytoagi_cache(payload: dict[str, Any] | None) -> bool:
+    if not isinstance(payload, dict):
+        return False
+    if payload.get("has_error") is True:
+        return False
+    return isinstance(payload.get("updates_7d"), list)
+
+
+def build_waytoagi_payload_on_failure(
+    now_utc: datetime,
+    root_url: str,
+    exc: Exception,
+    cached_payload: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    error_msg = (str(exc) or exc.__class__.__name__).strip()
+    if is_usable_waytoagi_cache(cached_payload):
+        payload = dict(cached_payload or {})
+        updates_7d = payload.get("updates_7d")
+        if not isinstance(updates_7d, list):
+            updates_7d = []
+        updates_today = payload.get("updates_today")
+        if not isinstance(updates_today, list):
+            updates_today = []
+
+        count_7d = payload.get("count_7d")
+        if not isinstance(count_7d, int):
+            count_7d = len(updates_7d)
+        count_today = payload.get("count_today")
+        if not isinstance(count_today, int):
+            count_today = len(updates_today)
+
+        latest_date = payload.get("latest_date")
+        if not latest_date and updates_7d:
+            latest_date = str(updates_7d[0].get("date") or "")
+            latest_date = latest_date or None
+
+        payload.update(
+            {
+                "generated_at": iso(now_utc),
+                "timezone": str(payload.get("timezone") or "Asia/Shanghai"),
+                "root_url": str(payload.get("root_url") or root_url),
+                "history_url": payload.get("history_url"),
+                "window_days": int(payload.get("window_days") or 7),
+                "latest_date": latest_date,
+                "count_today": count_today,
+                "updates_today": updates_today,
+                "count_7d": count_7d,
+                "updates_7d": updates_7d,
+                "warning": "WaytoAGI 近7日更新抓取失败，已回退到上次成功数据",
+                "has_error": False,
+                "error": None,
+                "stale": True,
+                "stale_reason": error_msg,
+            }
+        )
+        return payload
+
+    return {
+        "generated_at": iso(now_utc),
+        "timezone": "Asia/Shanghai",
+        "root_url": root_url,
+        "history_url": None,
+        "window_days": 7,
+        "latest_date": None,
+        "count_today": 0,
+        "updates_today": [],
+        "count_7d": 0,
+        "updates_7d": [],
+        "warning": "WaytoAGI 近7日更新抓取失败",
+        "has_error": True,
+        "error": error_msg,
+        "stale": True,
+        "stale_reason": error_msg,
+    }
+
+
 def create_session() -> requests.Session:
     session = requests.Session()
     retry = Retry(
@@ -2332,21 +2420,18 @@ def main() -> int:
         },
     }
 
+    cached_waytoagi_payload = load_cached_waytoagi_payload(waytoagi_path)
     try:
         waytoagi_payload = fetch_waytoagi_recent_7d(session, now, WAYTOAGI_DEFAULT)
+        waytoagi_payload["stale"] = False
+        waytoagi_payload["stale_reason"] = None
     except Exception as exc:
-        waytoagi_payload = {
-            "generated_at": iso(now),
-            "timezone": "Asia/Shanghai",
-            "root_url": WAYTOAGI_DEFAULT,
-            "history_url": None,
-            "window_days": 7,
-            "count_7d": 0,
-            "updates_7d": [],
-            "warning": "WaytoAGI 近7日更新抓取失败",
-            "has_error": True,
-            "error": str(exc),
-        }
+        waytoagi_payload = build_waytoagi_payload_on_failure(
+            now,
+            WAYTOAGI_DEFAULT,
+            exc,
+            cached_payload=cached_waytoagi_payload,
+        )
 
     latest_path.write_text(json.dumps(latest_payload, ensure_ascii=False, indent=2), encoding="utf-8")
     archive_path.write_text(json.dumps(archive_payload, ensure_ascii=False, indent=2), encoding="utf-8")
