@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-03-07T19:42:54.659764Z",
+  "generated_at": "2026-03-07T20:19:30.932473Z",
   "window_days": 3,
-  "source_generated_at": "2026-03-07T19:42:02.640435Z",
+  "source_generated_at": "2026-03-07T20:18:37.793200Z",
   "source_window_hours": 24,
   "source_topic_filter": "ai_tech_robotics",
   "output_name": "special-focus",
   "section_count": 5,
-  "total_items": 213,
+  "total_items": 214,
   "official_error_count": 0,
   "official_errors": [],
   "sections": [
     {
       "id": "palantir",
       "name": "Palantir",
-      "count": 5,
+      "count": 6,
       "items": [
         {
           "id": "069e333d400b89c271efeecbebb034962d9a82b0",
@@ -23,7 +23,7 @@
           "title": "Maven Smart System: Innovating for the Alliance",
           "url": "https://blog.palantir.com/maven-smart-system-innovating-for-the-alliance-5ebc31709eea?source=rss----3c87dc14372f---4",
           "published_at": "2026-03-05T18:40:29Z",
-          "first_seen_at": "2026-03-07T19:42:48.970536Z",
+          "first_seen_at": "2026-03-07T20:19:24.744078Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -32,6 +32,23 @@
           "hover_description": "<figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*rDDZDcEQP011rQj5uPCuwA.png\" /></figure><h3>Delivering Immediate Capability to the Warfighter</h3><p>In November 2025, NATO’s Task Force Maven <a href=\"https://www.linkedin.com/posts/task-force-maven-shape-aco-nato_warfighting-innovation-week-2025-wrapped-activity-7399470293313851392-8GsC?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAACe4bEABGLDC58Y_uVZiW_X1SPZQ1Ivo6Uc\">hosted an Industry Day</a> as a part of their Warfighting Innovation Week. The goal was to highlight how Maven Smart System’s (MSS) open, extensible architecture enables integration with third-party solutions, thereby powering rapid fielding of new technology combinations and enabling cutting-edge outcomes for the warfighter. NATO first <a href=\"https://palantir.quip.com/PydSA6U1caov?tracking_code=19muNSIpnGrXT#UWSADAU5UJP:~:text=https%3A//shape.nato.int/news%2Dreleases/nato%2Dacquires%2Daienabled%2Dwarfighting%2Dsystem%2D\">acquired MSS</a>, an AI-powered data integration and decision support system built by Palantir, in 2025.</p><p><a href=\"https://www.linkedin.com/posts/task-force-maven-shape-aco-nato_industry-day-announcement-task-force-activity-7368287361740197888-9Uyv/\">A call to industry was released</a>, and over 80 vendors applied for the Industry Day. Four were selected. Over the course of three weeks, teams from Germany’s <a href=\"https://quantum-systems.com/\">Quantum Systems</a>, France’s <a href=\"https://www.safran-group.com/companies/safran-ai\">Safran.AI</a>, and the UK’s <a href=\"https://hadean.com/\">Hadean</a> integrated with an unclassified, cloud-based deployment of Palantir’s MSS software, hosted out of Amazon Web Services (AWS)’s Stockholm region.</p><p>The results are a testament to the power of the trans-Atlantic Defense Industrial Base and what is possible when members come together to make NATO stronger using the best technology available across the West. In this blog, we’ll explore three of those vendor integrations.</p><h3>Exploiting the Power of AI Detections with Safran.AI 🇫🇷</h3><p>Safran.AI develops AI solutions for aerospace and defense. Their pre-trained AI algorithms perform automatic detection, classification, and identification of objects of military interest, enabling analysts to leverage the large amount of satellite data they receive into accurate insights in a matter of minutes.</p><p>NATO intelligence officers are often required to analyze hundreds of satellite images. For NATO’s MSS Industry Day, the teams explored how deploying Safran.AI detectors into MSS can deliver a more efficient, data-driven process. The end result was a suite of tools to empower analysts to extract high-value signal from high volumes of data when monitoring specific sites and performing temporal comparisons of those sites.</p><p>To begin, satellite data enriched with Safran.AI detections were ingested into MSS. This data were then transformed into backing datasets that comprised the core Safran.AI Ontology within MSS. The Ontology objects — like a Satellite Image object or Detection object — were the foundation of data-rich applications where analysts could conduct workflows. The Ontology also provided AIP Agents with the semantic, structured information they need to reason and act in the platform. The operational result of this technical integration work was a suite of AI-powered applications for imagery exploration and exploitation.</p><p>In one tool, users could view all imagery associated with an Area of Interest, and for each image, conduct comprehensive analysis and activity monitoring. For example, when an analyst clicked into Port of Baltiysk and selected two different Synthetic Aperture Radar (SAR) images captured only a short time apart, they could dynamically apply a layer to highlight the differences between these images, quickly surfacing the movement of assets that may contribute to important indications and warnings. Such insights can allow analysts to respond quickly, such as requesting further satellite data collection. (See the demo in Figure 1.)</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*qpXBn8mRFTgqiPBk6-CO4w.gif\" /></figure><p><em>Fig. 1 Viewing and comparing Safran.AI detections on an Area of Interest in MSS</em></p><p>In another application, a user could leverage an AIP Agent to quickly identify detections of interest across all detections on all available satellite imagery. For example, a user could ask a seemingly simple question in natural language, such as <em>“Show me detections of tum22s,” </em>a specific type of Russian airframe. The AIP agent would then query an object set of all 12,000 Safran.AI detection objects over all Areas of Interest and search for matches for any level classification that indicated this airframe. Within seconds, the application would automatically surface the detections directly to the analyst — of which there were only two — presenting them directly on the most recent satellite capture available in platform. (See demo in Figure 2.)</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*AZMXpI5ZXjyumwrbKNpqYg.gif\" /></figure><p><em>Fig. 2 Leveraging an AIP Agent to surface key detections from a pool of thousands across multiple satellite images.</em></p><p>NATO must leverage the ever-increasing amount of commercial satellite imagery available to power critical military workflows. The Alliance Persistent Surveillance from Space (APSS) program launched in 2023 and has already secured over $1B in commitments from 17 member nations over five years. The program <a href=\"https://spacenews.com/planet-signs-deal-with-nato-to-supply-satellite-imagery/\">recently contracted with Planet Labs and ICEYE</a> to provide high-resolution optical and radar imagery for tracking military capabilities. But to fully exploit this space-based information — whether in support of monitoring critical infrastructure or filling intelligence gaps — AI tools are required. As Nicolas David, Safran.AI sales lead for NATO and Europe, <a href=\"https://www.linkedin.com/posts/palantir-technologies_ai-enabled-istar-activity-7415396716662685696-k47w\">remarked</a>, “AI is gaining traction in operational Imagery workflows, and our work with Palantir can directly accelerate its adoption and deployment. Together, we are enabling faster accreditation, smoother integration, and the scaled rollout of AI capabilities across NATO MSS.”</p><h3>Tasking Drones at the Tactical Edge with Quantum Systems 🇩🇪</h3><p><a href=\"https://quantum-systems.com/\">Quantum Systems</a> is a German aerial data intelligence and drone company that develops and deploys multi-sensor data collection products to government agencies and commercial customers. With their commercial, dual-use approach — serving both commercial and defense customers — Quantum has the unusual advantage of applying commercial development speed to the defense industry. Through their MOSAIC Unmanned Systems (UXS) software, they deliver seamlessly integrated command and control of unmanned systems with AI-powered planning, real-time evaluation, and universal scalability for multi-domain operations.</p><p>Modern battlefields require the ability to translate theater-level objectives into immediate drone tasking. This has been starkly demonstrated in Ukraine, where both Palantir and Quantum Systems have deployed their technologies. At NATO’s Industry Day, Quantum’s teams successfully integrated <a href=\"https://quantum-systems.com/mosaic-uxs/\">Quantum’s MOSAIC UXS</a> with Palantir MSS to connect strategic intent with tactical execution, generating mission plans in MSS, sending those plans to MOSAIC for execution, and then receiving key insights back in MSS.</p><p>At the center of the integration was the “maneuver task” created in MSS and then sent to MOSAIC. The “maneuver” was an object in the Quantum Ontology and represented the area of interest for a drone mission, the type of detections that were of interest, and the mission priority. For example, a user monitoring the overall picture of the battlefield in MSS could create a new “maneuver task” and define armored vehicles and personnel as desired detections. By applying an Ontology Action on top of the “maneuver task” object, MSS was then able to execute dedicated logic using the Ontology. In this case, MSS sent out the tasking request to the external system, MOSAIC. (See the demo in Figure 3.)</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*eIp1H7IplglzkIdkaolqjA.gif\" /></figure><p><em>Fig. 3: Defining and sending the maneuver task request from MSS to MOSAIC.</em></p><p>Once it received the request, MOSAIC generated a complete mission plan with an optimal flight path based on mission targets, priorities, altitude, and vegetation — including waypoints, sensor angles, and zoom levels. Each drone could then be individually armed and sent on the mission. As the drones began flying, location data and live video was synced in real-time back to MSS. Detections of objects of interest — e.g., personnel or armored vehicles — were generated via optical, acoustic, and radio spectrum sensors and also synced back into MSS. With the Quantum Ontology, each detection was connected with a detection image as well as bounding boxes, which were immediately available for investigation through the common operating picture and AI-enabled tools in MSS. (See the demo in Figure 4.)</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*AdtApJeOTo-ZHLzKpbihyQ.gif\" /></figure><p><em>Fig 4: MSS and MOSIAC side by side. The Ontology object of a drone in MSS is powered live by stream data, enabling users to watch the mission in sync across systems.</em></p><p>Once the reconnaissance mission finished and all detections were available in MSS, a user could select a particularly interesting set of detections — like a group of vehicles — and load them into the Quantum AIP Agent to ask for assistance with their analysis. The AIP Agent would leverage the detections as well as specifically provided documents, like Russian Order of Battle protocols, to generate insights and recommendations on what action a user might take next. (See the demo in Figure 5.)</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*8_ZpOE4DdXsjnN2AKkCvqg.gif\" /></figure><p><em>Fig. 5 MSS processing MOSAIC detections with an AIP Agent.</em></p><p>For NATO Allied Command Operations (ACO) to coordinate multinational operations effectively in a high-intensity conflict, it must replicate this connectivity architecture, ensuring tactical drone intelligence from dispersed national and multinational units flows rapidly to higher headquarters. Operational directives must also reach frontline drone operators in real time, as Ukraine’s combat experience shows. Through the integration of MSS and MOSAIC, the teams demonstrated this capability can be accomplished — and fielded — today.</p><h3>Creating Flexibility through Course of Action Generation with Hadean 🇬🇧</h3><p>Hadean is a UK-based defense technology company that develops and fields next-generation software solutions. For NATO MSS Industry Day, its team integrated Hadean’s “<a href=\"https://hadean.com/dominai/\">dominAI</a>” tool with MSS. The result was a comprehensive, data-driven AI and simulation product suite that empowers users to achieve decision superiority in contested environments where adversaries adapt quickly and exploit delays.</p><p>DominAI is an AI-powered planning tool that generates, simulates, and validates multiple Courses of Action (COAs) to identify the optimal COA based on risk, logistics, and doctrine. It does this by fusing live, historical, and synthetic data to help military commanders make faster, better-informed decisions across all operational levels. For the Industry Day event, MSS served as an authoritative data feed to power Course of Action development in dominAI, and ingested dominAI-developed COAs back into MSS to ensure commanders could act with all available information.</p><p>MSS integrated with Hadean’s dominAI via open APIs to create a powerful military planning and analysis system that leverages both the data and AI models hosted in MSS. As an example, live tracks from MSS were ingested directly into dominAI in real time. From there, a user could configure mission planning parameters, including force laydown, equipment data pulled from MSS, operational objectives, and relevant doctrine such as Allied Joint Publications. DominAI would then call LLMs hosted in MSS to generate unique and feasible COAs based on these comprehensive inputs. Once generated, these COAs could be visualized alongside synchronization matrices, with the ability to step through each sequence of a plan in detail. During COA simulation, dominAI’s agentic solution ran parallelized simulations of each course of action simultaneously and performed a comparative analysis across all options. (See the demo in Figure 6.)</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*gllWU0XhL5Rsl-PHlALvzQ.gif\" /></figure><p><em>Fig. 6 Live picture of Red &amp; Blue forces in MSS synced to dominAI.</em></p><p>The integration of Hadean’s dominAI with MSS model hub represents a significant advancement in military AI capabilities. By enabling dominAI to call upon multiple LLMs hosted within MSS’s model hub, the system could gain access to a diverse ecosystem of specialized AI models, each potentially fine-tuned for different aspects of military operations — from tactical planning and logistics optimization to threat assessment and strategic analysis. This multi-model approach allows dominAI to select the most appropriate AI capability for each specific task within the planning and simulation workflow, rather than relying on a single model that may not excel across all domains. Leveraging MSS’s centralized model hub also ensures that all AI models are operating within a secure, accredited environment that meets stringent defense and intelligence community standards. (See the demo in Figure 7.)</p><p>NATO’s shift toward multi-domain operations requires cross-national intelligence sharing and detailed knowledge of each ally’s capabilities, along with transformed command and control arrangements. The Maven-dominAI integration addressed this challenge by providing a unified platform where commanders can visualize force laydown data, doctrine, and operational constraints from across the Alliance and then generate and simulate multiple courses of action using AI-powered analysis.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*_ZYZ6Qc7u-c77IDJQgP7DA.gif\" /></figure><p><em>Fig. 7 dominAI leveraging an AIP integration to call LLMs hosted in MSS to power bespoke COA generation.</em></p><h3>Making Rapid Innovation a Reality with Cloud Infrastructure</h3><p>To power truly rapid adoption and delivery of new capabilities to the warfighter, like what was demonstrated during this Industry Day event, hyperscale cloud computing infrastructure is needed. For this event, the ability to come together to deploy, integrate, and field new tools in a matter of weeks was made possible by the donation of Cloud infrastructure by AWS. The NATO MSS Industry Day stack was hosted out of AWS’s Stockholm region, so all development work took place on the Cloud in Europe.</p><p>Looking to the future, establishing hyperscale infrastructure on NATO Secret will enable NATO to further compress software release cycles from months to days, while maintaining security standards. It will also allow multiple teams to develop and deploy capabilities simultaneously without infrastructure constraints. This transforms software development from a periodic activity into a sustained operational capability, ensuring allied forces maintain technological superiority through failing forward and continuous development.</p><p>As Liz Martin, Managing Director and General Manager, Global Defense at AWS, said: “As global defense requirements evolve, AWS continues to invest in infrastructure to support modern military operations. AWS operates 12 Regions across NATO territories offering NATO the resilient and scalable digital backbone on which NATO can execute on its vision of interoperable, multi-domain operations. AWS and our strategic partners like Palantir provide the foundation for next-generation defense systems that can process and act on mission-critical data at the speed of relevance to the warfighter.”</p><h3>What’s Next?</h3><p>The tools built for Task Force Maven’s Industry Day event are not just concepts. They represent active, real-life integrations between Palantir Technologies, Quantum Systems, Hadean, and Safran.AI, built in just a few weeks. Achieving capability delivery at this pace is possible, but it requires deep partnership between companies. Industry is ready and willing. NATO must continue to create opportunities — both in exercise and event formats as well as via new, rapid procurement models — to let the power of the trans-Atlantic Defense Industrial Base shine through.</p><img alt=\"\" height=\"1\" src=\"https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=5ebc31709eea\" width=\"1\" /><hr /><p><a href=\"https://blog.palantir.com/maven-smart-system-innovating-for-the-alliance-5ebc31709eea\">Maven Smart System: Innovating for the Alliance</a> was originally published in <a href=\"https://blog.palantir.com\">Palantir Blog</a> on Medium, where people are continuing the conversation by highlighting and responding to this story.</p>",
           "monitor_class": "official",
           "monitor_class_label": "官方公告"
+        },
+        {
+          "id": "e523699cd90d97ee16e55d6e3b5703c6f7eda5d1",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Techmeme",
+          "title": "Leading the Future, a pro-AI PAC backed by Palantir-cofounder Joe Lonsdale, hit pro-regulation Democrat Alex Bores with attack ads over Bores' work for Palantir (Nancy Scola/Politico)",
+          "url": "http://www.techmeme.com/260307/p12",
+          "published_at": "2026-03-07T19:25:01Z",
+          "first_seen_at": "2026-03-07T20:18:37.793200Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "palantir"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
         },
         {
           "id": "2fa176fd23639e3e6b3fd56fcef39f3981f8807c",
@@ -59,7 +76,7 @@
           "url": "https://www.moneycontrol.com/europe/?url=https%3A%2F%2Fwww.moneycontrol.com%2Fworld%2Fhow-palantir-and-anthropic-ai-helped-the-us-hit-1-000-iran-targets-in-24-hours-article-13853331.html",
           "published_at": "2026-03-07T13:28:48Z",
           "first_seen_at": "2026-03-07T14:19:04.397714Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "palantir"
@@ -104,7 +121,7 @@
       ],
       "source_mode": "mixed",
       "official_count": 1,
-      "other_count": 4
+      "other_count": 5
     },
     {
       "id": "knowledge-graph",
@@ -272,7 +289,7 @@
           "url": "https://www.uisdc.com/skills-3",
           "published_at": null,
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "skills",
@@ -326,7 +343,7 @@
           "url": "https://www.typeui.sh",
           "published_at": "2026-03-07T19:06:19.817000Z",
           "first_seen_at": "2026-03-07T19:18:07.954036Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -343,7 +360,7 @@
           "url": "https://github.com/besslframework-stack/project-tessera",
           "published_at": "2026-03-07T18:50:20.973000Z",
           "first_seen_at": "2026-03-07T18:55:26.899807Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -411,7 +428,7 @@
           "url": "https://www.v2ex.com/t/1196541",
           "published_at": "2026-03-07T13:03:08Z",
           "first_seen_at": "2026-03-07T13:34:54.456689Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -445,7 +462,7 @@
           "url": "https://www.v2ex.com/t/1196533",
           "published_at": "2026-03-07T11:04:52Z",
           "first_seen_at": "2026-03-07T11:15:20.159057Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -462,7 +479,7 @@
           "url": "https://www.businessinsider.com/ai-disrupting-tech-industry-career-pivot-google-2026-3",
           "published_at": "2026-03-07T10:51:37.961000Z",
           "first_seen_at": "2026-03-07T11:15:20.159057Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -479,7 +496,7 @@
           "url": "https://juejin.cn/post/7613658584811618304",
           "published_at": "2026-03-07T09:50:27.861000Z",
           "first_seen_at": "2026-03-07T09:50:05.777726Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -496,7 +513,7 @@
           "url": "https://www.v2ex.com/t/1196525",
           "published_at": "2026-03-07T09:40:35Z",
           "first_seen_at": "2026-03-07T09:50:05.777726Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -513,7 +530,7 @@
           "url": "https://www.reddit.com/r/interesting/comments/1rn2e3s/after_understanding_the_meaning_behind_this",
           "published_at": "2026-03-07T06:14:41Z",
           "first_seen_at": "2026-03-07T09:23:27.066831Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -530,7 +547,7 @@
           "url": "https://juejin.cn/post/7612590314961059880",
           "published_at": null,
           "first_seen_at": "2026-03-07T04:57:43.275436Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -547,7 +564,7 @@
           "url": "https://www.oschina.net/news/407539",
           "published_at": null,
           "first_seen_at": "2026-03-07T04:57:43.275436Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -581,7 +598,7 @@
           "url": "https://juejin.cn/post/7613318336118882323",
           "published_at": null,
           "first_seen_at": "2026-03-07T04:57:43.275436Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -598,7 +615,7 @@
           "url": "https://www.36kr.com/newsflashes/3712388418302086",
           "published_at": "2026-03-07T04:37:03.284000Z",
           "first_seen_at": "2026-03-07T04:57:43.275436Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -615,7 +632,7 @@
           "url": "https://36kr.com/newsflashes/3712388418302086?f=rss",
           "published_at": "2026-03-07T04:36:47Z",
           "first_seen_at": "2026-03-07T04:57:43.275436Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -717,7 +734,7 @@
           "url": "https://dev.to/hadil/how-to-scale-claude-code-with-an-mcp-gateway-run-any-llm-centralize-tools-control-costs-nd9",
           "published_at": "2026-03-06T23:40:41.107000Z",
           "first_seen_at": "2026-03-06T23:48:47.021458Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -751,7 +768,7 @@
           "url": "https://mycelium-clj.github.io/docs/guestbook.html",
           "published_at": "2026-03-06T22:01:51Z",
           "first_seen_at": "2026-03-07T07:24:25.407734Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "workflow"
@@ -870,7 +887,7 @@
           "url": "https://dev.to/magnusrodseth/how-claude-skills-replaced-our-documentation-emi",
           "published_at": "2026-03-06T13:01:08.748000Z",
           "first_seen_at": "2026-03-06T13:50:43.850176Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -904,7 +921,7 @@
           "url": "https://github.com/openai/skills",
           "published_at": null,
           "first_seen_at": "2026-03-06T11:03:11.106514Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -921,7 +938,7 @@
           "url": "https://github.com/openai/skills",
           "published_at": "2026-03-06T10:41:40.176000Z",
           "first_seen_at": "2026-03-06T11:03:11.106514Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -989,7 +1006,7 @@
           "url": "https://juejin.cn/post/7612572336241901602",
           "published_at": null,
           "first_seen_at": "2026-03-06T08:35:24.974443Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -1006,7 +1023,7 @@
           "url": "https://xz.aliyun.com/news/91656",
           "published_at": null,
           "first_seen_at": "2026-03-06T08:35:24.974443Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -1057,7 +1074,7 @@
           "url": "https://xz.aliyun.com/news/91667",
           "published_at": null,
           "first_seen_at": "2026-03-06T08:35:24.974443Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -1091,7 +1108,7 @@
           "url": "https://www.woshipm.com/?p=6349297",
           "published_at": null,
           "first_seen_at": "2026-03-06T08:35:24.974443Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -1108,7 +1125,7 @@
           "url": "https://www.woshipm.com/?p=6349441",
           "published_at": null,
           "first_seen_at": "2026-03-06T08:35:24.974443Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -1176,7 +1193,7 @@
           "url": "https://dev.to/aaron_rose_0787cc8b4775a0/the-secret-life-of-claude-code-skill-is-not-what-you-think-it-is-5045",
           "published_at": "2026-03-05T17:51:04.368000Z",
           "first_seen_at": "2026-03-06T08:35:24.974443Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -1193,7 +1210,7 @@
           "url": "https://www.producthunt.com/r/7RWZG7JZC6OJL4",
           "published_at": "2026-03-05T15:47:55.472000Z",
           "first_seen_at": "2026-03-06T08:35:24.974443Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -1210,7 +1227,7 @@
           "url": "https://dev.to/richardbaxter/sqlite-as-an-mcp-context-saver-stop-cramming-raw-api-data-into-your-llm-2oj4",
           "published_at": "2026-03-05T14:44:00.847000Z",
           "first_seen_at": "2026-03-06T08:35:24.974443Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -1346,7 +1363,7 @@
           "url": "https://xz.aliyun.com/news/91642",
           "published_at": null,
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -1380,7 +1397,7 @@
           "url": "https://juejin.cn/post/7612218579228770340",
           "published_at": null,
           "first_seen_at": "2026-03-05T13:15:36.454254Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -1565,7 +1582,7 @@
           "url": "http://dlvr.it/TRLRFL",
           "published_at": "2026-03-07T00:12:30.502000Z",
           "first_seen_at": "2026-03-07T01:23:58.025547Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "五角大楼",
@@ -1773,6 +1790,40 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "918170dd321c1e7df64ae9a042274352ca8723d7",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Engadget",
+          "title": "OpenAI's head of robotics resigns following deal with the Department of Defense",
+          "url": "https://www.engadget.com/ai/openais-head-of-robotics-resigns-following-deal-with-the-department-of-defense-195918777.html?src=rss",
+          "published_at": "2026-03-07T19:59:18Z",
+          "first_seen_at": "2026-03-07T20:18:37.793200Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "defense"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "0e88ee5384721c2ec5879edd6421c8f5ef23a0c4",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "五角大楼风波中，克劳德下载量环比激增55% - Forbes",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQbU1SZEx4d1FhcGhWQVVCenZXc1J0UVBqSTJxWXFwTUNuTWNVZWVVVDR4aEI0bkFRUkVlaHZHS1pxR0tUa2dXYmJTUktSQVBiN3BZZGVqYTZRU0VhVXpTanlpaGhEMUo4aFRDblpuRVU0aGd4TWo4Ql9xTDFWNHhSVGREQWxZQWhhU2lTdzNXakhQcG1rNGhNU2xVa1prdklsYmNyWUtaZ3dGNldacWg2SDdB?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-03-07T19:38:21.600000Z",
+          "first_seen_at": "2026-03-07T20:18:37.793200Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "6aab17470dc95859e61efb177ee1a0d6ba09807f",
           "site_id": "buzzing",
           "site_name": "Buzzing",
@@ -1781,7 +1832,7 @@
           "url": "https://github.com/ashishgituser/NervOS",
           "published_at": "2026-03-07T18:50:22.104000Z",
           "first_seen_at": "2026-03-07T18:55:26.899807Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -1798,7 +1849,7 @@
           "url": "https://tech.slashdot.org/story/26/03/07/0521211/military-gps-jamming-is-interfering-with-the-navigation-systems-of-commercial-ships",
           "published_at": "2026-03-07T18:34:00Z",
           "first_seen_at": "2026-03-07T19:18:07.954036Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "military"
@@ -1815,7 +1866,7 @@
           "url": "https://blog.csdn.net/m0_46510245/article/details/158778613",
           "published_at": null,
           "first_seen_at": "2026-03-07T18:25:29.617986Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1866,7 +1917,7 @@
           "url": "https://reut.rs/3OVuaXt",
           "published_at": "2026-03-07T18:18:21.955000Z",
           "first_seen_at": "2026-03-07T18:25:29.617986Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
@@ -1900,7 +1951,7 @@
           "url": "https://www.businessinsider.com/caitlin-kalinowski-quits-openai-robotics-head-pentagon-deal-sam-altman-2026-3",
           "published_at": "2026-03-07T17:47:28.076000Z",
           "first_seen_at": "2026-03-07T18:25:29.617986Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -1917,7 +1968,7 @@
           "url": "https://www.ft.com/content/b974477f-61a4-492e-b8b7-9709f4086b4c",
           "published_at": "2026-03-07T17:47:27.753000Z",
           "first_seen_at": "2026-03-07T18:25:29.617986Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -1934,7 +1985,7 @@
           "url": "https://www.businessinsider.com/caitlin-kalinowski-quits-openai-robotics-head-pentagon-deal-sam-altman-2026-3",
           "published_at": "2026-03-07T17:43:08Z",
           "first_seen_at": "2026-03-07T19:18:07.954036Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -1951,7 +2002,7 @@
           "url": "https://www.businessinsider.com/merops-middle-east-iran-drones-shaheds-surveyor-us-military-2026-3",
           "published_at": "2026-03-07T17:15:19.778000Z",
           "first_seen_at": "2026-03-07T17:44:14.510638Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -1968,7 +2019,7 @@
           "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPN3NQZnBGaXE0YU9OUXRhVm9VbDVDSDhadnk4ZUx5eWhGOEpNR3VCYTl3WThtVHkzU2lCeTR3LXF5blQ0UkpSckJrSHFJNWczeHNGWkV0UE1TTUxCdS1mempnTlczd3M5Mm1qWnQwcnpXUUJGZXRXenVxdGpBcWh1Sm11ZGlWeTk3VEFsaXdxT0pfZU1HNUxUWjFOX0JhaGxyWEV4eXBQTQ?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-03-07T17:15:19.190000Z",
           "first_seen_at": "2026-03-07T17:44:14.510638Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -1985,7 +2036,7 @@
           "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxORFdjOG5iTmtxXzlqRklJYWdNdC1hbnphZDJwdnhZemJHenFOckxxMFluZFdTWHoyYlVIR2t0bVk5YXBPLXZnVG5MLW0xQXZXMEJBc2ROTkNWOUF5Q2RISjAteHlfbnhkUWxDUkhnc3loRGU4d3E0YW51SklJWEdlVjZFQXRscEJRU1pxdEVVVUhwWWFaZlZQaHp5TVdCT08tNmRPaW02Ym5LT0dRdHNfT3pfN3VTR2M2MnB1LUZ6S2hwVHhEQjFsaG03UdIB0AFBVV95cUxQZkxLbHJTdFNoTzJHandJUGtxS1lwR1JtNHFzRm9HRVBnZHo1djcyV0RRUW1WMngwY19CVW9SeUJqcEJEVWd2UUdyRjRWbklEeGh3eFFnaVFMWE94Q1U0YmhHVjJtVE1fTE44V1dlLW15blJYajlxbnVYQTBXVWJYQ29yMllwbU8xcnBHMG9EblFUYUJMUndxWDRtbnJFcHU4emdIUUUzSDRmNnU3MnFWTW40UFkxbUt1aFBOYjhjTExpQTIxRFpMSGhCYjNnLTZo?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-03-07T16:59:38.792000Z",
           "first_seen_at": "2026-03-07T17:16:45.565837Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2002,7 +2053,7 @@
           "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQUG1JZ2p5Vzk0S2FtQzZNMjNQTkM3a2xyTmRjaHo3YXp4U0lXbFpfYkZmekNSQUMzczY0ZlpaSmJxeDFweGFHcmZPc0tQOWg4SmpPcXRNZE1zbTNiY1ZrdTdKZWkxV3Zadl9COEVXVWd0TXpsbFg1NTdtSFlCanNjU2pSVXBYbFBUMWI1SDlfbWdQSmo0Z3I5OUU3SEU3aDRXd0ZPNTAwYWQxRlBvWFI5bmFfVHpCQVEzT0YzUkdsamg5alE?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-03-07T16:43:18.052000Z",
           "first_seen_at": "2026-03-07T16:48:59.067433Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2036,7 +2087,7 @@
           "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNNGdqc2RCQncxZ0hQbmFFcTctS0h2eUgyY2RVZkkycUNpNmRMRzNNMG1XamZ5MFM1d1JpaDFMZ1FrcWtEWG1YbXNzay1GdlhVTkdxS1ZVMVRyd2NrT2thNndQdEtOWXFmdXhZOWt0OGpMRkVTQlJSOFFjU01qaHRDX19JbHBWTEJwUjZPLXJfQldIcjFyNUdNYnNHb1l6Q09IVzVjdFFJbWtmX2xZOXRpY05SenBtSXpUbmQtbGNkY0dMeGtUbnZURDVR?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-03-07T16:11:24.270000Z",
           "first_seen_at": "2026-03-07T16:20:28.193964Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2121,7 +2172,7 @@
           "url": "https://news.google.com/read/CBMijwFBVV95cUxQOHZ0QS01bGEweV9SMkhMdHFtQXl2cHp2UTFtbzlzRWlSeWJKSGRzb28zQWc3M0ZxY2V6SFF5Z3J6VkVZSVpUYkNkV1lBTEJONE8yOXVNR0g3X3h5VnNZckZFRFBPejVnR1hlM1hMMHRZQktlZEpNWUc1SzF6b19zTXgtWXNoR1pYUlJhUTFHb9IBlAFBVV95cUxPSlg5MnM0N3JPTXBpZlo1NzlOUnJKdC0yYlh3Q1RRZkRPUHBZdEJfUUQ5MmFCRXlVREhRRnRnTEZPNnVka2NfYkE1UlctTGRqdkIzTUlNRTlWanBaV2t1elJabHJ3dGUwR2xrdjlEVll6Tl9CcnFiRzFyT0RNa2Q5dE1PbGVxcXRmY21mY185Y2N3YnJ1?hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-03-07T15:04:40Z",
           "first_seen_at": "2026-03-07T18:25:29.617986Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2138,7 +2189,7 @@
           "url": "https://index.e.kuaishou.com/rank/hotDetail?keyword=%E4%BF%84%E4%BD%BF%E7%94%A8%E6%97%A0%E4%BA%BA%E6%9C%BA%E5%AF%B9%E4%B9%8C%E5%8F%91%E5%8A%A8%E5%A4%A7%E8%A7%84%E6%A8%A1%E6%89%93%E5%87%BB&rankType=1",
           "published_at": null,
           "first_seen_at": "2026-03-07T14:47:16.280722Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2155,7 +2206,7 @@
           "url": "https://www.bloomberg.com/news/articles/2026-03-07/pentagon-turns-to-ex-uber-executive-in-anthropic-feud-over-ai",
           "published_at": "2026-03-07T14:35:28.705000Z",
           "first_seen_at": "2026-03-07T14:47:16.280722Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -2189,7 +2240,7 @@
           "url": "https://bbs.hupu.com/637782510.html",
           "published_at": null,
           "first_seen_at": "2026-03-07T14:19:04.397714Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2206,7 +2257,7 @@
           "url": "https://blog.csdn.net/2302_79376097/article/details/158743828",
           "published_at": null,
           "first_seen_at": "2026-03-07T14:19:04.397714Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2223,7 +2274,7 @@
           "url": "https://www.v2ex.com/t/1196546",
           "published_at": "2026-03-07T13:45:10Z",
           "first_seen_at": "2026-03-07T14:19:04.397714Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2274,7 +2325,7 @@
           "url": "https://www.reuters.com/world/europe/russian-strike-kills-seven-including-two-children-ukraines-kharkiv-governor-says-2026-03-07",
           "published_at": "2026-03-07T12:59:20.929000Z",
           "first_seen_at": "2026-03-07T13:34:54.456689Z",
-          "last_seen_at": "2026-03-07T14:47:16.280722Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2291,7 +2342,7 @@
           "url": "https://www.baidu.com/s?wd=%E5%91%A8%E9%B8%BF%E7%A5%8E%EF%BC%9A%E6%88%91%E8%AE%AD%E7%BB%83%E7%9A%84%E6%99%BA%E8%83%BD%E4%BD%93%E7%BB%8F%E5%B8%B8%E9%AA%82%E6%88%91",
           "published_at": null,
           "first_seen_at": "2026-03-07T12:34:28.047894Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2342,7 +2393,7 @@
           "url": "https://github.com/alibaba/page-agent",
           "published_at": "2026-03-07T12:18:33.839000Z",
           "first_seen_at": "2026-03-07T12:34:28.047894Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2393,7 +2444,7 @@
           "url": "https://github.com/alibaba/page-agent",
           "published_at": null,
           "first_seen_at": "2026-03-07T11:41:09.163192Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2444,7 +2495,7 @@
           "url": "https://www.nytimes.com/2026/03/07/technology/anthropic-openai-pentagon-dario-amodei-sam-altman.html",
           "published_at": "2026-03-07T10:01:21Z",
           "first_seen_at": "2026-03-07T10:17:45.176647Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -2478,7 +2529,7 @@
           "url": "https://juejin.cn/post/7611703214610579475",
           "published_at": null,
           "first_seen_at": "2026-03-07T09:50:05.777726Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2546,7 +2597,7 @@
           "url": "https://juejin.cn/post/7613680097548795919",
           "published_at": null,
           "first_seen_at": "2026-03-07T09:23:27.066831Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2580,7 +2631,7 @@
           "url": "https://www.freebuf.com/articles/web/472697.html",
           "published_at": null,
           "first_seen_at": "2026-03-07T08:23:42.753093Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2597,7 +2648,7 @@
           "url": "https://blog.csdn.net/qq_42055933/article/details/158745120",
           "published_at": null,
           "first_seen_at": "2026-03-07T08:23:42.753093Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2784,7 +2835,7 @@
           "url": "https://dustycloud.org/blog/the-first-ai-agent-worm-is-months-away-if-that",
           "published_at": "2026-03-07T05:34:58Z",
           "first_seen_at": "2026-03-07T08:23:42.753093Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3005,7 +3056,7 @@
           "url": "https://www.washingtonpost.com/national-security/2026/03/06/army-82nd-airborne-iran",
           "published_at": "2026-03-07T01:32:01Z",
           "first_seen_at": "2026-03-07T14:47:16.280722Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "army"
@@ -3039,7 +3090,7 @@
           "url": "https://www.freebuf.com/articles/472575.html",
           "published_at": null,
           "first_seen_at": "2026-03-07T01:23:58.025547Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3413,7 +3464,7 @@
           "url": "https://www.economist.com/international/2026/03/06/can-ukraine-help-defeat-irans-drone-swarms",
           "published_at": "2026-03-06T20:28:34.084000Z",
           "first_seen_at": "2026-03-06T20:54:35.059656Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -3447,7 +3498,7 @@
           "url": "https://econ.st/4cycNWl",
           "published_at": "2026-03-06T20:28:33.481000Z",
           "first_seen_at": "2026-03-06T20:54:35.059656Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -3505,40 +3556,6 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "2ec0d1cf9527b441cb64fa694e00d6c720a47509",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "TechCrunch",
-          "title": "Microsoft, Google, Amazon say Anthropic Claude remains available to non-defense customers",
-          "url": "https://techcrunch.com/2026/03/06/microsoft-anthropic-claude-remains-available-to-customers-except-the-defense-department",
-          "published_at": "2026-03-06T19:50:10Z",
-          "first_seen_at": "2026-03-06T20:25:42.908716Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "defense"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "1e4bfeb8722ce1ae7f935d1b8b73f541f638117e",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "Techmeme",
-          "title": "An interview with Pentagon AI head Emil Michael about Anthropic leaking to the media to win anti-Trump users, dealing with Amodei and his \"politburo\", and more (Pirate Wires)",
-          "url": "http://www.techmeme.com/260306/p19",
-          "published_at": "2026-03-06T19:45:02Z",
-          "first_seen_at": "2026-03-06T20:25:42.908716Z",
-          "last_seen_at": "2026-03-07T01:23:58.025547Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "pentagon"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
@@ -3577,7 +3594,7 @@
           "url": "http://www.techmeme.com/260307/p7",
           "published_at": "2026-03-07T15:10:01Z",
           "first_seen_at": "2026-03-07T16:20:28.193964Z",
-          "last_seen_at": "2026-03-07T19:42:02.640435Z",
+          "last_seen_at": "2026-03-07T20:18:37.793200Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
