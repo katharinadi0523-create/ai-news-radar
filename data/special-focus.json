@@ -1,14 +1,16 @@
 {
-  "generated_at": "2026-03-13T21:55:19.077101Z",
+  "generated_at": "2026-03-13T22:24:04.725821Z",
   "window_days": 3,
-  "source_generated_at": "2026-03-13T21:54:11.904439Z",
+  "source_generated_at": "2026-03-13T22:22:59.430905Z",
   "source_window_hours": 24,
   "source_topic_filter": "ai_tech_robotics",
   "output_name": "special-focus",
   "section_count": 5,
   "total_items": 254,
-  "official_error_count": 0,
-  "official_errors": [],
+  "official_error_count": 1,
+  "official_errors": [
+    "https://blog.palantir.com/feed: 429 Client Error: Too Many Requests for url: https://blog.palantir.com/feed"
+  ],
   "sections": [
     {
       "id": "palantir",
@@ -23,7 +25,7 @@
           "title": "Deep Dive: Advanced Ontology | DevCon 5",
           "url": "https://www.youtube.com/watch?v=_b2qsKz_Ifk",
           "published_at": "2026-03-11T17:38:52Z",
-          "first_seen_at": "2026-03-13T21:55:10.240996Z",
+          "first_seen_at": "2026-03-13T22:23:56.470753Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -42,7 +44,7 @@
           "url": "https://www.wired.com/story/palantir-demos-show-how-the-military-can-use-ai-chatbots-to-generate-war-plans",
           "published_at": "2026-03-13T10:00:00Z",
           "first_seen_at": "2026-03-13T11:03:15.757636Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "palantir"
@@ -59,7 +61,7 @@
           "url": "https://newrepublic.com/post/207693/palantir-ceo-karp-disrupting-democratic-power",
           "published_at": "2026-03-13T06:08:52Z",
           "first_seen_at": "2026-03-13T09:04:05.753683Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "palantir"
@@ -313,7 +315,7 @@
     {
       "id": "knowledge-graph",
       "name": "知识图谱",
-      "count": 7,
+      "count": 6,
       "items": [
         {
           "id": "2a92eee6e358e94447bac2c9ae1eb6d7da6bb0bf",
@@ -418,33 +420,16 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "479977e9034aace8d67f027117cb1339d497e00f",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.ycombinator.com",
-          "title": "我构建了一个人工智能代理的身份图谱——超过3.3亿条经过验证的记录。突破API限制",
-          "url": "https://news.ycombinator.com/item?id=47329246",
-          "published_at": "2026-03-10T22:06:18.284000Z",
-          "first_seen_at": "2026-03-10T22:22:08.635633Z",
-          "last_seen_at": "2026-03-11T06:07:17.338120Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "图谱"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 7
+      "other_count": 6
     },
     {
       "id": "skills",
       "name": "Skills",
-      "count": 90,
+      "count": 91,
       "items": [
         {
           "id": "a53c53b26799004844aae1b0a81fdcb10e64a522",
@@ -473,7 +458,7 @@
           "url": "https://juejin.cn/post/7614205951297732654",
           "published_at": null,
           "first_seen_at": "2026-03-12T10:05:32.580138Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "skill",
@@ -491,7 +476,7 @@
           "url": "https://xz.aliyun.com/news/91700",
           "published_at": null,
           "first_seen_at": "2026-03-12T03:44:27.054762Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "skill",
@@ -537,6 +522,23 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "0949401da90d4e4488f559a8f8a798db1c46438e",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.ycombinator.com",
+          "title": "在发现824个恶意技能后，我为OpenClaw开发了一个安全扫描器",
+          "url": "https://news.ycombinator.com/item?id=47370624",
+          "published_at": "2026-03-13T22:16:39.300000Z",
+          "first_seen_at": "2026-03-13T22:22:59.430905Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "技能"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "2d15d8e57812d28b77969d644b97139570b2d8f0",
           "site_id": "buzzing",
           "site_name": "Buzzing",
@@ -562,7 +564,7 @@
           "url": "https://www.bilibili.com/video/av116221412382019",
           "published_at": null,
           "first_seen_at": "2026-03-13T17:30:14.965962Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -596,7 +598,7 @@
           "url": "https://www.v2ex.com/t/1198166",
           "published_at": "2026-03-13T14:27:51Z",
           "first_seen_at": "2026-03-13T14:40:32.199715Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -613,7 +615,7 @@
           "url": "https://www.producthunt.com/products/perplexity-ai",
           "published_at": null,
           "first_seen_at": "2026-03-13T13:56:37.826387Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -630,7 +632,7 @@
           "url": "https://www.v2ex.com/t/1198156",
           "published_at": "2026-03-13T13:45:56Z",
           "first_seen_at": "2026-03-13T13:56:37.826387Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -647,7 +649,7 @@
           "url": "https://www.producthunt.com/r/HFTULLHPO6EX3A",
           "published_at": "2026-03-13T12:57:50.402000Z",
           "first_seen_at": "2026-03-13T13:56:37.826387Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -681,7 +683,7 @@
           "url": "https://www.v2ex.com/t/1198143",
           "published_at": "2026-03-13T12:11:18Z",
           "first_seen_at": "2026-03-13T12:43:43.916318Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -715,7 +717,7 @@
           "url": "https://www.aibase.com/news/26210",
           "published_at": "2026-03-13T10:01:38.349509Z",
           "first_seen_at": "2026-03-13T10:01:38.349509Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -766,7 +768,7 @@
           "url": "https://juejin.cn/post/7615379311402614810",
           "published_at": null,
           "first_seen_at": "2026-03-13T09:04:05.753683Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -783,7 +785,7 @@
           "url": "https://juejin.cn/post/7614331029458026531",
           "published_at": null,
           "first_seen_at": "2026-03-13T09:04:05.753683Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -800,7 +802,7 @@
           "url": "https://www.oschina.net/news/410172",
           "published_at": null,
           "first_seen_at": "2026-03-13T09:04:05.753683Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -851,7 +853,7 @@
           "url": "https://juejin.cn/post/7615449883811430415",
           "published_at": null,
           "first_seen_at": "2026-03-13T08:01:53.754555Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -902,7 +904,7 @@
           "url": "https://juejin.cn/post/7616141196217679914",
           "published_at": "2026-03-13T03:54:55.594000Z",
           "first_seen_at": "2026-03-13T03:54:25.889712Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -1089,7 +1091,7 @@
           "url": "https://blog.csdn.net/UbuntuTouch/article/details/158917181",
           "published_at": null,
           "first_seen_at": "2026-03-12T17:49:47.356601Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -1157,7 +1159,7 @@
           "url": "https://www.producthunt.com/r/Q4T65FKDY7JLAZ",
           "published_at": "2026-03-12T14:52:14.194000Z",
           "first_seen_at": "2026-03-12T15:56:50.412424Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -1276,7 +1278,7 @@
           "url": "https://dev.to/kimmaida/i-built-a-secure-planning-agent-with-mcp-and-keycard-324a",
           "published_at": "2026-03-12T12:28:16.651000Z",
           "first_seen_at": "2026-03-12T12:44:20.582855Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -1803,7 +1805,7 @@
           "url": "https://juejin.cn/post/7614066405495799808",
           "published_at": null,
           "first_seen_at": "2026-03-11T08:00:11.373805Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -1820,7 +1822,7 @@
           "url": "https://blog.csdn.net/zhangay1998/article/details/158918650",
           "published_at": null,
           "first_seen_at": "2026-03-11T07:25:55.896679Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -1984,7 +1986,7 @@
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 90
+      "other_count": 91
     },
     {
       "id": "defense-agent",
@@ -2095,7 +2097,7 @@
           "url": "https://finance.sina.com.cn/7x24/2026-03-14/doc-inhqwqny0808605.shtml",
           "published_at": null,
           "first_seen_at": "2026-03-13T21:54:11.904439Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "军事",
@@ -2465,6 +2467,57 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "69b8e54f5a51efc7673d16a275efc2e8b7e91b5b",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "新浪财经新闻 · 点击量排行",
+          "title": "沙特称在其领空拦截12架无人机。",
+          "url": "https://finance.sina.com.cn/7x24/2026-03-13/doc-inhquwcv7970431.shtml",
+          "published_at": null,
+          "first_seen_at": "2026-03-13T22:22:59.430905Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "db182601dd19312afda1a83f486e79aad6663dd0",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.reuters.com",
+          "title": "视频显示的是关于叙利亚战事的报道，而非针对土耳其境内美国军事基地的袭击",
+          "url": "https://www.reuters.com/fact-check/espanol/QRSSPK4ZJVPTRHIGSMRILUFDZ4-2026-03-13",
+          "published_at": "2026-03-13T22:16:42.552000Z",
+          "first_seen_at": "2026-03-13T22:22:59.430905Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "军事"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "44a54f1a8bea05dd62bc09922cb7778b1288ac40",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.bbc.com",
+          "title": "在无人机炮火下，流亡的库尔德人正等待与伊朗政权对抗",
+          "url": "https://www.bbc.com/news/articles/c79505804lpo?at_medium=RSS&at_campaign=rss",
+          "published_at": "2026-03-13T22:16:42.413000Z",
+          "first_seen_at": "2026-03-13T22:22:59.430905Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "69c3a94dcb3ce40f980306e8e00a86c9adf4659d",
           "site_id": "tophub",
           "site_name": "TopHub",
@@ -2490,7 +2543,7 @@
           "url": "https://www.theguardian.com/world/2026/mar/13/pentagon-maga-journalists-iran-war",
           "published_at": "2026-03-13T21:44:31.798000Z",
           "first_seen_at": "2026-03-13T21:54:11.904439Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -2507,7 +2560,7 @@
           "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPdHV1RlhrUE5SVnItQ2FzSHV0MmxJVmtmWnNXUE9kZkxQOGE4YnJrYmliY3I4UEFzUWZPYVVNMXBSUkdpVWJTV2x5blNQbTIzTnQ5dmJ4Nnk5bjZqRGNoeHpBQzZRSlhLRnZKeUVzZmdpNjZkTGxGRlMwLUNXNnBOa081NzRZRWtyeWZEMzVNelZhTjBfWWJJS2EwR0ktZE5hZVRSSFpEZXoxd21hY3dPOXQ4cUc1RDdxNmY3TWNXQ2pRa1JBRUs1R3dSMXJXRXRXWDBsMW9uVHY3Q004T0k0MC1vZ1BvR0poR0pFRdIB8gFBVV95cUxNOXVRZFg1TmR3R1g3S1VENC1MTVZqbGJvclZXeWdrZlJ3d1lNTVdwN1Jhb0l0M2Fmd2pzMThabXpCNkUtS0VKaTFtY2ZSMEhxMzRNck1jVERsNUM4ZzRqbGloYjFoOHVEcDdKZU5SZF9QeS1xOGFVU0QxYVVXb1RYWmZVMVgyS3dFRUFaWlpBRWRtVnNPWTBiVFA3YzJzOVJ1Mzcwdy1EcUhkWE1mbWxadmJxcGo5Z2RoRzlEVUV5ZU5LdmRLbThEaThHbWZTSi1WSE1HM2hzUFNuUUtibW1ybE0yZXIxcUFTTVVjUUV1dnJVQQ?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-03-13T21:44:31.779000Z",
           "first_seen_at": "2026-03-13T21:54:11.904439Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2541,7 +2594,7 @@
           "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBoRE1uaFB0NkxkNWUwclVydDJNb3dsZDhMRnBlcWpkNWdPcVBYMWhiVTBqbWdVaGJWb2k1eTRuWEMzb1pPQXZidFNXRnRiNlpwRUZZUi1YY2RyZUVuWlRjQWJ5aTFPRDlGRWRmMF9sN0N1c1RF?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-03-13T20:25:34.950000Z",
           "first_seen_at": "2026-03-13T21:00:50.489262Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -2558,7 +2611,7 @@
           "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOUlR4U3FSeEZEZHV0T0lEODh6WmRxaHpNbEdVajRodjdkT2xtS3lKSUo2QTVidjhkb3FyN2JtTjl3ZmtLejJBTVc4S2RBN3h1VlNDNEZsWXJVdHlJUWk5SjhVSUhjcWNacFRFOTM1cEpQcVZjamszelR3enR4MEVNMmFCNFNKN3pQcmRFMUM0akx3XzNCN215dG14ZXhIQQ?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-03-13T20:25:34.946000Z",
           "first_seen_at": "2026-03-13T21:00:50.489262Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2575,7 +2628,7 @@
           "url": "https://news.ycombinator.com/item?id=47367526",
           "published_at": "2026-03-13T19:07:13.800000Z",
           "first_seen_at": "2026-03-13T19:06:45.123143Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2592,7 +2645,7 @@
           "url": "https://blog.csdn.net/2501_91062530/article/details/158974268",
           "published_at": null,
           "first_seen_at": "2026-03-13T19:06:45.123143Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2643,7 +2696,7 @@
           "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE4wUlNka3p6cDUtQnFLQ3QyLWlOX1dUUjN5bGU0aDRnYjFTZmg0NVFrNEJUX0VjUi1rbWZsRURTWGlxckFpTGVHQ3JkTnA4MWp4d3BpTWFGeEFaeC1hYVhXXzVKd0ZrWVJz?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-03-13T19:05:50.221000Z",
           "first_seen_at": "2026-03-13T19:53:28.926997Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2745,7 +2798,7 @@
           "url": "https://www.reddit.com/r/politics/comments/1rsux6s/panicked_pentagon_sends_land_invasion_force_to",
           "published_at": "2026-03-13T18:09:08Z",
           "first_seen_at": "2026-03-13T20:27:47.755562Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -2762,7 +2815,7 @@
           "url": "https://github.com/Compresr-ai/Context-Gateway",
           "published_at": "2026-03-13T17:58:22Z",
           "first_seen_at": "2026-03-13T19:06:45.123143Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2847,7 +2900,7 @@
           "url": "https://www.techradar.com/pro/security/i-dont-think-a-company-can-dictate-to-a-sovereign-government-what-it-does-with-its-tools-dell-ceo-answers-question-on-anthropics-feud-with-the-pentagon",
           "published_at": "2026-03-13T17:05:00Z",
           "first_seen_at": "2026-03-13T17:30:14.965962Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -2915,7 +2968,7 @@
           "url": "https://www.reddit.com/r/news/comments/1rsraox/us_military_says_all_6_airmen_in_refueling",
           "published_at": "2026-03-13T16:00:49Z",
           "first_seen_at": "2026-03-13T19:06:45.123143Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "military"
@@ -2949,7 +3002,7 @@
           "url": "https://on.wsj.com/4btgieJ",
           "published_at": "2026-03-13T15:37:38.895000Z",
           "first_seen_at": "2026-03-13T16:33:29.355867Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -2966,7 +3019,7 @@
           "url": "https://bbs.hupu.com/637884308.html",
           "published_at": null,
           "first_seen_at": "2026-03-13T15:37:22.773184Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -3000,7 +3053,7 @@
           "url": "https://on.wsj.com/4usjdNh",
           "published_at": "2026-03-13T14:49:42.777000Z",
           "first_seen_at": "2026-03-13T15:37:22.773184Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -3051,7 +3104,7 @@
           "url": "https://on.wsj.com/4uK5EZV",
           "published_at": "2026-03-13T14:17:39.765000Z",
           "first_seen_at": "2026-03-13T14:40:32.199715Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -3085,7 +3138,7 @@
           "url": "https://bbs.hupu.com/637882834.html",
           "published_at": null,
           "first_seen_at": "2026-03-13T13:56:37.826387Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -3102,7 +3155,7 @@
           "url": "https://blog.csdn.net/u012365585/article/details/158929014",
           "published_at": null,
           "first_seen_at": "2026-03-13T13:56:37.826387Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3119,7 +3172,7 @@
           "url": "https://arstechnica.com/space/2026/03/rocket-report-pentagon-needs-more-missile-interceptors-artemis-ii-clears-review",
           "published_at": "2026-03-13T13:45:46.035000Z",
           "first_seen_at": "2026-03-13T13:56:37.826387Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -3255,7 +3308,7 @@
           "url": "https://arstechnica.com/space/2026/03/rocket-report-pentagon-needs-more-missile-interceptors-artemis-ii-clears-review",
           "published_at": "2026-03-13T12:46:30Z",
           "first_seen_at": "2026-03-13T13:56:37.826387Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -3272,7 +3325,7 @@
           "url": "https://blog.csdn.net/Openclaw2026/article/details/158922826",
           "published_at": null,
           "first_seen_at": "2026-03-13T12:43:43.916318Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3323,7 +3376,7 @@
           "url": "https://on.wsj.com/3NAQEfW",
           "published_at": "2026-03-13T12:25:27.564000Z",
           "first_seen_at": "2026-03-13T12:43:43.916318Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -3442,7 +3495,7 @@
           "url": "https://news.google.com/read/CBMiqwFBVV95cUxNRWtTWlVnclN4VHNOS0lfWGI3NnJqZnhhMEl0Y3JVN1FUMUNyVU5MRmJzcHBkOVFVUXNXT1pCNnFTSU9LQWk0a1JFOUdMazhTb1B1SjUwVUh3WUY4QVdtektZRkNqLWlzUGEyODEzREdDLUNuZ28xZkRZM1lfWHNjTWU4T2hrc24wX3NXYkg2SDZSY0F0aEpIZThkTm1ZeHpkY1NEZDY4R3o5ak0?hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-03-13T11:36:01Z",
           "first_seen_at": "2026-03-13T12:43:43.916318Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -3459,7 +3512,7 @@
           "url": "https://news.google.com/read/CBMihwFBVV95cUxOb05GSjNUU2NvUGMxS3lHU3dZMDM4MlFhajgtX0xZZHJlZGdqSWc2blNoVnJvbkVfaFhPZjd5d2hKbmxVcDc3SFNPRnZqdjl1WGZaR3ZDSDBrVXU1eWRuaTU5dklWR2pIaDNVQmdVbDBmSktwOEtXcnMzcFlZdl8zaXN4LVlMdEE?hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-03-13T11:30:52Z",
           "first_seen_at": "2026-03-13T11:51:33.952657Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -3544,7 +3597,7 @@
           "url": "https://www.woshipm.com/?p=6352857",
           "published_at": null,
           "first_seen_at": "2026-03-13T11:03:15.757636Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3595,7 +3648,7 @@
           "url": "https://www.v2ex.com/t/1198119",
           "published_at": "2026-03-13T10:14:06Z",
           "first_seen_at": "2026-03-13T11:03:15.757636Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3680,7 +3733,7 @@
           "url": "https://www.aibase.com/news/26212",
           "published_at": "2026-03-13T10:01:38.349509Z",
           "first_seen_at": "2026-03-13T10:01:38.349509Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -3731,7 +3784,7 @@
           "url": "https://www.wired.com/story/palantir-demos-show-how-the-military-can-use-ai-chatbots-to-generate-war-plans",
           "published_at": "2026-03-13T10:00:00Z",
           "first_seen_at": "2026-03-13T11:03:15.757636Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "military"
@@ -3782,7 +3835,7 @@
           "url": "https://juejin.cn/post/7614331029458026531",
           "published_at": null,
           "first_seen_at": "2026-03-13T09:04:05.753683Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3799,7 +3852,7 @@
           "url": "https://www.aibase.com/news/26206",
           "published_at": "2026-03-13T09:04:05.753683Z",
           "first_seen_at": "2026-03-13T09:04:05.753683Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -4010,57 +4063,6 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "ef671a6d2b0ea5bd047c497383afb6b7c54570bd",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "V2EX (创意工作者社区)",
-          "title": "[分享创造] 我做了一个开源 AI 智能体对比站 (ClawPulse)",
-          "url": "https://www.v2ex.com/t/1198060",
-          "published_at": "2026-03-13T07:18:59Z",
-          "first_seen_at": "2026-03-13T07:27:04.460797Z",
-          "last_seen_at": "2026-03-13T10:01:38.349509Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "838296a2ad95b27c3a926134d14bf83aa97d351b",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.reuters.com",
-          "title": "美国驻北约大使批评捷克削减国防开支",
-          "url": "https://www.reuters.com/de/welt/us-nato-botschafter-kritisiert-tschechische-verteidigungskrzungen-2026-03-13",
-          "published_at": "2026-03-13T06:33:35.970000Z",
-          "first_seen_at": "2026-03-13T07:27:04.460797Z",
-          "last_seen_at": "2026-03-13T07:27:04.460797Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "f678d61d236eafe243eef49c5e3d026bad0804f5",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "以色列国防军前发言人预测将导致伊朗政权垮台的因素 - The Daily Signal",
-          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPeEtaLWtzaVlUX1d0eTRLRmEySk83bTlpbnAtTC1ZUVdpQ0F1RUl6b21rNVlpdEVJQmNKWVJvSGhTVlVxR3l0WWxicmVhMjh1TTFQSUlTd0FIUE01VUlhVDNJSzlWbWtUeEZyRk9VbXd3ZUw2bzI5anJBT0dRWHh0UzBISnpPZk9ELV9GbG15b1VIaVU5YWc1ZzQ1Ny12N3dmTDhmR0g1Y0k?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-03-13T06:33:35.853000Z",
-          "first_seen_at": "2026-03-13T07:27:04.460797Z",
-          "last_seen_at": "2026-03-13T09:04:05.753683Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
@@ -4081,7 +4083,7 @@
           "url": "http://www.techmeme.com/260313/p20",
           "published_at": "2026-03-13T21:00:14Z",
           "first_seen_at": "2026-03-13T21:54:11.904439Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 4,
           "watch_matched_terms": [
             "scientific research",
@@ -4099,7 +4101,7 @@
           "url": "https://www.nature.com/articles/d41586-026-00844-x",
           "published_at": "2026-03-13T19:21:24.779000Z",
           "first_seen_at": "2026-03-13T19:53:28.926997Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 4,
           "watch_matched_terms": [
             "科学研究",
@@ -4135,7 +4137,7 @@
           "url": "https://www.businessinsider.com/computer-science-graduate-stability-ai-coding-tech-jobs-2026-3",
           "published_at": "2026-03-13T17:36:40Z",
           "first_seen_at": "2026-03-13T19:06:45.123143Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -4169,7 +4171,7 @@
           "url": "https://www.bbc.com/news/articles/clyg4wx6nxgo?at_medium=RSS&at_campaign=rss",
           "published_at": "2026-03-13T09:10:53Z",
           "first_seen_at": "2026-03-13T10:01:38.349509Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -4254,7 +4256,7 @@
           "url": "https://sspai.com/post/106919",
           "published_at": "2026-03-12T03:23:19Z",
           "first_seen_at": "2026-03-12T05:13:34.904371Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -4356,7 +4358,7 @@
           "url": "https://reut.rs/3P6fbdi",
           "published_at": "2026-03-13T19:05:50.320000Z",
           "first_seen_at": "2026-03-13T19:53:28.926997Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "科学研究"
@@ -4373,7 +4375,7 @@
           "url": "https://www.nature.com/articles/d41586-026-00813-4",
           "published_at": "2026-03-13T13:13:41.168000Z",
           "first_seen_at": "2026-03-13T13:56:37.826387Z",
-          "last_seen_at": "2026-03-13T21:54:11.904439Z",
+          "last_seen_at": "2026-03-13T22:22:59.430905Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "科学研究"
