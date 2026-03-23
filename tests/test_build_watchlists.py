@@ -221,6 +221,24 @@ class BuildWatchlistsTests(unittest.TestCase):
         self.assertGreaterEqual(score, 2)
         self.assertIn("domain:palantir.com", terms)
 
+    def test_match_item_openclaw_by_claw_keyword(self):
+        category = WatchCategory(
+            category_id="openclaw",
+            name="OpenClaw",
+            keywords=["openclaw", "claw"],
+            exclude_keywords=[],
+            domains=[],
+            official_sources=[],
+            official_only=False,
+        )
+        item = {
+            "title": "AI Claw desktop agent roundup",
+            "url": "https://example.com/openclaw-news",
+        }
+        score, terms = match_item(item, category)
+        self.assertGreaterEqual(score, 1)
+        self.assertIn("claw", terms)
+
     def test_match_item_ai_for_science_combo(self):
         category = WatchCategory(
             category_id="ai-for-science",
