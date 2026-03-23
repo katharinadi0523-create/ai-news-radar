@@ -603,6 +603,27 @@ function competitorTimeFilterLabel() {
   return "最近更新";
 }
 
+function itemTimestamp(item) {
+  const raw = item?.published_at || item?.first_seen_at;
+  const ts = raw ? new Date(raw).getTime() : Number.NaN;
+  return Number.isFinite(ts) ? ts : 0;
+}
+
+function compareItemsByTimestampDesc(a, b) {
+  const byTs = itemTimestamp(b) - itemTimestamp(a);
+  if (byTs !== 0) return byTs;
+
+  const byPublished = Number(Boolean(b?.published_at)) - Number(Boolean(a?.published_at));
+  if (byPublished !== 0) return byPublished;
+
+  const aKey = String(a?.id || a?.url || a?.title || "");
+  const bKey = String(b?.id || b?.url || b?.title || "");
+  const byKey = aKey.localeCompare(bKey, "en");
+  if (byKey !== 0) return byKey;
+
+  return String(a?.title || "").localeCompare(String(b?.title || ""), "zh-CN");
+}
+
 function competitorItemPassesTime(item) {
   if (state.competitorTimeFilter === "latest") return true;
   const raw = item?.published_at || item?.first_seen_at;
@@ -619,11 +640,9 @@ function competitorApplyTimeFilter(items) {
   if (state.competitorTimeFilter === "latest") {
     const dated = arr
       .map((x) => {
-        const raw = x?.published_at || x?.first_seen_at;
-        const ts = raw ? new Date(raw).getTime() : Number.NaN;
-        return { item: x, ts };
+        return { item: x, ts: itemTimestamp(x) };
       })
-      .filter((x) => Number.isFinite(x.ts));
+      .filter((x) => x.ts > 0);
     if (!dated.length) return arr.slice(0, 1);
     dated.sort((a, b) => b.ts - a.ts);
     return [dated[0].item];
@@ -1088,12 +1107,15 @@ function getFilteredAiItems() {
   });
 }
 
-function renderItemNode(item) {
+function renderItemNode(item, options = {}) {
   const node = itemTpl.content.firstElementChild.cloneNode(true);
   node.querySelector(".site").textContent = item.site_name;
-  const sourcePrefix = state.boardSection === "competitor"
-    ? (item.monitor_class === "official" ? "[官方公告] " : "[其他来源] ")
-    : "";
+  let sourcePrefix = "";
+  if (state.boardSection === "competitor") {
+    sourcePrefix = item.monitor_class === "official" ? "[官方公告] " : "[其他来源] ";
+  } else if (options.sectionName) {
+    sourcePrefix = `[${options.sectionName}] `;
+  }
   node.querySelector(".source").textContent = `分区: ${sourcePrefix}${item.source}`;
   if (state.boardSection === "competitor" && item.monitor_class === "official") {
     node.querySelector(".time").textContent = item.published_at ? `公告日期: ${fmtTime(item.published_at)}` : "公告日期: 未知";
@@ -1388,11 +1410,9 @@ function renderGroupedBySiteFlat(items) {
 }
 
 function renderWatchSections() {
-  const sections = activeWatchSections();
-  const frag = document.createDocumentFragment();
-  let total = 0;
+  const visibleSections = [];
 
-  sections.forEach((section) => {
+  activeWatchSections().forEach((section) => {
     if (state.boardSection === "competitor") {
       if (state.competitorProductFilter && section.id !== state.competitorProductFilter) return;
     } else if (state.watchFilter.startsWith("section:") && state.watchFilter !== `section:${section.id}`) {
@@ -1411,22 +1431,10 @@ function renderWatchSections() {
     });
     const timedItems = state.boardSection === "competitor" ? competitorApplyTimeFilter(sectionItems) : sectionItems;
     if (!timedItems.length) return;
-    total += timedItems.length;
-
-    const sectionNode = document.createElement("section");
-    sectionNode.className = "watch-section";
-    sectionNode.innerHTML = `
-      <header class="watch-section-head">
-        <h3>${section.name}</h3>
-        <span>${fmtNumber(timedItems.length)} 条</span>
-      </header>
-      <div class="watch-section-list"></div>
-    `;
-
-    const listEl = sectionNode.querySelector(".watch-section-list");
-    timedItems.forEach((item) => listEl.appendChild(renderItemNode(item)));
-    frag.appendChild(sectionNode);
+    visibleSections.push({ section, items: timedItems });
   });
+
+  const total = visibleSections.reduce((sum, entry) => sum + entry.items.length, 0);
 
   resultCountEl.textContent = `${fmtNumber(total)} 条`;
   if (!total) {
@@ -1437,6 +1445,36 @@ function renderWatchSections() {
     return;
   }
 
+  if (state.boardSection === "focus" && !state.watchFilter) {
+    const mixedItems = visibleSections
+      .flatMap(({ section, items }) => items.map((item) => ({ item, sectionName: section.name })))
+      .sort((a, b) => compareItemsByTimestampDesc(a.item, b.item));
+
+    const mixedFrag = document.createDocumentFragment();
+    mixedItems.forEach(({ item, sectionName }) => {
+      mixedFrag.appendChild(renderItemNode(item, { sectionName }));
+    });
+    newsListEl.appendChild(mixedFrag);
+    return;
+  }
+
+  const frag = document.createDocumentFragment();
+  visibleSections.forEach(({ section, items }) => {
+    const sectionNode = document.createElement("section");
+    sectionNode.className = "watch-section";
+    sectionNode.innerHTML = `
+      <header class="watch-section-head">
+        <h3>${section.name}</h3>
+        <span>${fmtNumber(items.length)} 条</span>
+      </header>
+      <div class="watch-section-list"></div>
+    `;
+
+    const listEl = sectionNode.querySelector(".watch-section-list");
+    items.forEach((item) => listEl.appendChild(renderItemNode(item)));
+    frag.appendChild(sectionNode);
+  });
+
   newsListEl.appendChild(frag);
 }
 
@@ -1446,6 +1484,8 @@ function renderList() {
     listTitleEl.textContent = state.aiSortMode === "interest"
       ? "最近 24 小时更新（兴趣优先排序）"
       : "最近 24 小时更新（默认排序）";
+  } else if (state.boardSection === "focus" && !state.watchFilter) {
+    listTitleEl.textContent = "特别关注（全部主题混排）";
   } else {
     listTitleEl.textContent = currentSectionTitle();
   }
