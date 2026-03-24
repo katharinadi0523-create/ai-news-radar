@@ -62,7 +62,10 @@ jobs:
           python scripts/build_watchlists.py --env-file .env
 
       - name: Commit and push changes
+        shell: bash
         run: |
+          set -euo pipefail
+
           tracked_files=(
             data/latest-24h.json
             data/archive.json
@@ -88,8 +91,21 @@ jobs:
           fi
 
           git commit -m "chore: update ai news snapshot"
-          git pull --rebase origin main
-          git push origin HEAD:main
+
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "Push succeeded on attempt ${attempt}"
+              exit 0
+            fi
+
+            echo "Push failed on attempt ${attempt}; fetching latest main and retrying"
+            git fetch origin main
+            git rebase origin/main
+            sleep 5
+          done
+
+          echo "Push failed after 3 attempts"
+          exit 1
 
       - name: Deploy to Vercel (optional)
         env:
