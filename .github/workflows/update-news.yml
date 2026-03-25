@@ -1,5 +1,8 @@
 name: Update AI News Snapshot
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 on:
   workflow_dispatch:
   schedule:
@@ -21,7 +24,6 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-          persist-credentials: false
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -64,9 +66,6 @@ jobs:
 
       - name: Commit and push changes
         shell: bash
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
           set -euo pipefail
 
@@ -80,15 +79,8 @@ jobs:
             data/competitor-monitor.json
           )
 
-          if git diff --quiet -- "${tracked_files[@]}"; then
-            echo "No tracked data changes to commit"
-            exit 0
-          fi
-
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -B main origin/main
-          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git add "${tracked_files[@]}"
 
           if git diff --cached --quiet; then
@@ -97,21 +89,7 @@ jobs:
           fi
 
           git commit -m "chore: update ai news snapshot"
-
-          for attempt in 1 2 3; do
-            if git push --verbose origin main; then
-              echo "Push succeeded on attempt ${attempt}"
-              exit 0
-            fi
-
-            echo "Push failed on attempt ${attempt}; fetching latest main and retrying"
-            git fetch origin main
-            git rebase origin/main
-            sleep 5
-          done
-
-          echo "Push failed after 3 attempts"
-          exit 1
+          git push origin HEAD:main
 
       - name: Deploy to Vercel (optional)
         env:
