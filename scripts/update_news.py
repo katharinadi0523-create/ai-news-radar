@@ -1869,6 +1869,54 @@ def load_archive(path: Path) -> dict[str, dict[str, Any]]:
     return out
 
 
+def archive_sort_time(record: dict[str, Any]) -> datetime:
+    return (
+        parse_iso(record.get("last_seen_at"))
+        or parse_iso(record.get("published_at"))
+        or parse_iso(record.get("first_seen_at"))
+        or datetime.min.replace(tzinfo=UTC)
+    )
+
+
+def build_archive_payload(generated_at: datetime, items: list[dict[str, Any]]) -> dict[str, Any]:
+    return {
+        "generated_at": iso(generated_at),
+        "total_items": len(items),
+        "items": items,
+    }
+
+
+def archive_payload_num_bytes(generated_at: datetime, items: list[dict[str, Any]]) -> int:
+    payload = build_archive_payload(generated_at, items)
+    return len(json.dumps(payload, ensure_ascii=False, indent=2).encode("utf-8"))
+
+
+def trim_archive_to_max_bytes(
+    archive: dict[str, dict[str, Any]],
+    generated_at: datetime,
+    max_bytes: int,
+) -> tuple[dict[str, dict[str, Any]], int]:
+    if max_bytes <= 0 or not archive:
+        return archive, 0
+
+    items = sorted(archive.values(), key=archive_sort_time, reverse=True)
+    if archive_payload_num_bytes(generated_at, items) <= max_bytes:
+        return archive, 0
+
+    low = 0
+    high = len(items)
+    while low < high:
+        mid = (low + high + 1) // 2
+        if archive_payload_num_bytes(generated_at, items[:mid]) <= max_bytes:
+            low = mid
+        else:
+            high = mid - 1
+
+    kept_items = items[:low]
+    trimmed_archive = {str(item.get("id")): item for item in kept_items if str(item.get("id") or "").strip()}
+    return trimmed_archive, len(items) - len(trimmed_archive)
+
+
 def event_time(record: dict[str, Any]) -> datetime | None:
     # RSS sources must rely on the source's publish time only.
     # first_seen_at is fetch time and would falsely mark historical items as "24h".
@@ -2188,6 +2236,12 @@ def main() -> int:
     parser.add_argument("--output-dir", default="data", help="Directory for output JSON files")
     parser.add_argument("--window-hours", type=int, default=24, help="24h window size")
     parser.add_argument("--archive-days", type=int, default=45, help="Keep archive for N days")
+    parser.add_argument(
+        "--archive-max-bytes",
+        type=int,
+        default=95_000_000,
+        help="Max archive.json size in bytes before trimming oldest items (0 disables)",
+    )
     parser.add_argument("--translate-max-new", type=int, default=80, help="Max new EN->ZH title translations per run")
     parser.add_argument("--rss-opml", default="", help="Optional OPML file path to include RSS sources")
     parser.add_argument("--rss-max-feeds", type=int, default=0, help="Optional max OPML RSS feeds to fetch (0 means all)")
@@ -2285,6 +2339,7 @@ def main() -> int:
         if ts >= keep_after:
             pruned[item_id] = record
     archive = pruned
+    archive, archive_trimmed_count = trim_archive_to_max_bytes(archive, now, args.archive_max_bytes)
 
     # 24h view
     window_start = now - timedelta(hours=args.window_hours)
@@ -2367,6 +2422,7 @@ def main() -> int:
         "total_items_all_mode": len(latest_items_all_dedup),
         "topic_filter": "ai_tech_robotics",
         "archive_total": len(archive),
+        "archive_trimmed_count": archive_trimmed_count,
         "site_count": len(site_stat),
         "source_count": len({f"{i['site_id']}::{i['source']}" for i in latest_items_ai_dedup}),
         "site_stats": sorted(site_stat.values(), key=lambda x: x["count"], reverse=True),
@@ -2376,15 +2432,10 @@ def main() -> int:
         "items_all": latest_items_all_dedup,
     }
 
-    archive_payload = {
-        "generated_at": iso(now),
-        "total_items": len(archive),
-        "items": sorted(
-            archive.values(),
-            key=lambda x: parse_iso(x.get("last_seen_at")) or datetime.min.replace(tzinfo=UTC),
-            reverse=True,
-        ),
-    }
+    archive_payload = build_archive_payload(
+        now,
+        sorted(archive.values(), key=archive_sort_time, reverse=True),
+    )
 
     status_payload = {
         "generated_at": iso(now),
@@ -2395,6 +2446,7 @@ def main() -> int:
         "fetched_raw_items": len(raw_items),
         "items_before_topic_filter": len(latest_items_all),
         "items_in_24h": len(latest_items_ai_dedup),
+        "archive_trimmed_count": archive_trimmed_count,
         "rss_opml": {
             "enabled": bool(args.rss_opml),
             "path": str(Path(args.rss_opml).expanduser()) if args.rss_opml else None,
@@ -2442,6 +2494,8 @@ def main() -> int:
 
     print(f"Wrote: {latest_path} ({len(latest_items)} items)")
     print(f"Wrote: {archive_path} ({len(archive)} items)")
+    if archive_trimmed_count:
+        print(f"Trimmed {archive_trimmed_count} oldest archive items to keep archive.json under {args.archive_max_bytes} bytes")
     print(f"Wrote: {status_path}")
     print(f"Wrote: {waytoagi_path} ({waytoagi_payload.get('count_7d', 0)} items)")
     print(f"Wrote: {title_cache_path} ({len(title_cache)} entries)")

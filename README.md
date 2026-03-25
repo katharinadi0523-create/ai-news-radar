@@ -169,6 +169,7 @@ python -m unittest discover -s tests -p 'test_*.py'
 - `--output-dir`：输出目录（默认 `data`）
 - `--window-hours`：24h 视图窗口小时数（默认 `24`）
 - `--archive-days`：归档保留天数（默认 `45`）
+- `--archive-max-bytes`：归档 JSON 最大字节数，超出时自动裁掉最旧项（默认 `95000000`，`0`=不限制）
 - `--translate-max-new`：本次新增英译中标题上限（默认 `80`）
 - `--rss-opml`：可选 OPML 路径
 - `--rss-max-feeds`：限制 OPML 拉取 feed 数（`0`=不限制）
