@@ -66,6 +66,9 @@ jobs:
 
       - name: Commit and push changes
         shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
           set -euo pipefail
 
@@ -89,7 +92,20 @@ jobs:
           fi
 
           git commit -m "chore: update ai news snapshot"
-          git push origin HEAD:main
+
+          echo "git branch: $(git rev-parse --abbrev-ref HEAD)"
+          git status --short
+
+          set +e
+          git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:main 2>&1 \
+            | sed -E 's#x-access-token:[^@]+@#x-access-token:***@#g'
+          push_status=${PIPESTATUS[0]}
+          set -e
+
+          if [ "${push_status}" -ne 0 ]; then
+            echo "git push failed with status ${push_status}"
+            exit "${push_status}"
+          fi
 
       - name: Deploy to Vercel (optional)
         env:
