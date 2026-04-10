@@ -1,20 +1,40 @@
 {
-  "generated_at": "2026-04-10T00:03:12.536654Z",
+  "generated_at": "2026-04-10T02:59:42.443952Z",
   "window_days": 3,
-  "source_generated_at": "2026-04-10T00:01:17.827274Z",
+  "source_generated_at": "2026-04-10T02:57:59.462924Z",
   "source_window_hours": 24,
   "source_topic_filter": "ai_tech_robotics",
   "output_name": "special-focus",
   "section_count": 6,
-  "total_items": 289,
-  "official_error_count": 0,
-  "official_errors": [],
+  "total_items": 295,
+  "official_error_count": 2,
+  "official_errors": [
+    "https://blog.palantir.com/feed: 429 Client Error: Too Many Requests for url: https://blog.palantir.com/feed",
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UCQRc3PMlCsoodxbR4IsglKQ: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCQRc3PMlCsoodxbR4IsglKQ"
+  ],
   "sections": [
     {
       "id": "openclaw",
       "name": "OpenClaw",
-      "count": 55,
+      "count": 56,
       "items": [
+        {
+          "id": "7a274b18b14345083002e46ba17fa38daf83f089",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "CSDN博客 · 综合热榜",
+          "title": "OpenClaw安全：从暴露到加固的实战指南",
+          "url": "https://blog.csdn.net/qq_36478920/article/details/159987656",
+          "published_at": null,
+          "first_seen_at": "2026-04-10T02:57:59.462924Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "openclaw"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
         {
           "id": "8f3b4a544d0d192ea42e4154db606fce59486d74",
           "site_id": "iris",
@@ -24,7 +44,7 @@
           "url": "https://www.v2ex.com/t/1204765",
           "published_at": "2026-04-09T23:41:21Z",
           "first_seen_at": "2026-04-10T00:01:17.827274Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "claw"
@@ -58,7 +78,7 @@
           "url": "https://juejin.cn/post/7625557111918772276",
           "published_at": null,
           "first_seen_at": "2026-04-09T17:57:57.361850Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "openclaw"
@@ -92,7 +112,7 @@
           "url": "https://blog.csdn.net/wal1314520/article/details/159974086",
           "published_at": null,
           "first_seen_at": "2026-04-09T10:41:41.219421Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "openclaw"
@@ -194,7 +214,7 @@
           "url": "https://blog.csdn.net/cui_yonghua/article/details/159965211",
           "published_at": null,
           "first_seen_at": "2026-04-09T06:23:18.530972Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "claw"
@@ -262,7 +282,7 @@
           "url": "https://juejin.cn/post/7625528557731037230",
           "published_at": null,
           "first_seen_at": "2026-04-08T16:13:52.654784Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "openclaw"
@@ -789,7 +809,7 @@
           "url": "https://www.woshipm.com/?p=6371291",
           "published_at": null,
           "first_seen_at": "2026-04-07T09:44:32.845624Z",
-          "last_seen_at": "2026-04-09T13:14:29.563061Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "claw"
@@ -953,31 +973,13 @@
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 55
+      "other_count": 56
     },
     {
       "id": "palantir",
       "name": "Palantir",
-      "count": 8,
+      "count": 7,
       "items": [
-        {
-          "id": "143924adc676733588fe72077a814f452ccf4af1",
-          "site_id": "official",
-          "site_name": "Official",
-          "source": "官方渠道: 【Palantir Blog RSS】 blog.palantir.com",
-          "title": "Frontend Engineering at Palantir: Plotlines in Three.js",
-          "url": "https://blog.palantir.com/frontend-engineering-at-palantir-plotlines-in-three-js-c0c47f310715?source=rss----3c87dc14372f---4",
-          "published_at": "2026-04-07T13:58:02Z",
-          "first_seen_at": "2026-04-10T00:03:03.978693Z",
-          "watch_score": 90,
-          "watch_matched_terms": [
-            "official-source",
-            "rss-feed"
-          ],
-          "hover_description": "<figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*D_5LhinYPvt9spEjX8t_AA.png\" /></figure><p><strong>About this Series</strong><br /><em>Frontend engineering at Palantir goes far beyond building standard web apps. Our engineers design interfaces for mission-critical decision-making, build operational applications that translate insight to action, and create systems that handle massive datasets — thinking not just about what the user needs, but what they need when the network is unreliable, the stakes are high, and the margin for error is zero.</em></p><p><em>This series pulls back the curtain on what that work really looks like: the technical problems we solve, the impact we have, and the approaches we take. Whether you’re just curious or exploring opportunities to join us, these posts offer an authentic look at life on our Frontend teams.</em></p><p><em>In this blog post, Lasse, a frontend engineer based in NY, shares an overview of various 3D workflows engineers at Palantir work on and some unique challenges to handle performance. Stay tuned for Part 5.</em></p><p>Last September marked five years since Stripe <a href=\"https://stripe.com/blog/globe\">started a cinematic universe of globes</a> to render live purchase orders on their platform. GitHub threw its hat in the ring three and a half months later with <a href=\"https://github.blog/engineering/how-we-built-the-github-globe/\">their own</a>, where they showed connection lines between the location a PR was opened and the place it merged.</p><p>As it turns out, plenty of companies have geospatial data flying around in realtime. It’s often a very compelling way to show how far data is traveling over a network or how a company operates in a wider space than it’s hosted. In the case of Palantir, Gotham lands in the same neighborhood. A huge focus for frontend engineers here is rendering <a href=\"https://www.palantir.com/docs/foundry/geospatial/ontology\">Ontology objects with geospatial properties</a> on an app called Gaia to visualize defense and intelligence operations. Or to put more simply, “render anything and everything”.</p><p>Recently, our team has been developing a 3D implementation of Gaia. It’s powered by Zodiac, a library we built using <a href=\"https://threejs.org/\">Three.js</a>, along with a set of Foundry-based APIs that generalize rendering. In short, any “object” that exists in a Foundry Ontology with a piece of location data (point, shape, or styles) gets served up in an map rendering API in Gotham.</p><p>When I first started at Palantir last year, it was hard to gauge what 3D challenges we would face for our customers. This blog post details some workflows and performance challenges we encountered, and our approach to solving them in a browser accessible to anyone in the DOD. The examples include some over-simplifications for illustrative purposes.</p><h3>3D Gaia</h3><p>3D introduces a new dimension for users to experience geospatial data. It allows users to gain a conceptual understanding of spaces as the real world will see it. Rendering objects at altitude, resolving issues with polar distortion, and objects in space all require a visualization of space that a mercator projection can’t provide.</p><p>For example, Starlink contributes to hundreds of satellite launches a year. Near misses, orbit projections, and space debris are all things in the bucket of tracking that various Gaia users would need to visualize. Often these 3D workflows require the same tooling as 2D for briefs and visualizations.</p><h4>Zodiac and Our Big Sphere</h4><p>The architecture splits cleanly: the backend handles data storage, filtering, and heavier computation, while the frontend focuses on rendering. Our backend sends down simplified geometry and style information — the client doesn’t need to know how the data was computed, just where to draw it and what it should look like.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*diaUzou7E3HstAyzTrrptA.png\" /></figure><p>With that serving layer in place (and skipping over the work to get there), we have a suite of components to place something in a location and see it. We grab generalized renderables from our API and render them on the map across every frame.</p><pre>interface EarthLineItem {<br /> id?: string;<br /> points: LatLngHeight[];<br /> color?: string;<br />}<br /><br />interface LineVisualProps {<br /> color?: string;<br /> lineWidth?: number;<br /> opacity?: number;<br /> dashed?: boolean;<br />}</pre><p>Using those interfaces, drawing a line is straightforward:</p><pre>&lt;EarthLine<br /> points={[<br /> { lat: 40.7128, lng: -74.0060, height: 10_000 },<br /> { lat: 38.9072, lng: -77.0369, height: 10_000 },<br /> ]}<br /> color=&quot;#3b82f6&quot;<br /> lineWidth={2}<br />/&gt;</pre><p>These create a building blocks by which we can explore very complex projects. High density sets of lines can be aggregated by grouped geometries, custom colors and styling can change the style of the lines, and visibility can be toggled based on time or other filters without rebuilding geometry.</p><p>The EarthLineGroup batches lines by style into single draw calls. 10,000 lines with the same styling become one GPU operation.</p><pre>&lt;EarthLineGroup&gt;<br /> {flights.map((flight) =&gt; (<br /> &lt;EarthLine<br /> key={flight.id}<br /> points={flight.waypoints}<br /> color={flight.airline.color}<br /> lineWidth={1}<br /> onPick={(picked) =&gt; picked &amp;&amp; setSelectedFlight(flight.id)}<br /> /&gt;<br /> ))}<br />&lt;/EarthLineGroup&gt;</pre><p>Under the hood of Zodiac, objects above are built via classes that implement a ZodiacObject, which abstracts managing the position on the globe with rotation, coordinates, and changes per frame. Using that, object implementation can focus entirely on properties that are relevant to the rendered object like visuals and positioning.</p><pre>interface ZodiacObject {<br /> // Called on initialization of the object into the scene.<br /> onAdd(context: ZodiacContext): void;<br /> <br /> // Called each frame, to allow for changes on the object.<br /> onRender?(context: ZodiacContext): void;<br />} <br /><br />class EarthLine implements ZodiacObject {<br /> private geometry: LineGeometry; <br /> private material: LineMaterial;<br /> private mesh: Line;<br /><br /> constructor(points: LatLngHeight[], color: string) {<br /> this.geometry = new LineGeometry();<br /> this.material = new LineMaterial({ color });<br /> this.mesh = new Line(this.geometry, this.material);<br /><br /> // Convert lat/lng to Earth-fixed coordinates once.<br /> const ecefPositions = points.map(p =&gt; latLngToEcef(p));<br /> this.geometry.setPositions(ecefPositions);<br /> }<br /><br /> onAdd(context: ZodiacContext): void {<br /> // Add to Earth-fixed scene — stays pinned to geography.<br /> context.ecefScene.add(this.mesh);<br /> }<br /><br /> onRender(context: ZodiacContext): void {<br /> // Update visibility, animate, respond to time changes, etc.<br /> }<br />}</pre><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*iP7f44dfGyjP9ZR7_sks7A.png\" /></figure><h3>Zooming out to Space</h3><p>High density visualizations of satellite positions push the performance capabilities of graphics on the browser. With tens of thousands of objects circling around the globe, we used an instanced mesh to update objects on and off the map, and recompute the positions of the nearest Satellites the fastest. This instanced mesh exists under a singular Zodiac Object, but renders thousands of satellites (or any object of the same geometry) in the same draw call frame.</p><pre>class SatelliteRenderer extends ZodiacObject {<br /> private satellites: string[] = [];<br /> private currentBatch = 0;<br /> private batchSize = 1_000;<br /> private mesh: InstancedMesh;<br /><br /> public onRender(time: number): void {<br /> const batch = this.getSatelliteBatch(this.currentBatch);<br /> for (const satellite of batch) {<br /> this.updatePosition(satellite, time);<br /> }<br /> this.currentBatch = this.nextBatch();<br /> }<br /><br /> private updatePosition(satellite: string, time: number): void {<br /> const position = this.propagateSgp4Position(satellite, time);<br /> this.mesh.setPositionAt(satellite, position);<br /> }<br /><br /> // Later code blocks leverage our satellite mesh to &quot;attach&quot; to <br /> // the current position and corresponding TLE used on the map.<br /> public getPosition(satellite: string, out: Vector3): void {<br /> this.mesh.getPositionAt(satellite, out);<br /> }<br />}</pre><p>Positioning work is different in space as well. Earth-bound orbits can be propagated using Two-Line Elements (TLEs), a format dating back to the 1960s that encodes orbital parameters in two 69-character lines. The client handles basic propagation for rendering, but heavier orbital math like collision analysis, long-term predictions, maneuver planning runs server-side on <a href=\"https://www.palantir.com/docs/foundry/compute-modules/overview\">Foundry compute modules</a>.</p><h4>Lines as an Orbit Path</h4><p>When you’re looking at objects that have positioning as a function of time, it’s often helpful to see where the object will be in T units of time. For our visualizations, we allow selected satellites to show their positioning around and on the Earth's surface to estimate their pathing. However, this ends up being expensive.</p><p>We started off calculating the path for ~2 days on selection, but every frame would cause an entirely new propagation moving forward. This worked for single use cases, but buckled with weaker hardware or multiple selected objects.</p><p>Because we're looking at a function of time, most of the propagation can be re-used. With some abstractions, we can share the orbit position across any object that needs it, and calculate new sections as time passes.</p><pre>abstract class OrbitPath extends ZodiacObject {<br /> private.geometry: LineGeometry;<br /> private material: LineMaterial;<br /> protected points: CircularBuffer&lt;TrackPoint&gt;;<br /> protected timePerPoint: number;<br /><br /> public onRender(time: number): void {<br /> if (this.needsFullRecompute(time)) {<br /> this.computeFullOrbit(time);<br /> return;<br /> }<br /> this.advanceQueue(time);<br /> }<br /><br /> private advanceQueue(time: number): void {<br /> while (this.points.head().timestamp &lt; time) {<br /> const point = this.points.shift();<br /> point.timestamp = this.lastTimestamp() + this.timePerPoint;<br /> point.position = this.propagatePosition(point.timestamp);<br /> this.points.push(point);<br /> }<br /> }<br />}</pre><p>The queue slides forward through time. When a point falls off the front, we recalculate it for the next block at the back. With the old approach, our map would need to perform thousands of SGP4 propagations per second. With the queue, we can drop 95% of calculations made for each selected object.</p><p>This ends up allowing many more orbit paths to render at once. Seated next to our satellite mesh, we can listen for TLE updates as users scrub through time to ensure we’re using the correctly propagated element.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*iQgv1gp2REjz8SdIH4Y03A.png\" /></figure><h4>Lines of Sight</h4><p>It’s also helpful to show a line of sight between sets of satellites and terrestrial objects. Often satellites work in systems, and visualizing “links” between them is useful. Certain configurations of satellites will only render pairing lines when they don’t have the Earth between them.</p><p>With the same Satellite helper objects from before, it is now easier to translate a similar connection line.</p><pre>class SatelliteConnectionLine extends ZodiacObject {<br /> private.geometry: LineGeometry;<br /> private material: LineMaterial;<br /><br /> constructor(<br /> private primarySatellite: string,<br /> private secondarySatellite: string,<br /> private getPosition: (id: string) =&gt; Vector3<br /> ) {}<br /><br /> public onRender(): void {<br /> const posA = this.getPosition(this.primarySatellite);<br /> const posB = this.getPosition(this.secondarySatellite);<br /><br /> const visible = this.hasLineOfSight(posA, posB);<br /><br /> if (visible) {<br /> this.geometry.setPositions([posA, posB]);<br /> }<br /> this.material.opacity = visible ? 1.0 : 0.0;<br /> }<br />}</pre><p>Each frame, we grab the current positions from a shared context and check line of sight. It’s <a href=\"https://en.wikipedia.org/wiki/Line%E2%80%93sphere_intersection\">a ray-ellipsoid intersection test</a>: If the ray between two satellites intersects Earth, we hide the line.</p><h4>Sensor Visualizations, with Angles</h4><p>The last lines we drew for satellite work involved sensor visualizations. Visualizing satellite capabilities involved a more complex set of lines. We created a 3D polygon that matches the movement of the satellite, and has various specs to match the orientation, sizing, and capabilities. Often more “complex” shapes are an aggregation of multiple primitive shapes. In the case of sensors, we constructed a frame of lines and some opaque planes to show that coverage area.</p><p>Since the satellite orbits the earth, our earth swath should match where the sensor could scan across its entire orbit. The correct path for this is an aggregation of the satellites position, earths rotation, aim at the earth, and any properties of sensor rotation. After combining that into a single object, the result was a track more aligned with the sensor “capability” rather than an approximate flyover.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*4L401YxtP5InShG1i2in1w.png\" /></figure><p>Above is an image I attached to my PR to explain the math behind swath rotation. Often, the fastest workflow for this was brainstorming steps in a notebook, and then passing off the math to an LLM with some tests.</p><p>After calculating the max width, building polygons between the raycasted points, and propagating, you’re left with a relatively accurate representation of what a satellite could see. The satellite would then match closer to the path as the timestamps changed.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*kCuWXsUWx0gG55hY6yM9Lg.png\" /></figure><p>Visualizations above are based on completely notational sensor specs.</p><h3>Back on Earth</h3><p><a href=\"https://www.palantir.com/platforms/gotham/\">Gotham</a> as a platform builds many abstractions for common patterns and data shapes. As our 3D library increases in complexity, it needs to pick up APIs that match <a href=\"https://www.palantir.com/platforms/foundry/\">Foundry</a> data sources and already render in our 2D scenes.</p><p>This can involve a suite of temporal and property-based data, but the cost of render changes is heavier due to rendering large sets of lines in parent collections. This led to a few different implementation approaches to ensure our globe felt fast.</p><h4>Time Filterable Lines</h4><p>Lines often have temporal data attached. A flight path has departure and arrival times, a ship track has observation windows, and sensor coverage has visibility periods. When users scrub through time, lines need to appear and disappear accordingly.</p><p>An initial approach could involve culling and rebuilding the geometry every frame. With thousands of lines at 60fps, the client would have a lot of churn reallocating arrays. Instead, we opted to attach a simple filter function, some time-filterable middleware, and a shader to manage the visibility states more efficiently. For Foundry data that natively has temporal interfaces applied, the client can automatically configure these per line.</p><pre>// Most commonly a range function coming from Foundry.<br />type TimeFilter = (time: number) =&gt; boolean;<br /><br />interface TimeFilterableLine {<br /> points: LatLngHeight[];<br /> isVisibleAt?: TimeFilter;<br />}<br /><br />const flightPath: TimeFilterableLine = {<br /> points: waypoints,<br /> isVisibleAt: (time) =&gt; departureTime &lt; time &amp;&amp; time &lt; arrivalTime,<br />};</pre><p>The geometry gets built once. When time changes, we evaluate each filter and update visibility without touching the vertex data. The filters can run every frame, but we only touch the GPU buffer when visibility actually changes:</p><pre>class TimeFilterableLineCollection {<br /> private geometry: TimeFilterableGeometry;<br /> private material: TimeFilterableMaterial; // Includes opacity shader.<br /> private filters: Map&lt;number, TimeFilter&gt; = new Map();<br /> private visibility: Map&lt;number, boolean&gt; = new Map();<br /><br /> applyFilters(time: number): void {<br /> for (const [index, filter] of this.filters) {<br /> const isVisible = filter(time);<br /> const wasVisible = this.visibility.get(index) ?? true;<br /><br /> if (isVisible !== wasVisible) {<br /> this.geometry.setVisibility(index, isVisible);<br /> this.visibility.set(index, isVisible);<br /> }<br /> }<br /> }<br />}<br /><br />// A custom shader reads opacity and discards invisible fragments.<br />const fragmentShader = `<br /> if (opacity &lt; 0.01) discard; // Gone, not rendered<br /> gl_FragColor.a *= opacity;<br />`;</pre><p>When visibility does change, we update a per-segment opacity buffer on the GPU. Each line maps to a range of segments, and we can flip their opacity between 0 and 1:</p><pre>// The geometry stores an opacity value per line in a GPU buffer.<br />class TimeFilterableGeometry {<br /> private opacities: Float32Array;<br /><br /> setVisibility(lineIndex: number, visible: boolean): void {<br /> this.opacities[lineIndex] = visible ? 1.0 : 0.0;<br /> this.opacityBuffer.needsUpdate = true;<br /> }<br />}</pre><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*fF81a-bfhoL7ZXzH-yaNEQ.gif\" /></figure><h4>Animated Lines</h4><p>My favorite iteration cycles across the last year involved exposing APIs to the underlying Gaia map to manipulate the Three.JS objects. We ran across a similar suite of problems with animations. Similar to the lines of sight in space, there are lots of scenarios where users could see different visual variations in their workflow.</p><p>In one of our use cases, realtime animations to provide transition states were important for customers keeping a top-level domain awareness of a situation. When managing a high number of units on their map, traditional visualizations using the map became more effective than cards, tables, and toasts.</p><p>The API we landed on passes a callback that receives the current time and time since animation start. You return whatever style properties should change:</p><pre>const pulseCallback = (currentTime: number, elapsedTime: number) =&gt; {<br /> const progress = (elapsedTime % 2000) / 2000;<br /> const pulse = Math.sin(progress * Math.PI * 2) * 0.5 + 0.5;<br /> return { color: baseColor.clone().lerp(targetColor, pulse) };<br />};<br /><br />&lt;AnimatedEarthLine<br /> points={flightPath}<br /> animationCallback={pulseCallback}<br />/&gt;;</pre><p>The callback runs on every frame via an onPrerender hook synced to the 3D render loop. Only material properties update, no geometry rebuilds.</p><p>For state-driven animations, the callback can derive its behavior from React state. A line representing a tasking might pulse while awaiting confirmation, then ease to a solid color once confirmed:</p><pre>const animationCallback = useCallback(<br /> (currentTime: number) =&gt; {<br /> if (phase === &quot;awaiting&quot;) {<br /> return { color: createPulsingColor(baseColor, white, currentTime, 1000) };<br /> }<br /> return { color: confirmedColor };<br /> },<br /> [phase]<br />);</pre><p>This keeps the 3D rendering decoupled from UI state while still letting state changes drive visual transitions. Users can take advantage of color changes, flashing, opacity updates, and directional dash changes. Focusing these animations on the underlying visual change, and allowing the platform to leverage property mapping to states keeps the 3D team focused on the underlying implementation without needing to decipher specific workflows.</p><h4>Down The Line</h4><p>Ultimately 3D has many challenges to work through, and we’re always iterating on the APIs to hit the right mix of user-friendliness, integration with the broader platform, and performance. These types of features often require monitoring and multiple passes to get right, which is more fun as we onboard new datasources and workflows from our customers.</p><p>Looking forward, we’re excited about Foundry’s support for rendering properties in 3D. Historical visuals of a sensor range in 2D can now land as a volume or point-cloud, and workflows in projected areas like the poles are more readily available. We’ll continue on support across all types of data sources the platform has with the goal of users choosing the most effective visualization for their needs. This could be anywhere from object models on the ground to maps spanning the solar system.</p><p>Looking back, I’m considering what education has impacted me the most across my work. Given the geospatial focus work that Palantir has, it’s unsurprising my middle-school geometry class returns the most dividends week to week.</p><p><em>Read more about the Gotham Platform in our Palantir docs: </em><a href=\"https://www.palantir.com/offerings/defense/secure-collaboration/capabilities/\"><em>https://www.palantir.com/offerings/defense/secure-collaboration/capabilities/</em></a></p><p><em>If this sounds like the kind of project and impact you’re interested in, check out our open roles today: </em><a href=\"https://www.palantir.com/careers/open-positions/\"><em>https://www.palantir.com/careers/open-positions/</em></a><em>. Our most applicable frontend postings are the “Web Application Developer” roles. We’re also hiring for these two specific roles right now: </em><a href=\"https://jobs.lever.co/palantir/cf76738e-3030-42fa-92ac-a9446df956fc\"><em>Software Engineer — Core Interfaces</em></a><em> (Palo Alto), and </em><a href=\"https://jobs.lever.co/palantir/cf76738e-3030-42fa-92ac-a9446df956fc\"><em>Software Engineer — Defense Applications</em></a><em> (DC).</em></p><img alt=\"\" height=\"1\" src=\"https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=c0c47f310715\" width=\"1\" /><hr /><p><a href=\"https://blog.palantir.com/frontend-engineering-at-palantir-plotlines-in-three-js-c0c47f310715\">Frontend Engineering at Palantir: Plotlines in Three.js</a> was originally published in <a href=\"https://blog.palantir.com\">Palantir Blog</a> on Medium, where people are continuing the conversation by highlighting and responding to this story.</p>",
-          "monitor_class": "official",
-          "monitor_class_label": "官方公告"
-        },
         {
           "id": "e8ba20025f7ebef887803212611d49eea347e34d",
           "site_id": "buzzing",
@@ -1099,7 +1101,7 @@
         }
       ],
       "source_mode": "mixed",
-      "official_count": 1,
+      "official_count": 0,
       "other_count": 7
     },
     {
@@ -1202,8 +1204,26 @@
     {
       "id": "skills",
       "name": "Skills",
-      "count": 85,
+      "count": 90,
       "items": [
+        {
+          "id": "5e7b5679ad9afbeba3d621fd34623ad48a1fa9b6",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "Hacker News (黑客新闻)",
+          "title": "I still prefer MCP over skills",
+          "url": "https://david.coffee/i-still-prefer-mcp-over-skills",
+          "published_at": "2026-04-10T02:01:48Z",
+          "first_seen_at": "2026-04-10T02:57:59.462924Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
+          "watch_score": 2,
+          "watch_matched_terms": [
+            "skills",
+            "mcp"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
         {
           "id": "83ecd8c74a63c1a951acfdba4128dbd78a4a717c",
           "site_id": "tophub",
@@ -1213,7 +1233,7 @@
           "url": "https://xz.aliyun.com/news/91917",
           "published_at": null,
           "first_seen_at": "2026-04-09T09:20:20.793735Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "skills",
@@ -1231,7 +1251,7 @@
           "url": "https://blog.csdn.net/2301_76444133/article/details/159922005",
           "published_at": null,
           "first_seen_at": "2026-04-09T04:58:44.597952Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "skills",
@@ -1331,6 +1351,108 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "870a4fc3b0993c925a6f5a2b00c32a406d8f4a33",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "Readhub · AI",
+          "title": "继“同事.skill”走红，周鸿祎回应“把自己炼成AI分身”：这才是数字分身的正确未来",
+          "url": "https://lieyunpro.com/archives/501018",
+          "published_at": null,
+          "first_seen_at": "2026-04-10T02:57:59.462924Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skill"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "4b8d939c14f4afa9d24f765a9bfa8a6fc2cb7b0f",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "36氪 · 24小时热榜",
+          "title": "8点1氪｜“张雪峰.skill”上线GitHub引争议；康师傅“再来一瓶”被曝多店不兑换；微信回应“夫妻用AI写公众号年赚200万”",
+          "url": "https://www.36kr.com/p/3760260422648327",
+          "published_at": null,
+          "first_seen_at": "2026-04-10T02:57:59.462924Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skill"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "138dbef59d6c2a2a42d66f9d96f0d43de53b14e8",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "github.com",
+          "title": "Show HN: Facebook 市集 MCP",
+          "url": "https://github.com/jdcodes1/facebook-marketplace-mcp",
+          "published_at": "2026-04-10T02:01:51.491000Z",
+          "first_seen_at": "2026-04-10T02:57:59.462924Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "mcp"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "6166deb39d5ac688d1537f2569489ecb8b93107e",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "V2EX (创意工作者社区)",
+          "title": "[问与答] 有哪些提高工作效率的 Skills？",
+          "url": "https://www.v2ex.com/t/1204778",
+          "published_at": "2026-04-10T01:09:45Z",
+          "first_seen_at": "2026-04-10T02:57:59.462924Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skills"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "0fcd782b2dc0f6658dcdc0ab0647447755d706b1",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "少数派 (sspai)",
+          "title": "派早报：微信支付发布接入 Skill 工具体系等",
+          "url": "https://sspai.com/post/108468",
+          "published_at": "2026-04-10T00:47:54Z",
+          "first_seen_at": "2026-04-10T02:57:59.462924Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skill"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "13bb7fc36db7c38c9b46cc4d07a2e2fb5c4eaf71",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "36氪 (36Kr)",
+          "title": "8点1氪｜“张雪峰.skill”上线GitHub引争议；康师傅“再来一瓶”被曝多店不兑换；微信回应“夫妻用AI写公众号年赚200万”",
+          "url": "https://36kr.com/p/3760260422648327?f=rss",
+          "published_at": "2026-04-10T00:17:47Z",
+          "first_seen_at": "2026-04-10T02:57:59.462924Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skill"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "e9f23a8856807d254f256c1834ca8c1cae60d25f",
           "site_id": "buzzing",
           "site_name": "Buzzing",
@@ -1339,7 +1461,7 @@
           "url": "https://phys.org/news/2026-04-skills-age-economic-driver-china.html",
           "published_at": "2026-04-09T23:05:51.100000Z",
           "first_seen_at": "2026-04-10T00:01:17.827274Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -1356,7 +1478,7 @@
           "url": "https://github.com/LittleLittleCloud/Dobby",
           "published_at": "2026-04-09T23:05:49.379000Z",
           "first_seen_at": "2026-04-10T00:01:17.827274Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -1373,7 +1495,7 @@
           "url": "https://news.ycombinator.com/item?id=47711279",
           "published_at": "2026-04-09T22:49:40.110000Z",
           "first_seen_at": "2026-04-09T23:08:34.801594Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -1390,7 +1512,7 @@
           "url": "https://blog.csdn.net/qq_38998213/article/details/159998495",
           "published_at": null,
           "first_seen_at": "2026-04-09T21:09:10.518391Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -1594,7 +1716,7 @@
           "url": "https://blog.csdn.net/cui_yonghua/article/details/159965211",
           "published_at": null,
           "first_seen_at": "2026-04-09T06:23:18.530972Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -1628,7 +1750,7 @@
           "url": "https://www.woshipm.com/?p=6373970",
           "published_at": null,
           "first_seen_at": "2026-04-09T04:58:44.597952Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -1645,7 +1767,7 @@
           "url": "https://www.woshipm.com/?p=6373676",
           "published_at": null,
           "first_seen_at": "2026-04-09T04:58:44.597952Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -1662,7 +1784,7 @@
           "url": "https://juejin.cn/post/7625237255016988691",
           "published_at": null,
           "first_seen_at": "2026-04-09T04:58:44.597952Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "工具调用"
@@ -1696,7 +1818,7 @@
           "url": "https://www.woshipm.com/?p=6373507",
           "published_at": null,
           "first_seen_at": "2026-04-09T02:29:28.172178Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -1764,7 +1886,7 @@
           "url": "https://dev.to/fdocr/clawshier-openclaw-skill-l1n",
           "published_at": "2026-04-08T23:57:47.247000Z",
           "first_seen_at": "2026-04-09T02:29:28.172178Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -2036,7 +2158,7 @@
           "url": "https://www.woshipm.com/?p=6373267",
           "published_at": null,
           "first_seen_at": "2026-04-08T06:20:23.751330Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -2070,7 +2192,7 @@
           "url": "https://juejin.cn/post/7625838952655912994",
           "published_at": null,
           "first_seen_at": "2026-04-08T04:35:53.159792Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -2325,7 +2447,7 @@
           "url": "https://github.com/forrestchang/andrej-karpathy-skills",
           "published_at": null,
           "first_seen_at": "2026-04-07T11:50:51.809974Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -2359,7 +2481,7 @@
           "url": "https://github.com/forrestchang/andrej-karpathy-skills",
           "published_at": "2026-04-07T11:33:05.656000Z",
           "first_seen_at": "2026-04-07T11:50:51.809974Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -2621,51 +2743,35 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "7764ed6d126f29cd8efc0416d4e63585ed0486e1",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "人人都是产品经理 · 日榜",
-          "title": "把前任变成AI技能？说实话，我试完之后心情有点复杂",
-          "url": "https://www.woshipm.com/?p=6371684",
-          "published_at": null,
-          "first_seen_at": "2026-04-07T02:32:45.880841Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "技能"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "1a1dd64beb398df3215dc39296acc8d94a91fbc8",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "虎嗅 (Huxiu)",
-          "title": "今天，我决定把“卡兹克风格创作.skill”开源了。",
-          "url": "https://www.huxiu.com/article/4848444.html?f=rss",
-          "published_at": "2026-04-07T02:14:08Z",
-          "first_seen_at": "2026-04-07T02:32:45.880841Z",
-          "last_seen_at": "2026-04-07T14:53:36.481410Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "skill"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 85
+      "other_count": 90
     },
     {
       "id": "defense-agent",
       "name": "国防类Agent",
       "count": 120,
       "items": [
+        {
+          "id": "981ef5714af543bdc7ba8eb90ca2cd34a52d4884",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "V2EX (创意工作者社区)",
+          "title": "[AI Agent 智能体] MacOS 上搭建了本地的 Gemma4，如何与它协作最高效？",
+          "url": "https://www.v2ex.com/t/1204781",
+          "published_at": "2026-04-10T01:27:28Z",
+          "first_seen_at": "2026-04-10T02:57:59.462924Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
+          "watch_score": 2,
+          "watch_matched_terms": [
+            "agent",
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
         {
           "id": "c95927e6900d23f70d0f0f47163613d54f020c62",
           "site_id": "buzzing",
@@ -2675,7 +2781,7 @@
           "url": "https://www.theguardian.com/us-news/2026/apr/09/pentagon-ai-xai-emil-michael",
           "published_at": "2026-04-09T20:09:53.135000Z",
           "first_seen_at": "2026-04-09T21:09:10.518391Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "国防",
@@ -2693,7 +2799,7 @@
           "url": "https://news.google.com/read/CBMirgFBVV95cUxQcTd6SEJDQUdhYnY2ZVVMaEVOVmhPQXZiX2Z3d0ZtQU04WXFQQ0hUeUZUSFA2Ui1Va0dRMVIxTzJWX2Q0RzNXRUdUbWVFU21Uc2pOanVJSlA5b0hfNFRjTGR1V2pDUkJJQmt6WVkySlkyVE1vT0g5TjM2aV9CUUJkVlNKMnF5d2F3dVE1MUF3cVhhYmZjR01DOEI1dGZka1dxa0dPMEJLd3FERFQwa3c?hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-04-09T17:18:15Z",
           "first_seen_at": "2026-04-09T20:03:54.364579Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "defense",
@@ -2783,7 +2889,7 @@
           "url": "https://xz.aliyun.com/news/91933",
           "published_at": null,
           "first_seen_at": "2026-04-08T04:35:53.159792Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "agent",
@@ -2855,11 +2961,79 @@
           "url": "https://juejin.cn/post/7624357532246507561",
           "published_at": null,
           "first_seen_at": "2026-04-07T05:07:19.593970Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "agent",
             "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "a5f103620df773fdfc1c51d225648daf57208991",
+          "site_id": "aibase",
+          "site_name": "AIbase",
+          "source": "AIbase",
+          "title": "扣子 2.5 重磅升级！给 AI Agent 配云电脑 + 云手机 + 独立邮箱，还建了个“平行世界”",
+          "url": "https://www.aibase.com/news/27013",
+          "published_at": "2026-04-10T02:57:59.462924Z",
+          "first_seen_at": "2026-04-10T02:57:59.462924Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "69f9ea76a058eb2fb195f5b1ba3feebcf34b8a09",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "reut.rs",
+          "title": "美国法官称五角大楼违反了恢复媒体采访权的法院命令",
+          "url": "https://reut.rs/4tDEqCG",
+          "published_at": "2026-04-10T01:45:46.041000Z",
+          "first_seen_at": "2026-04-10T02:57:59.462924Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "5f0106d05922a6962213804faa13cbd59b224794",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "dlvr.it",
+          "title": "法院撤销五角大楼最新媒体限制令",
+          "url": "http://dlvr.it/TRySvh",
+          "published_at": "2026-04-10T00:57:46.814000Z",
+          "first_seen_at": "2026-04-10T02:57:59.462924Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "d7758819c1c424c17011aeebb7401b57a6e1627f",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "nyti.ms",
+          "title": "法官驳回赫格塞斯限制五角大楼记者活动的第二次尝试",
+          "url": "https://nyti.ms/41sJdLd",
+          "published_at": "2026-04-10T00:09:38.957000Z",
+          "first_seen_at": "2026-04-10T02:57:59.462924Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -2890,7 +3064,7 @@
           "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOd1UyODVIdnNGWVRMTnNIZXp6QlJQWVQ5U1M3YU1COXJOZEZDbC1tLTZkSmMtMmhiU3BOQ05fRnRKU2dPakl6cU1SLTUxYTVSWFBuV1BEd0I2R25zcHMwcW5UVDlVdkxIN1UwbWtFV3Y1bkRUOTF0TThxRl9RdFNvRVQtdHVTYjFXNTRz?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-04-09T23:21:46.231000Z",
           "first_seen_at": "2026-04-10T00:01:17.827274Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
@@ -2907,7 +3081,7 @@
           "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOd1UyODVIdnNGWVRMTnNIZXp6QlJQWVQ5U1M3YU1COXJOZEZDbC1tLTZkSmMtMmhiU3BOQ05fRnRKU2dPakl6cU1SLTUxYTVSWFBuV1BEd0I2R25zcHMwcW5UVDlVdkxIN1UwbWtFV3Y1bkRUOTF0TThxRl9RdFNvRVQtdHVTYjFXNTRz?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-04-09T23:21:41.861000Z",
           "first_seen_at": "2026-04-10T00:01:17.827274Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
@@ -2924,7 +3098,7 @@
           "url": "https://news.ycombinator.com/item?id=47706141",
           "published_at": "2026-04-09T23:08:52.993000Z",
           "first_seen_at": "2026-04-09T23:08:34.801594Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2941,7 +3115,7 @@
           "url": "https://blog.skypilot.co/research-driven-agents",
           "published_at": "2026-04-09T23:05:49.368000Z",
           "first_seen_at": "2026-04-10T00:01:17.827274Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2975,7 +3149,7 @@
           "url": "https://news.sky.com/story/three-russian-submarines-targeted-uk-cables-defence-secretary-says-13529764",
           "published_at": "2026-04-09T22:17:56.340000Z",
           "first_seen_at": "2026-04-09T23:08:34.801594Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
@@ -3009,7 +3183,7 @@
           "url": "https://blog.csdn.net/qq_38998213/article/details/159998495",
           "published_at": null,
           "first_seen_at": "2026-04-09T21:09:10.518391Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3077,7 +3251,7 @@
           "url": "https://www.theguardian.com/us-news/2026/apr/09/pentagon-ai-xai-emil-michael",
           "published_at": "2026-04-09T20:14:23Z",
           "first_seen_at": "2026-04-10T00:01:17.827274Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "defense"
@@ -3128,7 +3302,7 @@
           "url": "https://www.businessinsider.com/changes-to-us-military-draft-registration-2026-4",
           "published_at": "2026-04-09T18:50:11Z",
           "first_seen_at": "2026-04-09T20:03:54.364579Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "military"
@@ -3162,7 +3336,7 @@
           "url": "https://www.techradar.com/pro/security/flamingchina-hacker-claims-to-have-stolen-over-10-petabytes-of-advanced-military-data-from-chinas-national-supercomputing-center-in-possibly-the-biggest-hack-of-all-time",
           "published_at": "2026-04-09T18:05:00Z",
           "first_seen_at": "2026-04-09T18:58:58.835532Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "military"
@@ -3196,7 +3370,7 @@
           "url": "https://blog.csdn.net/weixin_37899718/article/details/159973870",
           "published_at": null,
           "first_seen_at": "2026-04-09T17:57:57.361850Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3213,7 +3387,7 @@
           "url": "https://www.thelettersfromleo.com/p/the-pentagon-threatened-pope-leo",
           "published_at": "2026-04-09T17:13:49.471000Z",
           "first_seen_at": "2026-04-09T17:57:57.361850Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -3230,7 +3404,7 @@
           "url": "https://blog.skypilot.co/research-driven-agents",
           "published_at": "2026-04-09T16:58:49Z",
           "first_seen_at": "2026-04-09T23:08:34.801594Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3264,7 +3438,7 @@
           "url": "https://www.thelettersfromleo.com/p/the-pentagon-threatened-pope-leo",
           "published_at": "2026-04-09T16:46:11Z",
           "first_seen_at": "2026-04-09T17:57:57.361850Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -3281,7 +3455,7 @@
           "url": "https://econ.st/3Q2L0Eg",
           "published_at": "2026-04-09T16:09:58.007000Z",
           "first_seen_at": "2026-04-09T16:48:53.173411Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -3349,7 +3523,7 @@
           "url": "https://newrepublic.com/post/208820/pentagon-threatened-pope-criticized-donald-trump",
           "published_at": "2026-04-09T14:54:24Z",
           "first_seen_at": "2026-04-09T22:04:51.185743Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -3434,7 +3608,7 @@
           "url": "https://www.economist.com/britain/2026/04/09/why-swindon-is-emerging-as-a-centre-for-britains-drone-industry",
           "published_at": "2026-04-09T14:02:10.416000Z",
           "first_seen_at": "2026-04-09T15:06:41.974536Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -3519,7 +3693,7 @@
           "url": "https://blog.csdn.net/sjw890821sjw/article/details/159973294",
           "published_at": null,
           "first_seen_at": "2026-04-09T11:53:10.621322Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -3570,7 +3744,7 @@
           "url": "https://yro.slashdot.org/story/26/04/09/0010207/anthropic-loses-appeals-court-bid-to-temporarily-block-pentagon-blacklisting",
           "published_at": "2026-04-09T11:00:00Z",
           "first_seen_at": "2026-04-09T11:53:10.621322Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -3638,7 +3812,7 @@
           "url": "https://www.businessinsider.com/nato-needs-drones-protect-arctic-but-cold-brings-challenges-2026-4",
           "published_at": "2026-04-09T10:03:41.314000Z",
           "first_seen_at": "2026-04-09T10:41:41.219421Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -3672,7 +3846,7 @@
           "url": "https://www.qbitai.com/2026/04/398121.html",
           "published_at": null,
           "first_seen_at": "2026-04-09T09:20:20.793735Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3723,7 +3897,7 @@
           "url": "https://xz.aliyun.com/news/91896",
           "published_at": null,
           "first_seen_at": "2026-04-09T09:20:20.793735Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3808,7 +3982,7 @@
           "url": "https://www.qbitai.com/2026/04/398117.html",
           "published_at": null,
           "first_seen_at": "2026-04-09T08:01:55.400020Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3876,7 +4050,7 @@
           "url": "https://www.producthunt.com/products/lukan-ai-agent-ide-and-workstation",
           "published_at": null,
           "first_seen_at": "2026-04-09T08:01:55.400020Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3961,7 +4135,7 @@
           "url": "https://blog.csdn.net/INTSIG/article/details/159959976",
           "published_at": null,
           "first_seen_at": "2026-04-09T06:23:18.530972Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3978,7 +4152,7 @@
           "url": "https://news.sky.com/story/the-young-military-leader-strengthening-relations-with-russia-and-china-13529478",
           "published_at": "2026-04-09T06:20:03.048000Z",
           "first_seen_at": "2026-04-09T08:01:55.400020Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -4046,7 +4220,7 @@
           "url": "https://www.woshipm.com/?p=6373871",
           "published_at": null,
           "first_seen_at": "2026-04-09T04:58:44.597952Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -4114,7 +4288,7 @@
           "url": "https://blog.csdn.net/qq_47741012/article/details/159955126",
           "published_at": null,
           "first_seen_at": "2026-04-09T04:58:44.597952Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -4131,7 +4305,7 @@
           "url": "https://www.woshipm.com/?p=6373275",
           "published_at": null,
           "first_seen_at": "2026-04-09T04:58:44.597952Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -4352,7 +4526,7 @@
           "url": "https://new.qq.com/rain/a/20260409Q028AH00",
           "published_at": null,
           "first_seen_at": "2026-04-09T02:29:28.172178Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -4631,91 +4805,6 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "1c4c113124490b8a1eb98c06409c2f2ff433ce1b",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "新浪财经新闻 · 点击量排行",
-          "title": "以色列国防军否认袭击伊朗拉万炼油厂",
-          "url": "https://finance.sina.com.cn/7x24/2026-04-09/doc-inhtvrtm9135549.shtml",
-          "published_at": null,
-          "first_seen_at": "2026-04-08T22:07:11.566894Z",
-          "last_seen_at": "2026-04-08T23:59:56.976145Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "5523e3de309791c6de3e0a61e50b4dd8787a5c37",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.bloomberg.com",
-          "title": "阿联酋称必须解决伊朗的核能力和军事能力问题",
-          "url": "https://www.bloomberg.com/news/articles/2026-04-08/iran-s-nuclear-military-capabilities-must-be-addressed-uae",
-          "published_at": "2026-04-08T21:49:24.391000Z",
-          "first_seen_at": "2026-04-08T22:07:11.566894Z",
-          "last_seen_at": "2026-04-08T23:08:40.597766Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "b2ae0b46d5adc81de52d9fabde7d65c6071cc975",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "特朗普会见北约领导人吕特，同时考虑退出该军事联盟 - AP News",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOMlZ0cTNKYmcybnNwZmV0Y0plc3hLU2k1ZXJ5cFhnamZHWnpaOERPbHFpQVN5VkJkUlEtR0ZRY1MwTVRISHJ3UDhtRXl3cDlsTThVWUhySU5KM29KXzA3bmFtM3QtMm5rVWkyNWdGQzVYYU5mSFVzaGVLOGttTE1aM09uS1B1aDF6RWdlTTVB?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-04-08T21:49:24.198000Z",
-          "first_seen_at": "2026-04-08T22:07:11.566894Z",
-          "last_seen_at": "2026-04-09T09:20:20.793735Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "a258cf95af39590a6089231a314e4fe6fd6310b5",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "reut.rs",
-          "title": "乌克兰反垄断机构退回了阿联酋公司对一家无人机制造商的收购要约",
-          "url": "https://reut.rs/4mqFhV2",
-          "published_at": "2026-04-08T21:26:00.168000Z",
-          "first_seen_at": "2026-04-08T22:07:11.566894Z",
-          "last_seen_at": "2026-04-08T23:59:56.976145Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "84e0b4e98a1873f4605056fbd04555062c511b95",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "CSDN博客 · 综合热榜",
-          "title": "AutoGen 自定义代理：打造符合企业需求的个性化 Agent 协作网络",
-          "url": "https://blog.csdn.net/universsky2015/article/details/159967600",
-          "published_at": null,
-          "first_seen_at": "2026-04-08T21:09:49.751957Z",
-          "last_seen_at": "2026-04-09T16:48:53.173411Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
@@ -4725,8 +4814,26 @@
     {
       "id": "ai-for-science",
       "name": "AI+科研",
-      "count": 16,
+      "count": 17,
       "items": [
+        {
+          "id": "68e877e6667c45b80064f624f5f08a6f4e1bb5d3",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "phys.org",
+          "title": "通过更优的数据库架构，将人工智能驱动与实验驱动的材料发现相结合",
+          "url": "https://phys.org/news/2026-04-bridging-ai-experimental-materials-discovery.html",
+          "published_at": "2026-04-10T02:49:39.249000Z",
+          "first_seen_at": "2026-04-10T02:57:59.462924Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
+          "watch_score": 4,
+          "watch_matched_terms": [
+            "材料发现",
+            "combo:ai+science"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
         {
           "id": "725c4e7e47568cbce20fb9f8fa744a4fbaa38773",
           "site_id": "tophub",
@@ -4754,7 +4861,7 @@
           "url": "https://phys.org/news/2026-04-ai-proteins-built-specific-compounds.html",
           "published_at": "2026-04-09T23:53:41.604000Z",
           "first_seen_at": "2026-04-10T00:01:17.827274Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -4771,7 +4878,7 @@
           "url": "https://news.ycombinator.com/item?id=47706141",
           "published_at": "2026-04-09T23:08:52.993000Z",
           "first_seen_at": "2026-04-09T23:08:34.801594Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -4856,7 +4963,7 @@
           "url": "https://www.producthunt.com/r/D62M64Q67NPDCH",
           "published_at": "2026-04-08T06:21:43.158000Z",
           "first_seen_at": "2026-04-08T07:59:54.002926Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -4941,7 +5048,7 @@
           "url": "https://phys.org/news/2026-04-reveals-hidden-patterns-decades-social.html",
           "published_at": "2026-04-09T22:01:42.324000Z",
           "first_seen_at": "2026-04-09T23:08:34.801594Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "科学研究"
@@ -4992,7 +5099,7 @@
           "url": "https://www.newyorker.com/news/the-lede/the-forest-service-a-force-across-rural-america-reorganizes-under-trump",
           "published_at": "2026-04-07T10:07:33.787000Z",
           "first_seen_at": "2026-04-07T10:52:31.253440Z",
-          "last_seen_at": "2026-04-10T00:01:17.827274Z",
+          "last_seen_at": "2026-04-10T02:57:59.462924Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "科学研究"
@@ -5003,7 +5110,7 @@
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 16
+      "other_count": 17
     }
   ]
 }
