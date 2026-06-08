@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-06-08T18:28:54.082170Z",
+  "generated_at": "2026-06-08T20:45:44.428752Z",
   "window_days": 3,
-  "source_generated_at": "2026-06-08T18:27:14.683491Z",
+  "source_generated_at": "2026-06-08T20:43:57.675018Z",
   "source_window_hours": 24,
   "source_topic_filter": "ai_tech_robotics",
   "output_name": "special-focus",
   "section_count": 6,
-  "total_items": 181,
+  "total_items": 183,
   "official_error_count": 0,
   "official_errors": [],
   "sections": [
@@ -60,7 +60,7 @@
           "url": "https://blog.csdn.net/Linlingu/article/details/161771499",
           "published_at": null,
           "first_seen_at": "2026-06-08T18:27:14.683491Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "openclaw"
@@ -144,7 +144,7 @@
     {
       "id": "palantir",
       "name": "Palantir",
-      "count": 5,
+      "count": 6,
       "items": [
         {
           "id": "b3756f7754fd5f9b68a8b2789933506b32c56064",
@@ -154,15 +154,32 @@
           "title": "Managing Elasticsearch Reindex at Scale: Performance, Reliability, and Observability",
           "url": "https://blog.palantir.com/managing-elasticsearch-reindex-at-scale-performance-reliability-and-observability-cf948d0efd47?source=rss----3c87dc14372f---4",
           "published_at": "2026-06-08T17:57:01Z",
-          "first_seen_at": "2026-06-08T18:28:48.947112Z",
+          "first_seen_at": "2026-06-08T20:45:39.162872Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
             "rss-feed"
           ],
-          "hover_description": "<figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/844/1*rDwvo_eXFC7GNW_3FE4B7Q.jpeg\" /></figure><p><em>Editor’s Note: This is the fourth post in a </em><a href=\"https://blog.palantir.com/all?topic=palantir-foundations\"><em>series</em></a><em> exploring how Palantir customizes infrastructure software for reliable operation at scale.</em></p><p><em>The following is a guest contribution to the Foundations series from the Gotham Core Platform organization, which builds and maintains the bedrock for mission-critical applications within the Gotham ecosystem. This blogpost by Kevin Liang, a backend developer based in CA, highlights the design considerations and improvements made to the Elasticsearch reindex machinery — which broadly aims to provide an easy-to-use, performant, reliable, and observable way to repair and rebuild search indices for backend applications. The goal of this post is two-fold: share our design decisions and learnings with the broader technical community, and shed light on what a typical project looks like for a systems-leaning backend engineer working in Gotham Core Platform at Palantir.</em></p><p>Search is one of the most heavily used workflows across Palantir Gotham. Users are constantly querying, filtering, and drilling into large datasets to surface entities, trace connections, and assemble the analyses that drive mission-critical operational decisions. At any point in that workflow, they expect results to feel instantaneous, regardless of the scale or complexity of the underlying data graph.</p><p>Many of these search workflows leverage <a href=\"https://www.elastic.co/docs\">Elasticsearch</a>, an open-source distributed search and analytics engine that provides robust full-text search capabilities at scale. We have previously explained the role Elasticsearch plays within our broader ecosystem and architecture, which you can read more about in <a href=\"https://blog.palantir.com/defensive-databases-optimizing-index-refresh-semantics-554ef3852ff1\">Defensive Databases: Optimizing Index-Refresh Semantics</a>.</p><p>As mentioned in that blog post, most Gotham applications interact with Elasticsearch via an in-house <em>database client service</em> that acts as a layer between backend services and storage infrastructure. At a high level, the service resembles a document store and provides:</p><ul><li>Strongly consistent key-value CRUD backed by a transactional database, which remains the authoritative source of truth</li><li>Full-text search on document fields via Elasticsearch, which functions as an “external”, secondary index</li><li>First-class security policy enforcement built into the core read, search and write paths, not just bolted on as an afterthought</li></ul><p>We will henceforth refer to this in-house database client service as “the document store.” The document store serves many distinct clients, each with its own group of <strong>schemas</strong> (analogous to database tables). Each <strong>schema</strong> declares field names, types, security, the structural layouts of documents and, critically, whether and how the field should be indexed into Elasticsearch via something called mappings. Some schemas are not indexed at all; others carry rich mappings that power faceted search, geo queries, and date-range filters. You can read more about Elasticsearch mappings in their <a href=\"https://www.elastic.co/docs/manage-data/data-store/mapping\">official documentation here</a>.</p><p>The flow of data from various application backends to the database, Elasticsearch, and the authentication service, is illustrated in the following diagram, expanding upon the diagram we used in the <a href=\"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*QGaK8n6GOrxEXccLePvmYg.jpeg\">Defensive Databases</a> blog post.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/844/1*uXSJIuQGH0pWJ0OlVfLq4Q.jpeg\" /></figure><p>While Palantir’s <em>Foundations</em> group is responsible for operating and delivering Elasticsearch clusters across our diverse fleet of deployments, the services that interact with this infrastructure also bear the responsibility of using the clusters efficiently and responsibly, and maintaining their own indices.</p><p>There are also times when a service needs to repair or rebuild Elasticsearch indices. When an index becomes outdated or falls into an inconsistent state, whether from mapping changes or operational failures, a process known as reindexing is often the remediation.</p><ul><li>For example, a logistics application that needs to add a new field for users to search supply chain disruption data, or that needs to support an additional security metadata field in the access policy, would need a reindex.</li><li>Reindexing can also apply at the cluster level. For example, when migrating from Elasticsearch 8.x to 9.x, we prefer reindexing over an in-place upgrade because it allows us to roll back quickly if something goes wrong.</li></ul><p>This post discusses the design and evolution of the Elasticsearch reindex machinery embedded in the document store, which has enabled us to carry out reindex reliably, performantly, and without taking the service offline or requiring excessive human oversight, across any number of client applications.</p><h3>What do we need</h3><p>As previously mentioned, reindex can be necessary for multiple reasons. Schemas and their mappings evolve as our products do, index settings (including the number of shards) may change, and indices may become corrupted due to unexpected failures or bugs in the software. When they happen, a new index with the correct mappings and updated settings must be created, populated with data, and swapped in. Furthermore, when we need to migrate between clusters, such as during version upgrades (e.g. upgrading from Elasticsearch 8.x to 9.x) or to move to a standalone cluster rather than one shared with other services when the throughput justifies it, we would need to carry out a cross-cluster reindex.</p><p>Elasticsearch does offer a _reindex API, which copies documents from one index to another within the same cluster, and offers the ability to <a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/8.19/docs-reindex.html#reindex-from-remote\">source the reindex from a remote cluster</a> in the API, too. However, since the database is the primary source of truth with strong consistency in our architecture, the reindex we are conducting will rehydrate the new index with documents loaded from the database instead, which means that our document store service will have to orchestrate and oversee the entire reindex process rather than simply dispatching a command and letting the Elasticsearch cluster handle the rest.</p><p>The requirements for our Elasticsearch reindex machine are:</p><p>1. <strong>Schema-aware reconstruction</strong>: The system must know how to construct each client schema’s indices — field types, analyzers, shard counts, etc.</p><p>2. <strong>Low manual action</strong>: Operators shouldn’t have to shepherd each schema through the process and move it through the stages. Managing reindex across hundreds of deployments, each with 100+ schemas, is simply too much work to do by hand.</p><p>3. <strong>Automatically detect and repair inconsistency</strong>: The system should be able to detect when reindex is needed for a specific schema and carry it out autonomously.</p><p>4. <strong>Bounded resource usage</strong>: Reindex must not bring down the server or impede API serving. It cannot monopolize memory, exhaust the thread pool, or saturate the database connection pool.</p><p>5. <strong>Online, live reindex</strong>: The service is serving live traffic the entire time, including search. In the context of our logistics-focused application, existing search functionalities must continue to work.</p><h3>Our first reindex machine</h3><p>With the requirements in mind, we implemented the first Elasticsearch reindex machine within the document store. The following diagram shows the process to reindex a particular schema.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/844/1*Opj33xG7PdFSax-wZHURNA.jpeg\" /></figure><h3>Shadow index</h3><p>Our example application must continue to handle search requests during and after the reindex. The key to maintaining liveness during reindex is the <strong>shadow index</strong>, a separate, physical index on the same Elasticsearch cluster for the same schema with desired mappings and settings, and receiving all index / deindex requests from the document store’s client-facing API while getting backfilled by the reindex machine. Crucially, the shadow index does not yet serve reads. The reindex machine will create a shadow index, with suffix _b if the current index ends in _a (and vice-versa), at the inception with the intended mapping and settings, and backfill documents from the database. Upon conclusion, the machine will set the shadow index as the primary index and discard the previous index.</p><p>Searches are always served from the primary index, and write requests from the API dual-write to both the primary and shadow index to not lose the latest edits. We take advantage of the <a href=\"https://www.elastic.co/blog/elasticsearch-versioning-support\">optimistic concurrency control primitive provided by Elasticsearch</a> (version_type.external_gte) to deconflict concurrent index writes from the API and the reindex machine.</p><p>As for the routing of read and write requests, instead of directly referencing names of physical indices, we use <a href=\"https://www.elastic.co/docs/manage-data/data-store/aliases\">Elasticsearch index aliases</a> in read, write, and reindex code paths. Mappings from aliases to physical indices are only set or altered during index creation and after reindex operations.</p><p>The following table illustrates changes in aliases involving the shadow index, _b, and the existing primary index, _a, at key stages of a reindex. In this example, _b was created and tagged with the reindex alias at the onset of a reindex. _a kept the read alias while the write alias was dropped. When the backfilling phase of reindex is complete, _b becomes primary by assuming the read and write aliases, while _a gets deleted.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*dHfuC4QDLjtL2J8v4Shlrg.png\" /></figure><h3>Orchestrating a reindex</h3><p>The reindex machine maintains a schema-level index metadata table to track information related to reindex job runs, e.g. when a schema last started/ succeeded/ failed, whether and when the schema is queued, running a reindex, aborting one, or has no work. The schema-level index metadata is the single source of truth for coordination within the reindex machine.</p><p>Running as a background task on the server, the reindex machine periodically scans all schema definitions, compares the database-persisted metadata against the actual index state on the Elasticsearch cluster, and determines which schemas require attention: continue an ongoing reindex, start the next queued, or attempt to repair an inconsistent schema index before queueing it for a full reindex if a repair was insufficient.</p><p>In addition to proactively reindexing for schemas whose indices require repair, a separate background task, which picks up config-supplied requests, and several admin API endpoints allow operators and clients (including our logistics-focused application in the example) to request and abort a reindex.</p><h3>Cluster agnostic</h3><p>A key design choice across the document store service is being cluster-agnostic. Elasticsearch clusters are discovered and mapped to logical components in code. In most cases there will be one cluster, but during a cross-cluster reindex, there will be an additional migration cluster attached and recognized as such. Via a dynamic layer, reads are served from the primary cluster only while writes — reindex included — fan out to all connected clusters, supporting both single-cluster and cross-cluster operations with minimal additional code.</p><p>With this basic design, we are able to perform reindex on any schemas within the document store. Our logistics-focused example application can include a reindex in their schema upgrade and gate the new search feature on reindex completion.</p><h3>Evolution of the reindex machine</h3><p>As our products have expanded in both features and usage, and our storage infrastructure has evolved, the reindex machine has faced increasing demands. Running a full rebuild of an Elasticsearch index with millions of documents — while the document store service continues to handle live traffic — presents a constantly evolving challenge. As we add new features and improve stability, reindexing has become more frequent and critical. In response, we have continually enhanced the reindex machine to improve performance, stability, and observability. Here, we highlight a few notable improvements.</p><h3>Parallelization and asynchronous processing</h3><p>Parallelization was built into the reindex machine early on, since both reading pages of documents from the database and indexing them into a search engine involve significant I/O wait. The solution is a parallel job runner backed by a configurable thread pool and a bounded staging queue. Worker threads dynamically assume one of two roles on each iteration: a thread that acquires the paging lock fetches the next batch of records into the queue, while threads that find the lock held instead claim a queued batch and perform the indexing work. A separate daemon thread periodically snapshots progress by recording the earliest unfinished batch’s position, enabling the job to resume from where it left off after a failure. This design creates a pipeline where multiple batches are in flight simultaneously — some being read from the database, others being indexed — without requiring explicit role assignment or blocking the reindex loop.</p><p>The diagram below illustrates the design of the parallel job runner.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/844/1*5sphL2YRqfBrX8Uhr5H_dg.jpeg\" /></figure><h3>Batch limiting</h3><p>To prevent toppling the document store due to reindex, we have added a multitude of rate and batch limiting capabilities around the reindex machine. A single reindex run is bounded along three dimensions:</p><ul><li>Document count per batch: Caps the number of objects fetched from the database in a single transaction, keeping database connection hold times short.</li><li>Memory per batch: A soft cap on the memory footprint of a single batch, preventing surprise memory surge caused by large documents due to a rigid batch size limit.</li><li>Total batches per run: Limits how many batches a single invocation of the reindex loop will process before yielding. Combined with a configurable rest interval between runs, this creates natural breathing room for API-serving threads and garbage collection.</li></ul><p>These three knobs interact to prevent any single dimension from becoming a bottleneck. A schema with many small documents hits the document-count limit; a schema with fewer but larger documents hits the memory limit; and the batches-per-run limit ensures the reindex machine periodically pauses regardless.</p><h3>Crash safety</h3><p>Imagine if the document store server were to crash mid-way through an operation that modifies indices and aliases — say, while starting or finishing a reindex for our logistics application. The indices could be left in a broken state from which deterministic recovery is impossible without restarting the entire reindex from scratch. To guard against this, each index lifecycle operation is modeled as a fine-grained state machine: before dispatching any mutation to the search engine, the current state is persisted to the database, and every search engine operation is designed to be idempotent. If the server crashes at any point, it simply resumes from the last persisted state and safely re-executes the pending operation.</p><p>The states, illustrated below, are persisted in a separate per-cluster, per-schema metadata table, where we also persist key parameters such as the current primary index for crash-safety.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/844/1*J1HC3FbpelbACmLTAlMizg.jpeg\" /></figure><h3>Logs? Metrics? or Diagnostics? Yes.</h3><p>When a background process is silently rebuilding indices involving millions of documents, observability is non-negotiable. The diverse and often-times restricted environments in which Palantir products are deployed further means that viability and access to the different forms of observability vary greatly between deployments. You cannot backport the observability you wish you had when things go wrong. Not to mention that different forms of observability have their pros and cons, and we would like the best of all worlds.</p><h4>Logs:</h4><ul><li>Pros: shows timestamped state snapshots with rich parameters, great for tracing exact steps and examining detailed states at each step.</li><li>Cons: may be too spammy and occupy excessive disk space if parameters are too informative; while logs are helpful for investigation after the fact and we would want exhaustive logs during a root-cause analysis, most of the time logs and their parameters are simply not consumed.</li></ul><h4>Metrics:</h4><ul><li>Pros: an ideal, light-weight tool to track changes in states and progress over time, and can be turned into user-friendly dashboard visualizations to aid quick insight gathering and aggregation analyses.</li><li>Cons: do not contain additional information beyond the time series and tags themselves, i.e. no additional parameters.</li></ul><p><strong>Diagnostics</strong> (on-demand, one-off reports generated upon request, often consumed on <a href=\"https://www.palantir.com/platforms/apollo/\">Palantir Apollo</a>):</p><ul><li>Pros: can be as detailed as we need them to be (within reason, of course), without having to worry about spamming or disk space given that they are on-demand.</li><li>Cons: they are often a snapshot (unless specifically engineered to recount historical events) when they are requested, making them less useful for an after-the-fact analysis</li></ul><p>In our case, we have opted to implement all three forms of observability available to us, which has proven to be immensely valuable.</p><h3>Handling cross-cluster reindex</h3><p>Recall from our earlier examples that a reindex can be triggered for reasons beyond application-level changes. Cross-cluster migrations — moving a service’s search traffic from one Elasticsearch cluster to another without downtime — are a fact of life in a large-scale platform. For example, if we want to migrate from Elasticsearch 8.x to 9.x while preserving the ability to rollback at any point, we would need to implement the migration with a reindex.</p><p>In the reindex machine design we have discussed thus far, which aims to repair the primary, request-serving Elasticsearch cluster, we create a new index as the shadow index on the same cluster that is then rebuilt from the primary store. When backfilling is complete, the shadow index is promoted for searching. While conceptually similar to a regular reindex, cross-cluster reindex does require slightly different handling. Specifically, we need to make sure that the new index is located on a different cluster than the cluster that hosts the old index, and skip the deletion of old indices upon reindex completion as there is nothing to delete on the new cluster, and we want to keep the indices on the old cluster around in case we need to roll back.</p><h3>A separate reindex machine for migration</h3><p>We decided to keep the two reindex machines separate, each orchestrating reindex based on metadata tied to the appropriate Elasticsearch cluster in question. The <strong>primary reindex machine</strong>, which we have covered in this article thus far, works with the primary cluster and serves to repair active indices that handle API requests. The new <strong>migration reindex machine</strong>, on the other hand, backfills the migration cluster and prepares it to become the new primary cluster. Creating two separate reindex machines makes configuration, metadata management, code readability, and observability easier, compared to a single reindex machine filled with cluster-specific branching logic. Each reindex machine will have its own configuration: thread counts, batch sizes, memory limits, schedule interval, etc., and run as independent background tasks, working with only their respective cluster rather than all connected clusters.</p><p>Each reindex machine applies different index and alias evolutions tailored to their respective use case:</p><h4>Index and alias evolution on the primary reindex machine (same as before)</h4><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*2E_ayD2j1i9gsLYyW7pFOA.png\" /></figure><h4>Index and alias evolution on the migration reindex machine</h4><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*mHCIHK-nLlLcXjfRe0ezPg.png\" /></figure><p>The following diagram shows a comparison of active indices on relevant clusters when reindexing for the primary cluster, and when conducting a cross-cluster reindex for migration purposes.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/844/1*-LHnaclGFXSO3zo2yAnDDw.jpeg\" /></figure><h3>Rome wasn’t built in a day</h3><p>Over the years, many Palantir engineers have worked to support a first-class search experience by contributing a myriad of improvements across the reindex machinery in Gotham’s document store service. Ongoing learnings from both the engineering and operational sides continue to drive improvements across the Elasticsearch reindex apparatus. A lot of the same learnings, pertaining to observability and increasingly proactive support modalities, will inform the design of future pieces of software — across Foundry, AIP, Gotham, and Apollo development efforts — that interact with Palantir’s infrastructure layers. No product ever reaches perfection, but at Palantir, we strive to continuously learn from every challenge and operational outcome, using those insights as fuel to refine our products further. Our commitment is not just to deliver powerful capabilities, but also to ensure the highest levels of stability and reliability for our users.</p><p>If this sounds like the kind of project and impact you’re interested in, check out our open roles today: <a href=\"https://www.palantir.com/careers/open-positions/\">https://www.palantir.com/careers/open-positions/</a></p><img alt=\"\" height=\"1\" src=\"https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=cf948d0efd47\" width=\"1\" /><hr /><p><a href=\"https://blog.palantir.com/managing-elasticsearch-reindex-at-scale-performance-reliability-and-observability-cf948d0efd47\">Managing Elasticsearch Reindex at Scale: Performance, Reliability, and Observability</a> was originally published in <a href=\"https://blog.palantir.com\">Palantir Blog</a> on Medium, where people are continuing the conversation by highlighting and responding to this story.</p>",
+          "hover_description": "<figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/844/1*rDwvo_eXFC7GNW_3FE4B7Q.jpeg\" /></figure><p><em>Editor’s Note: This is the fourth post in a </em><a href=\"https://blog.palantir.com/all?topic=palantir-foundations\"><em>series</em></a><em> exploring how Palantir customizes infrastructure software for reliable operation at scale.</em></p><p><em>The following is a guest contribution to the Foundations series from the Gotham Core Platform organization, which builds and maintains the bedrock for mission-critical applications within the Gotham ecosystem. This blog post by Kevin Liang, a backend developer based in CA, highlights the design considerations and improvements made to the Elasticsearch reindex machinery — which broadly aims to provide an easy-to-use, performant, reliable, and observable way to repair and rebuild search indices for backend applications. The goal of this post is two-fold: share our design decisions and learnings with the broader technical community, and shed light on what a typical project looks like for a systems-leaning backend engineer working in Gotham Core Platform at Palantir.</em></p><p>Search is one of the most heavily used workflows across Palantir Gotham. Users are constantly querying, filtering, and drilling into large datasets to surface entities, trace connections, and assemble the analyses that drive mission-critical operational decisions. At any point in that workflow, they expect results to feel instantaneous, regardless of the scale or complexity of the underlying data graph.</p><p>Many of these search workflows leverage <a href=\"https://www.elastic.co/docs\">Elasticsearch</a>, an open-source distributed search and analytics engine that provides robust full-text search capabilities at scale. We have previously explained the role Elasticsearch plays within our broader ecosystem and architecture, which you can read more about in <a href=\"https://blog.palantir.com/defensive-databases-optimizing-index-refresh-semantics-554ef3852ff1\">Defensive Databases: Optimizing Index-Refresh Semantics</a>.</p><p>As mentioned in that blog post, most Gotham applications interact with Elasticsearch via an in-house <em>database client service</em> that acts as a layer between backend services and storage infrastructure. At a high level, the service resembles a document store and provides:</p><ul><li>Strongly consistent key-value CRUD backed by a transactional database, which remains the authoritative source of truth</li><li>Full-text search on document fields via Elasticsearch, which functions as an “external”, secondary index</li><li>First-class security policy enforcement built into the core read, search and write paths, not just bolted on as an afterthought</li></ul><p>We will henceforth refer to this in-house database client service as “the document store.” The document store serves many distinct clients, each with its own group of <strong>schemas</strong> (analogous to database tables). Each <strong>schema</strong> declares field names, types, security, the structural layouts of documents and, critically, whether and how the field should be indexed into Elasticsearch via something called mappings. Some schemas are not indexed at all; others carry rich mappings that power faceted search, geo queries, and date-range filters. You can read more about Elasticsearch mappings in their <a href=\"https://www.elastic.co/docs/manage-data/data-store/mapping\">official documentation here</a>.</p><p>The flow of data from various application backends to the database, Elasticsearch, and the authentication service, is illustrated in the following diagram, expanding upon the diagram we used in the <a href=\"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*QGaK8n6GOrxEXccLePvmYg.jpeg\">Defensive Databases</a> blog post.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/844/1*uXSJIuQGH0pWJ0OlVfLq4Q.jpeg\" /></figure><p>While Palantir’s <em>Foundations</em> group is responsible for operating and delivering Elasticsearch clusters across our diverse fleet of deployments, the services that interact with this infrastructure also bear the responsibility of using the clusters efficiently and responsibly, and maintaining their own indices.</p><p>There are also times when a service needs to repair or rebuild Elasticsearch indices. When an index becomes outdated or falls into an inconsistent state, whether from mapping changes or operational failures, a process known as reindexing is often the remediation.</p><ul><li>For example, a logistics application that needs to add a new field for users to search supply chain disruption data, or that needs to support an additional security metadata field in the access policy, would need a reindex.</li><li>Reindexing can also apply at the cluster level. For example, when migrating from Elasticsearch 8.x to 9.x, we prefer reindexing over an in-place upgrade because it allows us to roll back quickly if something goes wrong.</li></ul><p>This post discusses the design and evolution of the Elasticsearch reindex machinery embedded in the document store, which has enabled us to carry out reindex reliably, performantly, and without taking the service offline or requiring excessive human oversight, across any number of client applications.</p><h3>What do we need</h3><p>As previously mentioned, reindex can be necessary for multiple reasons. Schemas and their mappings evolve as our products do, index settings (including the number of shards) may change, and indices may become corrupted due to unexpected failures or bugs in the software. When they happen, a new index with the correct mappings and updated settings must be created, populated with data, and swapped in. Furthermore, when we need to migrate between clusters, such as during version upgrades (e.g. upgrading from Elasticsearch 8.x to 9.x) or to move to a standalone cluster rather than one shared with other services when the throughput justifies it, we would need to carry out a cross-cluster reindex.</p><p>Elasticsearch does offer a _reindex API, which copies documents from one index to another within the same cluster, and offers the ability to <a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/8.19/docs-reindex.html#reindex-from-remote\">source the reindex from a remote cluster</a> in the API, too. However, since the database is the primary source of truth with strong consistency in our architecture, the reindex we are conducting will rehydrate the new index with documents loaded from the database instead, which means that our document store service will have to orchestrate and oversee the entire reindex process rather than simply dispatching a command and letting the Elasticsearch cluster handle the rest.</p><p>The requirements for our Elasticsearch reindex machine are:</p><p>1. <strong>Schema-aware reconstruction</strong>: The system must know how to construct each client schema’s indices — field types, analyzers, shard counts, etc.</p><p>2. <strong>Low manual action</strong>: Operators shouldn’t have to shepherd each schema through the process and move it through the stages. Managing reindex across hundreds of deployments, each with 100+ schemas, is simply too much work to do by hand.</p><p>3. <strong>Automatically detect and repair inconsistency</strong>: The system should be able to detect when reindex is needed for a specific schema and carry it out autonomously.</p><p>4. <strong>Bounded resource usage</strong>: Reindex must not bring down the server or impede API serving. It cannot monopolize memory, exhaust the thread pool, or saturate the database connection pool.</p><p>5. <strong>Online, live reindex</strong>: The service is serving live traffic the entire time, including search. In the context of our logistics-focused application, existing search functionalities must continue to work.</p><h3>Our first reindex machine</h3><p>With the requirements in mind, we implemented the first Elasticsearch reindex machine within the document store. The following diagram shows the process to reindex a particular schema.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/844/1*Opj33xG7PdFSax-wZHURNA.jpeg\" /></figure><h3>Shadow index</h3><p>Our example application must continue to handle search requests during and after the reindex. The key to maintaining liveness during reindex is the <strong>shadow index</strong>, a separate, physical index on the same Elasticsearch cluster for the same schema with desired mappings and settings, and receiving all index / deindex requests from the document store’s client-facing API while getting backfilled by the reindex machine. Crucially, the shadow index does not yet serve reads. The reindex machine will create a shadow index, with suffix _b if the current index ends in _a (and vice-versa), at the inception with the intended mapping and settings, and backfill documents from the database. Upon conclusion, the machine will set the shadow index as the primary index and discard the previous index.</p><p>Searches are always served from the primary index, and write requests from the API dual-write to both the primary and shadow index to not lose the latest edits. We take advantage of the <a href=\"https://www.elastic.co/blog/elasticsearch-versioning-support\">optimistic concurrency control primitive provided by Elasticsearch</a> (version_type.external_gte) to deconflict concurrent index writes from the API and the reindex machine.</p><p>As for the routing of read and write requests, instead of directly referencing names of physical indices, we use <a href=\"https://www.elastic.co/docs/manage-data/data-store/aliases\">Elasticsearch index aliases</a> in read, write, and reindex code paths. Mappings from aliases to physical indices are only set or altered during index creation and after reindex operations.</p><p>The following table illustrates changes in aliases involving the shadow index, _b, and the existing primary index, _a, at key stages of a reindex. In this example, _b was created and tagged with the reindex alias at the onset of a reindex. _a kept the read alias while the write alias was dropped. When the backfilling phase of reindex is complete, _b becomes primary by assuming the read and write aliases, while _a gets deleted.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*dHfuC4QDLjtL2J8v4Shlrg.png\" /></figure><h3>Orchestrating a reindex</h3><p>The reindex machine maintains a schema-level index metadata table to track information related to reindex job runs, e.g. when a schema last started/ succeeded/ failed, whether and when the schema is queued, running a reindex, aborting one, or has no work. The schema-level index metadata is the single source of truth for coordination within the reindex machine.</p><p>Running as a background task on the server, the reindex machine periodically scans all schema definitions, compares the database-persisted metadata against the actual index state on the Elasticsearch cluster, and determines which schemas require attention: continue an ongoing reindex, start the next queued, or attempt to repair an inconsistent schema index before queueing it for a full reindex if a repair was insufficient.</p><p>In addition to proactively reindexing for schemas whose indices require repair, a separate background task, which picks up config-supplied requests, and several admin API endpoints allow operators and clients (including our logistics-focused application in the example) to request and abort a reindex.</p><h3>Cluster agnostic</h3><p>A key design choice across the document store service is being cluster-agnostic. Elasticsearch clusters are discovered and mapped to logical components in code. In most cases there will be one cluster, but during a cross-cluster reindex, there will be an additional migration cluster attached and recognized as such. Via a dynamic layer, reads are served from the primary cluster only while writes — reindex included — fan out to all connected clusters, supporting both single-cluster and cross-cluster operations with minimal additional code.</p><p>With this basic design, we are able to perform reindex on any schemas within the document store. Our logistics-focused example application can include a reindex in their schema upgrade and gate the new search feature on reindex completion.</p><h3>Evolution of the reindex machine</h3><p>As our products have expanded in both features and usage, and our storage infrastructure has evolved, the reindex machine has faced increasing demands. Running a full rebuild of an Elasticsearch index with millions of documents — while the document store service continues to handle live traffic — presents a constantly evolving challenge. As we add new features and improve stability, reindexing has become more frequent and critical. In response, we have continually enhanced the reindex machine to improve performance, stability, and observability. Here, we highlight a few notable improvements.</p><h3>Parallelization and asynchronous processing</h3><p>Parallelization was built into the reindex machine early on, since both reading pages of documents from the database and indexing them into a search engine involve significant I/O wait. The solution is a parallel job runner backed by a configurable thread pool and a bounded staging queue. Worker threads dynamically assume one of two roles on each iteration: a thread that acquires the paging lock fetches the next batch of records into the queue, while threads that find the lock held instead claim a queued batch and perform the indexing work. A separate daemon thread periodically snapshots progress by recording the earliest unfinished batch’s position, enabling the job to resume from where it left off after a failure. This design creates a pipeline where multiple batches are in flight simultaneously — some being read from the database, others being indexed — without requiring explicit role assignment or blocking the reindex loop.</p><p>The diagram below illustrates the design of the parallel job runner.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/844/1*5sphL2YRqfBrX8Uhr5H_dg.jpeg\" /></figure><h3>Batch limiting</h3><p>To prevent toppling the document store due to reindex, we have added a multitude of rate and batch limiting capabilities around the reindex machine. A single reindex run is bounded along three dimensions:</p><ul><li>Document count per batch: Caps the number of objects fetched from the database in a single transaction, keeping database connection hold times short.</li><li>Memory per batch: A soft cap on the memory footprint of a single batch, preventing surprise memory surge caused by large documents due to a rigid batch size limit.</li><li>Total batches per run: Limits how many batches a single invocation of the reindex loop will process before yielding. Combined with a configurable rest interval between runs, this creates natural breathing room for API-serving threads and garbage collection.</li></ul><p>These three knobs interact to prevent any single dimension from becoming a bottleneck. A schema with many small documents hits the document-count limit; a schema with fewer but larger documents hits the memory limit; and the batches-per-run limit ensures the reindex machine periodically pauses regardless.</p><h3>Crash safety</h3><p>Imagine if the document store server were to crash mid-way through an operation that modifies indices and aliases — say, while starting or finishing a reindex for our logistics application. The indices could be left in a broken state from which deterministic recovery is impossible without restarting the entire reindex from scratch. To guard against this, each index lifecycle operation is modeled as a fine-grained state machine: before dispatching any mutation to the search engine, the current state is persisted to the database, and every search engine operation is designed to be idempotent. If the server crashes at any point, it simply resumes from the last persisted state and safely re-executes the pending operation.</p><p>The states, illustrated below, are persisted in a separate per-cluster, per-schema metadata table, where we also persist key parameters such as the current primary index for crash-safety.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/844/1*J1HC3FbpelbACmLTAlMizg.jpeg\" /></figure><h3>Logs? Metrics? or Diagnostics? Yes.</h3><p>When a background process is silently rebuilding indices involving millions of documents, observability is non-negotiable. The diverse and often-times restricted environments in which Palantir products are deployed further means that viability and access to the different forms of observability vary greatly between deployments. You cannot backport the observability you wish you had when things go wrong. Not to mention that different forms of observability have their pros and cons, and we would like the best of all worlds.</p><h4>Logs:</h4><ul><li>Pros: shows timestamped state snapshots with rich parameters, great for tracing exact steps and examining detailed states at each step.</li><li>Cons: may be too spammy and occupy excessive disk space if parameters are too informative; while logs are helpful for investigation after the fact and we would want exhaustive logs during a root-cause analysis, most of the time logs and their parameters are simply not consumed.</li></ul><h4>Metrics:</h4><ul><li>Pros: an ideal, light-weight tool to track changes in states and progress over time, and can be turned into user-friendly dashboard visualizations to aid quick insight gathering and aggregation analyses.</li><li>Cons: do not contain additional information beyond the time series and tags themselves, i.e. no additional parameters.</li></ul><p><strong>Diagnostics</strong> (on-demand, one-off reports generated upon request, often consumed on <a href=\"https://www.palantir.com/platforms/apollo/\">Palantir Apollo</a>):</p><ul><li>Pros: can be as detailed as we need them to be (within reason, of course), without having to worry about spamming or disk space given that they are on-demand.</li><li>Cons: they are often a snapshot (unless specifically engineered to recount historical events) when they are requested, making them less useful for an after-the-fact analysis</li></ul><p>In our case, we have opted to implement all three forms of observability available to us, which has proven to be immensely valuable.</p><h3>Handling cross-cluster reindex</h3><p>Recall from our earlier examples that a reindex can be triggered for reasons beyond application-level changes. Cross-cluster migrations — moving a service’s search traffic from one Elasticsearch cluster to another without downtime — are a fact of life in a large-scale platform. For example, if we want to migrate from Elasticsearch 8.x to 9.x while preserving the ability to rollback at any point, we would need to implement the migration with a reindex.</p><p>In the reindex machine design we have discussed thus far, which aims to repair the primary, request-serving Elasticsearch cluster, we create a new index as the shadow index on the same cluster that is then rebuilt from the primary store. When backfilling is complete, the shadow index is promoted for searching. While conceptually similar to a regular reindex, cross-cluster reindex does require slightly different handling. Specifically, we need to make sure that the new index is located on a different cluster than the cluster that hosts the old index, and skip the deletion of old indices upon reindex completion as there is nothing to delete on the new cluster, and we want to keep the indices on the old cluster around in case we need to roll back.</p><h3>A separate reindex machine for migration</h3><p>We decided to keep the two reindex machines separate, each orchestrating reindex based on metadata tied to the appropriate Elasticsearch cluster in question. The <strong>primary reindex machine</strong>, which we have covered in this article thus far, works with the primary cluster and serves to repair active indices that handle API requests. The new <strong>migration reindex machine</strong>, on the other hand, backfills the migration cluster and prepares it to become the new primary cluster. Creating two separate reindex machines makes configuration, metadata management, code readability, and observability easier, compared to a single reindex machine filled with cluster-specific branching logic. Each reindex machine will have its own configuration: thread counts, batch sizes, memory limits, schedule interval, etc., and run as independent background tasks, working with only their respective cluster rather than all connected clusters.</p><p>Each reindex machine applies different index and alias evolutions tailored to their respective use case:</p><h4>Index and alias evolution on the primary reindex machine (same as before)</h4><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*2E_ayD2j1i9gsLYyW7pFOA.png\" /></figure><h4>Index and alias evolution on the migration reindex machine</h4><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*mHCIHK-nLlLcXjfRe0ezPg.png\" /></figure><p>The following diagram shows a comparison of active indices on relevant clusters when reindexing for the primary cluster, and when conducting a cross-cluster reindex for migration purposes.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/844/1*-LHnaclGFXSO3zo2yAnDDw.jpeg\" /></figure><h3>Rome wasn’t built in a day</h3><p>Over the years, many Palantir engineers have worked to support a first-class search experience by contributing a myriad of improvements across the reindex machinery in Gotham’s document store service. Ongoing learnings from both the engineering and operational sides continue to drive improvements across the Elasticsearch reindex apparatus. A lot of the same learnings, pertaining to observability and increasingly proactive support modalities, will inform the design of future pieces of software — across Foundry, AIP, Gotham, and Apollo development efforts — that interact with Palantir’s infrastructure layers. No product ever reaches perfection, but at Palantir, we strive to continuously learn from every challenge and operational outcome, using those insights as fuel to refine our products further. Our commitment is not just to deliver powerful capabilities, but also to ensure the highest levels of stability and reliability for our users.</p><p>If this sounds like the kind of project and impact you’re interested in, check out our open roles today: <a href=\"https://www.palantir.com/careers/open-positions/\">https://www.palantir.com/careers/open-positions/</a></p><img alt=\"\" height=\"1\" src=\"https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=cf948d0efd47\" width=\"1\" /><hr /><p><a href=\"https://blog.palantir.com/managing-elasticsearch-reindex-at-scale-performance-reliability-and-observability-cf948d0efd47\">Managing Elasticsearch Reindex at Scale: Performance, Reliability, and Observability</a> was originally published in <a href=\"https://blog.palantir.com\">Palantir Blog</a> on Medium, where people are continuing the conversation by highlighting and responding to this story.</p>",
           "monitor_class": "official",
           "monitor_class_label": "官方公告"
+        },
+        {
+          "id": "209e530afd8b3a70b7222f6ae72f1432b8758e2b",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "百度 · 实时热点",
+          "title": "阿里新设Token Foundry事业部",
+          "url": "https://m.baidu.com/s?wd=%E9%98%BF%E9%87%8C%E6%96%B0%E8%AE%BEToken+Foundry%E4%BA%8B%E4%B8%9A%E9%83%A8",
+          "published_at": null,
+          "first_seen_at": "2026-06-08T20:43:57.675018Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "foundry"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
         },
         {
           "id": "37761a010a0e53ad8cf4d2b83e94d42f393f5a1b",
@@ -190,7 +207,7 @@
           "url": "https://www.aibase.com/news/28747",
           "published_at": "2026-06-08T11:57:33.617464Z",
           "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "foundry"
@@ -235,7 +252,7 @@
       ],
       "source_mode": "mixed",
       "official_count": 1,
-      "other_count": 4
+      "other_count": 5
     },
     {
       "id": "knowledge-graph",
@@ -267,7 +284,7 @@
     {
       "id": "skills",
       "name": "Skills",
-      "count": 36,
+      "count": 37,
       "items": [
         {
           "id": "1735e2526159adf3688ad981d006e75ab7a08294",
@@ -288,19 +305,35 @@
           "monitor_class_label": "其他来源"
         },
         {
-          "id": "16a65bad18a71d3ebe790e9a2b65631150bfc597",
-          "site_id": "newsnow",
-          "site_name": "NewsNow",
-          "source": "hackernews",
-          "title": "My Agent Skill for Test-Driven Development",
-          "url": "https://news.ycombinator.com/item?id=48398925",
-          "published_at": "2026-06-05T19:08:32.642000Z",
-          "first_seen_at": "2026-06-05T19:20:39.365634Z",
-          "last_seen_at": "2026-06-06T15:55:29.109422Z",
-          "watch_score": 2,
+          "id": "f43ecd26fcca2ed4597bdd2b994f16c181c79063",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Techmeme",
+          "title": "Apple announces that the iOS 27 Shortcuts app will feature AI-powered workflow creation, allowing users to build automations via natural language prompts (Sarah Perez/TechCrunch)",
+          "url": "https://www.techmeme.com/260608/p44",
+          "published_at": "2026-06-08T18:55:03Z",
+          "first_seen_at": "2026-06-08T20:43:57.675018Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
+          "watch_score": 1,
           "watch_matched_terms": [
-            "skill",
-            "agent skill"
+            "workflow"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "94a689bd722c79b4d241bd27bff9bbe6d95c7ba2",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "medium.com",
+          "title": "Show HN: 请停止从 MCP 服务器返回原始 JSON，转而构建丰富的内联用户界面",
+          "url": "https://medium.com/towards-artificial-intelligence/mcp-apps-build-interactive-apps-directly-inside-your-ai-agents-chat-c571678099e3",
+          "published_at": "2026-06-08T18:49:12.275000Z",
+          "first_seen_at": "2026-06-08T20:43:57.675018Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "mcp"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -314,7 +347,7 @@
           "url": "https://github.com/kerbelp/metatron",
           "published_at": "2026-06-08T18:17:22.099000Z",
           "first_seen_at": "2026-06-08T18:27:14.683491Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -331,7 +364,7 @@
           "url": "https://dev.to/xulingfeng/my-company-packaged-12-years-of-my-experience-into-an-ai-skill-then-laid-me-off-when-it-crashed-4b3e",
           "published_at": "2026-06-08T17:13:21.081000Z",
           "first_seen_at": "2026-06-08T18:27:14.683491Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -348,7 +381,7 @@
           "url": "https://www.v2ex.com/t/1218896",
           "published_at": "2026-06-08T16:20:52Z",
           "first_seen_at": "2026-06-08T18:27:14.683491Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -467,7 +500,7 @@
           "url": "https://blog.csdn.net/xiewenfeng520/article/details/161777438",
           "published_at": null,
           "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -501,7 +534,7 @@
           "url": "https://github.com/google/skills",
           "published_at": null,
           "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -518,7 +551,7 @@
           "url": "https://github.com/phuryn/pm-skills",
           "published_at": null,
           "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -535,7 +568,7 @@
           "url": "https://github.com/google/skills",
           "published_at": "2026-06-08T11:40:21.188000Z",
           "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -552,7 +585,7 @@
           "url": "https://github.com/phuryn/pm-skills",
           "published_at": "2026-06-08T11:40:21.188000Z",
           "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -586,7 +619,7 @@
           "url": "https://juejin.cn/post/7646938869473230883",
           "published_at": null,
           "first_seen_at": "2026-06-08T06:43:25.735793Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -603,7 +636,7 @@
           "url": "https://www.woshipm.com/?p=6409197",
           "published_at": null,
           "first_seen_at": "2026-06-08T06:43:25.735793Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -654,7 +687,7 @@
           "url": "https://blog.csdn.net/2503_93374004/article/details/161751354",
           "published_at": null,
           "first_seen_at": "2026-06-07T08:39:12.106516Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -886,7 +919,7 @@
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 36
+      "other_count": 37
     },
     {
       "id": "defense-agent",
@@ -908,6 +941,60 @@
             "defense",
             "defense tech",
             "autonomous drone"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "da752b7292f68bae673d848350a9adb59e1ce003",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.ft.com",
+          "title": "五角大楼将阿里巴巴、百度和比亚迪重新列入中国军事黑名单",
+          "url": "https://www.ft.com/content/0689d87b-8ad3-4b7c-87e3-e06f07891a17",
+          "published_at": "2026-06-08T20:25:41.757000Z",
+          "first_seen_at": "2026-06-08T20:43:57.675018Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
+          "watch_score": 2,
+          "watch_matched_terms": [
+            "军事",
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "0e1cc8562e7247c1c1d5dc714c0cbf3d5de22208",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "The Next Web",
+          "title": "Pentagon adds Alibaba, Baidu, BYD, and Unitree to its Chinese military companies list",
+          "url": "https://thenextweb.com/news/pentagon-1260h-alibaba-baidu-byd-unitree-chinese-military",
+          "published_at": "2026-06-08T19:51:14Z",
+          "first_seen_at": "2026-06-08T20:43:57.675018Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
+          "watch_score": 2,
+          "watch_matched_terms": [
+            "military",
+            "pentagon"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "02ea39dbdf9b3854a86ca25371c9bc44a3961308",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "TechCrunch",
+          "title": "Pentagon says Alibaba, Baidu, BYD and Unitree support China’s military",
+          "url": "https://techcrunch.com/2026/06/08/pentagon-says-alibaba-baidu-byd-and-unitree-support-chinas-military",
+          "published_at": "2026-06-08T18:57:49Z",
+          "first_seen_at": "2026-06-08T20:43:57.675018Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
+          "watch_score": 2,
+          "watch_matched_terms": [
+            "military",
+            "pentagon"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -1039,19 +1126,120 @@
           "monitor_class_label": "其他来源"
         },
         {
-          "id": "6ec757bb1a7ec7d29919741c9c29d2d5104e90ba",
+          "id": "d877fd59c2109cff4252465f1ca3876a8eba20c6",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "新浪财经新闻 · 点击量排行",
+          "title": "伊朗武装部队称对以色列军事打击告一段落",
+          "url": "https://finance.sina.com.cn/jjxw/2026-06-08/doc-iniatath8584838.shtml",
+          "published_at": null,
+          "first_seen_at": "2026-06-08T20:43:57.675018Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "军事"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "bd24ba0dc0da0b78641e4cbbd104d0a950c7d1b1",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "Readhub · AI",
+          "title": "标普全球携手 Cohere，为金融机构打造可信 AI 智能体工作流",
+          "url": "https://finance.sina.com.cn/stock/usstock/c/2026-06-09/doc-iniattrm2254106.shtml",
+          "published_at": null,
+          "first_seen_at": "2026-06-08T20:43:57.675018Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "b871687c1d456b6816c18dae0f25e478bdbdfa01",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "Readhub · AI",
+          "title": "Xcode 27 Beta 发布：苹果称其是构建 AI 智能体应用的「最佳场所」",
+          "url": "https://www.ithome.com/0/961/694.htm",
+          "published_at": null,
+          "first_seen_at": "2026-06-08T20:43:57.675018Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "0a82dedcd9bea062a6b414b3dc51a0172b9aa431",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "百度 · 实时热点",
+          "title": "伊朗宣布停止对以色列的军事行动",
+          "url": "https://m.baidu.com/s?wd=%E4%BC%8A%E6%9C%97%E5%AE%A3%E5%B8%83%E5%81%9C%E6%AD%A2%E5%AF%B9%E4%BB%A5%E8%89%B2%E5%88%97%E7%9A%84%E5%86%9B%E4%BA%8B%E8%A1%8C%E5%8A%A8",
+          "published_at": null,
+          "first_seen_at": "2026-06-08T20:43:57.675018Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "军事"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "e19b24f4d730c8fb6247ddcdaff086985e39520d",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "V2EX (创意工作者社区)",
+          "title": "[分享创造] 给 AI Agent 造了个免费股票数据弹药库 — pip install 装了就能跑",
+          "url": "https://www.v2ex.com/t/1218903",
+          "published_at": "2026-06-08T19:59:42Z",
+          "first_seen_at": "2026-06-08T20:43:57.675018Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "9739a8d6667f39e0546c69dd94b6f6a6769ccaf3",
           "site_id": "buzzing",
           "site_name": "Buzzing",
           "source": "news.google.com",
-          "title": "乌克兰无人机袭击克里米亚主要铁路线上的两辆俄罗斯机车（视频） - Defense Express",
-          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOeDc1aXZwVi1ETWVyTHppN3lGbTRVaG55NEhBazRCbHBaNkFWOG4yX1dJRGx4bThldUFERjhqcVR3aldxRVlaNFBfYnI1clV0QklQbk5WQTJJNG9JWE9SUE9iSEdJenc5NVdJTkhGSFVKOHRydW9mR2kxWHAwdEEzdjdFYzdWb3RkZHJscjVUWk1Qa0MxMUdXdUl3SmQwZm5YZW95Uk94YlN1TGlIZ1ZSRUtHWUhHSWN1dE9wRA?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-06-05T20:27:26.002000Z",
-          "first_seen_at": "2026-06-05T21:11:54.867303Z",
-          "last_seen_at": "2026-06-06T00:07:11.302407Z",
-          "watch_score": 2,
+          "title": "视频记录了“阵风”战斗机在波罗的海击落无人机的一幕 - The War Zone",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQR3hrNmNXZ2JTRURGVzBOUzkzSEtqT1pxaXNWTEtQNGJFODFaN3JxR19HWk5NVHhHUDA3N3JFTktPekhYR0Nkb1k5d1B1VWItNUF3U1k3b3dfU1RzRHJtbWt1MWsxa2Q1dU9xWFpYNTYtU3pYQ1RSNkF6Uk1TSHdJQXZYTQ?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-06-08T19:21:26.981000Z",
+          "first_seen_at": "2026-06-08T20:43:57.675018Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
+          "watch_score": 1,
           "watch_matched_terms": [
-            "defense",
             "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "07a0be65cf94b13357b272f577a651bd3eaf66d4",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "IT之家 (ITHome)",
+          "title": "Xcode 27 Beta 发布：苹果称其是构建 AI 智能体应用的“最佳场所”",
+          "url": "https://www.ithome.com/0/961/694.htm",
+          "published_at": "2026-06-08T19:18:57Z",
+          "first_seen_at": "2026-06-08T20:43:57.675018Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -1065,7 +1253,7 @@
           "url": "https://mp.weixin.qq.com/s/NP-KDxsSx5PMJWNCLUA13Q",
           "published_at": null,
           "first_seen_at": "2026-06-08T18:27:14.683491Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1082,7 +1270,7 @@
           "url": "https://blog.csdn.net/GODYAD/article/details/161776561",
           "published_at": null,
           "first_seen_at": "2026-06-08T18:27:14.683491Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -1099,7 +1287,24 @@
           "url": "https://blog.csdn.net/lwcwam/article/details/161800571",
           "published_at": null,
           "first_seen_at": "2026-06-08T18:27:14.683491Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "6a811a52e6f191a7f6737162e0fdf3205ff48d7a",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "TechRadar",
+          "title": "US citizen pleads guilty to spying for the People's Republic of China – agent was tasked with stealing information from DoJ to help launch cyber espionage campaign",
+          "url": "https://www.techradar.com/pro/security/us-citizen-pleads-guilty-to-spying-for-the-peoples-republic-of-china-agent-was-tasked-with-stealing-information-from-doj-to-help-launch-cyber-espionage-campaign",
+          "published_at": "2026-06-08T18:15:00Z",
+          "first_seen_at": "2026-06-08T20:43:57.675018Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1167,7 +1372,7 @@
           "url": "https://news.google.com/read/CBMisgFBVV95cUxPTjlFNVVZTjFJcGtMdmgzcjhrY1pkM0V2Sy1nV29hVDRrbkdKM0t1cmZHNmV5WnRTOU5GaGtKY01JUThldjZRSFpCaTZvaFZvTUk0Q3ZOak1wQ3hLdXJORkZFbnFHX2NCZEZ1Sks5WGxzYWlKZ3EyeVFfTlZ6aW80Y1NtSW5GRTF5TU1MR2VGdUhHNWhHNFBkcnVRcWwxeEpjRG1iVmljb2xuNkI0QVYtcVdR?hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-06-08T16:45:42Z",
           "first_seen_at": "2026-06-08T18:27:14.683491Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -1184,7 +1389,7 @@
           "url": "https://www.v2ex.com/t/1218896",
           "published_at": "2026-06-08T16:20:52Z",
           "first_seen_at": "2026-06-08T18:27:14.683491Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1252,7 +1457,7 @@
           "url": "https://wallstreetcn.com/articles/3774115",
           "published_at": null,
           "first_seen_at": "2026-06-08T15:42:44.081832Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -1286,7 +1491,7 @@
           "url": "https://www.v2ex.com/t/1218888",
           "published_at": "2026-06-08T15:08:31Z",
           "first_seen_at": "2026-06-08T15:42:44.081832Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1320,7 +1525,7 @@
           "url": "https://www.v2ex.com/t/1218878",
           "published_at": "2026-06-08T14:15:33Z",
           "first_seen_at": "2026-06-08T15:42:44.081832Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1337,7 +1542,7 @@
           "url": "https://www.36kr.com/newsflashes/3844514407336201",
           "published_at": "2026-06-08T13:25:52.214000Z",
           "first_seen_at": "2026-06-08T15:42:44.081832Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -1354,7 +1559,7 @@
           "url": "https://www.v2ex.com/t/1218863",
           "published_at": "2026-06-08T13:07:33Z",
           "first_seen_at": "2026-06-08T15:42:44.081832Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1371,7 +1576,7 @@
           "url": "https://36kr.com/newsflashes/3844514407336201?f=rss",
           "published_at": "2026-06-08T12:47:44Z",
           "first_seen_at": "2026-06-08T15:42:44.081832Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -1473,7 +1678,7 @@
           "url": "https://www.qbitai.com/2026/06/432587.html",
           "published_at": null,
           "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -1490,7 +1695,7 @@
           "url": "https://www.oschina.net/news/454240",
           "published_at": null,
           "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1507,7 +1712,7 @@
           "url": "https://blog.csdn.net/m0_61134850/article/details/161718347",
           "published_at": null,
           "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1524,7 +1729,7 @@
           "url": "https://xz.aliyun.com/news/92190",
           "published_at": null,
           "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1541,7 +1746,7 @@
           "url": "https://blog.csdn.net/2301_79266502/article/details/161791668",
           "published_at": null,
           "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1558,7 +1763,7 @@
           "url": "https://blog.csdn.net/qq_35027690/article/details/161764241",
           "published_at": null,
           "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -1575,7 +1780,7 @@
           "url": "https://juejin.cn/post/7647862594847637547",
           "published_at": "2026-06-08T11:44:34.943000Z",
           "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1626,7 +1831,7 @@
           "url": "https://www.ft.com/content/730666c8-0821-4e7f-a928-74a3ff973492",
           "published_at": "2026-06-08T10:33:08.935000Z",
           "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
@@ -1660,7 +1865,7 @@
           "url": "https://www.ft.com/content/a1a0b1c0-cf5a-4285-baee-68edb01f0c5f",
           "published_at": "2026-06-08T09:13:41.147000Z",
           "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
@@ -1694,7 +1899,7 @@
           "url": "https://www.businessinsider.com/ukraine-lined-nets-drones-cover-length-florida-warfare-2026-6",
           "published_at": "2026-06-08T06:49:20.842000Z",
           "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -1728,7 +1933,7 @@
           "url": "https://www.woshipm.com/?p=6409638",
           "published_at": null,
           "first_seen_at": "2026-06-08T06:43:25.735793Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1745,7 +1950,7 @@
           "url": "https://www.bilibili.com/video/av116701341420908",
           "published_at": null,
           "first_seen_at": "2026-06-08T06:43:25.735793Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
@@ -1779,7 +1984,7 @@
           "url": "https://www.woshipm.com/?p=6409646",
           "published_at": null,
           "first_seen_at": "2026-06-08T06:43:25.735793Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1830,7 +2035,7 @@
           "url": "https://www.axios.com/2026/06/08/israel-strikes-iran-military-targets-after-iranian-missile-attack",
           "published_at": "2026-06-08T02:17:22.551000Z",
           "first_seen_at": "2026-06-08T06:43:25.735793Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -1949,7 +2154,7 @@
           "url": "https://opensource.posit.co/blog/2026-05-21_in-defense-of-yaml",
           "published_at": "2026-06-08T01:36:33Z",
           "first_seen_at": "2026-06-08T01:44:51.009512Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "defense"
@@ -2772,176 +2977,6 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "7d1e008b460edc1e1bae27bcf644aced24a6984c",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "CSDN博客 · 综合热榜",
-          "title": "AI Agent下半场：模型能力过剩，Skill生态成为新壁垒",
-          "url": "https://blog.csdn.net/2503_93374004/article/details/161751354",
-          "published_at": null,
-          "first_seen_at": "2026-06-07T08:39:12.106516Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "5559910b226b3aa0883c9471c7d364e99d5a9057",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "Readhub · AI",
-          "title": "OpenAI 启动 ChatGPT 问世以来最大改版：从聊天机器人进化为「超级智能体」",
-          "url": "https://finance.sina.com.cn/stock/usstock/c/2026-06-07/doc-iniaqpen9596538.shtml",
-          "published_at": null,
-          "first_seen_at": "2026-06-07T08:39:12.106516Z",
-          "last_seen_at": "2026-06-07T08:39:12.106516Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "4c7a5841d53eea71ac9cfdf9a33f582f3d1482b2",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "Readhub · AI",
-          "title": "AI Agent 需要一张人类社会的身份证",
-          "url": "https://www.huxiu.com/article/4865127.html?f=rss",
-          "published_at": null,
-          "first_seen_at": "2026-06-07T08:39:12.106516Z",
-          "last_seen_at": "2026-06-07T08:39:12.106516Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "827e9229b081655816ae6ef7cd18fba2482985a2",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.reuters.com",
-          "title": "乌克兰称，一架俄罗斯无人机袭击了切尔诺贝利附近的核燃料储存设施",
-          "url": "https://www.reuters.com/world/europe/russian-drone-hit-nuclear-fuel-storage-facility-near-chornobyl-ukraine-says-2026-06-07",
-          "published_at": "2026-06-07T08:27:36.545000Z",
-          "first_seen_at": "2026-06-07T08:39:12.106516Z",
-          "last_seen_at": "2026-06-07T08:39:12.106516Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "d6b49c19bee5ca445150edcfc62b2f8848bf9cd3",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "德国车企正评估与中国及国防领域的合作，以重振闲置厂区 - Daily Sabah",
-          "url": "https://news.google.com/read/CBMiswFBVV95cUxONmV5UjVHczc0UHpQand2SGMtWXduQ2JzcXhQZGlSc0Q3eGczWk5SeGRBWjdFd0VwaFFVcDU5Umd6YVF5akcwUk5oMjZfdUVNS0paYjRWY3JCLTNOU2NUdUhpXzJSQmY2M2xmUWd2ZFVDaTFITzBJTF9qSEtLNVIyVTl4WDVkVnNfVkN0c002S2lNeXQwMnBNdmVrYlV0ZHZpbmVHdkZubjEwX08tbHdrb0tobw?hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-06-07T08:24:00Z",
-          "first_seen_at": "2026-06-07T14:59:25.859419Z",
-          "last_seen_at": "2026-06-07T23:16:46.452339Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "66c743d6ed43881d883e2cd5cc57548a666bcb6b",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.producthunt.com",
-          "title": "Agent Browser Shield - 阻止提示注入并降低 AI 浏览器代理的令牌成本",
-          "url": "https://www.producthunt.com/r/F6KGMHVJXZBD7X",
-          "published_at": "2026-06-07T07:07:28.708000Z",
-          "first_seen_at": "2026-06-07T08:39:12.106516Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "e0d1dea24d40b59281e741e3f3565e56d8db5e13",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "美军称，伊朗向霍尔木兹海峡发射了导弹和无人机 - The Washington Post",
-          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNMnhrZmU1dEJXQzRJQWFaelI4LVZlUE01ZERhS3VKUzhsRXNEa3N1elZRc3VTRXlnclJvNTNyM1FUOFpLdjUxNmplY0xub29CUzRmZFQ1ZThsT0hsT29IcU96TjlJeVk2Y2s3eHUtN0FVekRhRnhuVG0xMTBTSC1sal9JVkVGalY4UTFvOS12UXppY1RJdHVHaUFpOEJOenJiV1RZdmp1aVpqS2xVOElPYWh2VHJuZ3M?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-06-07T06:19:31.938000Z",
-          "first_seen_at": "2026-06-07T08:39:12.106516Z",
-          "last_seen_at": "2026-06-07T13:03:32.182120Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "0c8543e5de6bf3eba678d193f1739084ace3465c",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "github.com",
-          "title": "Show HN: agent-asearch – Go 命令行工具，支持 18 个数据源，面向 AI 代理的基于会话的搜索",
-          "url": "https://github.com/izzzzzi/agent-asearch",
-          "published_at": "2026-06-07T05:15:34.467000Z",
-          "first_seen_at": "2026-06-07T08:39:12.106516Z",
-          "last_seen_at": "2026-06-07T11:09:47.883158Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "ab3f95e7bbd7827fd61f68ded783494da449c0ff",
-          "site_id": "newsnow",
-          "site_name": "NewsNow",
-          "source": "hackernews",
-          "title": "Harness engineering: Leveraging Codex in an agent-first world",
-          "url": "https://news.ycombinator.com/item?id=48416264",
-          "published_at": "2026-06-07T05:12:46.137000Z",
-          "first_seen_at": "2026-06-07T05:10:33.957716Z",
-          "last_seen_at": "2026-06-07T16:16:32.940259Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "b1bf586e811412a06a7de21f76602771ce353956",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "CSDN博客 · 综合热榜",
-          "title": "航拍输电线路故障识别｜线路金具缺陷判别｜无人机电力巡检故障检测数据集10262期",
-          "url": "https://blog.csdn.net/2403_88545703/article/details/161740348",
-          "published_at": null,
-          "first_seen_at": "2026-06-07T05:10:33.957716Z",
-          "last_seen_at": "2026-06-07T23:16:46.452339Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
@@ -2962,7 +2997,7 @@
           "url": "https://arstechnica.com/science/2026/06/the-weather-and-climate-science-ai-revolution-isnt-revolutionary",
           "published_at": "2026-06-08T11:00:58Z",
           "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T18:27:14.683491Z",
+          "last_seen_at": "2026-06-08T20:43:57.675018Z",
           "watch_score": 4,
           "watch_matched_terms": [
             "science ai",
