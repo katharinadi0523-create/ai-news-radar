@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-06-11T08:21:51.983199Z",
+  "generated_at": "2026-06-11T12:33:43.210459Z",
   "window_days": 3,
-  "source_generated_at": "2026-06-11T08:11:57.825943Z",
+  "source_generated_at": "2026-06-11T12:31:53.540130Z",
   "source_window_hours": 24,
   "source_topic_filter": "ai_tech_robotics",
   "output_name": "special-focus",
   "section_count": 6,
-  "total_items": 237,
+  "total_items": 231,
   "official_error_count": 0,
   "official_errors": [],
   "sections": [
     {
       "id": "openclaw",
       "name": "OpenClaw",
-      "count": 13,
+      "count": 12,
       "items": [
         {
           "id": "aa1d94ad0dda502ef630b0896f8fb0e6a7479756",
@@ -220,28 +220,11 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "69467bd50c8f65ef19513319ce31bce475de35c2",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "TechRadar",
-          "title": "What the OpenClaw vulnerability reveals about the future of agentic AI security",
-          "url": "https://www.techradar.com/pro/what-the-openclaw-vulnerability-reveals-about-the-future-of-agentic-ai-security",
-          "published_at": "2026-06-08T10:43:25Z",
-          "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T11:57:33.617464Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "openclaw"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 13
+      "other_count": 12
     },
     {
       "id": "palantir",
@@ -256,7 +239,7 @@
           "title": "Managing Elasticsearch Reindex at Scale: Performance, Reliability, and Observability",
           "url": "https://blog.palantir.com/managing-elasticsearch-reindex-at-scale-performance-reliability-and-observability-cf948d0efd47?source=rss----3c87dc14372f---4",
           "published_at": "2026-06-08T17:57:01Z",
-          "first_seen_at": "2026-06-11T08:21:45.709936Z",
+          "first_seen_at": "2026-06-11T12:33:36.768443Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -265,6 +248,23 @@
           "hover_description": "<figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/844/1*rDwvo_eXFC7GNW_3FE4B7Q.jpeg\" /></figure><p><em>Editor’s Note: This is the fourth post in a </em><a href=\"https://blog.palantir.com/all?topic=palantir-foundations\"><em>series</em></a><em> exploring how Palantir customizes infrastructure software for reliable operation at scale.</em></p><p><em>The following is a guest contribution to the Foundations series from the Gotham Core Platform organization, which builds and maintains the bedrock for mission-critical applications within the Gotham ecosystem. This blog post by Kevin Liang, a backend developer based in CA, highlights the design considerations and improvements made to the Elasticsearch reindex machinery — which broadly aims to provide an easy-to-use, performant, reliable, and observable way to repair and rebuild search indices for backend applications. The goal of this post is two-fold: share our design decisions and learnings with the broader technical community, and shed light on what a typical project looks like for a systems-leaning backend engineer working in Gotham Core Platform at Palantir.</em></p><p>Search is one of the most heavily used workflows across Palantir Gotham. Users are constantly querying, filtering, and drilling into large datasets to surface entities, trace connections, and assemble the analyses that drive mission-critical operational decisions. At any point in that workflow, they expect results to feel instantaneous, regardless of the scale or complexity of the underlying data graph.</p><p>Many of these search workflows leverage <a href=\"https://www.elastic.co/docs\">Elasticsearch</a>, an open-source distributed search and analytics engine that provides robust full-text search capabilities at scale. We have previously explained the role Elasticsearch plays within our broader ecosystem and architecture, which you can read more about in <a href=\"https://blog.palantir.com/defensive-databases-optimizing-index-refresh-semantics-554ef3852ff1\">Defensive Databases: Optimizing Index-Refresh Semantics</a>.</p><p>As mentioned in that blog post, most Gotham applications interact with Elasticsearch via an in-house <em>database client service</em> that acts as a layer between backend services and storage infrastructure. At a high level, the service resembles a document store and provides:</p><ul><li>Strongly consistent key-value CRUD backed by a transactional database, which remains the authoritative source of truth</li><li>Full-text search on document fields via Elasticsearch, which functions as an “external”, secondary index</li><li>First-class security policy enforcement built into the core read, search and write paths, not just bolted on as an afterthought</li></ul><p>We will henceforth refer to this in-house database client service as “the document store.” The document store serves many distinct clients, each with its own group of <strong>schemas</strong> (analogous to database tables). Each <strong>schema</strong> declares field names, types, security, the structural layouts of documents and, critically, whether and how the field should be indexed into Elasticsearch via something called mappings. Some schemas are not indexed at all; others carry rich mappings that power faceted search, geo queries, and date-range filters. You can read more about Elasticsearch mappings in their <a href=\"https://www.elastic.co/docs/manage-data/data-store/mapping\">official documentation here</a>.</p><p>The flow of data from various application backends to the database, Elasticsearch, and the authentication service, is illustrated in the following diagram, expanding upon the diagram we used in the <a href=\"https://miro.medium.com/v2/resize:fit:1400/format:webp/1*QGaK8n6GOrxEXccLePvmYg.jpeg\">Defensive Databases</a> blog post.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/844/1*uXSJIuQGH0pWJ0OlVfLq4Q.jpeg\" /></figure><p>While Palantir’s <em>Foundations</em> group is responsible for operating and delivering Elasticsearch clusters across our diverse fleet of deployments, the services that interact with this infrastructure also bear the responsibility of using the clusters efficiently and responsibly, and maintaining their own indices.</p><p>There are also times when a service needs to repair or rebuild Elasticsearch indices. When an index becomes outdated or falls into an inconsistent state, whether from mapping changes or operational failures, a process known as reindexing is often the remediation.</p><ul><li>For example, a logistics application that needs to add a new field for users to search supply chain disruption data, or that needs to support an additional security metadata field in the access policy, would need a reindex.</li><li>Reindexing can also apply at the cluster level. For example, when migrating from Elasticsearch 8.x to 9.x, we prefer reindexing over an in-place upgrade because it allows us to roll back quickly if something goes wrong.</li></ul><p>This post discusses the design and evolution of the Elasticsearch reindex machinery embedded in the document store, which has enabled us to carry out reindex reliably, performantly, and without taking the service offline or requiring excessive human oversight, across any number of client applications.</p><h3>What do we need</h3><p>As previously mentioned, reindex can be necessary for multiple reasons. Schemas and their mappings evolve as our products do, index settings (including the number of shards) may change, and indices may become corrupted due to unexpected failures or bugs in the software. When they happen, a new index with the correct mappings and updated settings must be created, populated with data, and swapped in. Furthermore, when we need to migrate between clusters, such as during version upgrades (e.g. upgrading from Elasticsearch 8.x to 9.x) or to move to a standalone cluster rather than one shared with other services when the throughput justifies it, we would need to carry out a cross-cluster reindex.</p><p>Elasticsearch does offer a _reindex API, which copies documents from one index to another within the same cluster, and offers the ability to <a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/8.19/docs-reindex.html#reindex-from-remote\">source the reindex from a remote cluster</a> in the API, too. However, since the database is the primary source of truth with strong consistency in our architecture, the reindex we are conducting will rehydrate the new index with documents loaded from the database instead, which means that our document store service will have to orchestrate and oversee the entire reindex process rather than simply dispatching a command and letting the Elasticsearch cluster handle the rest.</p><p>The requirements for our Elasticsearch reindex machine are:</p><p>1. <strong>Schema-aware reconstruction</strong>: The system must know how to construct each client schema’s indices — field types, analyzers, shard counts, etc.</p><p>2. <strong>Low manual action</strong>: Operators shouldn’t have to shepherd each schema through the process and move it through the stages. Managing reindex across hundreds of deployments, each with 100+ schemas, is simply too much work to do by hand.</p><p>3. <strong>Automatically detect and repair inconsistency</strong>: The system should be able to detect when reindex is needed for a specific schema and carry it out autonomously.</p><p>4. <strong>Bounded resource usage</strong>: Reindex must not bring down the server or impede API serving. It cannot monopolize memory, exhaust the thread pool, or saturate the database connection pool.</p><p>5. <strong>Online, live reindex</strong>: The service is serving live traffic the entire time, including search. In the context of our logistics-focused application, existing search functionalities must continue to work.</p><h3>Our first reindex machine</h3><p>With the requirements in mind, we implemented the first Elasticsearch reindex machine within the document store. The following diagram shows the process to reindex a particular schema.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/844/1*Opj33xG7PdFSax-wZHURNA.jpeg\" /></figure><h3>Shadow index</h3><p>Our example application must continue to handle search requests during and after the reindex. The key to maintaining liveness during reindex is the <strong>shadow index</strong>, a separate, physical index on the same Elasticsearch cluster for the same schema with desired mappings and settings, and receiving all index / deindex requests from the document store’s client-facing API while getting backfilled by the reindex machine. Crucially, the shadow index does not yet serve reads. The reindex machine will create a shadow index, with suffix _b if the current index ends in _a (and vice-versa), at the inception with the intended mapping and settings, and backfill documents from the database. Upon conclusion, the machine will set the shadow index as the primary index and discard the previous index.</p><p>Searches are always served from the primary index, and write requests from the API dual-write to both the primary and shadow index to not lose the latest edits. We take advantage of the <a href=\"https://www.elastic.co/blog/elasticsearch-versioning-support\">optimistic concurrency control primitive provided by Elasticsearch</a> (version_type.external_gte) to deconflict concurrent index writes from the API and the reindex machine.</p><p>As for the routing of read and write requests, instead of directly referencing names of physical indices, we use <a href=\"https://www.elastic.co/docs/manage-data/data-store/aliases\">Elasticsearch index aliases</a> in read, write, and reindex code paths. Mappings from aliases to physical indices are only set or altered during index creation and after reindex operations.</p><p>The following table illustrates changes in aliases involving the shadow index, _b, and the existing primary index, _a, at key stages of a reindex. In this example, _b was created and tagged with the reindex alias at the onset of a reindex. _a kept the read alias while the write alias was dropped. When the backfilling phase of reindex is complete, _b becomes primary by assuming the read and write aliases, while _a gets deleted.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*dHfuC4QDLjtL2J8v4Shlrg.png\" /></figure><h3>Orchestrating a reindex</h3><p>The reindex machine maintains a schema-level index metadata table to track information related to reindex job runs, e.g. when a schema last started/ succeeded/ failed, whether and when the schema is queued, running a reindex, aborting one, or has no work. The schema-level index metadata is the single source of truth for coordination within the reindex machine.</p><p>Running as a background task on the server, the reindex machine periodically scans all schema definitions, compares the database-persisted metadata against the actual index state on the Elasticsearch cluster, and determines which schemas require attention: continue an ongoing reindex, start the next queued, or attempt to repair an inconsistent schema index before queueing it for a full reindex if a repair was insufficient.</p><p>In addition to proactively reindexing for schemas whose indices require repair, a separate background task, which picks up config-supplied requests, and several admin API endpoints allow operators and clients (including our logistics-focused application in the example) to request and abort a reindex.</p><h3>Cluster agnostic</h3><p>A key design choice across the document store service is being cluster-agnostic. Elasticsearch clusters are discovered and mapped to logical components in code. In most cases there will be one cluster, but during a cross-cluster reindex, there will be an additional migration cluster attached and recognized as such. Via a dynamic layer, reads are served from the primary cluster only while writes — reindex included — fan out to all connected clusters, supporting both single-cluster and cross-cluster operations with minimal additional code.</p><p>With this basic design, we are able to perform reindex on any schemas within the document store. Our logistics-focused example application can include a reindex in their schema upgrade and gate the new search feature on reindex completion.</p><h3>Evolution of the reindex machine</h3><p>As our products have expanded in both features and usage, and our storage infrastructure has evolved, the reindex machine has faced increasing demands. Running a full rebuild of an Elasticsearch index with millions of documents — while the document store service continues to handle live traffic — presents a constantly evolving challenge. As we add new features and improve stability, reindexing has become more frequent and critical. In response, we have continually enhanced the reindex machine to improve performance, stability, and observability. Here, we highlight a few notable improvements.</p><h3>Parallelization and asynchronous processing</h3><p>Parallelization was built into the reindex machine early on, since both reading pages of documents from the database and indexing them into a search engine involve significant I/O wait. The solution is a parallel job runner backed by a configurable thread pool and a bounded staging queue. Worker threads dynamically assume one of two roles on each iteration: a thread that acquires the paging lock fetches the next batch of records into the queue, while threads that find the lock held instead claim a queued batch and perform the indexing work. A separate daemon thread periodically snapshots progress by recording the earliest unfinished batch’s position, enabling the job to resume from where it left off after a failure. This design creates a pipeline where multiple batches are in flight simultaneously — some being read from the database, others being indexed — without requiring explicit role assignment or blocking the reindex loop.</p><p>The diagram below illustrates the design of the parallel job runner.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/844/1*5sphL2YRqfBrX8Uhr5H_dg.jpeg\" /></figure><h3>Batch limiting</h3><p>To prevent toppling the document store due to reindex, we have added a multitude of rate and batch limiting capabilities around the reindex machine. A single reindex run is bounded along three dimensions:</p><ul><li>Document count per batch: Caps the number of objects fetched from the database in a single transaction, keeping database connection hold times short.</li><li>Memory per batch: A soft cap on the memory footprint of a single batch, preventing surprise memory surge caused by large documents due to a rigid batch size limit.</li><li>Total batches per run: Limits how many batches a single invocation of the reindex loop will process before yielding. Combined with a configurable rest interval between runs, this creates natural breathing room for API-serving threads and garbage collection.</li></ul><p>These three knobs interact to prevent any single dimension from becoming a bottleneck. A schema with many small documents hits the document-count limit; a schema with fewer but larger documents hits the memory limit; and the batches-per-run limit ensures the reindex machine periodically pauses regardless.</p><h3>Crash safety</h3><p>Imagine if the document store server were to crash mid-way through an operation that modifies indices and aliases — say, while starting or finishing a reindex for our logistics application. The indices could be left in a broken state from which deterministic recovery is impossible without restarting the entire reindex from scratch. To guard against this, each index lifecycle operation is modeled as a fine-grained state machine: before dispatching any mutation to the search engine, the current state is persisted to the database, and every search engine operation is designed to be idempotent. If the server crashes at any point, it simply resumes from the last persisted state and safely re-executes the pending operation.</p><p>The states, illustrated below, are persisted in a separate per-cluster, per-schema metadata table, where we also persist key parameters such as the current primary index for crash-safety.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/844/1*J1HC3FbpelbACmLTAlMizg.jpeg\" /></figure><h3>Logs? Metrics? or Diagnostics? Yes.</h3><p>When a background process is silently rebuilding indices involving millions of documents, observability is non-negotiable. The diverse and often-times restricted environments in which Palantir products are deployed further means that viability and access to the different forms of observability vary greatly between deployments. You cannot backport the observability you wish you had when things go wrong. Not to mention that different forms of observability have their pros and cons, and we would like the best of all worlds.</p><h4>Logs:</h4><ul><li>Pros: shows timestamped state snapshots with rich parameters, great for tracing exact steps and examining detailed states at each step.</li><li>Cons: may be too spammy and occupy excessive disk space if parameters are too informative; while logs are helpful for investigation after the fact and we would want exhaustive logs during a root-cause analysis, most of the time logs and their parameters are simply not consumed.</li></ul><h4>Metrics:</h4><ul><li>Pros: an ideal, light-weight tool to track changes in states and progress over time, and can be turned into user-friendly dashboard visualizations to aid quick insight gathering and aggregation analyses.</li><li>Cons: do not contain additional information beyond the time series and tags themselves, i.e. no additional parameters.</li></ul><p><strong>Diagnostics</strong> (on-demand, one-off reports generated upon request, often consumed on <a href=\"https://www.palantir.com/platforms/apollo/\">Palantir Apollo</a>):</p><ul><li>Pros: can be as detailed as we need them to be (within reason, of course), without having to worry about spamming or disk space given that they are on-demand.</li><li>Cons: they are often a snapshot (unless specifically engineered to recount historical events) when they are requested, making them less useful for an after-the-fact analysis</li></ul><p>In our case, we have opted to implement all three forms of observability available to us, which has proven to be immensely valuable.</p><h3>Handling cross-cluster reindex</h3><p>Recall from our earlier examples that a reindex can be triggered for reasons beyond application-level changes. Cross-cluster migrations — moving a service’s search traffic from one Elasticsearch cluster to another without downtime — are a fact of life in a large-scale platform. For example, if we want to migrate from Elasticsearch 8.x to 9.x while preserving the ability to rollback at any point, we would need to implement the migration with a reindex.</p><p>In the reindex machine design we have discussed thus far, which aims to repair the primary, request-serving Elasticsearch cluster, we create a new index as the shadow index on the same cluster that is then rebuilt from the primary store. When backfilling is complete, the shadow index is promoted for searching. While conceptually similar to a regular reindex, cross-cluster reindex does require slightly different handling. Specifically, we need to make sure that the new index is located on a different cluster than the cluster that hosts the old index, and skip the deletion of old indices upon reindex completion as there is nothing to delete on the new cluster, and we want to keep the indices on the old cluster around in case we need to roll back.</p><h3>A separate reindex machine for migration</h3><p>We decided to keep the two reindex machines separate, each orchestrating reindex based on metadata tied to the appropriate Elasticsearch cluster in question. The <strong>primary reindex machine</strong>, which we have covered in this article thus far, works with the primary cluster and serves to repair active indices that handle API requests. The new <strong>migration reindex machine</strong>, on the other hand, backfills the migration cluster and prepares it to become the new primary cluster. Creating two separate reindex machines makes configuration, metadata management, code readability, and observability easier, compared to a single reindex machine filled with cluster-specific branching logic. Each reindex machine will have its own configuration: thread counts, batch sizes, memory limits, schedule interval, etc., and run as independent background tasks, working with only their respective cluster rather than all connected clusters.</p><p>Each reindex machine applies different index and alias evolutions tailored to their respective use case:</p><h4>Index and alias evolution on the primary reindex machine (same as before)</h4><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*2E_ayD2j1i9gsLYyW7pFOA.png\" /></figure><h4>Index and alias evolution on the migration reindex machine</h4><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*mHCIHK-nLlLcXjfRe0ezPg.png\" /></figure><p>The following diagram shows a comparison of active indices on relevant clusters when reindexing for the primary cluster, and when conducting a cross-cluster reindex for migration purposes.</p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/844/1*-LHnaclGFXSO3zo2yAnDDw.jpeg\" /></figure><h3>Rome wasn’t built in a day</h3><p>Over the years, many Palantir engineers have worked to support a first-class search experience by contributing a myriad of improvements across the reindex machinery in Gotham’s document store service. Ongoing learnings from both the engineering and operational sides continue to drive improvements across the Elasticsearch reindex apparatus. A lot of the same learnings, pertaining to observability and increasingly proactive support modalities, will inform the design of future pieces of software — across Foundry, AIP, Gotham, and Apollo development efforts — that interact with Palantir’s infrastructure layers. No product ever reaches perfection, but at Palantir, we strive to continuously learn from every challenge and operational outcome, using those insights as fuel to refine our products further. Our commitment is not just to deliver powerful capabilities, but also to ensure the highest levels of stability and reliability for our users.</p><p>If this sounds like the kind of project and impact you’re interested in, check out our open roles today: <a href=\"https://www.palantir.com/careers/open-positions/\">https://www.palantir.com/careers/open-positions/</a></p><img alt=\"\" height=\"1\" src=\"https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=cf948d0efd47\" width=\"1\" /><hr /><p><a href=\"https://blog.palantir.com/managing-elasticsearch-reindex-at-scale-performance-reliability-and-observability-cf948d0efd47\">Managing Elasticsearch Reindex at Scale: Performance, Reliability, and Observability</a> was originally published in <a href=\"https://blog.palantir.com\">Palantir Blog</a> on Medium, where people are continuing the conversation by highlighting and responding to this story.</p>",
           "monitor_class": "official",
           "monitor_class_label": "官方公告"
+        },
+        {
+          "id": "107d501a876ad54bf825199c868c0647879c1dfd",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.businessinsider.com",
+          "title": "Palantir首席执行官表示，人工智能公司“不明白自己有多不受欢迎”",
+          "url": "https://www.businessinsider.com/palantir-ceo-ai-companies-leaders-unlikeable-fde-competition-2026-6",
+          "published_at": "2026-06-11T08:25:03.123000Z",
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "palantir"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
         },
         {
           "id": "d73272f66168fe4a58c89da3bf13019aa9ffc284",
@@ -503,23 +503,6 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "3d90847eb6e7623692f75f7e419f5eee289fae2b",
-          "site_id": "aibase",
-          "site_name": "AIbase",
-          "source": "AIbase",
-          "title": "阿里巴巴宣布大模型组织架构升级，成立Token Foundry事业部并设立AI未来研究院",
-          "url": "https://www.aibase.com/news/28747",
-          "published_at": "2026-06-08T11:57:33.617464Z",
-          "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-09T02:40:46.398224Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "foundry"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
@@ -540,7 +523,7 @@
           "url": "https://blog.csdn.net/yelangkingwuzuhu/article/details/161871617",
           "published_at": null,
           "first_seen_at": "2026-06-10T17:59:44.765750Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "neo4j",
@@ -559,7 +542,7 @@
           "url": "https://blog.csdn.net/zhangay1998/article/details/161837762",
           "published_at": null,
           "first_seen_at": "2026-06-10T07:10:37.532986Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "知识图谱",
@@ -577,7 +560,7 @@
           "url": "https://juejin.cn/post/7648844243549093903",
           "published_at": null,
           "first_seen_at": "2026-06-09T13:47:11.749160Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "知识图谱",
@@ -630,7 +613,7 @@
           "url": "https://github.com/HelixDB/helix-db/tree/main",
           "published_at": "2026-06-10T15:54:59.247000Z",
           "first_seen_at": "2026-06-10T17:59:44.765750Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "图数据库"
@@ -647,7 +630,7 @@
           "url": "https://github.com/HelixDB/helix-db/tree/main",
           "published_at": "2026-06-10T15:47:31Z",
           "first_seen_at": "2026-06-10T20:27:43.370800Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "graph database"
@@ -697,7 +680,7 @@
     {
       "id": "skills",
       "name": "Skills",
-      "count": 59,
+      "count": 55,
       "items": [
         {
           "id": "176308419c889c192b3faa87a0031bd25fd663b5",
@@ -718,6 +701,57 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "429a3ef73bef56b90a0a8b8e2de2aa0daa364282",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "GitHub · Trending Today",
+          "title": "alchaincyf / zhangxuefeng-skill",
+          "url": "https://github.com/alchaincyf/zhangxuefeng-skill",
+          "published_at": null,
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skill"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "d8ac3b79ff172a534c265a719da93d1dcfc8902f",
+          "site_id": "newsnow",
+          "site_name": "NewsNow",
+          "source": "github",
+          "title": "alchaincyf /      zhangxuefeng-skill",
+          "url": "https://github.com/alchaincyf/zhangxuefeng-skill",
+          "published_at": "2026-06-11T12:03:37.186000Z",
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skill"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "9e206a19f02a33c92a9621400ad4f63f2c850cc1",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "github.com",
+          "title": "Show HN: 一种用于审核 dbt 项目、以发现 AI 代理可能出错之处的技能",
+          "url": "https://github.com/GetCassis/dbt-agent-readiness",
+          "published_at": "2026-06-11T11:19:10.632000Z",
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "技能"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "e4f8e7332c4ee45db2b08a57ba34463ddef532d4",
           "site_id": "tophub",
           "site_name": "TopHub",
@@ -726,7 +760,7 @@
           "url": "https://xz.aliyun.com/news/92243",
           "published_at": null,
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -743,7 +777,7 @@
           "url": "https://xz.aliyun.com/news/92270",
           "published_at": null,
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -760,7 +794,7 @@
           "url": "https://www.woshipm.com/?p=6411291",
           "published_at": null,
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -777,7 +811,7 @@
           "url": "https://xz.aliyun.com/news/92268",
           "published_at": null,
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -828,7 +862,7 @@
           "url": "https://news.ycombinator.com/item?id=48485885",
           "published_at": "2026-06-11T03:40:23.315000Z",
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -845,7 +879,7 @@
           "url": "https://juejin.cn/post/7649329229150650378",
           "published_at": null,
           "first_seen_at": "2026-06-10T14:39:39.899991Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -862,7 +896,7 @@
           "url": "https://juejin.cn/post/7648545475571859475",
           "published_at": null,
           "first_seen_at": "2026-06-10T14:39:39.899991Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -930,7 +964,7 @@
           "url": "https://juejin.cn/post/7648894966207152180",
           "published_at": null,
           "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -981,7 +1015,7 @@
           "url": "https://juejin.cn/post/7649337767211515910",
           "published_at": "2026-06-10T10:58:26.203000Z",
           "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -1032,7 +1066,7 @@
           "url": "https://www.woshipm.com/?p=6366745",
           "published_at": null,
           "first_seen_at": "2026-06-10T02:53:01.879763Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -1185,7 +1219,7 @@
           "url": "https://dev.to/harsh2644/the-prompt-is-not-a-skill-and-we-need-to-stop-pretending-3m18",
           "published_at": "2026-06-09T14:23:40.928000Z",
           "first_seen_at": "2026-06-09T16:34:01.714093Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -1236,7 +1270,7 @@
           "url": "https://juejin.cn/post/7648152309277933608",
           "published_at": null,
           "first_seen_at": "2026-06-09T13:47:11.749160Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -1474,7 +1508,7 @@
           "url": "https://dev.to/xulingfeng/my-company-packaged-12-years-of-my-experience-into-an-ai-skill-then-laid-me-off-when-it-crashed-4b3e",
           "published_at": "2026-06-08T17:13:21.081000Z",
           "first_seen_at": "2026-06-08T18:27:14.683491Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -1583,130 +1617,11 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "e395ca32edd210de9b6a26a2662892aa0b61a57e",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "CSDN博客 · 综合热榜",
-          "title": "AI 时代还需要买课吗？我用 Skills + Markdown + HTML 搭了一套自学系统",
-          "url": "https://blog.csdn.net/xiewenfeng520/article/details/161777438",
-          "published_at": null,
-          "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T22:27:41.237418Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "skills"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "c16a25ac7a91d98d4f9c181ec5221ff4ea882f07",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "CSDN博客 · 综合热榜",
-          "title": "Spring AI 1.x 系列【40】MCP 客户端 Spring Boot 启动器",
-          "url": "https://blog.csdn.net/qq_43437874/article/details/161777025",
-          "published_at": null,
-          "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T15:42:44.081832Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "mcp"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "4d0198beda6b218894bcb632735648eb29e3a8df",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "GitHub · Trending Today",
-          "title": "google / skills",
-          "url": "https://github.com/google/skills",
-          "published_at": null,
-          "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "skills"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "3731d2b7f2b8df1b30eb4c9ef9922a3c4e5d7207",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "GitHub · Trending Today",
-          "title": "phuryn / pm-skills",
-          "url": "https://github.com/phuryn/pm-skills",
-          "published_at": null,
-          "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "skills"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "9338fec1226552420b8a9a1bcbaf7f216374b409",
-          "site_id": "newsnow",
-          "site_name": "NewsNow",
-          "source": "github",
-          "title": "google /      skills",
-          "url": "https://github.com/google/skills",
-          "published_at": "2026-06-08T11:40:21.188000Z",
-          "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "skills"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "90191d73dc88ffe8abc157d06062e34072c525c1",
-          "site_id": "newsnow",
-          "site_name": "NewsNow",
-          "source": "github",
-          "title": "phuryn /      pm-skills",
-          "url": "https://github.com/phuryn/pm-skills",
-          "published_at": "2026-06-08T11:40:21.188000Z",
-          "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "skills"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "f586bf84699e34badb41cb920d1ca9ba81e6d567",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "TechRadar",
-          "title": "AI could actually be driving positive tech job growth in Europe – but still presents growing security risks and skills gap",
-          "url": "https://www.techradar.com/pro/ai-could-actually-be-driving-positive-tech-job-growth-in-europe-but-still-presents-growing-security-risks-and-skills-gap",
-          "published_at": "2026-06-08T10:43:11Z",
-          "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T11:57:33.617464Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "skills"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 59
+      "other_count": 55
     },
     {
       "id": "defense-agent",
@@ -1794,7 +1709,7 @@
           "url": "https://www.bbc.com/news/articles/c20y6966xqzo?at_medium=RSS&at_campaign=rss",
           "published_at": "2026-06-09T21:13:17Z",
           "first_seen_at": "2026-06-09T22:14:56.291063Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "military",
@@ -1930,19 +1845,358 @@
           "monitor_class_label": "其他来源"
         },
         {
-          "id": "4b9f64cbcec4817f38b5414604f53a7d9963b72a",
+          "id": "f05363bff67373381a8e23ecc13d979b008d6b9b",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "CSDN博客 · 综合热榜",
+          "title": "从推理到纠错：ReAct、CoT 与自反思 Agent 的工程落地",
+          "url": "https://blog.csdn.net/lishengzhen123/article/details/161854008",
+          "published_at": null,
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "d9bee827c40e3c315b9cf8f37db22083bd5a2e90",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "开源中国 · 热门资讯",
+          "title": "SolonCode v2026.6.12 已经发布，终端智能体",
+          "url": "https://www.oschina.net/news/456097",
+          "published_at": null,
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "ca26907114f4e7fb2a829294b4dd366171108609",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "掘金 · 全站本周最热",
+          "title": "从纯文本到具身智能：魔珐星云让国产大模型 Agent 拥有 3D 具身躯壳",
+          "url": "https://juejin.cn/post/7649738148373823529",
+          "published_at": null,
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "7e0e0e30a9d37a5afd9cef83ec4cbaeb4c1c8c22",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "微博 · 热搜榜",
+          "title": "DeepSeek为何发力Agent",
+          "url": "https://m.weibo.cn/search?containerid=100103type%3D1%26q%3DDeepSeek%25E4%25B8%25BA%25E4%25BD%2595%25E5%258F%2591%25E5%258A%259BAgent",
+          "published_at": null,
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "3cfa433bd48a9555e7ce1b14f5d36be0b58f9dca",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "量子位 · 每日最新",
+          "title": "1290万高考生看过来！阿里出了个志愿填报Agent，免费的",
+          "url": "https://www.qbitai.com/2026/06/434558.html",
+          "published_at": null,
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "319aa970c7f2fabd3cec1ac64f271727e125a54d",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "百度 · 实时热点",
+          "title": "中方宣布制裁菲律宾国防部长",
+          "url": "https://m.baidu.com/s?wd=%E4%B8%AD%E6%96%B9%E5%AE%A3%E5%B8%83%E5%88%B6%E8%A3%81%E8%8F%B2%E5%BE%8B%E5%AE%BE%E5%9B%BD%E9%98%B2%E9%83%A8%E9%95%BF",
+          "published_at": null,
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "0a4c16e29b1ac3231140265d41c9b2117da6d75f",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "CSDN博客 · 综合热榜",
+          "title": "读完《一本书讲透 Agentic AI》，我更确定不能只盯着 Agent 工具",
+          "url": "https://blog.csdn.net/Mrxiao_bo/article/details/161837486",
+          "published_at": null,
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "565a9bd647e4ac190c0faa7c8a4e42d134322a07",
           "site_id": "buzzing",
           "site_name": "Buzzing",
-          "source": "reut.rs",
-          "title": "乌克兰国防部称在摩尔多瓦发现乌克兰无人机残骸",
-          "url": "https://reut.rs/4xglJHR",
-          "published_at": "2026-06-08T11:05:47.687000Z",
-          "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T11:57:33.617464Z",
-          "watch_score": 2,
+          "source": "www.reuters.com",
+          "title": "英国国防大臣希利辞职",
+          "url": "https://www.reuters.com/de/welt/britischer-verteidigungsminister-healey-tritt-zurck-2026-06-11",
+          "published_at": "2026-06-11T12:22:36.582000Z",
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
           "watch_matched_terms": [
-            "国防",
-            "无人机"
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "a0d17f5a1b5ecfb6c59ad3423ff2b36f5fa5aab3",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "英国国防大臣希利因国防开支问题辞职 - Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUHR5cUxPVW1vQ0M1TVNiTTlObF9QdmFpbHNfQTJSdG5DMEJlRVdwdENYS3NBNC1qTTJacVBBZlpyS3JfdUhUclc2LXJEV2FzdHkwVnBvYk94blNoWmJXNWlOay1sM21nQ1ZIZFpQZ1pWQjctWTRoR3BhdFRGaDAxUFgwNWQ5TUFIZzktWERwQUZHUElwTkpRSHkwTFhsSmpjRDJ2OUJ4MmhwZw?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-06-11T12:22:35.820000Z",
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "bf6c1b4a9b9819e0c417c6b46c4b380716c94ec6",
+          "site_id": "newsnow",
+          "site_name": "NewsNow",
+          "source": "hackernews",
+          "title": "Build a Basic AI Agent from Scratch: Long Task Planning",
+          "url": "https://news.ycombinator.com/item?id=48461635",
+          "published_at": "2026-06-11T12:08:43.016000Z",
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "c2ac22ae6d3dff650bc4e6c7bdf5295e461d7ab5",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "英国国防大臣希利因国防开支问题辞职 - Al Jazeera",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQN2hrbDUtTkw3WjVINEh6bzRmQXp0UWwxVy1KT1hSeVJ3bVhvNHVZUnl0Q25ubExQMXRPSHhwMW5tMTlsMElZb0RaQ1FJQkJRXzBfNE1YV2VRWkYwVTkwNWNpYmNTTEdxTkRKWVpBVGtnQnNVbElfQjBJWml0VTBFX28tWm8wT2FSWTJScERfQTFRN2RHZ25JVWpsZXlteGZaOXlyQnhDVmViTXZmM1ZN0gG0AUFVX3lxTE5FSUs0QU5QTnlEVWRyMHFCM3FZaWNJT1AtS2VsY19ldHphUGp5Mlo3STFlUTN0cnJQSXN3NG9YRzVRSDI4U0VJa2R5RlZDalJfaEhOcldrTE56anFEdGxKbU1TbERDeDUtVXRqbC0ybUJfTXdBMXR0bWRiOGM2OUtmOG42aXgxa1NrTzFYSFlXWTQzU3oydW9Ib2c3bWIwQzQ3YnBzbk9JM0gtdy1ZTHpqeWhLaQ?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-06-11T12:06:22.833000Z",
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "f2efbfbf69521fec5655091ba8c508aefca353e2",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.bloomberg.com",
+          "title": "英国国防大臣因与财政部在资金问题上发生冲突而辞职",
+          "url": "https://www.bloomberg.com/news/articles/2026-06-11/defense-secretary-john-healey-resigns-from-uk-government",
+          "published_at": "2026-06-11T11:50:04.503000Z",
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "7ca37f1160a75681fe039295d5bb9c708a8f374f",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.ft.com",
+          "title": "英国国防大臣因预算案辞职",
+          "url": "https://www.ft.com/content/e294734a-67db-4267-88e0-4793767f50d2",
+          "published_at": "2026-06-11T11:35:12.881000Z",
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "6ab0a8782562402ca2d2b10b551ac556ea667f3d",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.theguardian.com",
+          "title": "约翰·希利因与斯塔默在国防开支问题上存在分歧，辞去国防大臣职务——英国政坛实时动态",
+          "url": "https://www.theguardian.com/politics/live/2026/jun/11/belfast-riots-hilary-benn-anti-immigrant-injured-police-latest-news-updates",
+          "published_at": "2026-06-11T11:35:12.660000Z",
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "45c54451f33f3bb2678cf38829ef42fd2c36432f",
+          "site_id": "newsnow",
+          "site_name": "NewsNow",
+          "source": "36kr",
+          "title": "京东方A：将公司列入中国军事企业清单并无正当理由",
+          "url": "https://www.36kr.com/newsflashes/3848650633761798",
+          "published_at": "2026-06-11T11:19:16.145000Z",
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "军事"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "09ea034aec1c9778eb607f512b3bfe8cfe18d7dc",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "36氪 (36Kr)",
+          "title": "京东方A：将公司列入中国军事企业清单并无正当理由",
+          "url": "https://36kr.com/newsflashes/3848650633761798?f=rss",
+          "published_at": "2026-06-11T10:49:52Z",
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "军事"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "a43380f6cb87f12ca148fea13f57b0d931c81846",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "The Next Web",
+          "title": "Mercedes-Benz turns to defence, partnering with startup Tytan to build anti-drone vehicles",
+          "url": "https://thenextweb.com/news/mercedes-benz-tytan-anti-drone-vehicles-defence",
+          "published_at": "2026-06-11T10:12:25Z",
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "defence"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "20f0b1ce8ce53a64bcc288fa6dcba0705bb8b739",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "IT之家 (ITHome)",
+          "title": "京东发布国内首个智能体自主支付协议，AI 花钱权限划分 L0 至 L5 六个等级",
+          "url": "https://www.ithome.com/0/963/090.htm",
+          "published_at": "2026-06-11T09:59:37Z",
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "5dfb5fda2a5458fbbea665f6fb19b079d73fe724",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Business Insider",
+          "title": "The 'Tartan Army' is coming for Providence",
+          "url": "https://www.businessinsider.com/world-cup-scotland-fan-group-tartan-army-providence-2026-6",
+          "published_at": "2026-06-11T09:51:01Z",
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "army"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "c59cc4def9ffe56117bcac3cb5943b33d56d5de0",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Business Insider",
+          "title": "US Army soldiers say you can't just pour AI on new warfighting tech like ranch dressing",
+          "url": "https://www.businessinsider.com/us-army-soldiers-ai-cant-be-poured-warfighting-tech-ranch-2026-6",
+          "published_at": "2026-06-11T09:42:01Z",
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "army"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "286c019618e739afa0f13d57821f03c9b7ad4d56",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Business Insider",
+          "title": "He built tech to connect the Israeli army's data. Now he has $14 million from VCs to do it for companies.",
+          "url": "https://www.businessinsider.com/israel-startup-upriver-raises-14-million-ai-data-engineering-2026-6",
+          "published_at": "2026-06-11T09:30:01Z",
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "army"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -1973,7 +2227,7 @@
           "url": "https://blog.csdn.net/2201_75454341/article/details/161845224",
           "published_at": null,
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -1990,7 +2244,7 @@
           "url": "https://www.oschina.net/news/455946",
           "published_at": null,
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2007,24 +2261,7 @@
           "url": "https://www.woshipm.com/?p=6410878",
           "published_at": null,
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "686af2ca024b41c821fed4e62fc188986a9af7f2",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "掘金 · 人工智能本周最热",
-          "title": "从纯文本到具身智能：魔珐星云让国产大模型 Agent 拥有 3D 具身躯壳",
-          "url": "https://juejin.cn/post/7649738148373823529",
-          "published_at": null,
-          "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2041,7 +2278,7 @@
           "url": "https://www.qbitai.com/2026/06/434317.html",
           "published_at": null,
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2058,7 +2295,7 @@
           "url": "https://blog.csdn.net/unbelievevc/article/details/161880173",
           "published_at": null,
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2109,10 +2346,27 @@
           "url": "https://xz.aliyun.com/news/92242",
           "published_at": null,
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "cb1dfe1a606350edfe2bee88ad8911a1e84d69a7",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "dronexl.co",
+          "title": "《精灵宝可梦GO》的扫描功能为军用无人机导航技术提供了训练",
+          "url": "https://dronexl.co/2026/06/09/pokemon-go-scans-niantic-vantor-military-drone-navigation",
+          "published_at": "2026-06-11T08:09:17.228000Z",
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -2126,7 +2380,7 @@
           "url": "https://news.ycombinator.com/item?id=48487029",
           "published_at": "2026-06-11T07:53:40.089000Z",
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "military"
@@ -2194,7 +2448,7 @@
           "url": "https://github.com/DO-SAY-GO/web-cli",
           "published_at": "2026-06-11T07:05:18.492000Z",
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2203,15 +2457,15 @@
           "monitor_class_label": "其他来源"
         },
         {
-          "id": "58b5f47a56b74fcb5898cc0771d38d0bb301471a",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "Hacker News",
+          "id": "c211bb3e5b86730b72136f0347fb69fa3f963247",
+          "site_id": "zeli",
+          "site_name": "Zeli",
+          "source": "Hacker News · 24h最热",
           "title": "Cheap Iranian drone downed $25M US Army helicopter–maybe by chance",
           "url": "https://arstechnica.com/gadgets/2026/06/cheap-iranian-drone-downed-25-million-us-army-helicopter-maybe-by-chance",
           "published_at": "2026-06-11T06:57:16Z",
-          "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "army"
@@ -2228,7 +2482,7 @@
           "url": "https://www.huxiu.com/article/4866373.html?f=rss",
           "published_at": "2026-06-11T06:51:46Z",
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2245,7 +2499,7 @@
           "url": "https://dronexl.co/2026/06/09/pokemon-go-scans-niantic-vantor-military-drone-navigation",
           "published_at": "2026-06-11T06:42:06Z",
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "military"
@@ -2279,7 +2533,7 @@
           "url": "https://www.huxiu.com/article/4866351.html?f=rss",
           "published_at": "2026-06-11T05:48:14Z",
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2313,7 +2567,7 @@
           "url": "http://dlvr.it/TSzY3k",
           "published_at": "2026-06-11T04:59:04.698000Z",
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -2330,7 +2584,7 @@
           "url": "https://www.huxiu.com/article/4866322.html?f=rss",
           "published_at": "2026-06-11T04:15:23Z",
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2364,7 +2618,7 @@
           "url": "https://news.ycombinator.com/item?id=48484584",
           "published_at": "2026-06-11T03:04:54.295000Z",
           "first_seen_at": "2026-06-11T03:04:27.845032Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2381,7 +2635,7 @@
           "url": "https://blog.csdn.net/weixin_67304359/article/details/161843842",
           "published_at": null,
           "first_seen_at": "2026-06-11T03:04:27.845032Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2398,7 +2652,7 @@
           "url": "https://www.zhihu.com/question/2021884245254127959",
           "published_at": null,
           "first_seen_at": "2026-06-11T03:04:27.845032Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2500,7 +2754,7 @@
           "url": "https://news.google.com/read/CBMiwwFBVV95cUxOT2hrSENTODJRMzd4Q2R0LURrdEktcllXeHNwVWxFUEtlT1pEekY4VFV5SEJvMTJpRHlJQnU2cGFSS3RZbUZRVE8wLXNYeG1Wci03RVl1b09uMG0zN3gwQlFVNFJBRUhJZmVOcHRKS2M0dnppRGRrXzZ6QVFXTXIyZ0tOQmM4eU1xQ3hxSDZ6S3k1U1laelBhajIyS0tMSW9tSDlUbEFOTUd3dFg2d3h6X0x3amw4dmtmeUl3bnJ4ei1LSmPSAcMBQVVfeXFMTk9ZQUFkZElRU0pzSnYwNDhSUkpTX0k2eW9uWWp2RE4xVHJZNXVsNGh1ZkNoYzYzOE5FREpRNTFwUWc2VUtQOWhmVFVkUnhIVGhnQnp0V0xiaWV2NUREbHBlM3Y5aGROWEJtR2lTOXBwdTZlNDdwOERYZG5FLUNEZ3dEU1F4NjB5WjVqZDZxRHMySE0tUEM1WWVIQXIwX1dtSGlCZFF1YUV0TnUyVkRTOGNxQnY3cE5ZSHVjcGtJOTlfVVNB?hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-06-11T01:30:06Z",
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2517,7 +2771,7 @@
           "url": "https://lwn.net/SubscriberLink/1077035/c7e7c14fbd60fae9",
           "published_at": "2026-06-11T00:10:08Z",
           "first_seen_at": "2026-06-11T03:04:27.845032Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2721,7 +2975,7 @@
           "url": "https://www.axios.com/2026/06/10/trump-iran-strike-situation-room-meeting",
           "published_at": "2026-06-10T20:26:04.831000Z",
           "first_seen_at": "2026-06-10T22:30:46.578216Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2806,7 +3060,7 @@
           "url": "https://arstechnica.com/gadgets/2026/06/cheap-iranian-drone-downed-25-million-us-army-helicopter-maybe-by-chance",
           "published_at": "2026-06-10T18:50:15.710000Z",
           "first_seen_at": "2026-06-10T20:27:43.370800Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2976,7 +3230,7 @@
           "url": "https://arstechnica.com/gadgets/2026/06/cheap-iranian-drone-downed-25-million-us-army-helicopter-maybe-by-chance",
           "published_at": "2026-06-10T17:04:47Z",
           "first_seen_at": "2026-06-10T20:27:43.370800Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "army"
@@ -3010,7 +3264,7 @@
           "url": "https://juejin.cn/post/7648545475571859475",
           "published_at": null,
           "first_seen_at": "2026-06-10T14:39:39.899991Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3112,7 +3366,7 @@
           "url": "https://blue41.com/blog/how-we-helped-bunq-secure-their-financial-ai-assistant",
           "published_at": "2026-06-10T13:39:11Z",
           "first_seen_at": "2026-06-10T17:59:44.765750Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3214,7 +3468,7 @@
           "url": "https://www.bbc.com/news/articles/c5yzm2nzgr2o?at_medium=RSS&at_campaign=rss",
           "published_at": "2026-06-10T11:43:40Z",
           "first_seen_at": "2026-06-10T14:39:39.899991Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "military"
@@ -3248,7 +3502,7 @@
           "url": "https://www.woshipm.com/?p=6411094",
           "published_at": null,
           "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3316,7 +3570,7 @@
           "url": "https://juejin.cn/post/7648894966207152180",
           "published_at": null,
           "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3418,347 +3672,7 @@
           "url": "https://juejin.cn/post/7649337767211515910",
           "published_at": "2026-06-10T10:58:26.203000Z",
           "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "77cefc8fba961057703a74fa2223912e5bcac42d",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.reuters.com",
-          "title": "莱茵金属与初创公司ERC就重型无人机达成合作协议",
-          "url": "https://www.reuters.com/business/aerospace-defense/rheinmetall-pact-heavy-lift-drones-with-startup-erc-2026-06-10",
-          "published_at": "2026-06-10T10:49:51.329000Z",
-          "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-10T11:13:21.509897Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "b538609ba3a81d6fe04e195b7c3ab490b25b7e72",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "乌克兰无人机行动的最新转折“正让俄军吃尽苦头” - The New York Times",
-          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPMVN6cDJKdmJBMFh0bUVfaWZNRDJOQ3ZzeVA4REQxTjROTGRCMHBFcXN6dTZGcVYzYnhySmVSMzRKckxpdzUyb3VxQWtJSUdrakl0UkU3N2VESWZ3M0t4LTFPWjlGVW9aUzZwT2NOLUZHMkM4Mi1NUkF1OFpUOXVjUHpOWTUyM09DSXcwVml1ZzA?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-06-10T10:49:51.217000Z",
-          "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-10T14:39:39.899991Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "7afb6f28ac21be67dd6b140ced699e6328ddca26",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "视频显示，在约旦河西岸希伯伦一名婴儿中弹后，以色列国防军士兵袖手旁观 - Haaretz",
-          "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQaGlJalZPYTNLVG02TGZkOElnN1hPaWtzcTdNR3NsdVB0cHMtYmYxaDlkQXpFS2Z0QlFJNTFFaWI1eURicDlBWlBad0xKNWNjZFM4TGlHbjN4Z051M0FRcDk0M3NGVHhJYlRvemtGV3RfUkctVW9QZXdJSFpkTVk0YTlDTURFbDdXUXFfNjU2RGZfOWl0N255bjJPaGRSSTMyYzE1N1pJWHM3RGlaSVBIOVZWWHd3cUFTOTR1SmlxYzhxejJMTDhFSmRqZnhlbTFKcE0xaFNva3hqNldFN2lTQmhaWkRKZDhONkxzTXN1aXhxVnk4QW9hYWJzbw?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-06-10T10:49:51.210000Z",
-          "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-10T14:39:39.899991Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "9e856cd930d14f47a14494e067454c35e6f9e8df",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "泽连斯基表示，乌克兰计划每天对俄罗斯发动大规模袭击，动用600架无人机和导弹 - UNITED24 Media",
-          "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOckMyZjBramlrVjZKUXJyOU00WlVQN2UxWEx3WlRrdUU1MGtDQU9GMGEtWGxKeVc4Nk9QZDR2TnduMmRxaXQ4NGpRMXpqWkZraG5IdDY1WktzZTAxN2ZpMVhDMlo1WUFBUTRhTGZMWnMwQTZnNXd5T29Ud2EzUVBQczJyWW42cXNQekQwbE00amxzYVJ1aE4tUHdPeFFoSjZhV1hoOWNfSDZ6bWo5SXRLN2VnZS1oX3ZfOG40NkZ2YjdKZWhIaXZzczhvMmxIMGpNWDFmR0tR?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-06-10T10:49:51.206000Z",
-          "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-10T14:39:39.899991Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "05b390adfc5d8884a4f3e5ce85d50e69011c3c7e",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "乌克兰无人机在夜间连番袭击中击中俄罗斯一家炼油厂和一家军用电子设备厂 - Kyiv Post",
-          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1vbllyYlNzT1Q0NFU2V1VMV1YyZ1lGaEx4Z3FnTnFDWlc1V2xNNWYtUGlzWjF3Nzh3bmd2eEtKZC1PeDV0V0pMQWZ5UQ?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-06-10T10:34:04.897000Z",
-          "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-10T14:39:39.899991Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "4238476d2895e24c74b297f70382be8bacdae292",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.bloomberg.com",
-          "title": "油价回吐涨幅，交易员正评估美伊军事打击的后续影响",
-          "url": "https://www.bloomberg.com/news/articles/2026-06-09/latest-oil-market-news-and-analysis-for-june-10",
-          "published_at": "2026-06-10T10:17:58.468000Z",
-          "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-10T11:13:21.509897Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "39e546e8ca41ba2294797d4265e8b43b7d5041dc",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "reut.rs",
-          "title": "印尼军事法庭判处四名涉酸袭人权活动家的军官入狱",
-          "url": "https://reut.rs/4xaq3Iy",
-          "published_at": "2026-06-10T10:02:00.964000Z",
-          "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-10T11:13:21.509897Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "904f0c366b66cddd0a73595deb60a8ea5c856a34",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "BBC News (世界新闻)",
-          "title": "Zelensky under pressure to end row with Poland over WW2 name of army unit",
-          "url": "https://www.bbc.com/news/articles/c992r4kn5j9o?at_medium=RSS&at_campaign=rss",
-          "published_at": "2026-06-10T09:57:20Z",
-          "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "army"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "9c7c4a90f4c42ddf56354201a713b761f88de467",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.businessinsider.com",
-          "title": "被誉为“人工智能教父”的杰弗里·辛顿表示，乌克兰战争改变了他对军事人工智能的看法",
-          "url": "https://www.businessinsider.com/geoffrey-hinton-russia-ukraine-war-changed-view-military-ai-2026-6",
-          "published_at": "2026-06-10T09:29:59.105000Z",
-          "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "29774bfbd8accd604ba2f1e8fe97939d3e28a582",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "V2EX (创意工作者社区)",
-          "title": "[问与答] 让 AI agent 完整任务就通知的方法",
-          "url": "https://www.v2ex.com/t/1219420",
-          "published_at": "2026-06-10T09:15:59Z",
-          "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-10T14:39:39.899991Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "1b7bf0ad07ed960dd7fe262e97544c055d616ccf",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "TechRadar",
-          "title": "The vulnerability crisis: How AI is shrinking the window for defense",
-          "url": "https://www.techradar.com/pro/the-vulnerability-crisis-how-ai-is-shrinking-the-window-for-defense",
-          "published_at": "2026-06-10T09:07:40Z",
-          "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-10T11:13:21.509897Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "defense"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "a5c6a60ae76de24fd1f205aa3458294b75f4d49d",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "俄罗斯能源部承认汽油短缺系无人机袭击所致 - The Moscow Times",
-          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPT2pCalk0Yk43QmRRM1Q5dHZ5RUVsLVNqN0FSanNfY2pKZU5ZU1dyYzR5TDd1ci1uTmlMaVdFSVllSGE5WUhQQzhLMHRxMlV6NEZZVnJHanI5UnVZZlpmMFNrNXFaWnR0TFNhcmhTdlpoa3NGRVY2LXFKOHlsS1BReDJNZXI0bEdTMnBBRUZNa0NvWmpYNUJta1hoU2plQnlhclpUaktIWlZiNTJUekxNa1lEc2VBV3RqV2Y4?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-06-10T08:57:54.103000Z",
-          "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-10T11:13:21.509897Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "216810268719cd878f6f184f6267c1be1ba8497e",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "github.com",
-          "title": "Show HN: OpenClaw 和 Hermes Agent 通过 XMPP 相互通信",
-          "url": "https://github.com/ai-sns/openclaw-hermes-agent-network",
-          "published_at": "2026-06-10T08:41:55.045000Z",
-          "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-10T11:13:21.509897Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "51bb7dcf19d5b0017899e46d1b0687eaf84109da",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "IT之家 (ITHome)",
-          "title": "阿里千问上线“国内首个全周期高考志愿填报 Agent”，提供免费咨询服务",
-          "url": "https://www.ithome.com/0/962/506.htm",
-          "published_at": "2026-06-10T08:13:11Z",
-          "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-10T11:13:21.509897Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "87417768691f016a71ac17efc84257a3f39c9962",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "无人机袭击了俄罗斯吞并的克里米亚半岛上的一座历史博物馆，与此同时，当地官员正在调整列车时刻表 - Reuters",
-          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPSGllalBfeVQzMUlnOU5VZUZkeTNLUUc2ajJHV1pFU1JhTU9HdmpVeTdLSEpXd0lMVUdscFJMNldHZlZQa0ZvbmdpZzY1V25SeEF4UzRrQllqOXV2M3lwZ21iNlY4TXdDaHYwNFVqLXMtM0syS0RfSFNlTEUtRGgyazVHcXZuS282YlRXVElCTnVkZmt3d2hJbkZrVkxMU3ZNVlBJOG0xTXEtLXktY1h0QzlheW42ZjdYTDI3QkZR?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-06-10T07:53:52.608000Z",
-          "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-10T11:13:21.509897Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "02e86db1e2caececb85534be57b12a551f5d4515",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "无人机袭击了俄罗斯吞并的克里米亚半岛上的一座历史博物馆，与此同时，当局调整了列车时刻表 - Reuters",
-          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPSGllalBfeVQzMUlnOU5VZUZkeTNLUUc2ajJHV1pFU1JhTU9HdmpVeTdLSEpXd0lMVUdscFJMNldHZlZQa0ZvbmdpZzY1V25SeEF4UzRrQllqOXV2M3lwZ21iNlY4TXdDaHYwNFVqLXMtM0syS0RfSFNlTEUtRGgyazVHcXZuS282YlRXVElCTnVkZmt3d2hJbkZrVkxMU3ZNVlBJOG0xTXEtLXktY1h0QzlheW42ZjdYTDI3QkZR?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-06-10T07:53:52.564000Z",
-          "first_seen_at": "2026-06-10T11:13:21.509897Z",
-          "last_seen_at": "2026-06-10T11:13:21.509897Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "ccfd39b6dfe54970eca4597c93e29a70a67fb781",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "Readhub · AI",
-          "title": "AI 智能体生产力洞察：任务时间缩短 87%、总成本下降 94%",
-          "url": "https://www.ithome.com/0/962/414.htm",
-          "published_at": null,
-          "first_seen_at": "2026-06-10T07:10:37.532986Z",
-          "last_seen_at": "2026-06-10T07:10:37.532986Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "ac9496a383a35fd94ec8c699e278517d5d59ad58",
-          "site_id": "aibase",
-          "site_name": "AIbase",
-          "source": "AIbase",
-          "title": "美团 AI 浏览器Tabbit 1.0 正式上线，主打全能智能体",
-          "url": "https://www.aibase.com/news/28814",
-          "published_at": "2026-06-10T07:10:37.532986Z",
-          "first_seen_at": "2026-06-10T07:10:37.532986Z",
-          "last_seen_at": "2026-06-11T00:01:06.852022Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "49b0be624dae7824705a96aee6dd73b5e82eaee9",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "新浪财经新闻 · 点击量排行",
-          "title": "比亚迪、阿里等回应“被美国防部列入中国军工企业名单”：没有正当理由 无任何依据",
-          "url": "https://finance.sina.com.cn/roll/2026-06-10/doc-iniawawa6144803.shtml",
-          "published_at": null,
-          "first_seen_at": "2026-06-10T07:10:37.532986Z",
-          "last_seen_at": "2026-06-10T17:59:44.765750Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "0cd366120d791088c8f93cd434e3cbd4c0246a4c",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "36氪 · 24小时热榜",
-          "title": "永久免费，美团AI浏览器来了，10多个顶级模型帮你干活，还附送Agent外挂",
-          "url": "https://www.36kr.com/p/3845982766680581",
-          "published_at": null,
-          "first_seen_at": "2026-06-10T07:10:37.532986Z",
-          "last_seen_at": "2026-06-11T00:01:06.852022Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3774,7 +3688,7 @@
     {
       "id": "ai-for-science",
       "name": "AI+科研",
-      "count": 20,
+      "count": 19,
       "items": [
         {
           "id": "85160502f4279819cae3abe368b9d22e678480fa",
@@ -3850,24 +3764,6 @@
           "monitor_class_label": "其他来源"
         },
         {
-          "id": "90284b4a1d954d870af80f5e5df9052ba140e1b0",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "Ars Technica",
-          "title": "The weather and climate science AI revolution isn’t revolutionary",
-          "url": "https://arstechnica.com/science/2026/06/the-weather-and-climate-science-ai-revolution-isnt-revolutionary",
-          "published_at": "2026-06-08T11:00:58Z",
-          "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T22:27:41.237418Z",
-          "watch_score": 4,
-          "watch_matched_terms": [
-            "science ai",
-            "combo:ai+science"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
           "id": "8ce3cc6427cb26ffd8751cd2704f2d0f772476f8",
           "site_id": "techurls",
           "site_name": "TechURLs",
@@ -3876,7 +3772,7 @@
           "url": "https://www.wired.com/story/anthropic-responds-to-backlash-on-claudes-secret-sabotage-on-ai-research",
           "published_at": "2026-06-11T03:11:22Z",
           "first_seen_at": "2026-06-11T08:11:57.825943Z",
-          "last_seen_at": "2026-06-11T08:11:57.825943Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3987,18 +3883,18 @@
           "monitor_class_label": "其他来源"
         },
         {
-          "id": "ccf84bb8052cfb42e95af29ed52af3723486dbed",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "虎嗅 (Huxiu)",
-          "title": "生物基础模型（Bio AI Models）训练数据的探讨：告别“大力出奇迹”。",
-          "url": "https://www.huxiu.com/article/4865380.html?f=rss",
-          "published_at": "2026-06-08T09:10:28Z",
-          "first_seen_at": "2026-06-08T11:57:33.617464Z",
-          "last_seen_at": "2026-06-08T15:42:44.081832Z",
-          "watch_score": 3,
+          "id": "1b1c087817b69fd970aef599bd576b9141f43075",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "Readhub · AI",
+          "title": "（活力中国调研行）北京建设「人工智能第一城」打造全球科学智能创新策源地和产业高地",
+          "url": "https://finance.sina.com.cn/roll/2026-06-11/doc-iniaztwk5541775.shtml",
+          "published_at": null,
+          "first_seen_at": "2026-06-11T12:31:53.540130Z",
+          "last_seen_at": "2026-06-11T12:31:53.540130Z",
+          "watch_score": 1,
           "watch_matched_terms": [
-            "combo:ai+science"
+            "科学智能"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -4125,7 +4021,7 @@
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 20
+      "other_count": 19
     }
   ]
 }
