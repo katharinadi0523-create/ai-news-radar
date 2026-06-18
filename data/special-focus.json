@@ -1,14 +1,16 @@
 {
-  "generated_at": "2026-06-18T00:22:16.079902Z",
+  "generated_at": "2026-06-18T05:19:47.844200Z",
   "window_days": 3,
-  "source_generated_at": "2026-06-18T00:20:23.196908Z",
+  "source_generated_at": "2026-06-18T05:18:19.432611Z",
   "source_window_hours": 24,
   "source_topic_filter": "ai_tech_robotics",
   "output_name": "special-focus",
   "section_count": 6,
-  "total_items": 206,
-  "official_error_count": 0,
-  "official_errors": [],
+  "total_items": 207,
+  "official_error_count": 1,
+  "official_errors": [
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UCQRc3PMlCsoodxbR4IsglKQ: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCQRc3PMlCsoodxbR4IsglKQ"
+  ],
   "sections": [
     {
       "id": "openclaw",
@@ -60,7 +62,7 @@
           "url": "https://www.freebuf.com/news/485837.html",
           "published_at": null,
           "first_seen_at": "2026-06-15T10:01:26.141985Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "openclaw",
@@ -78,7 +80,7 @@
           "url": "https://blog.csdn.net/LOVEmy134611/article/details/160627309",
           "published_at": null,
           "first_seen_at": "2026-06-17T19:27:03.410271Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "openclaw"
@@ -146,7 +148,7 @@
           "url": "https://juejin.cn/post/7651145221669355571",
           "published_at": null,
           "first_seen_at": "2026-06-17T03:32:24.078044Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "openclaw"
@@ -214,7 +216,7 @@
           "url": "https://blog.csdn.net/2302_78391795/article/details/162013343",
           "published_at": null,
           "first_seen_at": "2026-06-15T15:47:16.542788Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "openclaw"
@@ -393,8 +395,25 @@
     {
       "id": "knowledge-graph",
       "name": "知识图谱",
-      "count": 1,
+      "count": 2,
       "items": [
+        {
+          "id": "1d6b55868628c6d2459c9f9434d99eb0ea461cf8",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "phys.org",
+          "title": "最新研究绘制了花生基因组的完整图谱",
+          "url": "https://phys.org/news/2026-06-peanut-genome-entirety.html",
+          "published_at": "2026-06-18T01:33:12.102000Z",
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "图谱"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
         {
           "id": "14ad712e9dec48754e1ff6a55fc7b7c6eed42695",
           "site_id": "buzzing",
@@ -404,7 +423,7 @@
           "url": "https://www.nature.com/articles/s41586-026-10691-5",
           "published_at": "2026-06-17T16:01:33.670000Z",
           "first_seen_at": "2026-06-17T16:40:08.762568Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "图谱"
@@ -415,12 +434,12 @@
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 1
+      "other_count": 2
     },
     {
       "id": "skills",
       "name": "Skills",
-      "count": 58,
+      "count": 57,
       "items": [
         {
           "id": "7810c2cb47b741e89fd00e99e7024c2d053bc1df",
@@ -441,6 +460,74 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "8643a265a2bcf863c078f57472220b027f353294",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "掘金 · 人工智能本周最热",
+          "title": "瑞幸 Skill 实测，看看点一杯咖啡到底耗了多少 token",
+          "url": "https://juejin.cn/post/7650310216820129835",
+          "published_at": null,
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skill"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "312156a2476d5549e5c27ef606b59a93769f81f4",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "人人都是产品经理 · 日榜",
+          "title": "当大家都在疯狂给Agent“堆技能”时，为什么这个「空壳」智能体反而屠榜了？",
+          "url": "https://www.woshipm.com/?p=6415443",
+          "published_at": null,
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "技能"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "3eb22165a57b3714b7e319f60e76e2f5e7be7336",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "V2EX (创意工作者社区)",
+          "title": "[分享发现] 我们做了一个 Twitter Skill，没想到昨天在 Twitter 上爆了",
+          "url": "https://www.v2ex.com/t/1221301",
+          "published_at": "2026-06-18T04:16:14Z",
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skill"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "5dbac324e0b9aa6f8beda27fc0c8145fb9a8efe2",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "github.com",
+          "title": "Show HN: Cowork/Codex DOCX 插件。其消耗的令牌数量比 docx 技能少一半",
+          "url": "https://github.com/LegalRabbit-AI/legalrabbit-docx-claude-plugin",
+          "published_at": "2026-06-18T01:01:15.068000Z",
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "技能"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "72f769ef33bf77105697a380b2e5a4747fa37968",
           "site_id": "buzzing",
           "site_name": "Buzzing",
@@ -449,7 +536,7 @@
           "url": "https://www.rigthhand.ai",
           "published_at": "2026-06-17T23:09:09.060000Z",
           "first_seen_at": "2026-06-18T00:20:23.196908Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -551,7 +638,7 @@
           "url": "https://readwrite.com/pennsylvania-supreme-court-ruling-skill-games-regulation",
           "published_at": "2026-06-17T14:08:05Z",
           "first_seen_at": "2026-06-17T16:40:08.762568Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -585,7 +672,7 @@
           "url": "https://github.com/DeusData/codebase-memory-mcp",
           "published_at": "2026-06-17T12:54:22.524000Z",
           "first_seen_at": "2026-06-17T12:53:59.427584Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -602,7 +689,7 @@
           "url": "https://github.com/mattpocock/skills",
           "published_at": "2026-06-17T12:54:22.524000Z",
           "first_seen_at": "2026-06-17T12:53:59.427584Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -619,7 +706,7 @@
           "url": "https://github.com/DeusData/codebase-memory-mcp",
           "published_at": null,
           "first_seen_at": "2026-06-17T12:53:59.427584Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -636,7 +723,7 @@
           "url": "https://www.bilibili.com/video/av116754441311592",
           "published_at": null,
           "first_seen_at": "2026-06-17T12:53:59.427584Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -653,7 +740,7 @@
           "url": "https://www.woshipm.com/?p=6415145",
           "published_at": null,
           "first_seen_at": "2026-06-17T12:53:59.427584Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -670,7 +757,7 @@
           "url": "https://github.com/mattpocock/skills",
           "published_at": null,
           "first_seen_at": "2026-06-17T12:53:59.427584Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -721,7 +808,7 @@
           "url": "https://blog.csdn.net/2301_80956187/article/details/162046480",
           "published_at": null,
           "first_seen_at": "2026-06-17T08:46:20.827574Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -993,7 +1080,7 @@
           "url": "https://www.woshipm.com/?p=6401572",
           "published_at": null,
           "first_seen_at": "2026-06-16T05:49:14.222565Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -1027,7 +1114,7 @@
           "url": "https://juejin.cn/post/7651561974362718258",
           "published_at": "2026-06-16T05:37:53.765000Z",
           "first_seen_at": "2026-06-16T05:49:14.222565Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -1078,7 +1165,7 @@
           "url": "https://www.uisdc.com/skill-9",
           "published_at": null,
           "first_seen_at": "2026-06-16T00:14:23.929141Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -1265,7 +1352,7 @@
           "url": "https://xz.aliyun.com/news/92292",
           "published_at": null,
           "first_seen_at": "2026-06-15T10:01:26.141985Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -1282,7 +1369,7 @@
           "url": "https://juejin.cn/post/7650146543882518591",
           "published_at": null,
           "first_seen_at": "2026-06-15T10:01:26.141985Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -1323,96 +1410,11 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "dbbd7643ace41fffa5e0dd539ef010f788577db5",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "人人都是产品经理 · 日榜",
-          "title": "Coze Skill 速通教程：一文学会 Skill 设计方法",
-          "url": "https://www.woshipm.com/?p=6331987",
-          "published_at": null,
-          "first_seen_at": "2026-06-15T03:39:40.817456Z",
-          "last_seen_at": "2026-06-15T03:39:40.817456Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "skill"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "44d56fe0be04357979fa7593eee543ed380e017c",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "人人都是产品经理 · 日榜",
-          "title": "离职第三天，我发现了AI最深的秘密：入口+Skill=Results",
-          "url": "https://www.woshipm.com/?p=6413007",
-          "published_at": null,
-          "first_seen_at": "2026-06-15T03:39:40.817456Z",
-          "last_seen_at": "2026-06-16T00:14:23.929141Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "skill"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "d1787b990c729ac2fbe311deef8f18ad5c811102",
-          "site_id": "newsnow",
-          "site_name": "NewsNow",
-          "source": "juejin",
-          "title": "AI Skills 工程化：当每个开发者都有一支「AI 小队」，你该怎么管理？",
-          "url": "https://juejin.cn/post/7650352436700545024",
-          "published_at": "2026-06-15T03:25:27.156000Z",
-          "first_seen_at": "2026-06-15T03:39:40.817456Z",
-          "last_seen_at": "2026-06-15T03:39:40.817456Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "skills"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "09d90576b38fa124a8efa73a286547a26d3f3cc5",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "Techmeme",
-          "title": "Sandstone, which builds AI-powered workflow automation tools for legal teams at small and mid-sized businesses, raised a $30M Series A led by Lightspeed (Russell Brandom/TechCrunch)",
-          "url": "https://www.techmeme.com/260614/p19",
-          "published_at": "2026-06-15T01:10:02Z",
-          "first_seen_at": "2026-06-15T03:39:40.817456Z",
-          "last_seen_at": "2026-06-15T10:01:26.141985Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "workflow"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "0efefbb4de20cb8a7abad4ed6de1913aff23449b",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "虎嗅 (Huxiu)",
-          "title": "置身钉内的20个切片和1个skill",
-          "url": "https://www.huxiu.com/article/4867263.html?f=rss",
-          "published_at": "2026-06-15T00:57:31Z",
-          "first_seen_at": "2026-06-15T03:39:40.817456Z",
-          "last_seen_at": "2026-06-15T15:47:16.542788Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "skill"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 58
+      "other_count": 57
     },
     {
       "id": "defense-agent",
@@ -1439,6 +1441,42 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "312156a2476d5549e5c27ef606b59a93769f81f4",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "人人都是产品经理 · 日榜",
+          "title": "当大家都在疯狂给Agent“堆技能”时，为什么这个「空壳」智能体反而屠榜了？",
+          "url": "https://www.woshipm.com/?p=6415443",
+          "published_at": null,
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 2,
+          "watch_matched_terms": [
+            "agent",
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "19d30cf478064f90f0b92dd35aededcbd0731520",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "空军选定通用原子公司和安杜里尔公司，负责制造首批CCA无人机僚机 - Breaking Defense",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNZGxsVVo2S0tjenhZS2UyMDVYZlhNVUFlN2NOWjhOWGw1SFdtV2JXQ1VkRFRUUDJON040MkpMeXZMbVE2eDFEaFA4WWtMYU9EZjhNZkppU3l2cUpncWRCTEJDek8wd2RkVWJCb1NmYVBwNUo5R0lpbGZjSTE5UjRMQlFCWU84Z3FadlcyTDZLWjFGYTVjMTYyUW9SeG5kLWc?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-06-18T03:57:21.129000Z",
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 2,
+          "watch_matched_terms": [
+            "defense",
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "37a8519d8725bc0a8b3b5664356941d846486fc6",
           "site_id": "techurls",
           "site_name": "TechURLs",
@@ -1447,7 +1485,7 @@
           "url": "https://thenextweb.com/news/european-automakers-defence-pivot-ineos-daimler-mercedes",
           "published_at": "2026-06-17T21:52:54Z",
           "first_seen_at": "2026-06-18T00:20:23.196908Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "defence",
@@ -1655,19 +1693,188 @@
           "monitor_class_label": "其他来源"
         },
         {
-          "id": "9d60c666d117f10ac23fe32c3999ffcecb967a76",
+          "id": "f195a001ce5df7df85ff2e642e03656a1b23049e",
+          "site_id": "aibase",
+          "site_name": "AIbase",
+          "source": "AIbase",
+          "title": "​苹果 Xcode 27 深度集成 AI 智能体，迎来“氛围编程”新时代",
+          "url": "https://www.aibase.com/news/28995",
+          "published_at": "2026-06-18T05:18:19.432611Z",
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "86eeeb44265b3a32089d04b7ba8755b1ac511943",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "人人都是产品经理 · 日榜",
+          "title": "AI Agent：从“会聊天”到“替你把活干完”，这中间隔着多少坑",
+          "url": "https://www.woshipm.com/?p=6415474",
+          "published_at": null,
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "19942c10f98f2ad13390aeedff9d56b24501bf09",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "Readhub · AI",
+          "title": "吴恩达戳破 AI 幻象：炒作过头了，未来公司是 10 人小队＋Agent 重做数据架构",
+          "url": "https://www.huxiu.com/article/4868394.html?f=rss",
+          "published_at": null,
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "c9acd63f9cf769fc89049bc17b410d307a419653",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "虎嗅 (Huxiu)",
+          "title": "吴恩达戳破AI幻象：炒作过头了，未来公司是10人小队＋Agent重做数据架构",
+          "url": "https://www.huxiu.com/article/4868394.html?f=rss",
+          "published_at": "2026-06-18T04:36:24Z",
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "dce51ef995c2e37b1ff5cd069c83b0c30b0c9049",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "V2EX (创意工作者社区)",
+          "title": "[问与答] agent 开发在企业里开发什么",
+          "url": "https://www.v2ex.com/t/1221290",
+          "published_at": "2026-06-18T03:31:52Z",
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "de535497e1aedf83c770d8612e1ff2b78c12c7de",
           "site_id": "buzzing",
           "site_name": "Buzzing",
-          "source": "finance.yahoo.com",
-          "title": "众议院军事委员会成员持续买入国防类股票：自9月以来已进行9笔交易",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/congressman-armed-services-committee-cant-163125270.html",
-          "published_at": "2026-06-15T03:26:05.705000Z",
-          "first_seen_at": "2026-06-15T03:39:40.817456Z",
-          "last_seen_at": "2026-06-15T03:39:40.817456Z",
-          "watch_score": 2,
+          "source": "news.google.com",
+          "title": "军方将于今年晚些时候发布ISV-Heavy项目的招标书：官方消息 - Breaking Defense",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNU0dTbXBoRUZKb2JZd0hpWGI3M1FVQk5DdkxnNHZqaGdFc0xiQUl1Z0NNZDFNd1JmOVM1U0kwbTJxck5uUlJFb2RkNUZzQ3lLeGp2SlRZVUxIc3BKT1ZhMHNVbFEtVWtQSG5XYU9BemQ1dnV5eHZDTUowemF4eEw3NnFhNWd3aU04dEZRLWlIZG50OG9rMFNrSklMY0ppc3hnbDVKVmVvQ1NZU0hK?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-06-18T03:25:23.356000Z",
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 1,
           "watch_matched_terms": [
-            "国防",
-            "军事"
+            "defense"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "bb29ff5c54b3d31b210cf73f1645f2b3f11abaf2",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Techmeme",
+          "title": "Nvidia researchers unveil ENPIRE, an agent harness framework that develops robotic self-improvement strategies for physical tasks with minimal human supervision (Jeremy Hsu/Ars Technica)",
+          "url": "https://www.techmeme.com/260617/p57",
+          "published_at": "2026-06-18T03:25:01Z",
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "3fde76be9ac21ee037c121bd54184bb0273f96cb",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "总理因空军司令关于伊朗任务的信函而斥责以色列国防军总参谋长 - The Jerusalem Post",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9MWkNUNWxUbF9nR01pZEJZTzBER3JOZ3FPTERWODdBSHgwU01fSkh0RjlPUlYxYVhZY0RKMjM2azhWdnBLTTJTTW1LcTJURkZMa0tKUWQ2a1dwbEZy?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-06-18T02:37:14.097000Z",
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "892efc689d28b6297c9247e6552cb19bc78efa2c",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.theguardian.com",
+          "title": "受乌克兰启发，又因中国而担忧：台湾教导民众如何操作无人机",
+          "url": "https://www.theguardian.com/world/2026/jun/18/taiwan-citizens-learn-fly-pilot-drones-courses-china",
+          "published_at": "2026-06-18T01:49:54.021000Z",
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "4e71e330958453deb5674aa1494ff67590e6f40e",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "受乌克兰启发，又因中国而担忧：台湾教导民众如何操作无人机 - The Guardian",
+          "url": "https://news.google.com/read/CBMinwFBVV95cUxOeXJXV2dfSThxOUV6SEV5a3JWeU9oQzV3VEZEQVpEM2FUeHFOLVlVVGgtTG1MQVNyLTVhSGQ0NmRyYjBIQXlNZm40bEtrUk5iYmxyVUE4bzhqMnE0X2pWN2VTNjFqQlZHNTZYelcyd0RidXg2cEUtR0VsOUhwT0NXNlBWTFVjMXg1bnhsZElON0owRVBnWnZ1NFZPQkptWG8?hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-06-18T01:20:00Z",
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "7883057ed7a172fdb8fe590945f067b824f53e8e",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "BBC News (世界新闻)",
+          "title": "Japan ramping up defence is 'critical' to prevent war, Defence Minister Koizumi tells BBC",
+          "url": "https://www.bbc.com/news/articles/cly8qd4595eo?at_medium=RSS&at_campaign=rss",
+          "published_at": "2026-06-17T22:36:13Z",
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "defence"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -1766,7 +1973,7 @@
           "url": "https://on.wsj.com/4xzFgmE",
           "published_at": "2026-06-17T19:57:42.460000Z",
           "first_seen_at": "2026-06-17T21:32:00.851347Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -1834,7 +2041,7 @@
           "url": "https://www.engadget.com/2196329/anthropics-design-assistant-now-works-better-with-its-coding-agent",
           "published_at": "2026-06-17T19:00:00Z",
           "first_seen_at": "2026-06-17T19:27:03.410271Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1851,7 +2058,7 @@
           "url": "https://www.theatlantic.com/national-security/2026/06/the-pentagon-might-win-the-lottery/687568",
           "published_at": "2026-06-17T17:52:18.813000Z",
           "first_seen_at": "2026-06-17T19:27:03.410271Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -1872,6 +2079,23 @@
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "4a16aff7150c46a1de6a252fb35949dbd76fbf9b",
+          "site_id": "zeli",
+          "site_name": "Zeli",
+          "source": "Hacker News · 24h最热",
+          "title": "Pentagon says Grok has been used to launch missiles at Iran",
+          "url": "https://thehill.com/policy/technology/5928204-pentagon-musk-grok-chatbot-iran-strikes",
+          "published_at": "2026-06-17T17:05:43Z",
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "pentagon"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -1902,7 +2126,7 @@
           "url": "https://www.woshipm.com/?p=6414448",
           "published_at": null,
           "first_seen_at": "2026-06-17T16:40:08.762568Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1919,7 +2143,7 @@
           "url": "https://baike.so.com/doc/6044910.html",
           "published_at": null,
           "first_seen_at": "2026-06-17T16:40:08.762568Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -1953,7 +2177,7 @@
           "url": "https://www.zhihu.com/question/1906023807417811104",
           "published_at": null,
           "first_seen_at": "2026-06-17T16:40:08.762568Z",
-          "last_seen_at": "2026-06-17T21:32:00.851347Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2021,7 +2245,7 @@
           "url": "https://www.bbc.com/news/articles/c1lym76jyymo?at_medium=RSS&at_campaign=rss",
           "published_at": "2026-06-17T15:52:47Z",
           "first_seen_at": "2026-06-17T16:40:08.762568Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "defence"
@@ -2140,7 +2364,7 @@
           "url": "https://www.bbc.com/news/articles/cpq37yxexd9o?at_medium=RSS&at_campaign=rss",
           "published_at": "2026-06-17T13:27:47Z",
           "first_seen_at": "2026-06-17T16:40:08.762568Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "military"
@@ -2157,7 +2381,7 @@
           "url": "https://blog.csdn.net/weixin_51390582/article/details/162070608",
           "published_at": null,
           "first_seen_at": "2026-06-17T12:53:59.427584Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2276,7 +2500,7 @@
           "url": "https://www.woshipm.com/?p=6414816",
           "published_at": null,
           "first_seen_at": "2026-06-17T08:46:20.827574Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2327,7 +2551,7 @@
           "url": "https://www.aibase.com/news/28988",
           "published_at": "2026-06-17T08:46:20.827574Z",
           "first_seen_at": "2026-06-17T08:46:20.827574Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2361,7 +2585,7 @@
           "url": "https://www.producthunt.com/products/polygram-4",
           "published_at": null,
           "first_seen_at": "2026-06-17T08:46:20.827574Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2395,7 +2619,7 @@
           "url": "https://www.aibase.com/news/28987",
           "published_at": "2026-06-17T08:46:20.827574Z",
           "first_seen_at": "2026-06-17T08:46:20.827574Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2718,7 +2942,7 @@
           "url": "https://arstechnica.com/ai/2026/06/anthropic-pauses-token-based-billing-for-its-claude-agent-sdk",
           "published_at": "2026-06-16T22:21:10.625000Z",
           "first_seen_at": "2026-06-16T23:59:49.880074Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2922,7 +3146,7 @@
           "url": "https://arstechnica.com/ai/2026/06/pentagon-boasts-of-using-ai-to-write-reports-mandated-by-congress",
           "published_at": "2026-06-16T18:29:30.272000Z",
           "first_seen_at": "2026-06-16T19:58:39.893382Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -3126,7 +3350,7 @@
           "url": "https://blog.csdn.net/qq_36863796/article/details/162006356",
           "published_at": null,
           "first_seen_at": "2026-06-16T16:06:34.231028Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3143,7 +3367,7 @@
           "url": "https://blog.csdn.net/2402_87298751/article/details/162042907",
           "published_at": null,
           "first_seen_at": "2026-06-16T16:06:34.231028Z",
-          "last_seen_at": "2026-06-18T00:20:23.196908Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3252,227 +3476,6 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "b718fb815716eca06d2480698fc95996261d75fa",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "github.com",
-          "title": "Show HN: Agent Harness Lab——通过可替换工具比较代理框架",
-          "url": "https://github.com/graphlit/agent-harness-lab",
-          "published_at": "2026-06-16T15:57:26.999000Z",
-          "first_seen_at": "2026-06-16T16:06:34.231028Z",
-          "last_seen_at": "2026-06-16T16:06:34.231028Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "afac316c127aab07f5cc07be0cc0076571a1e4b8",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.bloomberg.com",
-          "title": "若未获得额外资金，英国将缩减军事行动",
-          "url": "https://www.bloomberg.com/news/articles/2026-06-16/uk-to-reduce-military-operations-without-defense-funding-boost",
-          "published_at": "2026-06-16T15:41:19.962000Z",
-          "first_seen_at": "2026-06-16T16:06:34.231028Z",
-          "last_seen_at": "2026-06-16T16:06:34.231028Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "285ccd22a4730c53f5035ebbbaaf94a3c523efac",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "reut.rs",
-          "title": "以色列无人机空袭造成黎巴嫩南部至少4人死亡",
-          "url": "https://reut.rs/4uCAHW8",
-          "published_at": "2026-06-16T15:41:19.596000Z",
-          "first_seen_at": "2026-06-16T16:06:34.231028Z",
-          "last_seen_at": "2026-06-16T16:06:34.231028Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "3fe59c49561cee488975f6d8ab490d34733806f1",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "七国集团领导人举行会议之际，乌克兰动用无人机袭击莫斯科一处石油设施 - The New York Times",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPMDktVDdSU3FHbFlreTF0ajlWbkpRQkVBb0V0UVBmdVJsa1diYmwtMm92RDcycDJCVERUSndpSFBwdVJVYWdaVE13RmdNRjNUclZKN0o1QzRKY19iNmJNVk9oTWhEeHhsOEVQTEpQMVlZUHJjcnNYSzlDYWh5MGFaVVlfZzV4alZaZC1ZWkI1YnBSREFGQWVOeDNuckpjQQ?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-06-16T14:53:35.917000Z",
-          "first_seen_at": "2026-06-16T16:06:34.231028Z",
-          "last_seen_at": "2026-06-16T16:06:34.231028Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "73b45148fed9de3abef3e00421a86a5fc413fea4",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "七国集团领导人举行会议之际，乌克兰出动无人机袭击莫斯科一处石油设施 - The New York Times",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPMDktVDdSU3FHbFlreTF0ajlWbkpRQkVBb0V0UVBmdVJsa1diYmwtMm92RDcycDJCVERUSndpSFBwdVJVYWdaVE13RmdNRjNUclZKN0o1QzRKY19iNmJNVk9oTWhEeHhsOEVQTEpQMVlZUHJjcnNYSzlDYWh5MGFaVVlfZzV4alZaZC1ZWkI1YnBSREFGQWVOeDNuckpjQQ?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-06-16T14:53:35.075000Z",
-          "first_seen_at": "2026-06-16T16:06:34.231028Z",
-          "last_seen_at": "2026-06-16T19:58:39.893382Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "9ce7dc9c9108b1245964eaa0ec3dbf6c30b0d3d0",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "Hacker News (黑客新闻)",
-          "title": "Show HN: Hackers for Granny (defense against industrialized elder fraud)",
-          "url": "https://professorsigmund.com/praxis/hackers_for_granny_manifesto.html",
-          "published_at": "2026-06-16T14:15:00Z",
-          "first_seen_at": "2026-06-16T16:06:34.231028Z",
-          "last_seen_at": "2026-06-16T16:06:34.231028Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "defense"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "1fde2377fe7a470af3b65418c24a71414334e5ae",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "The Next Web",
-          "title": "More Big Tech executives just became Army officers. The conflict-of-interest question is getting louder.",
-          "url": "https://thenextweb.com/news/detachment-201-big-tech-army-reserve",
-          "published_at": "2026-06-16T14:02:48Z",
-          "first_seen_at": "2026-06-16T16:06:34.231028Z",
-          "last_seen_at": "2026-06-16T22:12:57.736538Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "army"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "cf48a2e1362c093cab197ab233b37bf97db1635a",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "IT之家 (ITHome)",
-          "title": "腾讯张军：智能体 WorkBuddy 将入职政务系统，全国首个省级政务智能中枢平台「湾擎」上线试运行",
-          "url": "https://www.ithome.com/0/965/103.htm",
-          "published_at": "2026-06-16T13:33:48Z",
-          "first_seen_at": "2026-06-16T16:06:34.231028Z",
-          "last_seen_at": "2026-06-16T23:59:49.880074Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "8538060cff9f8b3f950d7810a2fa67a28f1add7e",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "IT之家 (ITHome)",
-          "title": "腾讯网盘官宣“COMING SOON”：多应用数据互通、支持 Agent 调用",
-          "url": "https://www.ithome.com/0/965/094.htm",
-          "published_at": "2026-06-16T12:35:39Z",
-          "first_seen_at": "2026-06-16T16:06:34.231028Z",
-          "last_seen_at": "2026-06-16T23:59:49.880074Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "2ca3b4bad0f76cf035fe5a57ec807c52872dc600",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "V2EX (创意工作者社区)",
-          "title": "[酷工作] 找 Agent/AI 应用开发工作， base 无要求",
-          "url": "https://www.v2ex.com/t/1220912",
-          "published_at": "2026-06-16T12:09:18Z",
-          "first_seen_at": "2026-06-16T16:06:34.231028Z",
-          "last_seen_at": "2026-06-16T23:59:49.880074Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "cd59a57e28f10385f5efe64445de9e17b3cecf00",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "Business Insider",
-          "title": "More Big Tech execs are joining the Army Reserve as senior officers",
-          "url": "https://www.businessinsider.com/more-big-tech-execs-join-army-reserve-as-senior-officers-2026-6",
-          "published_at": "2026-06-16T11:44:01Z",
-          "first_seen_at": "2026-06-16T16:06:34.231028Z",
-          "last_seen_at": "2026-06-16T16:06:34.231028Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "army"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "473f921ed62991670e2486f64b0c671ff19d5c10",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "TechCrunch",
-          "title": "This startup’s super metals could soon be in military drones, luxury watches, and chef’s knives",
-          "url": "https://techcrunch.com/2026/06/16/this-startups-super-metals-could-soon-be-in-military-drones-luxury-watches-and-chefs-knives",
-          "published_at": "2026-06-16T11:25:00Z",
-          "first_seen_at": "2026-06-16T16:06:34.231028Z",
-          "last_seen_at": "2026-06-16T16:06:34.231028Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "military"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "7905ccffc8a19ec563f112d8c3205253fb75ecfb",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "Reddit (热门)",
-          "title": "[OC] SpaceX vs. Aerospace and Defense Sector",
-          "url": "https://www.reddit.com/r/dataisbeautiful/comments/1u7aiwg/oc_spacex_vs_aerospace_and_defense_sector",
-          "published_at": "2026-06-16T11:11:58Z",
-          "first_seen_at": "2026-06-16T19:58:39.893382Z",
-          "last_seen_at": "2026-06-16T19:58:39.893382Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "defense"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
@@ -3482,7 +3485,7 @@
     {
       "id": "ai-for-science",
       "name": "AI+科研",
-      "count": 6,
+      "count": 7,
       "items": [
         {
           "id": "561d388db0998266cdebae88199795004a50c7d1",
@@ -3504,18 +3507,34 @@
           "monitor_class_label": "其他来源"
         },
         {
-          "id": "3f67418e1082e0f133f45ce4741283507c81d058",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "phys.org",
-          "title": "可解释人工智能在材料发现中的应用：揭示模型如何进行预测",
-          "url": "https://phys.org/news/2026-06-ai-materials-discovery-uncovering.html",
-          "published_at": "2026-06-15T01:34:00.280000Z",
-          "first_seen_at": "2026-06-15T03:39:40.817456Z",
-          "last_seen_at": "2026-06-15T15:47:16.542788Z",
-          "watch_score": 4,
+          "id": "1789c1f938e387b69707a66db793f927da577e0e",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "Readhub · AI",
+          "title": "分子之心（MoleculeMind）完成 A 轮系列融资，累计融资金额逾亿美元 | BV Family",
+          "url": "https://bydrug.pharmcube.com/news/detail/f949187f3ddd5203aa848c0f5e2a283f",
+          "published_at": null,
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 3,
           "watch_matched_terms": [
-            "材料发现",
+            "combo:ai+science"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "bb29ff5c54b3d31b210cf73f1645f2b3f11abaf2",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Techmeme",
+          "title": "Nvidia researchers unveil ENPIRE, an agent harness framework that develops robotic self-improvement strategies for physical tasks with minimal human supervision (Jeremy Hsu/Ars Technica)",
+          "url": "https://www.techmeme.com/260617/p57",
+          "published_at": "2026-06-18T03:25:01Z",
+          "first_seen_at": "2026-06-18T05:18:19.432611Z",
+          "last_seen_at": "2026-06-18T05:18:19.432611Z",
+          "watch_score": 3,
+          "watch_matched_terms": [
             "combo:ai+science"
           ],
           "monitor_class": "other",
@@ -3592,7 +3611,7 @@
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 6
+      "other_count": 7
     }
   ]
 }
