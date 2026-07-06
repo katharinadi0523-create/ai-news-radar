@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-06T12:50:15.374373Z",
+  "generated_at": "2026-07-06T16:21:46.511452Z",
   "sites": [
     {
       "site_id": "techurls",
       "site_name": "TechURLs",
       "ok": true,
       "item_count": 405,
-      "duration_ms": 512,
+      "duration_ms": 542,
       "error": null
     },
     {
@@ -14,15 +14,15 @@
       "site_name": "Buzzing",
       "ok": true,
       "item_count": 744,
-      "duration_ms": 302,
+      "duration_ms": 291,
       "error": null
     },
     {
       "site_id": "iris",
       "site_name": "Info Flow",
       "ok": true,
-      "item_count": 465,
-      "duration_ms": 15260,
+      "item_count": 344,
+      "duration_ms": 12185,
       "error": null
     },
     {
@@ -30,23 +30,23 @@
       "site_name": "BestBlogs",
       "ok": true,
       "item_count": 1,
-      "duration_ms": 1305,
+      "duration_ms": 956,
       "error": null
     },
     {
       "site_id": "tophub",
       "site_name": "TopHub",
       "ok": true,
-      "item_count": 3025,
-      "duration_ms": 1661,
+      "item_count": 3023,
+      "duration_ms": 1442,
       "error": null
     },
     {
       "site_id": "zeli",
       "site_name": "Zeli",
       "ok": true,
-      "item_count": 70,
-      "duration_ms": 489,
+      "item_count": 80,
+      "duration_ms": 485,
       "error": null
     },
     {
@@ -54,7 +54,7 @@
       "site_name": "AI HubToday",
       "ok": true,
       "item_count": 1,
-      "duration_ms": 315,
+      "duration_ms": 525,
       "error": null
     },
     {
@@ -62,7 +62,7 @@
       "site_name": "AIbase",
       "ok": true,
       "item_count": 20,
-      "duration_ms": 1161,
+      "duration_ms": 1015,
       "error": null
     },
     {
@@ -70,27 +70,28 @@
       "site_name": "AI今日热榜",
       "ok": false,
       "item_count": 0,
-      "duration_ms": 26,
+      "duration_ms": 31,
       "error": "403 Client Error: Forbidden for url: https://aihot.today/"
     },
     {
       "site_id": "newsnow",
       "site_name": "NewsNow",
-      "ok": true,
-      "item_count": 126,
-      "duration_ms": 775,
-      "error": null
+      "ok": false,
+      "item_count": 0,
+      "duration_ms": 1254,
+      "error": "'ascii' codec can't decode byte 0xc2 in position 76534: ordinal not in range(128)"
     }
   ],
-  "successful_sites": 9,
+  "successful_sites": 8,
   "failed_sites": [
-    "aihot"
+    "aihot",
+    "newsnow"
   ],
   "zero_item_sites": [],
-  "fetched_raw_items": 4857,
-  "items_before_topic_filter": 5801,
-  "items_in_24h": 690,
-  "archive_trimmed_count": 970,
+  "fetched_raw_items": 4618,
+  "items_before_topic_filter": 5807,
+  "items_in_24h": 730,
+  "archive_trimmed_count": 947,
   "rss_opml": {
     "enabled": false,
     "path": null,
