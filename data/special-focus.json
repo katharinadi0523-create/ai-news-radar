@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-28T20:09:46.522983Z",
+  "generated_at": "2026-07-28T21:21:18.547385Z",
   "window_days": 3,
-  "source_generated_at": "2026-07-28T20:07:55.853534Z",
+  "source_generated_at": "2026-07-28T21:19:04.598143Z",
   "source_window_hours": 24,
   "source_topic_filter": "ai_tech_robotics",
   "output_name": "special-focus",
   "section_count": 6,
-  "total_items": 194,
+  "total_items": 195,
   "official_error_count": 0,
   "official_errors": [],
   "sections": [
@@ -58,7 +58,7 @@
           "url": "https://blog.csdn.net/sinat_41617212/article/details/163217917",
           "published_at": null,
           "first_seen_at": "2026-07-27T01:18:14.045395Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "openclaw"
@@ -91,7 +91,7 @@
     {
       "id": "palantir",
       "name": "Palantir",
-      "count": 5,
+      "count": 6,
       "items": [
         {
           "id": "ed55597e882b5ea70ee632d51d0a044714d8ff60",
@@ -101,7 +101,7 @@
           "title": "AI Sovereignty is Your Alpha: How to Avoid Transferring Your Alpha to a Hosted Model Provider",
           "url": "https://blog.palantir.com/ai-sovereignty-is-your-alpha-how-to-avoid-transferring-your-alpha-to-a-hosted-model-provider-774a1b35bf98?source=rss----3c87dc14372f---4",
           "published_at": "2026-07-27T12:51:42Z",
-          "first_seen_at": "2026-07-28T20:09:40.341468Z",
+          "first_seen_at": "2026-07-28T21:21:12.858165Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -110,6 +110,23 @@
           "hover_description": "<figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*QvGMQmMAaP1sU3OId8uWDg.png\" /></figure><p>Use of third party AI model services poses significant risk to your alpha. Without sovereign control over how your data is processed by those services (either the AI Labs or the Hyperscalers, collectively referred to as “Hosted Model Providers”), Hosted Model Providers may extract your alpha (your unique institutional knowledge and tradecraft embodied in data exposed to and generated from your use of AI models) and resell it to the broader market in the form of weights or services. Storage of your data by Hosted Model Providers also increases the attack surface against your alpha in an increasingly cyber-insecure world, and risks your most valuable assets being swept up in the ongoing existential legal battles that many Hosted Model Providers are facing. It is essential to maintain sovereign control of your data so this does not occur.</p><p>While additional sovereign control might involve making use of neoclouds (providers of which might be more open to more data-protective terms than Hosted Model Providers) to host and improve open-source models you deploy and control, you may still be inclined to make use of the walled-garden frontier models offered by Hosted Model Providers. But even for wary legal teams, Hosted Model Providers’ labyrinthine legal terms hide traps that can jeopardize AI sovereignty. This document helps identify some of those common traps and proposes best practices to mitigate the associated risks. It walks you through guidance on securing terms that protect your data, tracking and permitting only services that are covered by those protections, restricting the ability of the Hosted Model Providers to unilaterally change the terms of your agreement, and mitigating the risk of operational disruption when things go wrong.</p><p><em>Note: this document is not intended as and does not contain legal advice, nor does it establish any attorney-client relationship. Please consult an attorney for any legal advice.</em></p><h3>1. Contractually Protect Your Alpha</h3><h4>1.1 Secure robust Zero Data Retention (ZDR)</h4><p>One critical way of mitigating these risks is by securing contractual guarantees for Zero Data Retention (ZDR). Different Hosted Model Providers will use different conceptions of ZDR.</p><blockquote><strong><em>Robust ZDR means the Hosted Model Provider will not (1) store or otherwise log your prompts or responses to disk (which would be more permanent than ephemerally keeping it in memory), (2) expose your prompts or responses to human review, (3) use your prompts or responses to train their models or improve their services, and (4) will only persist prompts and responses in memory for the time required to return a request.</em></strong></blockquote><p>Some Hosted Model Providers offer a version of ZDR protection that is diluted by exceptions that hide in their contracts, technical documents, and product architecture, exposing your alpha to their control. Some of the most common exceptions are addressed in section 2 of this document — track them carefully and permit only services that are actually covered by your protections.</p><h4>1.2 Restrict use of your alpha</h4><p>Your alpha should compound to your benefit only, not to a Hosted Model Provider’s. Some Hosted Model Providers will provide assurances that models will not be trained on your data. However, there may be omissions from this protection — e.g. a hyperscaler acting as a Hosted Model Provider may assure you that the AI lab that created the model you are using will not train on your data, but the hyperscaler may not bind themselves in the same way. They may hide terms in their legal agreements or product documentation enabling them to use metadata about your patterns of use, or your prompts and responses themselves, to improve ancillary services and tools. E.g., they may use your prompts that trigger safety classifiers to improve their safety classifiers, or your usage patterns to improve their model harnesses.</p><p><strong>Best practice:</strong></p><ol><li>Ensure that the terms limit the Hosted Model Provider’s and (if the Hosted Model Provider is a hyperscaler) any AI lab involved in the processing’s use of your data to providing you the service — it’s better to positively recite this one permitted use, rather than to try and create a laundry list of various restrictions, which risks missing something. Additionally, be sure that the restrictions on how your data is used extend to both the Hosted Model Provider’s platform you are using and any relevant AI lab.</li><li>If you can’t land the above, at minimum do not permit your data to be used to improve the product or service you are using, including but not limited to model training. Be sure to bind both the Hosted Model Provider and any AI lab involved in the processing.</li></ol><h4>1.3 Ensure liability caps are high enough to make contractual protections bite</h4><p>Hosted Model Providers may set a nominal liability cap for violations of ZDR, data processing obligations, or other contractual obligations protective of AI Sovereignty, giving them a weak incentive to abide by those obligations. This is especially common for beta services, but is not limited to those.</p><p><strong>Best practice:</strong></p><ol><li>In addition to negotiating robust ZDR, ensure the Hosted Model Provider is exposed to high enough liability for ZDR and data protection violations to incentivize their compliance with those obligations.</li><li>Follow the mitigation strategies in Section 3.1 to protect against unilateral modifications to liability caps by Hosted Model Providers.</li></ol><h3>2. Track and Permit Only Services Covered by Your Contractual Alpha Protections</h3><h4>2.1 Beta or other ZDR-ineligible services</h4><p>Many Hosted Model Providers do not apply ZDR to services in beta (also called “preview” or “pre-GA”). Some services, tools, and API endpoints might also be ZDR-ineligible by default. These exceptions can sneak their way into your legal terms in a variety of ways — they may appear in hyperlinked service-specific terms, in a special section of the terms for beta services, or even via a note in the terms that says that beta services are excluded from the definition of model services to which ZDR obligations apply. ZDR-ineligible and beta statuses can apply not just to models, but to specific configurations of the API calls to the models. E.g. model A may not be beta, but model A called with a specific beta tool, feature, or API may be excepted from ZDR. As an additional complexity, the Hosted Model Provider’s default legal terms will almost never spell out what services, features, and tools are beta — they will usually be buried either in ever-changing online product documentation, or the Hosted Model Provider’s console or portal (which, for good reason, IT departments rarely give legal teams access to by default).</p><p><strong>Best practice:</strong></p><ol><li>Contractually obtain a broad scope of services (e.g. covering any use of any of the Hosted Model Provider’s APIs, including to access beta services) that fall within your data protections, and ensure that there are no terms subject to unilateral change by the Model Provider (e.g. no hyper-linked online terms).</li><li>If you cannot obtain the above, work with your IT department to establish a living allow-list of models, tools, and features, and API endpoints that fall within the scope of the data protections you did obtain, which will often need to exclude beta services. Regularly update that list based on routine checks of the Hosted Model Provider’s applicable documentation, and set up operational processes for your IT department to connect with legal to vet new models, tools and features prior to allowing them for your organization.</li><li>Some Hosted Model Providers make use of a “beta” header that must be proactively added to API calls to a beta service for the call to go through. This can be a helpful technical gate to block disallowed services — collaborate with IT to automatically block calls that include beta headers as a fail-safe.</li></ol><h4>2.2 Data is stored when a safety classifier is triggered</h4><p>Many Hosted Model Providers will store prompts and outputs, and implement human review, when a safety classifier fires. These safety classifiers can and have incorrectly triggered on perfectly legitimate prompts (false positives), meaning legitimate prompts get stored and reviewed.</p><p><strong>Best practice:</strong> some Hosted Model Providers offer a technical option to disable this ZDR exception, often referred to as disabling abuse monitoring or safety classifiers. If you cannot obtain broad contractual ZDR protections that render this issue moot, ensure operationally that you have configured your account to disable abuse monitoring (or its equivalent) where possible.</p><h4>2.3 Prompts with images or files introduce ZDR exceptions</h4><p>Many Hosted Model Providers do not apply ZDR to prompts that include images or files. Some other Hosted Model Providers might claim that use of image inputs or outputs (or interaction with image API endpoints) is subject to their (less robust) conception of ZDR, while buried in their documentation there may be disclosures that in the event of positive safety classifier hits for certain classifiers, all the context of your prompts or responses are retained by the Hosted Model Provider to disk and potentially subject to human review. This may be true for certain high priority safety classifiers even if abuse monitoring is disabled.</p><p><strong>Best practice:</strong> seek custom terms that apply ZDR to image inputs and outputs by requiring that none of your prompts or responses may be stored to disk or subjected to human review under any circumstances.</p><h4>2.4 Some prompt caching configurations may store your data for longer than needed</h4><p>Some Hosted Model Providers offer features (sometimes required for use of certain models or API endpoints) involving extended or enhanced prompt caching. While some form of prompt caching may be helpful for reduced latency and cost, and may be unavoidable, ideally prompt caching will have a reasonable TTL (“Time-to-Live”, indicating how long data is persisted) and will persist the cached prompts only in memory for as long as needed to complete your session, after which the cache is purged. This can be consistent with robust ZDR. Undesirable prompt caching configurations may involve storing your prompts and responses to disk for unreasonably long periods of time.</p><p><strong>Best practice:</strong> If you cannot secure robust contractual ZDR protections that prohibit caching to disk, add a check for acceptable prompt-caching configurations to your allow-list vetting process.</p><h4>2.5 Carefully determine which terms apply</h4><p>Terms and conditions for models can vary based on which Hosted Model Provider platform you are using and which model you are using. In many cases, Hyperscalers flow down certain terms from the model creator and add their own terms on top.</p><p><strong>Best practice:</strong> Be sure to thoroughly vet the relevant terms for the specific Hosted Model Provider platform you are using. Note that if you have secured favorable custom terms from the model creator (e.g. disabling abuse monitoring), you should ensure that the Hosted Model Provider platform you are using is aware of these custom terms and is implementing any special data handling such as ZDR. For example, if you are using a model created by AI Lab A (with whom you have custom terms and protections), but are accessing the model via Hyperscaler B, you may need to connect AI Lab A with Hyperscaler B so that the AI Lab can confirm to the Hyperscaler that special data handling should apply.</p><h4>2.6 Disclaimer of data processing terms</h4><p>Hosted Model Providers sometimes disclaim DPAs or BAAs, or simply all “data processing terms”, for certain services. This typically appears in online hyperlinked terms. This has historically surfaced for beta features and for specialty features such as websearch, though it could in theory be applied to any service.</p><p><strong>Best practice: </strong>Ideally you should have master terms that override any online terms that disclaim data processing protections. If that can’t be obtained,<strong> </strong>carefully vet new services before adding them to your allow-list. These data processing disclaimers could be applied directly to the service or could be applied via a status of the service (e.g. via the service being labeled “beta”, thereby attaching beta conditions), so be sure to check (i) the service’s specific documentation, (ii) any service-specific terms that the model provider has (often its own webpage, presented as a long list of services and special conditions that apply to them), and (iii) the terms that apply to the status of the service of interest.</p><h4>2.7 Surprise service enablement</h4><p>Some Hosted Model Providers may auto-enable or auto-upgrade services or models to new services or models that are not covered by ZDR or other AI Sovereignty protections described in this document, and you will not be provided express notice of such term change (though the change may be disclosed in unilaterally updated technical or contractual documentation).</p><p><strong>Best practice:</strong> In addition to the mitigations described in Sections 2.1 and 3.1, secure contractual guarantees that any new model or service that does not satisfy ZDR or your other AI Sovereignty requirements will not be enabled for your tenant without provision of prior notice and your express written consent.</p><h4>2.8 Ensuring appropriate accreditation compliance boundaries</h4><p>Not all Hosted Model Providers, and not all of their services, meet the compliance requirements your organization may require for specific workflows — while many may have a SOC2, many may not have FedRAMP certification, or IL2, 4, or 5 accreditation, for example.</p><p><strong>Best practice:</strong> If you need heightened technical compliance or accreditation for specific workflows, articulate contractually in your terms with the Hosted Model Provider which compliance or accreditation requirements you require (and to which services they need to apply). Work with your engineering teams to fail-safe requests from environments requiring a heightened accreditation or compliance certification from going to lower-accredited or certified Hosted Model Provider endpoints or services.</p><h3>3. Clamp Down on the Hosted Model Provider’s Ability to Unilaterally Change Terms</h3><h4>3.1 Unilateral changes to hyperlinked online terms</h4><p>Terms and conditions with Hosted Model Providers often incorporate online terms that are subject to unilateral change by the Hosted Model Providers. Often this is a consequence of Hosted Model Provider terms layering in hyperlinked terms that can be unilaterally updated and effective without notice. Even if you have successfully negotiated master terms, those terms may incorporate hyperlinked terms (e.g., to acceptable use policies, service specific terms, data processing terms, ZDR terms, etc.) that may be unilaterally updated by the Hosted Model Provider without notice. Hosted Model Providers often do update these hyperlinked terms in ways corrosive to ZDR and other AI Sovereignty considerations discussed in this document.</p><p><strong>Best practice:</strong></p><ol><li>Seek custom contractual terms that do not incorporate online terms by reference; or if you need to incorporate links, specify that those linked terms are only effective as-written on the effective date of your contract.</li><li>If you’re able to achieve the above for some but not all hyperlinked terms (i.e., some hyperlinked terms can be unilaterally changed by the Hosted Model Provider), specify a rigorous order of precedence in the event of inconsistencies or conflicts between the negotiated and hyperlinked terms such that unilateral changes to the hyperlinked terms may not erode negotiated contractual guarantees like ZDR.</li><li>If you need to agree to hyperlinked terms that the Hosted Model Provider may unilaterally alter, establish regular checks (ideally automated alerts) to monitor for any changes to the relevant online terms. Viewing older versions of the terms and conditions (e.g. via <a href=\"https://web.archive.org/\">https://web.archive.org/</a>) can be helpful in figuring out what changed.</li></ol><h4>3.2 Click-through terms surfaced to your non-legal employees</h4><p>Model Providers may surface click-through terms in their console or platform that notify users that ZDR or other protections will not apply to a service they are trying to enable. An engineer attempting to enable that service may inadvertently accept these terms.</p><p><strong>Best practice:</strong> Include contractual terms that make click-through agreements ineffective. If that cannot be obtained, educate console or platform users about this risk and have them check with legal before accepting any click-through agreements.</p><h3>4. Mitigate Risk of Operational Disruption</h3><h4>4.1 Business disruption if safety classifiers triggered</h4><p>Terms and conditions may allow Hosted Model Providers to suspend or terminate service immediately under certain conditions, including if they believe that you are violating any of their acceptable use policies (AUPs), which often include a broad set of restrictions that are subject to frequent unilateral changes by the Hosted Model Provider. Even in a robust ZDR setup Hosted Model Providers may rely on safety classifiers (that store only metadata indicating if the classifier fired, not the prompt that caused it to fire) to determine whether you are complying with their AUP, and those classifiers are often overly-sensitive and can incorrectly trigger on benign prompts. This means even a compliant use of their service can trigger suspension or termination, threatening disruption of your business.</p><p><strong>Best practice:</strong></p><ol><li>Require contractually that prior to initiating any termination or suspension of the service, the Hosted Model Provider provide (a) notice in the event a safety classifier fires, (b) an “investigation and cure” period for your security and IT teams to evaluate what triggered the classifier and collaborate with the Hosted Model Provider to establish that the trigger was the result of a false positive, or align on remediation in the event of a true positive, © that such “investigation and cure” period does not give the Hosted Model Provider rights to obtain or review your alpha, and (d) a reasonable buffer period for any suspension or termination of the service, sufficient to allow you to migrate to a different model.</li><li>Ensure that your technical organization has implemented appropriate observability infrastructure to be able to track down prompts that caused a positive safety classifier hit, to help de-escalate any Hosted Model Provider outreach about a flag. Most Hosted Model Providers implement prompt IDs, and in the event of an incident can provide you the offending IDs to help you in your audit.</li></ol><h4>4.2 Blocking legitimate model requests</h4><p>Hosted Model Providers’ safety classifiers can block legitimate use. Even if you have secured contractual exemptions to certain prohibited use cases, the Hosted Model Provider’s safety classifiers may still fail your requests to enforce those use case restrictions, disrupting your business.</p><p><strong>Best practice:</strong> Add affirmative contractual language permitting your specific use cases, and if possible, language guaranteeing that the Hosted Model Provider will disable relevant safety classifiers. Don’t just remove blocking use case restrictions in your contract.</p><h4>4.3 Global inference standards that route your traffic to prohibited regions</h4><p>Many Hosted Model Providers offer model services, tools, and features by default under global inference standards that load balance your traffic across infrastructure in all the regions in which they have capacity. Some of those regions could be prohibited by your business operations due to legal or contractual requirements, and result in incidents and/or attendant business disruptions. Hosted Model Providers are not always upfront in their contracts or documentation about precisely what regions are in scope for global inference standards, and when they are, those lists are often subject to unilateral change by the Hosted Model Provider.</p><p><strong>Best practice:</strong></p><ol><li>Contractually require that the Hosted Model Provider not route your traffic to regions that would be prohibited by your organization.</li><li>If you cannot obtain the above, some Hosted Model Providers offer inference capacity dedicated to specific regions, which you can contractually specify upon purchase. Note that these region-restricted options often involve additional cost.</li><li>If you cannot obtain any of the above, contractually require that the Hosted Model Provider notify you if and when they add new regions to their global inference services, with sufficient lead-time to either procure region-restricted capacity or migrate to a different model service.</li></ol><h3>Key Takeaways</h3><p>Sovereign control of your alpha requires granular control over how your data is processed by Hosted Model Providers. The protections offered by Hosted Model Providers, even if they call them “ZDR”, and even if you have negotiated robust ZDR, are full of pitfalls and traps for the unwary. Seek broad protective contractual terms, establish a vetting process and allow-list for new services to avoid going outside the scope of your protections, clamp down on unilateral changes to your agreement, and mitigate the risk of operational disruption by limiting what Hosted Model Providers can do if they believe things have gone wrong. The Hosted Model Providers have put a lot of thought into what their terms allow them to do with your alpha — you should too.</p><img alt=\"\" height=\"1\" src=\"https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=774a1b35bf98\" width=\"1\" /><hr /><p><a href=\"https://blog.palantir.com/ai-sovereignty-is-your-alpha-how-to-avoid-transferring-your-alpha-to-a-hosted-model-provider-774a1b35bf98\">AI Sovereignty is Your Alpha: How to Avoid Transferring Your Alpha to a Hosted Model Provider</a> was originally published in <a href=\"https://blog.palantir.com\">Palantir Blog</a> on Medium, where people are continuing the conversation by highlighting and responding to this story.</p>",
           "monitor_class": "official",
           "monitor_class_label": "官方公告"
+        },
+        {
+          "id": "99c7a53b184d00feff4deda4b9bd6a87d620b4b0",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "在遭到Palantir公司卡普的批评后，Anthropic公司的阿莫迪为“开放权重”立场进行了辩护 - Fox Business",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQaFBXM1I3QXlmRzl4dzd0SExrOFE2bUQ4eHZNTFJOZ2ZTaWhRWVhnaUlaVzE0c2ZyU0toVmxrQUhsbWlRRDFEY1o3T3A5Z0RtU25relZrS0gweGlMczNUeDlKRE4zSlhSLXJHSTVWRGtraVdyYlRfTXg3a3U5bmpZZnN6V2ZyTHFmeG5McW4zUWdoMmh6LVZJYnAxMDlZSlY5RHhNb0lsYU4wNlFkYXdDZzdfUmJTM0lkNlBGNlFtUdIBxAFBVV95cUxPR0xOQW4yMndPR0tOWVAyNXg1RHpwWVVkanJXNU5DOGl6WWtRR0JLdTdBQVYxT1g5R0hzTEhubTJKRm1lU3dHTWZ1Q1JXYml2RndXVFZrTGgyWFZMWlBaekstR0ZwLVpZZGx1a0g3ODdzZndLeDJLN2JSekJwbzdueE9oSGtwZmQtOHpqaF9ZYmI4RlF4QzNOd1ZibVU3S2ptb3pIOS1HVnNIVTZjYUtfWFRPOFJQclNISEpVc0V4eExlNU1D?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-07-28T20:57:27.954000Z",
+          "first_seen_at": "2026-07-28T21:19:04.598143Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "palantir"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
         },
         {
           "id": "bbbf9385197ecea1f1fce5bfbe72715f07497859",
@@ -182,7 +199,7 @@
       ],
       "source_mode": "mixed",
       "official_count": 1,
-      "other_count": 4
+      "other_count": 5
     },
     {
       "id": "knowledge-graph",
@@ -198,7 +215,7 @@
           "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html",
           "published_at": null,
           "first_seen_at": "2026-07-27T05:13:45.840449Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "知识图谱",
@@ -283,7 +300,7 @@
     {
       "id": "skills",
       "name": "Skills",
-      "count": 47,
+      "count": 48,
       "items": [
         {
           "id": "f66e55f8f94486956ad27655b4968117b627b9a5",
@@ -294,7 +311,7 @@
           "url": "https://juejin.cn/post/7667008177453252659",
           "published_at": "2026-07-28T10:51:22.013000Z",
           "first_seen_at": "2026-07-28T11:04:16.222166Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "skills",
@@ -340,6 +357,23 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "9062e74d08e45a1eccd5d3110c0d6fa5ff487812",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "TechCrunch",
+          "title": "MCP startup Runlayer accuses Rippling of stealing its product idea",
+          "url": "https://techcrunch.com/2026/07/28/mcp-startup-runlayer-accuses-rippling-of-stealing-its-product-idea",
+          "published_at": "2026-07-28T20:45:12Z",
+          "first_seen_at": "2026-07-28T21:19:04.598143Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "mcp"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "6ba97d22b45f802d1bac23dfe5fd0e84131dd597",
           "site_id": "newsnow",
           "site_name": "NewsNow",
@@ -348,7 +382,7 @@
           "url": "https://news.ycombinator.com/item?id=49088058",
           "published_at": "2026-07-28T19:50:36.686000Z",
           "first_seen_at": "2026-07-28T20:07:55.853534Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -365,7 +399,7 @@
           "url": "https://www.techradar.com/pro/this-plugable-portable-monitor-fixed-my-single-screen-workflow-but-one-cable-rule-almost-ruined-everything-for-me",
           "published_at": "2026-07-28T19:00:00Z",
           "first_seen_at": "2026-07-28T20:07:55.853534Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "workflow"
@@ -382,7 +416,7 @@
           "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28",
           "published_at": "2026-07-28T18:35:11Z",
           "first_seen_at": "2026-07-28T20:07:55.853534Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -399,7 +433,7 @@
           "url": "https://www.techmeme.com/260728/p37",
           "published_at": "2026-07-28T18:35:01Z",
           "first_seen_at": "2026-07-28T20:07:55.853534Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -416,7 +450,7 @@
           "url": "https://www.v2ex.com/t/1230562",
           "published_at": "2026-07-28T17:03:07Z",
           "first_seen_at": "2026-07-28T17:06:22.062559Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -433,7 +467,7 @@
           "url": "https://www.producthunt.com/products/mcp-billing",
           "published_at": "2026-07-28T12:59:20.296000Z",
           "first_seen_at": "2026-07-28T12:58:55.537517Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -484,7 +518,7 @@
           "url": "https://github.com/virgiliojr94/book-to-skill",
           "published_at": null,
           "first_seen_at": "2026-07-28T11:04:16.222166Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -535,7 +569,7 @@
           "url": "https://github.com/virgiliojr94/book-to-skill",
           "published_at": "2026-07-28T10:48:15.564000Z",
           "first_seen_at": "2026-07-28T11:04:16.222166Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -620,7 +654,7 @@
           "url": "https://juejin.cn/post/7666360723081101355",
           "published_at": "2026-07-28T02:27:30.391000Z",
           "first_seen_at": "2026-07-28T02:35:13.924564Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -688,7 +722,7 @@
           "url": "https://dev.to/gde/auditing-agent-skills-a-threat-model-for-the-next-generation-of-ai-package-managers-2g25",
           "published_at": "2026-07-27T18:17:19.509000Z",
           "first_seen_at": "2026-07-27T19:02:10.742589Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -705,7 +739,7 @@
           "url": "https://daringfireball.net/linked/2026/07/27/workos-mcp",
           "published_at": "2026-07-27T16:30:00Z",
           "first_seen_at": "2026-07-27T17:24:10.103926Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -722,7 +756,7 @@
           "url": "https://blog.csdn.net/weixin_74809706/article/details/162941525",
           "published_at": null,
           "first_seen_at": "2026-07-27T15:29:55.950765Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -773,7 +807,7 @@
           "url": "https://www.woshipm.com/?p=6435717",
           "published_at": null,
           "first_seen_at": "2026-07-27T12:23:24.083264Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -790,7 +824,7 @@
           "url": "https://juejin.cn/post/7665184555516395555",
           "published_at": null,
           "first_seen_at": "2026-07-27T12:23:24.083264Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -824,7 +858,7 @@
           "url": "https://www.woshipm.com/?p=6435968",
           "published_at": null,
           "first_seen_at": "2026-07-27T12:23:24.083264Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -892,7 +926,7 @@
           "url": "https://juejin.cn/post/7665897866712858674",
           "published_at": null,
           "first_seen_at": "2026-07-27T05:13:45.840449Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -926,7 +960,7 @@
           "url": "https://blog.csdn.net/2401_87342824/article/details/163233776",
           "published_at": null,
           "first_seen_at": "2026-07-27T05:13:45.840449Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -977,7 +1011,7 @@
           "url": "https://blog.csdn.net/yelangkingwuzuhu/article/details/163207583",
           "published_at": null,
           "first_seen_at": "2026-07-26T18:05:22.570262Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -1090,7 +1124,7 @@
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 47
+      "other_count": 48
     },
     {
       "id": "defense-agent",
@@ -1242,6 +1276,57 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "c366b084e39e20538b6b24b8863b03ddc36d2107",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "reut.rs",
+          "title": "俄罗斯称罗马尼亚关于无人机的投诉毫无根据",
+          "url": "https://reut.rs/4fKuh1N",
+          "published_at": "2026-07-28T21:13:26.328000Z",
+          "first_seen_at": "2026-07-28T21:19:04.598143Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "0abceb6c276fe6e54a3ee7a81f38353c0ba3e6d2",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Business Insider",
+          "title": "The US Navy needs to find thousands of temporary beds. Houseboats are on the table.",
+          "url": "https://www.businessinsider.com/navy-considers-houseboats-and-rvs-for-sailors-amid-barracks-overhaul-2026-7",
+          "published_at": "2026-07-28T20:19:01Z",
+          "first_seen_at": "2026-07-28T21:19:04.598143Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "navy"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "e756ea45fd0e777d51e9239335929664ce5dc26c",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "reut.rs",
+          "title": "沙特阿拉伯称，从伊拉克发射、针对石油设施的无人机已被拦截",
+          "url": "https://reut.rs/4pM4pqW",
+          "published_at": "2026-07-28T20:09:30.345000Z",
+          "first_seen_at": "2026-07-28T21:19:04.598143Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "ccb69fa0945150137d9b1f559e5c118db5eb4c62",
           "site_id": "buzzing",
           "site_name": "Buzzing",
@@ -1250,7 +1335,7 @@
           "url": "http://dlvr.it/TTlRQL",
           "published_at": "2026-07-28T19:21:38.933000Z",
           "first_seen_at": "2026-07-28T20:07:55.853534Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -1267,7 +1352,7 @@
           "url": "https://reut.rs/4gXHZ3y",
           "published_at": "2026-07-28T19:05:22.410000Z",
           "first_seen_at": "2026-07-28T20:07:55.853534Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -1284,7 +1369,7 @@
           "url": "https://www.theguardian.com/education/2026/jul/28/school-shootings-pepper-spray-drones",
           "published_at": "2026-07-28T18:49:22.781000Z",
           "first_seen_at": "2026-07-28T20:07:55.853534Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -1335,7 +1420,7 @@
           "url": "https://www.v2ex.com/t/1230562",
           "published_at": "2026-07-28T17:03:07Z",
           "first_seen_at": "2026-07-28T17:06:22.062559Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1369,7 +1454,7 @@
           "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNbTFFRGl2VTI1THpRbFZXRUtqaXpfckR0X0p3dnU0UTd1bUlhR3VwUy1qLXYxOFdsZXI4ZGNCa1B4X2I4SUlOZ3J4akJHaXc5Uk14dkNmUzY4Vkt3cnpmRXpOeXFVcm9qUHV3UkNodXAwYWVianZEMFBfUE5uQ1N6cE81YTlRRk1lTGVxNjA4RTdhcUxQd2piTGpMajJ6bTFaWXF5X1lta0lKMHlVazh1QW1URUFRMnhZTmZFcHZqQVZDNWFR?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-07-28T16:41:19.352000Z",
           "first_seen_at": "2026-07-28T17:06:22.062559Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -1386,7 +1471,7 @@
           "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5pWTBsSGFDT3pzR2xQNi1iS25nbDJFTXMzVGdYeGgxSmJfV0ZsSjh0OUR2MDVkZUk0STB1ZU5BUDhwTW5LeFZQak5DWQ?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-07-28T15:37:22.461000Z",
           "first_seen_at": "2026-07-28T17:06:22.062559Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -1437,7 +1522,7 @@
           "url": "https://www.v2ex.com/t/1230543",
           "published_at": "2026-07-28T14:33:21Z",
           "first_seen_at": "2026-07-28T15:22:58.888456Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1454,7 +1539,7 @@
           "url": "https://www.v2ex.com/t/1230538",
           "published_at": "2026-07-28T13:56:10Z",
           "first_seen_at": "2026-07-28T15:22:58.888456Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1471,7 +1556,7 @@
           "url": "https://www.bbc.co.uk/news/articles/cy4ker2y1mko?at_medium=RSS&at_campaign=rss",
           "published_at": "2026-07-28T13:53:26Z",
           "first_seen_at": "2026-07-28T15:22:58.888456Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "navy"
@@ -1505,7 +1590,7 @@
           "url": "https://www.mittrchina.com/news/detail/16698",
           "published_at": null,
           "first_seen_at": "2026-07-28T12:58:55.537517Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -1556,7 +1641,7 @@
           "url": "https://www.v2ex.com/t/1230516",
           "published_at": "2026-07-28T12:07:25Z",
           "first_seen_at": "2026-07-28T12:58:55.537517Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1590,7 +1675,7 @@
           "url": "https://www.v2ex.com/t/1230510",
           "published_at": "2026-07-28T11:51:50Z",
           "first_seen_at": "2026-07-28T12:58:55.537517Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -1641,7 +1726,7 @@
           "url": "https://github.com/microsoft/agent-governance-toolkit",
           "published_at": null,
           "first_seen_at": "2026-07-28T11:04:16.222166Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1658,7 +1743,7 @@
           "url": "https://www.aibase.com/news/29950",
           "published_at": "2026-07-28T11:04:16.222166Z",
           "first_seen_at": "2026-07-28T11:04:16.222166Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -1675,7 +1760,7 @@
           "url": "https://www.aibase.com/news/29947",
           "published_at": "2026-07-28T11:04:16.222166Z",
           "first_seen_at": "2026-07-28T11:04:16.222166Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -1709,7 +1794,7 @@
           "url": "https://www.anquanke.com/post/id/315856",
           "published_at": null,
           "first_seen_at": "2026-07-28T11:04:16.222166Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1726,7 +1811,7 @@
           "url": "https://www.aibase.com/news/29952",
           "published_at": "2026-07-28T11:04:16.222166Z",
           "first_seen_at": "2026-07-28T11:04:16.222166Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1777,7 +1862,7 @@
           "url": "https://juejin.cn/post/7667008177453252659",
           "published_at": "2026-07-28T10:51:22.013000Z",
           "first_seen_at": "2026-07-28T11:04:16.222166Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1811,7 +1896,7 @@
           "url": "https://github.com/microsoft/agent-governance-toolkit",
           "published_at": "2026-07-28T10:48:15.564000Z",
           "first_seen_at": "2026-07-28T11:04:16.222166Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1896,7 +1981,7 @@
           "url": "https://tech.meituan.com/2026/07/28/CatPaw-LongCat.html",
           "published_at": null,
           "first_seen_at": "2026-07-28T08:09:18.499485Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1913,7 +1998,7 @@
           "url": "https://www.woshipm.com/?p=6435143",
           "published_at": null,
           "first_seen_at": "2026-07-28T08:09:18.499485Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1930,7 +2015,7 @@
           "url": "https://www.woshipm.com/?p=6436374",
           "published_at": null,
           "first_seen_at": "2026-07-28T08:09:18.499485Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2066,7 +2151,7 @@
           "url": "https://juejin.cn/post/7667103725047431174",
           "published_at": "2026-07-28T05:38:53.326000Z",
           "first_seen_at": "2026-07-28T05:38:30.167201Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2083,7 +2168,7 @@
           "url": "https://www.oschina.net/news/481112/taixu-admin-0-1-2-released",
           "published_at": null,
           "first_seen_at": "2026-07-28T05:38:30.167201Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2100,7 +2185,7 @@
           "url": "https://www.aibase.com/news/29937",
           "published_at": "2026-07-28T05:38:30.167201Z",
           "first_seen_at": "2026-07-28T05:38:30.167201Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2117,7 +2202,7 @@
           "url": "https://www.aibase.com/news/29934",
           "published_at": "2026-07-28T05:38:30.167201Z",
           "first_seen_at": "2026-07-28T05:38:30.167201Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2151,7 +2236,7 @@
           "url": "https://www.woshipm.com/?p=6436055",
           "published_at": null,
           "first_seen_at": "2026-07-28T05:38:30.167201Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2168,7 +2253,7 @@
           "url": "https://www.qbitai.com/2026/07/461565.html",
           "published_at": null,
           "first_seen_at": "2026-07-28T05:38:30.167201Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2304,7 +2389,7 @@
           "url": "https://blog.csdn.net/2501_91062530/article/details/163252274",
           "published_at": null,
           "first_seen_at": "2026-07-28T02:35:13.924564Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2559,7 +2644,7 @@
           "url": "https://time.com/article/2026/07/27/agent-kim-reactivated-ending",
           "published_at": "2026-07-27T20:58:17Z",
           "first_seen_at": "2026-07-27T23:03:19.101520Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2865,7 +2950,7 @@
           "url": "https://juejin.cn/post/7666403249923473459",
           "published_at": "2026-07-27T17:24:31.988000Z",
           "first_seen_at": "2026-07-27T17:24:10.103926Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3052,7 +3137,7 @@
           "url": "https://www.woshipm.com/?p=6435963",
           "published_at": null,
           "first_seen_at": "2026-07-27T15:29:55.950765Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3069,7 +3154,7 @@
           "url": "https://www.axios.com/2026/07/27/trump-interview-iran-bombing-pause",
           "published_at": "2026-07-27T15:21:18.748000Z",
           "first_seen_at": "2026-07-27T15:29:55.950765Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -3093,57 +3178,6 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "08d85f37679219cb303f4a8911cbb7259ba6a531",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "V2EX (创意工作者社区)",
-          "title": "[分享创造] Agent 是协作对象，而不只是工具，面向未来的协作基建",
-          "url": "https://www.v2ex.com/t/1230250",
-          "published_at": "2026-07-27T14:49:38Z",
-          "first_seen_at": "2026-07-27T15:29:55.950765Z",
-          "last_seen_at": "2026-07-28T00:05:34.447679Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "90aecd775c950838c629c0dda3a3f742e9d9b356",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "V2EX (创意工作者社区)",
-          "title": "[分享创造] 做了一个 macOS 菜单栏小工具： AI997，让 AI Agent 跑任务时 Mac 不锁屏",
-          "url": "https://www.v2ex.com/t/1230244",
-          "published_at": "2026-07-27T14:25:48Z",
-          "first_seen_at": "2026-07-27T15:29:55.950765Z",
-          "last_seen_at": "2026-07-28T00:05:34.447679Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "604636d89466f33ebd2c99f5a815a3e80b1c9c7b",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "BBC News (世界新闻)",
-          "title": "More than 600 US military service members injured since Iran War began in February",
-          "url": "https://www.bbc.co.uk/news/articles/c998pzd1e8xo?at_medium=RSS&at_campaign=rss",
-          "published_at": "2026-07-27T13:31:57Z",
-          "first_seen_at": "2026-07-27T15:29:55.950765Z",
-          "last_seen_at": "2026-07-28T08:09:18.499485Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "military"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
@@ -3153,7 +3187,7 @@
     {
       "id": "ai-for-science",
       "name": "AI+科研",
-      "count": 13,
+      "count": 12,
       "items": [
         {
           "id": "5297d310c32804691276e2519c634080ac4f0b9e",
@@ -3200,7 +3234,7 @@
           "url": "https://hub.baai.ac.cn/view/56698",
           "published_at": null,
           "first_seen_at": "2026-07-28T18:20:58.014245Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3234,7 +3268,7 @@
           "url": "https://www.ithome.com/0/982/773.htm",
           "published_at": "2026-07-28T14:22:39Z",
           "first_seen_at": "2026-07-28T15:22:58.888456Z",
-          "last_seen_at": "2026-07-28T20:07:55.853534Z",
+          "last_seen_at": "2026-07-28T21:19:04.598143Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3345,23 +3379,6 @@
           "monitor_class_label": "其他来源"
         },
         {
-          "id": "aa41026f162ffac4f2adca9f00812334bd8223f0",
-          "site_id": "zeli",
-          "site_name": "Zeli",
-          "source": "Hacker News · 24h最热",
-          "title": "Becoming a Research Engineer at a Big LLM Lab",
-          "url": "https://www.maxmynter.com/pages/blog/jobhunt",
-          "published_at": "2026-07-25T21:19:42Z",
-          "first_seen_at": "2026-07-26T12:23:12.331275Z",
-          "last_seen_at": "2026-07-26T20:36:33.426417Z",
-          "watch_score": 3,
-          "watch_matched_terms": [
-            "combo:ai+science"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
           "id": "8a4f12284ff01f3e7df888de7962184e342ffacc",
           "site_id": "buzzing",
           "site_name": "Buzzing",
@@ -3381,7 +3398,7 @@
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 13
+      "other_count": 12
     }
   ]
 }
