@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-08-12T15:38:45.898800Z",
+  "generated_at": "2026-08-12T16:36:18.587028Z",
   "window_days": 3,
-  "source_generated_at": "2026-08-12T15:36:51.008944Z",
+  "source_generated_at": "2026-08-12T16:34:38.167855Z",
   "source_window_hours": 24,
   "source_topic_filter": "ai_tech_robotics",
   "output_name": "special-focus",
   "section_count": 6,
-  "total_items": 219,
+  "total_items": 221,
   "official_error_count": 0,
   "official_errors": [],
   "sections": [
     {
       "id": "openclaw",
       "name": "OpenClaw",
-      "count": 5,
+      "count": 4,
       "items": [
         {
           "id": "bbfac0bb916a191afa6725ccae602b7c863c7b65",
@@ -84,28 +84,11 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "7f0702f4b926e2fb54cc7b68117f4147af4cc0c5",
-          "site_id": "tophub",
-          "site_name": "TopHub",
-          "source": "CSDN博客 · 综合热榜",
-          "title": "OpenClaw 测试策略实战：AI Agent 自动化测试体系搭建与落地",
-          "url": "https://blog.csdn.net/sinat_41617212/article/details/163612055",
-          "published_at": null,
-          "first_seen_at": "2026-08-09T16:04:36.000118Z",
-          "last_seen_at": "2026-08-12T08:19:59.693383Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "openclaw"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 5
+      "other_count": 4
     },
     {
       "id": "palantir",
@@ -121,7 +104,7 @@
           "url": "https://www.v2ex.com/t/1233934",
           "published_at": "2026-08-12T13:04:45Z",
           "first_seen_at": "2026-08-12T14:26:29.734943Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "foundry"
@@ -284,8 +267,26 @@
     {
       "id": "skills",
       "name": "Skills",
-      "count": 66,
+      "count": 69,
       "items": [
+        {
+          "id": "e3ff3c7b5ab9aa03b1a923b23222b37ab6fc66e7",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "V2EX (创意工作者社区)",
+          "title": "[推广] Coachix：给 AI Agent 构建者的知识、MCP 和 Skills 指南",
+          "url": "https://www.v2ex.com/t/1233966",
+          "published_at": "2026-08-12T15:48:58Z",
+          "first_seen_at": "2026-08-12T16:34:38.167855Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
+          "watch_score": 2,
+          "watch_matched_terms": [
+            "skills",
+            "mcp"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
         {
           "id": "abc47acb6e55b74d80049ab07e8b12665767f82f",
           "site_id": "iris",
@@ -349,11 +350,45 @@
           "url": "https://juejin.cn/post/7670593377075773491",
           "published_at": null,
           "first_seen_at": "2026-08-10T08:32:42.094158Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "skill",
             "agent skill"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "afb863753155d5e543fc6b8242108d6f5045babf",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "github.com",
+          "title": "Show HN: Dynobox——一款用于测试 AI 代理技能和工作流的测试运行器",
+          "url": "https://github.com/dynobox/dynobox",
+          "published_at": "2026-08-12T16:20:20.233000Z",
+          "first_seen_at": "2026-08-12T16:34:38.167855Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "技能"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "69a246230e91c8d10e520855b6d991d113dcbc7e",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.humanlayer.com",
+          "title": "Show HN: /show-me：用于紧凑可视化表示的智能体技能",
+          "url": "https://www.humanlayer.com/blog/show-me-skill",
+          "published_at": "2026-08-12T16:04:13.723000Z",
+          "first_seen_at": "2026-08-12T16:34:38.167855Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "技能"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -367,7 +402,7 @@
           "url": "https://github.com/Kosmoray/dayan-agent-skills",
           "published_at": "2026-08-12T15:16:33.541000Z",
           "first_seen_at": "2026-08-12T15:36:51.008944Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -384,7 +419,7 @@
           "url": "https://github.com/EMahmoudNabil/slnmap",
           "published_at": "2026-08-12T15:16:33.538000Z",
           "first_seen_at": "2026-08-12T15:36:51.008944Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -401,7 +436,7 @@
           "url": "https://www.v2ex.com/t/1233957",
           "published_at": "2026-08-12T15:14:59Z",
           "first_seen_at": "2026-08-12T15:36:51.008944Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -469,7 +504,7 @@
           "url": "https://www.pillar.security/blog/deadbugz-currently-active-mcp-supply-chain-campaign",
           "published_at": "2026-08-12T11:32:13.848000Z",
           "first_seen_at": "2026-08-12T11:50:56.502448Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -486,7 +521,7 @@
           "url": "https://www.pillar.security/blog/deadbugz-currently-active-mcp-supply-chain-campaign",
           "published_at": "2026-08-12T11:29:26Z",
           "first_seen_at": "2026-08-12T11:50:56.502448Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -503,7 +538,7 @@
           "url": "https://www.androidpolice.com/advanced-protection-mode-week-test",
           "published_at": "2026-08-12T11:00:16Z",
           "first_seen_at": "2026-08-12T11:50:56.502448Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "workflow"
@@ -520,7 +555,7 @@
           "url": "http://www.acfun.cn/v/ac48768864",
           "published_at": null,
           "first_seen_at": "2026-08-12T08:19:59.693383Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -571,7 +606,7 @@
           "url": "https://bbs.byr.cn/article/Talking/6454538",
           "published_at": null,
           "first_seen_at": "2026-08-12T05:35:22.117012Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -588,7 +623,7 @@
           "url": "https://daily.zhihu.com/story/9791837",
           "published_at": null,
           "first_seen_at": "2026-08-11T23:42:31.020357Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -826,7 +861,7 @@
           "url": "https://xz.aliyun.com/news/92644",
           "published_at": null,
           "first_seen_at": "2026-08-11T07:53:48.688237Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -860,7 +895,7 @@
           "url": "https://juejin.cn/post/7671467814255755315",
           "published_at": null,
           "first_seen_at": "2026-08-11T06:21:55.255958Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -894,7 +929,7 @@
           "url": "https://typesanitizer.com/blog/code-review.html",
           "published_at": "2026-08-11T05:37:40Z",
           "first_seen_at": "2026-08-11T06:21:55.255958Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -962,7 +997,7 @@
           "url": "https://sspai.com/post/113288",
           "published_at": "2026-08-11T04:00:00Z",
           "first_seen_at": "2026-08-11T05:09:50.907159Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -1030,7 +1065,7 @@
           "url": "https://dev.to/gde/from-threat-model-to-framework-closing-the-real-gaps-in-agent-skill-security-7m8",
           "published_at": "2026-08-10T19:54:08.700000Z",
           "first_seen_at": "2026-08-10T20:44:46.650176Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -1081,7 +1116,7 @@
           "url": "https://dev.to/gde/build-a-dart-adk-agent-and-mcp-server-4f9n",
           "published_at": "2026-08-10T15:07:24.823000Z",
           "first_seen_at": "2026-08-10T16:03:36.015278Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -1132,7 +1167,7 @@
           "url": "https://www.bilibili.com/video/av117070675188715",
           "published_at": null,
           "first_seen_at": "2026-08-10T14:01:39.855948Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -1166,7 +1201,7 @@
           "url": "https://xz.aliyun.com/news/92656",
           "published_at": null,
           "first_seen_at": "2026-08-10T08:32:42.094158Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -1217,7 +1252,7 @@
           "url": "https://www.woshipm.com/?p=6443282",
           "published_at": null,
           "first_seen_at": "2026-08-10T08:32:42.094158Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -1415,7 +1450,7 @@
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 66
+      "other_count": 69
     },
     {
       "id": "defense-agent",
@@ -1657,19 +1692,69 @@
           "monitor_class_label": "其他来源"
         },
         {
-          "id": "62d287849f0d110ad2e64f869d7740e7d4d84ce9",
+          "id": "f765260d825792ac6124a8a390aa47f1a80aa734",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "V2EX (创意工作者社区)",
+          "title": "[酷工作] 🚀 招聘｜ AI Agent 算法实习生｜北京｜海外 AI 互动内容方向",
+          "url": "https://www.v2ex.com/t/1233973",
+          "published_at": "2026-08-12T16:29:24Z",
+          "first_seen_at": "2026-08-12T16:34:38.167855Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "fb9610474d6432297d6914464a570b743c2b6b7f",
           "site_id": "buzzing",
           "site_name": "Buzzing",
-          "source": "www.bbc.co.uk",
-          "title": "莱比锡爆炸事件发生数日后，德国某军事基地上空发现无人机",
-          "url": "https://www.bbc.co.uk/news/articles/cwyeg1ljp2eo?at_medium=RSS&at_campaign=rss",
-          "published_at": "2026-08-09T16:30:47.226000Z",
-          "first_seen_at": "2026-08-09T16:36:18.761223Z",
-          "last_seen_at": "2026-08-11T02:07:44.874742Z",
-          "watch_score": 2,
+          "source": "news.google.com",
+          "title": "消息人士称，俄罗斯奥尔斯克炼油厂在8月11日遭遇无人机袭击后暂停了生产 - Reuters",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOWE84d1h2M1pxV0lrQkFVb1l3Xy1OdUVKbGM5OW5rMlhYZm1BWTJZSEgzNFpTWTVZcDQ5SHlkN0F0YnlkbjQzSC1XcjR1bGp6SHRPbEZYaEpnMnpFck00SkxJNm5nMlVuVE9ZOTFSRFFudm96WkZiaGxaTUVIVFNUN2VXTEVrMHFrTTNpTEhVclFfNU1fc241V0h2c1ZsQ1RPVHloRm81N2xuYkpjV0dkQkhsZFRUNGZWeFNnVF9RTE1ZXzZ6SnFRRXZxMFE?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-08-12T16:20:22.227000Z",
+          "first_seen_at": "2026-08-12T16:34:38.167855Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
+          "watch_score": 1,
           "watch_matched_terms": [
-            "军事",
             "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "69a246230e91c8d10e520855b6d991d113dcbc7e",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.humanlayer.com",
+          "title": "Show HN: /show-me：用于紧凑可视化表示的智能体技能",
+          "url": "https://www.humanlayer.com/blog/show-me-skill",
+          "published_at": "2026-08-12T16:04:13.723000Z",
+          "first_seen_at": "2026-08-12T16:34:38.167855Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "e3ff3c7b5ab9aa03b1a923b23222b37ab6fc66e7",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "V2EX (创意工作者社区)",
+          "title": "[推广] Coachix：给 AI Agent 构建者的知识、MCP 和 Skills 指南",
+          "url": "https://www.v2ex.com/t/1233966",
+          "published_at": "2026-08-12T15:48:58Z",
+          "first_seen_at": "2026-08-12T16:34:38.167855Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -1683,7 +1768,7 @@
           "url": "https://news.ycombinator.com/item?id=49272484",
           "published_at": "2026-08-12T15:37:16.066000Z",
           "first_seen_at": "2026-08-12T15:36:51.008944Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1700,7 +1785,7 @@
           "url": "https://news.ycombinator.com/item?id=49273175",
           "published_at": "2026-08-12T15:37:16.066000Z",
           "first_seen_at": "2026-08-12T15:36:51.008944Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1717,10 +1802,44 @@
           "url": "https://juejin.cn/post/7671865305111691302",
           "published_at": null,
           "first_seen_at": "2026-08-12T15:36:51.008944Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "958852db544f2451e660b462d9b8977dd76c93eb",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.bloomberg.com",
+          "title": "随着与美国的谈判陷入僵局，伊朗采取了更强硬的军事姿态",
+          "url": "https://www.bloomberg.com/news/articles/2026-08-12/iran-takes-more-aggressive-military-stance-with-us-talks-frozen",
+          "published_at": "2026-08-12T15:32:25.468000Z",
+          "first_seen_at": "2026-08-12T16:34:38.167855Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "军事"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "5ced7ba76d44faf846edb1fb47226cdc69ff2d6e",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "federaide.rocklab.in",
+          "title": "Show HN: FEDERaiDE，一款由 TUI 开发的框架，具备 P2P 多智能体路由功能并内置 IDE",
+          "url": "https://federaide.rocklab.in",
+          "published_at": "2026-08-12T15:32:24.616000Z",
+          "first_seen_at": "2026-08-12T16:34:38.167855Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -1734,7 +1853,7 @@
           "url": "https://www.v2ex.com/t/1233958",
           "published_at": "2026-08-12T15:16:36Z",
           "first_seen_at": "2026-08-12T15:36:51.008944Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1751,7 +1870,7 @@
           "url": "https://usehax.dev",
           "published_at": "2026-08-12T14:43:45Z",
           "first_seen_at": "2026-08-12T15:36:51.008944Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1785,7 +1904,7 @@
           "url": "https://www.v2ex.com/t/1233947",
           "published_at": "2026-08-12T14:14:20Z",
           "first_seen_at": "2026-08-12T14:26:29.734943Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1802,7 +1921,7 @@
           "url": "https://reut.rs/4z8rqbH",
           "published_at": "2026-08-12T13:56:27.036000Z",
           "first_seen_at": "2026-08-12T14:26:29.734943Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
@@ -1819,7 +1938,7 @@
           "url": "https://chad.cm/posts/2026-8-11-my-agent-setup",
           "published_at": "2026-08-12T13:56:05Z",
           "first_seen_at": "2026-08-12T14:26:29.734943Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1955,7 +2074,7 @@
           "url": "https://blog.csdn.net/weixin_45642847/article/details/163676952",
           "published_at": null,
           "first_seen_at": "2026-08-12T11:50:56.502448Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1972,7 +2091,7 @@
           "url": "https://www.businessinsider.com/nato-plan-drone-infested-battlefield-ai-flies-humans-decide-strikes-2026-8",
           "published_at": "2026-08-12T11:48:05.151000Z",
           "first_seen_at": "2026-08-12T13:03:31.226850Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2006,7 +2125,7 @@
           "url": "https://www.producthunt.com/products/trigger-dev",
           "published_at": "2026-08-12T11:29:43.400000Z",
           "first_seen_at": "2026-08-12T11:50:56.502448Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2023,7 +2142,7 @@
           "url": "https://github.com/embabel/embabel-agent",
           "published_at": "2026-08-12T11:04:50.015000Z",
           "first_seen_at": "2026-08-12T11:04:25.729770Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2057,7 +2176,7 @@
           "url": "https://github.com/embabel/embabel-agent",
           "published_at": null,
           "first_seen_at": "2026-08-12T11:04:25.729770Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2142,7 +2261,7 @@
           "url": "https://www.aibase.com/news/30285",
           "published_at": "2026-08-12T09:47:57.003800Z",
           "first_seen_at": "2026-08-12T09:47:57.003800Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2227,7 +2346,7 @@
           "url": "https://news.google.com/read/CBMixgFBVV95cUxPeWNGWmx4dVY4QjloM1pZVERMNkxjZFVyc2Zmd1JYWnoySVhyTHpJZHg0YlFsVmZMUnFVd1BXelFwdExFM3QxWENXVFF1YlhwNDFqaVNudzN2OWtPczRBbTRPQ21zUEM1M0w2enMtNWJSc2pwOTI5Wm9FbXZlaFhQbHB1STFBRlBRSVZuTnNEUWJDWGdkSUtWLXZwYXRkRU1KRWlXS2NneGE4SkNXWXpkeXJhQzNPUXZlVDNoakRRMExqOGY3Rnc?hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-08-12T09:11:43Z",
           "first_seen_at": "2026-08-12T13:03:31.226850Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2261,7 +2380,7 @@
           "url": "https://news.google.com/read/CBMiwwFBVV95cUxPMnU0Ykk1ZFFTdEpxZjNIUEpzNEdiSmRvZTZTeTN1MEc2NERPRkp4MUZzd0Z2ak5oWDlhQUZyWEtqdms3aHI2NkdQUjREaEZBY3QyQ1EyV3JIMFRCWGRkRXpyZmp1QUFQUDRqdU1YX2NTSHhfbS1YTGhHSzcwbXlhRTNnTV84cVFPQ3ViMFZjX3lwbWN1aDRwNmhFcXFvV3p2MEZNT0hRbnVrc3haS0oyaWxsUExVNFdtMzBrWjB0MkJ0RnPSAcgBQVVfeXFMTXU4YzZaTEJ3NlpudFEyMUZkNjlxbHZJa3BsaWJpVVFFYU5WUnp5ajhrcjdyOXdCbUxlaHpaM29wOGJodjYxVVhycHVFeVVNRU12MGNlWlFsREVXNV9hVEVocUpnUFNyUzB0TUVMRDZCUEthWjBXazZKR0xxSGJXcVlSLWJaUm1QdHlrckFaOGJmb0JKeEJLQkgyZHRodFVFYnZJZC1ldnhKQzk2Q1YtNUp0RTR6OGplUnNuUU9pMGFpZHUxdFg2Q0I?hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-08-12T09:00:28Z",
           "first_seen_at": "2026-08-12T11:04:25.729770Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2363,7 +2482,7 @@
           "url": "https://news.ycombinator.com/item?id=49268922",
           "published_at": "2026-08-12T07:32:31.875000Z",
           "first_seen_at": "2026-08-12T08:19:59.693383Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2380,7 +2499,7 @@
           "url": "https://www.producthunt.com/r/VWACZYA7FQVRD2",
           "published_at": "2026-08-12T07:17:21.369000Z",
           "first_seen_at": "2026-08-12T08:19:59.693383Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2414,7 +2533,7 @@
           "url": "https://juejin.cn/post/7671855098491043866",
           "published_at": null,
           "first_seen_at": "2026-08-12T07:01:09.781789Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2431,7 +2550,7 @@
           "url": "https://www.aibase.com/news/30276",
           "published_at": "2026-08-12T07:01:09.781789Z",
           "first_seen_at": "2026-08-12T07:01:09.781789Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2448,7 +2567,7 @@
           "url": "https://www.bbc.com/news/articles/cn0nww2qlp7o",
           "published_at": "2026-08-12T06:53:17Z",
           "first_seen_at": "2026-08-12T08:19:59.693383Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2499,7 +2618,7 @@
           "url": "https://www.reddit.com/r/worldnews/comments/1vm5zbn/top_adviser_to_irans_revolutionary_guard_leader",
           "published_at": "2026-08-12T06:15:59Z",
           "first_seen_at": "2026-08-12T13:03:31.226850Z",
-          "last_seen_at": "2026-08-12T14:26:29.734943Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "military"
@@ -2567,7 +2686,7 @@
           "url": "https://www.woshipm.com/?p=6445266",
           "published_at": null,
           "first_seen_at": "2026-08-12T05:35:22.117012Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2601,7 +2720,7 @@
           "url": "https://www.woshipm.com/?p=6444915",
           "published_at": null,
           "first_seen_at": "2026-08-12T05:35:22.117012Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2635,7 +2754,7 @@
           "url": "https://www.woshipm.com/?p=6422321",
           "published_at": null,
           "first_seen_at": "2026-08-12T05:35:22.117012Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2703,7 +2822,7 @@
           "url": "https://www.woshipm.com/?p=6445088",
           "published_at": null,
           "first_seen_at": "2026-08-12T03:43:34.222031Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2720,7 +2839,7 @@
           "url": "https://finance.sina.com.cn/jjxw/2026-08-11/doc-inimynsc4032320.shtml",
           "published_at": null,
           "first_seen_at": "2026-08-12T03:43:34.222031Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2737,7 +2856,7 @@
           "url": "https://www.36kr.com/p/3935738007485574",
           "published_at": "2026-08-12T03:43:34.222031Z",
           "first_seen_at": "2026-08-12T03:43:34.222031Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2754,7 +2873,7 @@
           "url": "https://blog.csdn.net/qq_19309473/article/details/163677009",
           "published_at": null,
           "first_seen_at": "2026-08-12T03:43:34.222031Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2771,7 +2890,7 @@
           "url": "https://www.woshipm.com/?p=6444972",
           "published_at": null,
           "first_seen_at": "2026-08-12T03:43:34.222031Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2805,7 +2924,7 @@
           "url": "https://dev.to/composiodev/pi-agent-vs-claude-code-after-100-hours-of-real-use-1dfp",
           "published_at": "2026-08-12T03:02:24.635000Z",
           "first_seen_at": "2026-08-12T03:43:34.222031Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2975,7 +3094,7 @@
           "url": "https://www.oschina.net/news/495042",
           "published_at": null,
           "first_seen_at": "2026-08-12T01:29:04.041557Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3213,7 +3332,7 @@
           "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxORWZuLWFoaGZXejN5NGFEVkw5TnU5bmhoamU4Vm5xZFZod2tJZTFFQm1YSWRSMC1kYjFEN2hmLU0zQ0hYRVd4UUh0TGxMQWphOW5sSGREUnJnLWRYVURfVUVnQmxqX2UwM2tEek45cklKcjc3X21fRFJBRnREY2s4OXhuSmI2bEdmYkRLM0FQanNRRVIwVjhBNUZSOWlvM2h1b1Y1bXpKOFdjazZmMFpjcm9yZ0htY1Fj?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-08-11T22:47:02.500000Z",
           "first_seen_at": "2026-08-11T23:42:31.020357Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -3247,7 +3366,7 @@
           "url": "https://arstechnica.com/gadgets/2026/08/romania-destroys-russian-drones-drifting-near-vital-european-offshore-gas-site",
           "published_at": "2026-08-11T22:15:19.719000Z",
           "first_seen_at": "2026-08-11T22:43:55.753612Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -3281,7 +3400,7 @@
           "url": "https://www.bbc.co.uk/news/videos/cy4k1jldxnwo?at_medium=RSS&at_campaign=rss",
           "published_at": "2026-08-11T21:49:01Z",
           "first_seen_at": "2026-08-12T07:01:09.781789Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "air force"
@@ -3298,7 +3417,7 @@
           "url": "https://blog.csdn.net/qq_61024956/article/details/163665196",
           "published_at": null,
           "first_seen_at": "2026-08-11T21:48:08.654162Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3387,91 +3506,6 @@
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "ab46c26b4622d168bc4b74b0ee6e502700e9449f",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "消息人士称，俄罗斯西伯利亚西部的一家西布尔石化厂在遭遇无人机袭击后停产 - Reuters",
-          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNaUk4OEtuQkJoalZXZFBfS0RPVHhicHktZkwwN3VoOTZPV0JUR0wxakVueUpUU1g5V21HcERUOTg3ekxGSjNhQjFwZnY0aU5uRWsySDVBRkpLUmNHZm9jNWd2NFJxZU1rc3JsT2k2X3ZrcFlDaXpXQ0tveXJMSWVNWU90Znlla1V6YVc0bndkWWlMMEk4MmpjbUdBTFdTTS0zenFQY1VMT3I4RVpCUzNCWkQ3WlNQYnpmd1p4VExobWdXSlU?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-08-11T20:55:58.829000Z",
-          "first_seen_at": "2026-08-11T21:48:08.654162Z",
-          "last_seen_at": "2026-08-12T01:29:04.041557Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "d95cf91069af51a232a1c5ed6f48e257b5d47333",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "The Next Web",
-          "title": "SpaceXAI launches Grok Bot as the agent race moves to office work",
-          "url": "https://thenextweb.com/news/spacexai-grok-bot-ai-agents-cursor",
-          "published_at": "2026-08-11T20:26:43Z",
-          "first_seen_at": "2026-08-11T20:45:51.570062Z",
-          "last_seen_at": "2026-08-12T11:50:56.502448Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "97e96c4b9e8e5260afec5b36032cdc86a560d8a4",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "空中出租车公司Joby以5亿美元收购一家国防科技公司 - Reuters",
-          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPR19tSGNrX0pFRjZvY0RpV0JCMWtnRGlDN2IzTHYyY0xFTDM3d0ZRSXh0UXB0bmFjclJKUmozbllfOTFnRW5yUF9kWTIwSEFuSy1DcDJ1eE5vdEhhUm92a0JxQlNYVXFCU2RLVGEwQ1BwM2dUSHQ2bG52Z0x0cDJMY3lfS2pHMlVNZ1Z0QXV4SnRRRks2dW1TSFBrcWUwdHI2a2twZWlCUktTbl9ZcW5ib2hqdFdKdk0wSlh6dllUX1c?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-08-11T20:24:29.651000Z",
-          "first_seen_at": "2026-08-11T20:45:51.570062Z",
-          "last_seen_at": "2026-08-11T23:42:31.020357Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "7ea9a99ba1c97434b225275dd15a764799939a1e",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "以色列国防军加强对被困在黎巴嫩地下设施内的真主党恐怖分子的包围 - Ynetnews",
-          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9yVWJMNFNObFdSMEM3ZVVoM3RmblZuNjJKR2ZVSE9vZ3hKM2dzQnRoaWlPeVY2UFJ4d05zN2V5MG5ZbjNlSW90YkFORDFhVlFGN0dfYjNn?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-08-11T20:08:14.128000Z",
-          "first_seen_at": "2026-08-11T20:45:51.570062Z",
-          "last_seen_at": "2026-08-11T23:42:31.020357Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "a7999ed6e746dde166b7208194c91e8a269fbb71",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "沙特阿拉伯、土耳其和巴基斯坦的联合军事能力如何？ - Al Jazeera",
-          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOUE1ET0RxWlFFRlhxMFJFdUJLRm9YOFF1NWJ3R21wcFBEaWdFNi0xempPZUtKcHd5ZHZYZVVpdU1MaHN2b2xWMjlmekVkZ09CWXFOVnJPQ3lEUVNWWHZlbXFOUU1iQ1pGeFFKLXJrUWdGTnRMM1JPUHMxZnlEUDVZUUNvVWxLMktCWWVEY2FOTExERnhmT1VuZDlwRXRTVnoyMGVFSUNTRmJ6WGQySExoM1BR0gG3AUFVX3lxTE1BR2h0ZWZJc0RJNExyN3dCZVJoM0prZ0tPUExQUFBnZXVqU01wakp0Vjh3R0ZYZmdRWmVsNm5pVG1ObmxuaHNBYlBxWHAxeEZtekdHUTNDT0RLeEVsNTlLM3I2Um9LR3lKS085bWRGUUFER3ZMdm5LZUhmaFhodTZLNWYwTTBfX0h5UWhsUE1YR0t5NXcwVnlteGtaQmRiR25lMUJMVk44MmpzLW45NzZtVTRFV1Nxcw?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-08-11T19:04:09.289000Z",
-          "first_seen_at": "2026-08-11T19:42:04.761940Z",
-          "last_seen_at": "2026-08-11T23:42:31.020357Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -3600,7 +3634,7 @@
           "url": "https://news.ycombinator.com/item?id=49269090",
           "published_at": "2026-08-12T09:37:39.013000Z",
           "first_seen_at": "2026-08-12T09:47:57.003800Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3617,7 +3651,7 @@
           "url": "https://www.mittrchina.com/news/detail/16774",
           "published_at": null,
           "first_seen_at": "2026-08-12T08:19:59.693383Z",
-          "last_seen_at": "2026-08-12T15:36:51.008944Z",
+          "last_seen_at": "2026-08-12T16:34:38.167855Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
