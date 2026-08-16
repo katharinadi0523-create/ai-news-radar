@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-16T09:04:31.768526Z",
+  "generated_at": "2026-08-16T09:30:17.718717Z",
   "sites": [
     {
       "site_id": "techurls",
       "site_name": "TechURLs",
       "ok": true,
       "item_count": 405,
-      "duration_ms": 450,
+      "duration_ms": 522,
       "error": null
     },
     {
@@ -14,15 +14,15 @@
       "site_name": "Buzzing",
       "ok": true,
       "item_count": 744,
-      "duration_ms": 318,
+      "duration_ms": 352,
       "error": null
     },
     {
       "site_id": "iris",
       "site_name": "Info Flow",
       "ok": true,
-      "item_count": 315,
-      "duration_ms": 12000,
+      "item_count": 319,
+      "duration_ms": 11014,
       "error": null
     },
     {
@@ -30,7 +30,7 @@
       "site_name": "BestBlogs",
       "ok": true,
       "item_count": 1,
-      "duration_ms": 1061,
+      "duration_ms": 895,
       "error": null
     },
     {
@@ -38,7 +38,7 @@
       "site_name": "TopHub",
       "ok": true,
       "item_count": 3040,
-      "duration_ms": 1376,
+      "duration_ms": 1603,
       "error": null
     },
     {
@@ -46,7 +46,7 @@
       "site_name": "Zeli",
       "ok": true,
       "item_count": 79,
-      "duration_ms": 398,
+      "duration_ms": 493,
       "error": null
     },
     {
@@ -54,23 +54,23 @@
       "site_name": "AI HubToday",
       "ok": false,
       "item_count": 0,
-      "duration_ms": 5127,
+      "duration_ms": 4926,
       "error": "HTTPSConnectionPool(host='ai.hubtoday.app', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='ai.hubtoday.app', port=443): Failed to resolve 'ai.hubtoday.app' ([Errno -2] Name or service not known)\"))"
     },
     {
       "site_id": "aibase",
       "site_name": "AIbase",
-      "ok": true,
-      "item_count": 20,
-      "duration_ms": 1065,
-      "error": null
+      "ok": false,
+      "item_count": 0,
+      "duration_ms": 39158,
+      "error": "HTTPSConnectionPool(host='www.aibase.com', port=443): Max retries exceeded with url: /zh/news (Caused by ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))"
     },
     {
       "site_id": "aihot",
       "site_name": "AI今日热榜",
       "ok": false,
       "item_count": 0,
-      "duration_ms": 72,
+      "duration_ms": 39,
       "error": "403 Client Error: Forbidden for url: https://aihot.today/"
     },
     {
@@ -78,20 +78,21 @@
       "site_name": "NewsNow",
       "ok": true,
       "item_count": 123,
-      "duration_ms": 1358,
+      "duration_ms": 2442,
       "error": null
     }
   ],
-  "successful_sites": 8,
+  "successful_sites": 7,
   "failed_sites": [
     "aihubtoday",
+    "aibase",
     "aihot"
   ],
   "zero_item_sites": [],
-  "fetched_raw_items": 4727,
-  "items_before_topic_filter": 6121,
-  "items_in_24h": 526,
-  "archive_trimmed_count": 161,
+  "fetched_raw_items": 4711,
+  "items_before_topic_filter": 5995,
+  "items_in_24h": 520,
+  "archive_trimmed_count": 92,
   "rss_opml": {
     "enabled": false,
     "path": null,
