@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-17T21:02:26.909918Z",
+  "generated_at": "2026-08-17T21:30:19.012204Z",
   "sites": [
     {
       "site_id": "techurls",
       "site_name": "TechURLs",
       "ok": true,
       "item_count": 405,
-      "duration_ms": 487,
+      "duration_ms": 513,
       "error": null
     },
     {
@@ -14,7 +14,7 @@
       "site_name": "Buzzing",
       "ok": true,
       "item_count": 744,
-      "duration_ms": 345,
+      "duration_ms": 397,
       "error": null
     },
     {
@@ -22,7 +22,7 @@
       "site_name": "Info Flow",
       "ok": true,
       "item_count": 322,
-      "duration_ms": 11796,
+      "duration_ms": 9621,
       "error": null
     },
     {
@@ -30,15 +30,15 @@
       "site_name": "BestBlogs",
       "ok": true,
       "item_count": 1,
-      "duration_ms": 822,
+      "duration_ms": 1565,
       "error": null
     },
     {
       "site_id": "tophub",
       "site_name": "TopHub",
       "ok": true,
-      "item_count": 3033,
-      "duration_ms": 1783,
+      "item_count": 3019,
+      "duration_ms": 1859,
       "error": null
     },
     {
@@ -46,7 +46,7 @@
       "site_name": "Zeli",
       "ok": true,
       "item_count": 75,
-      "duration_ms": 487,
+      "duration_ms": 855,
       "error": null
     },
     {
@@ -54,7 +54,7 @@
       "site_name": "AI HubToday",
       "ok": false,
       "item_count": 0,
-      "duration_ms": 5021,
+      "duration_ms": 5087,
       "error": "HTTPSConnectionPool(host='ai.hubtoday.app', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='ai.hubtoday.app', port=443): Failed to resolve 'ai.hubtoday.app' ([Errno -2] Name or service not known)\"))"
     },
     {
@@ -62,7 +62,7 @@
       "site_name": "AIbase",
       "ok": true,
       "item_count": 20,
-      "duration_ms": 1134,
+      "duration_ms": 1686,
       "error": null
     },
     {
@@ -70,28 +70,29 @@
       "site_name": "AI今日热榜",
       "ok": false,
       "item_count": 0,
-      "duration_ms": 27,
+      "duration_ms": 58,
       "error": "403 Client Error: Forbidden for url: https://aihot.today/"
     },
     {
       "site_id": "newsnow",
       "site_name": "NewsNow",
-      "ok": true,
-      "item_count": 121,
-      "duration_ms": 1096,
-      "error": null
+      "ok": false,
+      "item_count": 0,
+      "duration_ms": 10368,
+      "error": "HTTPSConnectionPool(host='newsnow.busiyi.world', port=443): Max retries exceeded with url: /api/s?id=36kr (Caused by ResponseError('too many 500 error responses'))"
     }
   ],
-  "successful_sites": 8,
+  "successful_sites": 7,
   "failed_sites": [
     "aihubtoday",
-    "aihot"
+    "aihot",
+    "newsnow"
   ],
   "zero_item_sites": [],
-  "fetched_raw_items": 4721,
-  "items_before_topic_filter": 7741,
-  "items_in_24h": 884,
-  "archive_trimmed_count": 134,
+  "fetched_raw_items": 4586,
+  "items_before_topic_filter": 7720,
+  "items_in_24h": 886,
+  "archive_trimmed_count": 64,
   "rss_opml": {
     "enabled": false,
     "path": null,
