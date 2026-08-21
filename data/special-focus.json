@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-21T06:06:31.599757Z",
+  "generated_at": "2026-08-21T06:45:01.431118Z",
   "window_days": 3,
-  "source_generated_at": "2026-08-21T06:04:33.020133Z",
+  "source_generated_at": "2026-08-21T06:43:32.890836Z",
   "source_window_hours": 24,
   "source_topic_filter": "ai_tech_robotics",
   "output_name": "special-focus",
   "section_count": 6,
-  "total_items": 214,
+  "total_items": 215,
   "official_error_count": 1,
   "official_errors": [
     "https://www.youtube.com/feeds/videos.xml?channel_id=UCQRc3PMlCsoodxbR4IsglKQ: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCQRc3PMlCsoodxbR4IsglKQ"
@@ -60,7 +60,7 @@
     {
       "id": "palantir",
       "name": "Palantir",
-      "count": 2,
+      "count": 3,
       "items": [
         {
           "id": "01ceb13118cf29500d8c1384a363abeb5acd6094",
@@ -70,7 +70,7 @@
           "title": "Securing Software at the Speed of AI",
           "url": "https://blog.palantir.com/securing-software-at-the-speed-of-ai-0b1d7ddd2bf0?source=rss----3c87dc14372f---4",
           "published_at": "2026-08-20T18:44:40Z",
-          "first_seen_at": "2026-08-21T06:06:23.213050Z",
+          "first_seen_at": "2026-08-21T06:44:55.585765Z",
           "watch_score": 90,
           "watch_matched_terms": [
             "official-source",
@@ -79,6 +79,23 @@
           "hover_description": "<p><em>Lessons from building an agentic software security strategy at Palantir</em></p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*S2-ZdqtYYt_6PUqU0Zzvfg.png\" /></figure><h3>Introduction</h3><p>Palantir’s Product Security Team began experimenting with agentic AI across a variety of security workflows over a year ago. By the time Anthropic launched Project Glasswing, we were already using an internal multi-agent review harness with AI security agents focused on different areas of security expertise. Anthropic’s Mythos model and OpenAI’s cyber program helped to accelerate that work.</p><p>Today, our team has operating capabilities for multi-agent source-code review, analyst-directed vulnerability hunting, product-team triage, and runtime validation. Agentic design review and penetration testing continue to develop, supported by the context generated through code and product reviews. In addition to using these capabilities to improve the security of our own software, we have also productionized our model-agnostic AI reviewer platform — called <a href=\"https://www.palantir.com/security-forge/\">Security Forge</a> — for customers to use for their own cyber defense.</p><p>Five key insights have shaped our software security strategy and Security Forge product:</p><ol><li><strong>A model alone is not a security-review program. </strong>Models need a harness — the software, instructions, tools, and controls that divide work among agents, determine what each agent can access, preserve evidence, challenge findings, and route results to engineers. We leverage our <a href=\"https://www.palantir.com/platforms/aip/\">Palantir Artificial Intelligence Platform (AIP)</a> as an orchestrator of agent-driven workloads.</li><li><strong>The quality of a harness depends heavily on the organizational context it is able to leverage for a specific task. </strong>A model is more useful when it understands how services relate, where trust boundaries sit, which configurations are deployed, what earlier reviews concluded, and who owns the affected software. We leverage our <a href=\"https://www.palantir.com/platforms/foundry/\">Palantir Foundry</a> data operations platform to connect that context through ontological lineage across source material, findings, decisions, and remediation.</li><li><strong>An organization’s context is their alpha, and must stay under their ownership and control. </strong>The context that enables security agents to be effective — data, models, decisions, actions, deployment environments, and accumulated knowledge — is part of an organization’s unique alpha and should not be exposed externally. Sovereignty over an AI security pipeline is key to ensuring the intelligence an organization generates compounds back into its own systems rather than benefiting third parties who could repackage it, resell it, or use it to erode the organization’s competitive position.</li><li><strong>Remediation is the new bottleneck. </strong>The pace of vulnerability identification has fundamentally accelerated. This has shifted the bottleneck in cyber defense from identification to remediation: how quickly can fixes be deployed across vast, heterogeneous environments? We leverage our <a href=\"https://www.palantir.com/platforms/apollo/\">Palantir Apollo</a> software production platform to ontologize the properties of our environment and provide an established path for delivering verified fixes across our entire software fleet.</li><li><strong>Models and harnesses will continue to improve. </strong>The durable capability is the governed process and infrastructure around them. As models and harnesses improve over time, the infrastructure around them will determine whether an organization’s security program actually gets better as a result. Our security pipeline — Foundry compounding security context and memory, AIP orchestrating swappable agents, and Apollo applying fixes across our software estate — provides a durable framework that lets us adapt as models and threats change.</li></ol><h3>Expanding on the Insights</h3><p>In our early evaluations of agentic AI, Palantir tested agents across Request for Comment (RFC) and engineering review, source-code analysis, Common Vulnerabilities and Exposures (CVE) triage, patch development, and penetration testing. Not all agents were uniformly useful. Code review and vulnerability analysis produced the fastest and most repeatable value. They generated actionable findings tied to specific code paths while building knowledge about products, services, trust boundaries, architecture, prior findings, and the reasons behind security decisions.</p><p>As a result of that experimentation, reviewing existing software became the foundation of our strategy: identify risk in what runs today, retain the context from each assessment, and apply that knowledge to future development, dynamic testing, and remediation. That context made RFC review more useful and gave dynamic testing stronger hypotheses than off-the-shelf tools could provide. We also built workflows for product engineers to validate, prioritize, and remediate the resulting findings.</p><p>Below, we elaborate on the insights that have helped us evolve and accelerate many aspects of our internal software security strategy and our Security Forge product.</p><h4>Models Need a Harness</h4><p>Models need a harness — the software, instructions, tools, data access, and controls that organize work across agents, determine what each agent can access, preserve evidence, and route validated results to engineers. In our security pipeline, AIP provides this harness and orchestration layer, coordinating multiple agents and models through structured workflows tuned for analytical depth, operational efficiency, or specific vulnerability classes.</p><p>AIP organizes code-review and security-analysis workflows into sequential and parallel stages designed to increase coverage, challenge weak findings, and produce structured, evidence-backed results. The workflow begins with a <em>Foundation</em> stage, in which agents map the target environment. They inspect the repository, dependencies, interfaces, authentication paths, deployment context, and available design material. Using this information, they establish an initial threat model and identify the relevant attack surface.</p><p>AIP then orchestrates specialized agents in parallel during the <em>Hunt </em>stage. One agent may trace authorization decisions while another examines untrusted parsing, outbound requests, secret handling, or dependency behavior. Other agents can investigate how individually modest weaknesses might combine across components to create a broader exploit path. Because AIP connects models to organizational data and operational systems, these analyses can incorporate not only source code but also deployment information, asset relationships, runtime context, and other data represented in the Foundry Ontology (see below).</p><p>As agents develop hypotheses, AIP coordinates independent validation and challenge stages intended to disprove or refine those hypotheses. Deterministic deduplication is particularly important. Semantic similarity alone can be inconsistent, so the workflow also compares each finding’s source-to-sink path: how untrusted input moves from its entry point to the operation that creates the risk. This comparison helps determine whether multiple reports reflect the same root cause or represent distinct vulnerabilities. A separate judging agent, operating independently from the original analysis session, can then challenge the evidence, assess exploitability, and validate the finding before it reaches the final report.</p><p>AIP governs access to the data and tools available at each stage of the analysis. Depending on the task, agents may receive controlled access to source code, documentation, dependency information, build systems, deployment metadata, threat intelligence, or isolated execution environments for testing proposed fixes. AIP’s orchestration and control mechanisms ensure that agents operate within approved boundaries while preserving the evidence behind every finding. That evidence can be reviewed and challenged by another agent, a security engineer, or the product owner.</p><p>The <em>Synthesis</em> stage consolidates the results. AIP correlates raw flags, filters likely false positives, validates exploitability, and collapses related weaknesses into unified findings with documented exploit paths, severity assessments, weakness mappings, and remediation guidance. Analyst decisions and adjudications can be captured in the Ontology as structured organizational knowledge, allowing future agent runs to incorporate prior conclusions, avoid repeatedly surfacing dismissed findings, and improve detection fidelity over time.</p><p>A model itself is only one part of this system, and no single model or run provides complete coverage. We have found that different models identify different attack surfaces, vulnerability classes, and critical issues under the same AIP-orchestrated workflow. They also vary in refusal behavior, duplicate rate, severity calibration, cost, runtime, and ability to complete long attack chains. Newer models are not uniformly better at every task; an older model may remain more effective for a particular workflow or vulnerability class.</p><p>Repeated runs of the same model also produce meaningful variation. Agentic systems are probabilistic, so a single successful analysis should not be treated as proof of complete coverage. AIP enables repeated execution, independent validation, and cross-model comparison, helping to surface additional findings and reveal where each configuration is strong or weak.</p><p>AIP is therefore model-agnostic by design. It enables us to evaluate output quality for the task at hand and orchestrate complementary commercial, government-owned, or third-party models through the same controlled workflow. By coordinating models, agents, tools, data, validation steps, and human approvals, AIP reduces blind spots, improves coverage, and supports the deployment, governance, security, and sovereignty requirements of our operational environment.</p><h4>Harnesses Need Organizational Context</h4><p>One key finding of our agentic AI experimentation was that allowing agents to review existing software helped to build valuable context for future reviews. Each assessment taught the system about how a product was assembled: its service relationships, identity assumptions, exposed interfaces, deployment shapes, known mitigations, accepted risks, and prior fixes.</p><p>That knowledge can then improve every subsequent line of work. An RFC review becomes more useful when the agent can compare a proposed design with the actual trust boundaries and failure modes of related services. A code review becomes more precise when it can reuse earlier reachability decisions instead of inferring the environment from scratch. A runtime-testing agent can choose better actions when it knows which paths the source review considered plausible.</p><p>We use our Foundry data operations platform to build and maintain this organizational context. Foundry lets us create an Ontology for our cyber defense work — a shared operational model that connects products, services, repositories, models, assessments, findings, evidence, owners, triage decisions, patches, and deployment status as a single source of operational truth. AIP runs on this Ontology in Foundry, turning all agentic activity into operational context that feeds back into the orchestration layer and compounds into model effectiveness over time.</p><p>The Ontology also preserves data lineage, which is necessary for showing how a conclusion was reached — which source and context were reviewed, which model and harness produced the candidate, what evidence survived validation, who made the decision, and what remediation followed. That lineage enables model output to be authenticated, either by humans and/or by other agents. A product engineer needs to inspect the evidence and understand the assumptions behind a finding. A later agent needs to know whether an earlier issue was disproved, accepted, mitigated elsewhere, or fixed. Security leadership needs to see verified risk and remediation progress rather than a total count of alerts.</p><p>In our security environment, our Apollo software production platform (see more below) serves as a starting baseline for building an ontological model of our attack surface. With all assets already governed by Apollo, each asset’s existence and many of its characteristics are already a known quantity. Those properties can be ingested into the Ontology from the start, helping to power discovery or visibility workloads on day one.</p><p>As the Ontology matures, every review can improve the next one, and the context gathered from existing software can feed everything from design review to code review, dynamic testing, and remediation.</p><h4>Organizational Context Must Remain Sovereign</h4><p>The context that enables security agents to be effective — data, models, decisions, actions, deployment environments, and accumulated knowledge — is part of an organization’s unique alpha and should not be exposed externally. Every detection, triage decision, and remediation action an agent takes generates information about how an organization actually operates. If that signal is captured by a hosted model provider rather than the organization itself, the feedback loop that should be improving the organization’s own defenses instead flows outward, refining someone else’s model at the organization’s expense. This asymmetry compounds over time, with the provider’s system growing smarter across its entire customer base while the originating organization sees none of the differentiated advantage its own operational history should be producing. That signal must be retained in order to turn security operations into a compounding institutional asset.</p><p>Furthermore, an organization’s security posture cannot be hostage to a single model account, cloud region, or vendor’s roadmap. The organization should be able to route detection, triage, and response across any model, any compute, and any deployment environment — on-premises, sovereign cloud, or at the edge. This is especially critical for security workloads, where operational speed requires the ability to act on findings in real time. A governed loop that connects detection through remediation and rollout must stay under the organization’s own authority to move at the speed threats actually demand.</p><p>For these reasons, we strongly advocate for a “sovereign” approach to AI, in which an organization controls and independently operates its own AI environment. A sovereign approach is not opposed to using best-in-class commercial models. An organization can and should use whatever model performs best for a given task — but it should still own the data, the decision logic, the audit trail, and the resulting institutional memory. Without that ownership, security teams are unable to build the kind of durable, differentiated defense posture that only comes from an organization controlling and learning from its own accumulated experience.</p><p>As an example of AI sovereignty, we recently completed a migration of all Palantir employees away from frontier-provided clients in favor of internally developed productivity tooling. This has given us flexibility over model usage and architecture and total control over the fate of any alpha present in a given workload. We expect to see a similar norm propagate throughout industry as institutions weigh risks that may imperil their own means of production.</p><h4>Remediation is the New Bottleneck</h4><p>Until recently, the main bottleneck in cyber defense was an organization’s ability to find vulnerabilities in its software. This was a highly manual process that relied on large teams of security engineers. Today, agentic AI can do this easily and with unprecedented speed and depth, uncovering novel vulnerabilities and developing multi-stage exploits at a velocity that humans cannot match. This shifts the bottleneck to the remediation process — how quickly can a security team fix all of the issues its agents are finding?</p><p>Palantir entered this period of agentic AI with a major advantage: software production and delivery was already highly automated through our Apollo platform. Apollo serves a dual and critical function in our security pipeline: it is simultaneously the monitoring and alerting mechanism that surfaces security-relevant events across our environments, and the remediation capability through which validated fixes, patches, and configuration changes are deployed at scale. This dual role is architecturally significant because in most security environments, detection and remediation are handled by separate tools with manual handoffs between them. Apollo eliminates this gap, providing a single, auditable control plane that spans the full lifecycle from alert generation to confirmed remediation without requiring manual intervention.</p><p>Apollo manages deployments, upgrades, rollbacks, service health, and the distribution of software across a wide range of connected and disconnected environments. Once a fix is established, Apollo manages the release mechanics across our entire software estate. This has made the new agentic discovery tempo manageable; a higher finding rate does not automatically create a proportional release-management burden.</p><p>Information from Apollo additionally serves as a source of visibility feeding back into the Ontology in Foundry. From the earliest phases of operating an AI-driven security platform, and actively throughout its lifecycle, the deployment orchestration layer is an ongoing source of institutional knowledge about the environment’s attack surface. Its properties and characteristics feed the Ontology, which in turn provides context and a superior understanding of state for successive agentic workloads operating against the environment.</p><h4>Process and Infrastructure are the Durable Capabilities</h4><p>Every generation of models will be faster, cheaper, and better at finding and fixing vulnerabilities than the last. The question is whether an organization’s security program actually gets better as a result, or whether each model upgrade brings the program back to square one instead of building on past experience. The answer depends on everything <em>around </em>the model: how the organization records what was found, keeps track of decisions, audits both human and agentic activity, and turns approved fixes into deployed changes. Those surrounding processes and systems are what preserve institutional knowledge, maintain accountability, and allow the program to improve over time.</p><p>In our security program:</p><ul><li><strong>Foundry provides context and continuity. </strong>Each detection pass is connected to the Ontology, which maintains a persistent view of our assets, identities, and relevant behaviors across review cycles. When an engineer confirms or dismisses a finding, that decision — and the reasoning behind it — is recorded as structured context rather than left in a chat or buried in a closed ticket. Future agent runs can use that history, so the same finding does not have to be evaluated from scratch every time. It also gives us a clear record of each review: what was found, who or what produced it, and why it was accepted or rejected.</li><li><strong>AIP runs the detection and triage work. </strong>We can use approved commercial, government, or third-party models, and replace or add models as they are evaluated and authorized. That keeps our security program from depending on any single vendor and lets us adopt better cyber-focused models without rebuilding the surrounding process. AIP can survey the environment, run specialized agents in parallel, correlate and validate their results, and produce a prioritized queue of findings that have been checked for exploitability. This lets our human reviewers focus on the decisions that require their unique judgment, such as triage, policy approvals, disclosures, and change reviews.</li><li><strong>Apollo carries approved fixes through the fleet.</strong> Patches, configuration changes, and actions such as host isolation are staged, health-checked, and authorized before reaching production. Each action is logged with the information needed to support change control and establish what happened after the fact. That makes it possible to move quickly across a large, heterogeneous fleet without losing the review trail our engineers and oversight teams rely on.</li></ul><p>Together, Foundry, AIP, and Apollo give the program a stable foundation as models and threats evolve. Foundry preserves the context, AIP provides a replaceable intelligence layer, and Apollo ensures that approved changes are carried out in a controlled and traceable way. The models can change anytime without forcing us to redesign the entire security program around them.</p><h3>Security Forge — A Solution for Customers</h3><p>For customers who want to use Palantir capabilities for their own cyber defense, we developed <a href=\"https://www.palantir.com/security-forge/\">Security Forge</a>, a model-agnostic AI reviewer platform that automates the high-volume, repetitive elements of security operations while preserving human judgment at the decisions that matter most. Security Forge includes the Foundry, AIP, and Apollo platforms discussed above in an integrated solution that customers can use in their own environments. Security Forge enables organizations to:</p><ol><li>Use cyber-tuned LLMs with code and network access to actively hunt for vulnerabilities;</li><li>Apply organizational context (team staffing, asset criticality, usage data, real-world data and intelligence) to prioritize findings intelligently;</li><li>Feed findings into a remediation agent that automatically recommends and builds code and architectural changes as well as mitigating controls that can break the kill-chain; and</li><li>Automatically deploy remediations to software and network assets at a speed humans alone cannot match.</li></ol><p>Security Forge creates a continuously operating, feedback-driven cycle that improves detection fidelity over time, reduces analyst burden, and accelerates time-to-containment for confirmed threats.</p><h3>Building Your Own Agentic Security Pipeline</h3><p>For organizations seeking to build their own agentic security pipeline using other technologies, we offer the following as a practical starting sequence:</p><ol><li><strong>Build a software inventory.</strong> Connect repositories, services, dependencies, owners, deployed versions, and runtime environments. Agents need to know what exists and who is accountable for it.</li><li><strong>Start with bounded code-review tasks.</strong> Choose targets where findings can be tied to specific code paths and checked by engineers. Use those reviews to establish evidence standards and build initial context.</li><li><strong>Put a controlled harness around the models.</strong> Divide work among scoped agents, restrict tools and credentials by stage, preserve the evidence behind each finding, challenge candidate findings independently, and deduplicate the results before they reach engineers.</li><li><strong>Evaluate multiple models and repeated runs.</strong> Compare models and harnesses against the same targets and known security cases. Track coverage, validation rate, cost, runtime, refusal behavior, and duplicate rate. Do not assume that the newest model or one successful scan provides complete coverage.</li><li><strong>Retain the decisions as organizational context.</strong> Store findings, false positives, reachability decisions, accepted risks, mitigations, and fixes in a governed system with lineage. Each review should make later code, design, and dynamic reviews better informed.</li><li><strong>Keep your context sovereign. </strong>Maintain ownership and control over the value you create. We outline 15 steps that every company can take to ensure both their sovereignty and alpha <a href=\"https://www.palantir.com/assets/xrfr7uokpv1b/7BF74dqccPeVFMHRmy7FO3/2a33ff9b4f9e11ba904445e637095960/Palantir_-_Institutional_Sovereignty_in_the_Age_of_AI.pdf\">here</a>.</li><li><strong>Give security and product engineers a shared workflow.</strong> Engineers need to inspect evidence, add system context, validate severity, assign ownership, and develop and approve remediations without creating another disconnected security queue.</li><li><strong>Connect verified fixes to normal software delivery.</strong> Approved patches should move through the same release, deployment, health-monitoring, and rollback controls used for other software changes.</li><li><strong>Define success correctly. </strong>Generating a long list of findings is not the same as actually improving security. Success means reducing verified risk in deployed software and doing so with fixes that are delivered quickly, reliably, and efficiently.</li></ol><img alt=\"\" height=\"1\" src=\"https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=0b1d7ddd2bf0\" width=\"1\" /><hr /><p><a href=\"https://blog.palantir.com/securing-software-at-the-speed-of-ai-0b1d7ddd2bf0\">Securing Software at the Speed of AI</a> was originally published in <a href=\"https://blog.palantir.com\">Palantir Blog</a> on Medium, where people are continuing the conversation by highlighting and responding to this story.</p>",
           "monitor_class": "official",
           "monitor_class_label": "官方公告"
+        },
+        {
+          "id": "8ce3fa14f879ab55db8cf6c17773b3abc3072640",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Wired",
+          "title": "The Single English County Saying No to Palantir",
+          "url": "https://www.wired.com/story/the-single-english-county-saying-no-to-palantir",
+          "published_at": "2026-08-21T06:00:00Z",
+          "first_seen_at": "2026-08-21T06:43:32.890836Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "palantir"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
         },
         {
           "id": "d3168db9d8e47cd85077123b4d59fbac2300d28c",
@@ -100,7 +117,7 @@
       ],
       "source_mode": "mixed",
       "official_count": 1,
-      "other_count": 1
+      "other_count": 2
     },
     {
       "id": "knowledge-graph",
@@ -240,6 +257,23 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "3ae28c948e7581fb954c4f43e88dbb833a56c3bf",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "V2EX (创意工作者社区)",
+          "title": "[分享创造] 分享一个自己写的 skill niceui，欢迎尝试",
+          "url": "https://www.v2ex.com/t/1236168",
+          "published_at": "2026-08-21T06:21:50Z",
+          "first_seen_at": "2026-08-21T06:43:32.890836Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skill"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "7deeee4b400fba0bdf63e385c0a743bdb11e7248",
           "site_id": "aibase",
           "site_name": "AIbase",
@@ -248,7 +282,7 @@
           "url": "https://www.aibase.com/news/30525",
           "published_at": "2026-08-21T06:04:33.020133Z",
           "first_seen_at": "2026-08-21T06:04:33.020133Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -265,7 +299,7 @@
           "url": "https://www.ithome.com/0/992/607.htm",
           "published_at": "2026-08-21T05:35:57Z",
           "first_seen_at": "2026-08-21T06:04:33.020133Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -282,7 +316,7 @@
           "url": "https://www.woshipm.com/?p=6452106",
           "published_at": null,
           "first_seen_at": "2026-08-21T04:18:28.000379Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -299,7 +333,7 @@
           "url": "https://www.aibase.com/zh/news/30522",
           "published_at": null,
           "first_seen_at": "2026-08-21T03:36:40.692849Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -316,7 +350,7 @@
           "url": "https://www.aibase.com/news/30522",
           "published_at": "2026-08-21T03:36:40.692849Z",
           "first_seen_at": "2026-08-21T03:36:40.692849Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -333,7 +367,7 @@
           "url": "https://dev.to/heinrichneb/i-built-an-mcp-memory-server-for-one-user-me-for-six-weeks-30fh",
           "published_at": "2026-08-21T02:13:47.048000Z",
           "first_seen_at": "2026-08-21T02:27:28.307025Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -384,7 +418,7 @@
           "url": "https://news.slashdot.org/story/26/08/20/1729258/does-using-ai-to-edit-an-op-ed-on-students-math-skills-undermine-the-argument",
           "published_at": "2026-08-20T19:00:00Z",
           "first_seen_at": "2026-08-20T23:56:11.133737Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -486,7 +520,7 @@
           "url": "https://blog.csdn.net/weixin_74809706/article/details/163614053",
           "published_at": null,
           "first_seen_at": "2026-08-20T12:00:56.863736Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -537,7 +571,7 @@
           "url": "https://juejin.cn/post/7675187455231475727",
           "published_at": "2026-08-20T08:25:56.489000Z",
           "first_seen_at": "2026-08-20T08:40:11.446509Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -605,7 +639,7 @@
           "url": "https://juejin.cn/post/7675346841392070707",
           "published_at": null,
           "first_seen_at": "2026-08-20T05:11:02.955105Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -656,7 +690,7 @@
           "url": "https://www.bilibili.com/video/av117119681300555",
           "published_at": null,
           "first_seen_at": "2026-08-20T04:13:58.164401Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -792,7 +826,7 @@
           "url": "https://blog.csdn.net/Mrxiao_bo/article/details/163893901",
           "published_at": null,
           "first_seen_at": "2026-08-19T18:32:32.294352Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -877,7 +911,7 @@
           "url": "https://juejin.cn/post/7674818950488932398",
           "published_at": "2026-08-19T11:42:58.069000Z",
           "first_seen_at": "2026-08-19T11:59:21.568015Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -928,7 +962,7 @@
           "url": "https://www.woshipm.com/?p=5973563",
           "published_at": null,
           "first_seen_at": "2026-08-19T08:40:56.475094Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -945,7 +979,7 @@
           "url": "https://www.producthunt.com/r/OTKPG4D4Y4NG66",
           "published_at": "2026-08-19T08:37:55.993000Z",
           "first_seen_at": "2026-08-19T09:13:49.093824Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -979,7 +1013,7 @@
           "url": "https://www.bilibili.com/video/av117117248739084",
           "published_at": null,
           "first_seen_at": "2026-08-19T07:43:26.589368Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -996,7 +1030,7 @@
           "url": "https://dev.to/ashwin_ugale_102f2abc9cec/your-agent-ignored-a-failed-tool-call-heres-how-to-catch-that-in-ci-2i17",
           "published_at": "2026-08-19T05:57:54.093000Z",
           "first_seen_at": "2026-08-19T06:04:17.132800Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "工具调用"
@@ -1285,7 +1319,7 @@
           "url": "https://juejin.cn/post/7673674128557326374",
           "published_at": null,
           "first_seen_at": "2026-08-18T08:38:34.276002Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -1394,23 +1428,6 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "56b9db33871656fb7363ebc5c71e496aab8f0e6d",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "github.com",
-          "title": "Show HN: Vyral——适用于数据、检索、持久化工作及MCP的便携式合约",
-          "url": "https://github.com/Univeracity/vyral",
-          "published_at": "2026-08-18T06:14:00.622000Z",
-          "first_seen_at": "2026-08-18T06:42:17.544589Z",
-          "last_seen_at": "2026-08-18T10:34:46.023273Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "mcp"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
@@ -1431,7 +1448,7 @@
           "url": "https://www.v2ex.com/t/1236145",
           "published_at": "2026-08-21T05:21:06Z",
           "first_seen_at": "2026-08-21T06:04:33.020133Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "agent",
@@ -1449,7 +1466,7 @@
           "url": "https://www.v2ex.com/t/1236143",
           "published_at": "2026-08-21T04:58:42Z",
           "first_seen_at": "2026-08-21T05:10:58.468827Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "agent",
@@ -1467,7 +1484,7 @@
           "url": "https://www.v2ex.com/t/1236120",
           "published_at": "2026-08-21T04:00:07Z",
           "first_seen_at": "2026-08-21T04:18:28.000379Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "agent",
@@ -1503,7 +1520,7 @@
           "url": "https://www.aibase.com/news/30513",
           "published_at": "2026-08-21T02:27:28.307025Z",
           "first_seen_at": "2026-08-21T02:27:28.307025Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "agent",
@@ -1539,7 +1556,7 @@
           "url": "https://www.techradar.com/pro/african-defense-tech-startup-reveals-usd52-million-funding-as-it-looks-to-take-on-ukraine-and-us-giants",
           "published_at": "2026-08-21T00:15:00Z",
           "first_seen_at": "2026-08-21T01:04:05.094137Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "defense",
@@ -1729,6 +1746,23 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "1dd64dd7777203fe23b9dab59f20c25c062011a4",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.businessinsider.com",
+          "title": "“阿帕奇”和“黑鹰”直升机在台湾举行的演习凸显了乌克兰无人机战争的影响",
+          "url": "https://www.businessinsider.com/apache-black-hawk-drill-taiwan-impact-ukraine-drone-war-2026-8",
+          "published_at": "2026-08-21T06:29:36.390000Z",
+          "first_seen_at": "2026-08-21T06:43:32.890836Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "a7a1c0b62a82afc77d6779111114d8be81cac978",
           "site_id": "tophub",
           "site_name": "TopHub",
@@ -1737,7 +1771,7 @@
           "url": "https://bbs.hupu.com/641982704.html",
           "published_at": null,
           "first_seen_at": "2026-08-21T06:04:33.020133Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -1754,7 +1788,7 @@
           "url": "https://www.leiphone.com/category/private/ra5HO5WX7PHYJ86b.html",
           "published_at": null,
           "first_seen_at": "2026-08-21T06:04:33.020133Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -1771,7 +1805,7 @@
           "url": "https://www.reuters.com/podcasts/40-trillion-debt-cancer-vaccine-humanoid-robots-idf-probes-2026-08-20",
           "published_at": "2026-08-21T05:57:13.272000Z",
           "first_seen_at": "2026-08-21T06:04:33.020133Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
@@ -1788,7 +1822,7 @@
           "url": "https://www.woshipm.com/?p=6452200",
           "published_at": null,
           "first_seen_at": "2026-08-21T04:18:28.000379Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1805,7 +1839,7 @@
           "url": "https://www.36kr.com/p/3947852851664512",
           "published_at": null,
           "first_seen_at": "2026-08-21T04:18:28.000379Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1839,7 +1873,7 @@
           "url": "https://www.oschina.net/news/501966",
           "published_at": null,
           "first_seen_at": "2026-08-21T02:27:28.307025Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1856,7 +1890,7 @@
           "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE05YkRobFBkY0NEZEQxaldSYXZEQ2NMSVN2azdkYjNsUHJkYjF2Unhvdnd0ZVRvUEhGSHdPZ1JyZ01aWTJRN3dCSkJvYV9LN2ZoWmh2SlJ4R3hELU1vTXhfSmhvT1hFanV4Y1E4YzZUQlB4Q253NGRGT1V5Z2tOTTDSAYQBQVVfeXFMT09jbjRwdVZ2ZmU5dE1RSU1PUlJSdTF6Zkxua1pCM3dVbDBXMDZoYjlLaTFfa3UtcV9abHEtQW9pbkFCa2dXa1NjYmJ3cFh4WkR1cUVvdGNjSXdQTHdQNGJ3NmhjdnoxWmQza1BuWlExTm8xN3Jtay1fMEc4M0VqbWxIWVJU?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-08-21T02:13:47.066000Z",
           "first_seen_at": "2026-08-21T02:27:28.307025Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -1873,7 +1907,7 @@
           "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE05YkRobFBkY0NEZEQxaldSYXZEQ2NMSVN2azdkYjNsUHJkYjF2Unhvdnd0ZVRvUEhGSHdPZ1JyZ01aWTJRN3dCSkJvYV9LN2ZoWmh2SlJ4R3hELU1vTXhfSmhvT1hFanV4Y1E4YzZUQlB4Q253NGRGT1V5Z2tOTTDSAYQBQVVfeXFMT09jbjRwdVZ2ZmU5dE1RSU1PUlJSdTF6Zkxua1pCM3dVbDBXMDZoYjlLaTFfa3UtcV9abHEtQW9pbkFCa2dXa1NjYmJ3cFh4WkR1cUVvdGNjSXdQTHdQNGJ3NmhjdnoxWmQza1BuWlExTm8xN3Jtay1fMEc4M0VqbWxIWVJU?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-08-21T02:13:47.044000Z",
           "first_seen_at": "2026-08-21T02:27:28.307025Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -1924,7 +1958,7 @@
           "url": "https://news.ycombinator.com/item?id=49382011",
           "published_at": "2026-08-21T00:22:16.400000Z",
           "first_seen_at": "2026-08-21T01:04:05.094137Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -1958,7 +1992,7 @@
           "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQLTZYaWxlbjdRU3lSTGZVdTFzc3g4blpKdEtwODlFcnFtaEU4SFlySUJrQURDenFrdEV1ck9rbk55R2d4OW54ZGZXQzZIandvRmVNNk1uWTQ2RzNKaGZ6bEl6VEFzbkItNkpoeUk2NkdLeURSY21pT0dNNnYxWmk3b1hkRzlUbnlvbVZMb0hkRGdPTVlNQ0taeU5WOTd1WFhRb25GMmVfUXZzdFJKWkpqeUpMSFM1OF9RdTAzT1BqeWJnSUViVFE?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-08-21T00:05:59.144000Z",
           "first_seen_at": "2026-08-21T01:04:05.094137Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
@@ -1975,7 +2009,7 @@
           "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQelotdF8xX2VhZDlmQ1BhZmcwYzhlRmlnSzVrRGRIQnYxRG5xUHktcEtGRWhFNnpiWjdpSDhxTVdIZENMeXZIcHpRaXIyTWdKRFFDbmlnSU51VUN0ckllZWJJOE9iOF9PTEJoNGRnelJycDRodGlUeUczUGJ3YVp0NUd1Vl8?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-08-21T00:05:59.141000Z",
           "first_seen_at": "2026-08-21T01:04:05.094137Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
@@ -1992,7 +2026,7 @@
           "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxObzA2Z1hkeENFTmN3eDNWdDZQd1dfYW9oQW01MlM1U0JhZnowYnFuMGVHMVFtNlF0Rm9xNkc3RE1VVFJGSFFsQ0piNmF4eEd5NEZpR3FZb3BHUkIyWXRVVU5wVEJkR0dPOV9TSGhCWVBGVXR5cElOTVdBTDNGenpSQ0ljSG5TdnhhMWQzWk5aMNIBjwFBVV95cUxQRXJ4aVJWcVROZmN4cWdXaGhwd01DSVRia3BKOTVDMXI4WWFXMXdlNmxXaU51SkNPMTFzYXY2MGRRcEw3aHJwRjZpT3cxY053RTRqZXVSYXlOeVl0andWMEVraHN6Zk1Dd2dUNlVkd3lISGxxeGk4bDBBZUhLdUdZa3hzb0cwR3RjRzFSUWMwTQ?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-08-20T23:50:01.008000Z",
           "first_seen_at": "2026-08-20T23:56:11.133737Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2026,7 +2060,7 @@
           "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPZXZuamZHeVdFVTRUV1R3aEpwbjVrak5vYkxCd1ZfSExLTVItZjEtY2pHbTllWEN3anNhZGxuellldF9nUXJicmd2c0ZadWhadkE5WTlBbVQxVERkQkk0dlQtYWlqQ3RJX182aC05cndVbjRrVWRJLWY5b0xyQWZub2tWOS1aZlkyRFdfSkNoenFwMTFBRFlYRXJaQVA?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-08-20T23:34:08.113000Z",
           "first_seen_at": "2026-08-20T23:56:11.133737Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2060,7 +2094,7 @@
           "url": "https://www.businessinsider.com/amazon-prime-air-drone-delivery-pool-texas-2026-8",
           "published_at": "2026-08-20T21:58:03.714000Z",
           "first_seen_at": "2026-08-20T22:30:00.676602Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2188,6 +2222,23 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "89f86e93c4a0ecea92fd05eb2171b4d38678ef16",
+          "site_id": "zeli",
+          "site_name": "Zeli",
+          "source": "Hacker News · 24h最热",
+          "title": "TrueForge – The open-source agent harness",
+          "url": "https://github.com/truefoundry/trueforge",
+          "published_at": "2026-08-20T18:36:07Z",
+          "first_seen_at": "2026-08-21T06:43:32.890836Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "cfae44741c68260a30008b0b5355be9ed5486223",
           "site_id": "newsnow",
           "site_name": "NewsNow",
@@ -2196,7 +2247,7 @@
           "url": "https://juejin.cn/post/7675242010802896948",
           "published_at": "2026-08-20T18:20:35.149000Z",
           "first_seen_at": "2026-08-20T18:39:19.424187Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2247,7 +2298,7 @@
           "url": "https://bit.ly/4x70849",
           "published_at": "2026-08-20T17:58:06.631000Z",
           "first_seen_at": "2026-08-20T18:39:19.424187Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2298,7 +2349,7 @@
           "url": "https://foxandlion.pub/analysis/the-defense-tech-bubble-is-headed-for-consolidation",
           "published_at": "2026-08-20T17:01:09Z",
           "first_seen_at": "2026-08-20T18:39:19.424187Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "defense"
@@ -2332,7 +2383,7 @@
           "url": "https://www.theatlantic.com/national-security/2026/08/ukraine-moscow-airports-ai-drones/688337",
           "published_at": "2026-08-20T16:06:09.062000Z",
           "first_seen_at": "2026-08-20T16:41:44.653310Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -2434,7 +2485,7 @@
           "url": "https://on.wsj.com/4bUmNbu",
           "published_at": "2026-08-20T15:18:05.597000Z",
           "first_seen_at": "2026-08-20T16:05:57.613468Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
@@ -2519,7 +2570,7 @@
           "url": "https://www.economist.com/middle-east-and-africa/2026/08/20/a-military-junta-is-consolidating-power-in-iran",
           "published_at": "2026-08-20T13:58:13.147000Z",
           "first_seen_at": "2026-08-20T14:37:45.332260Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2638,7 +2689,7 @@
           "url": "https://sprocketfox.io/xssfox/2026/08/19/sondehub-and-war",
           "published_at": "2026-08-20T12:21:41Z",
           "first_seen_at": "2026-08-20T13:51:06.963682Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "warfare"
@@ -2672,7 +2723,7 @@
           "url": "https://blog.csdn.net/weixin_74809706/article/details/163614053",
           "published_at": null,
           "first_seen_at": "2026-08-20T12:00:56.863736Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2706,7 +2757,7 @@
           "url": "https://github.com/agent-substrate/substrate",
           "published_at": "2026-08-20T11:30:08.005000Z",
           "first_seen_at": "2026-08-20T11:29:38.930032Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2723,7 +2774,7 @@
           "url": "https://github.com/agent-substrate/substrate",
           "published_at": null,
           "first_seen_at": "2026-08-20T11:29:38.930032Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2757,7 +2808,7 @@
           "url": "https://www.producthunt.com/r/GAULWNJU36TUR3",
           "published_at": "2026-08-20T11:17:58.066000Z",
           "first_seen_at": "2026-08-20T11:29:38.930032Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -3012,7 +3063,7 @@
           "url": "https://www.nytimes.com/2026/08/19/style/jennifer-hegseth.html",
           "published_at": "2026-08-20T09:28:28Z",
           "first_seen_at": "2026-08-21T01:04:05.094137Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -3148,7 +3199,7 @@
           "url": "https://juejin.cn/post/7675447922214191150",
           "published_at": "2026-08-20T08:25:56.489000Z",
           "first_seen_at": "2026-08-20T08:40:11.446509Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3335,7 +3386,7 @@
           "url": "https://blog.csdn.net/2403_87933448/article/details/163892966",
           "published_at": null,
           "first_seen_at": "2026-08-20T06:42:46.291764Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3352,7 +3403,7 @@
           "url": "https://juejin.cn/post/7674145872716513280",
           "published_at": null,
           "first_seen_at": "2026-08-20T06:42:46.291764Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3441,40 +3492,6 @@
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "a93920d9b9fb6ad4c4c47ca36c1b1c67f4dc33af",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.theguardian.com",
-          "title": "特朗普威胁伊朗的贸易伙伴，军事打击正让位于经济施压",
-          "url": "https://www.theguardian.com/world/2026/aug/20/trump-threatens-crush-iran-economy-war-hormuz",
-          "published_at": "2026-08-20T05:10:07.058000Z",
-          "first_seen_at": "2026-08-20T06:04:50.267076Z",
-          "last_seen_at": "2026-08-20T07:43:07.339479Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "6f5d8a016f1ad155bd393ecc2cea8f420983e9e5",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "V2EX (创意工作者社区)",
-          "title": "[求职] 福报终于到我了 某国际大厂被裁了 求职后端/Agent",
-          "url": "https://www.v2ex.com/t/1235850",
-          "published_at": "2026-08-20T05:02:11Z",
-          "first_seen_at": "2026-08-20T05:11:02.955105Z",
-          "last_seen_at": "2026-08-20T07:43:07.339479Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -3570,7 +3587,7 @@
           "url": "https://www.nature.com/articles/d41586-026-02551-z",
           "published_at": "2026-08-20T16:54:13.154000Z",
           "first_seen_at": "2026-08-20T17:31:35.533417Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3724,7 +3741,7 @@
           "url": "https://www.rathbiotaclan.com/tiktok-videos-deactivate-key-cognitive-brain-regions",
           "published_at": "2026-08-20T19:50:03.844000Z",
           "first_seen_at": "2026-08-20T20:01:57.565484Z",
-          "last_seen_at": "2026-08-21T06:04:33.020133Z",
+          "last_seen_at": "2026-08-21T06:43:32.890836Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "科学研究"
