@@ -1,14 +1,16 @@
 {
-  "generated_at": "2026-09-10T00:18:04.903696Z",
+  "generated_at": "2026-09-10T03:09:25.536407Z",
   "window_days": 3,
-  "source_generated_at": "2026-09-09T23:54:00.593158Z",
+  "source_generated_at": "2026-09-10T02:44:42.541745Z",
   "source_window_hours": 24,
   "source_topic_filter": "ai_tech_robotics",
   "output_name": "special-focus",
   "section_count": 6,
-  "total_items": 212,
-  "official_error_count": 0,
-  "official_errors": [],
+  "total_items": 216,
+  "official_error_count": 1,
+  "official_errors": [
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UCQRc3PMlCsoodxbR4IsglKQ: 404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCQRc3PMlCsoodxbR4IsglKQ"
+  ],
   "sections": [
     {
       "id": "openclaw",
@@ -41,7 +43,7 @@
           "url": "https://blog.csdn.net/mrdeam/article/details/164612764",
           "published_at": null,
           "first_seen_at": "2026-09-08T10:34:29.857906Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "openclaw"
@@ -152,7 +154,7 @@
     {
       "id": "knowledge-graph",
       "name": "知识图谱",
-      "count": 6,
+      "count": 7,
       "items": [
         {
           "id": "99c157302ea130f2a715b9184874ca4d21d25bc4",
@@ -173,6 +175,23 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "783172cedc8082e30ee71e0b3cf00bfc0367c32b",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.producthunt.com",
+          "title": "AlphaGenome Atlas - 谷歌绘制的涵盖所有可能人类DNA突变的人工智能图谱",
+          "url": "https://www.producthunt.com/r/GDCAOSOHHUNYFD",
+          "published_at": "2026-09-10T02:20:15.419000Z",
+          "first_seen_at": "2026-09-10T02:44:42.541745Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "图谱"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "ce42aedeff40cb1c9c5abc13df54c29a1c0dcf37",
           "site_id": "tophub",
           "site_name": "TopHub",
@@ -181,7 +200,7 @@
           "url": "https://blog.csdn.net/BADAO_LIUMANG_QIZHI/article/details/164628324",
           "published_at": null,
           "first_seen_at": "2026-09-09T11:48:49.078255Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "图谱"
@@ -260,12 +279,12 @@
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 6
+      "other_count": 7
     },
     {
       "id": "skills",
       "name": "Skills",
-      "count": 52,
+      "count": 50,
       "items": [
         {
           "id": "4e2d99540f7aa023db1f5352959e1f27f2506dd5",
@@ -304,6 +323,23 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "a70504ee1145c45ee4a52c074ca02665158e6e8c",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "ray.run",
+          "title": "Show HN: Rayrun——面向整个公司的统一MCP网关",
+          "url": "https://ray.run",
+          "published_at": "2026-09-10T00:43:51.491000Z",
+          "first_seen_at": "2026-09-10T02:44:42.541745Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "mcp"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "a43ab5dc65ac10821dd867a74732edd04cd5a8ef",
           "site_id": "tophub",
           "site_name": "TopHub",
@@ -312,7 +348,7 @@
           "url": "https://daily.zhihu.com/story/9792471",
           "published_at": null,
           "first_seen_at": "2026-09-09T23:54:00.593158Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -329,7 +365,7 @@
           "url": "https://juejin.cn/post/7683152167263846463",
           "published_at": "2026-09-09T23:44:16.023000Z",
           "first_seen_at": "2026-09-09T23:54:00.593158Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skills"
@@ -346,7 +382,7 @@
           "url": "https://news.ycombinator.com/item?id=49635577",
           "published_at": "2026-09-09T22:53:54.373000Z",
           "first_seen_at": "2026-09-09T23:54:00.593158Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -652,7 +688,7 @@
           "url": "https://juejin.cn/post/7681574954577281076",
           "published_at": null,
           "first_seen_at": "2026-09-08T10:34:29.857906Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -720,7 +756,7 @@
           "url": "https://juejin.cn/post/7681931232724860970",
           "published_at": null,
           "first_seen_at": "2026-09-08T05:41:13.139784Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -754,7 +790,7 @@
           "url": "https://www.woshipm.com/?p=6460716",
           "published_at": null,
           "first_seen_at": "2026-09-08T05:41:13.139784Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -805,7 +841,7 @@
           "url": "https://dev.to/eugeniya_ivanova_4a58eadc/my-mcp-integration-got-rejected-almost-nothing-in-the-server-had-to-change-npb",
           "published_at": "2026-09-08T04:11:44.225000Z",
           "first_seen_at": "2026-09-08T05:41:13.139784Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -941,7 +977,7 @@
           "url": "https://dev.to/pascal_cescato_692b7a8a20/from-ai-solutions-to-shared-knowledge-building-an-mcp-for-the-community-6bk",
           "published_at": "2026-09-07T11:22:14.136000Z",
           "first_seen_at": "2026-09-07T16:40:21.660587Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -1101,62 +1137,11 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "1339833fbe9dcf404790fd065a6011656c1eee70",
-          "site_id": "zeli",
-          "site_name": "Zeli",
-          "source": "Hacker News · 24h最热",
-          "title": "ripwire: ripgrep of AI context (CLI+MCP) giving coding agents a map of any repo",
-          "url": "https://github.com/redhat-et/ripwire",
-          "published_at": "2026-09-07T02:11:40Z",
-          "first_seen_at": "2026-09-07T20:27:05.850932Z",
-          "last_seen_at": "2026-09-08T01:03:00.633031Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "mcp"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "a6ce402f47ee375d69a37537ae8a36100082bc54",
-          "site_id": "zeli",
-          "site_name": "Zeli",
-          "source": "Hacker News · 24h最热",
-          "title": "Ponytail: Lazy Senior Engineer Skill",
-          "url": "https://ponytail.dev",
-          "published_at": "2026-09-07T01:18:17Z",
-          "first_seen_at": "2026-09-07T05:43:58.620443Z",
-          "last_seen_at": "2026-09-08T01:03:00.633031Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "skill"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "d7279c0d493e7388f747a5b387aace3de8ad3184",
-          "site_id": "zeli",
-          "site_name": "Zeli",
-          "source": "Hacker News · 24h最热",
-          "title": "MathKernel: An evidence-aware multi-engine mathematics kernel and MCP server",
-          "url": "https://github.com/Staatsgeheim/MathKernel",
-          "published_at": "2026-09-07T00:21:01Z",
-          "first_seen_at": "2026-09-07T05:43:58.620443Z",
-          "last_seen_at": "2026-09-07T23:05:31.792408Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "mcp"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 52
+      "other_count": 50
     },
     {
       "id": "defense-agent",
@@ -1334,7 +1319,7 @@
           "url": "https://blog.csdn.net/weixin_74809706/article/details/164296429",
           "published_at": null,
           "first_seen_at": "2026-09-07T11:27:29.124306Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "agent",
@@ -1362,6 +1347,74 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "ee7e2420da6636ee990629d17257182d9cee927c",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "新浪财经新闻 · 点击量排行",
+          "title": "“五角大楼暴露大问题”",
+          "url": "https://finance.sina.com.cn/roll/2026-09-10/doc-inirhrra8662623.shtml",
+          "published_at": null,
+          "first_seen_at": "2026-09-10T02:44:42.541745Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "五角大楼"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "996bd5881bdaa31eac8ae03c199a5839c34c0c8a",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "先知社区 · 精华推荐",
+          "title": "Arthas查杀Agent内存马的一次实践",
+          "url": "https://xz.aliyun.com/news/92797",
+          "published_at": null,
+          "first_seen_at": "2026-09-10T02:44:42.541745Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "03bcbc0465ae17f661b87b9ab1abc6d05f733a1a",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "V2EX (创意工作者社区)",
+          "title": "[求职] [求职 / 深圳南山 / Remote] 前端 / 全栈 / Agent 开发， node 贡献者，个人投入了很多方向",
+          "url": "https://www.v2ex.com/t/1240931",
+          "published_at": "2026-09-10T02:38:53Z",
+          "first_seen_at": "2026-09-10T02:44:42.541745Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "f9e026e138f2ac35174404dcd7842370d4df25b0",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Hacker News",
+          "title": "Muse, the band, lost its social media handles to Muse, Meta's new AI agent",
+          "url": "https://www.engadget.com/2254419/muse-the-band-lost-its-social-media-handles-to-muse-meta-s-new-ai-agent",
+          "published_at": "2026-09-09T23:57:29Z",
+          "first_seen_at": "2026-09-10T02:44:42.541745Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "97cd181ef6ce2eb838e267322f233e76f9a85483",
           "site_id": "buzzing",
           "site_name": "Buzzing",
@@ -1370,7 +1423,7 @@
           "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQS0NOSXBkaEhEcjcyU1VQWWFUVmJzTHUtYWhYMFFRcVlQdGpBWGpEbnlRUHFUR2Q3QjZMWkwwN2thR3FIZ3RvTFI5dmhkN1czbTVfbWZscjA5dmREbGxRMFF2bm5qT2ZwdV9VY2Q1WlA0OC1ERmNfdzdiRmF3elA1Z0VBSnY?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-09-09T23:24:54.054000Z",
           "first_seen_at": "2026-09-09T23:54:00.593158Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -1387,27 +1440,10 @@
           "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPYXl5NEhWdWhSUHJZanQ3LU5Jd0dyWHhUN1RYVVROUHFWcnV2WjEwNzl3VWtjX0cxanNGanNUV1NEZGZTeXYwNDh6T0tIT0hQYkVsTzZGNzA0SWlONVZWOEZwRmY1OWdGUmZLMmkyNWt2Uk5fQnFNWVF2ZlBXcmdfdmowSG9fUWJBWFE1MHU1bXdwYUpsb0EwSEVkSjEtYWFvRWpwd2lvdUpZZWdXOWNlRm5wRVV5N1plM1RUMGpXc1BwWTEwcWYyaDZ6emk?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-09-09T22:53:54.384000Z",
           "first_seen_at": "2026-09-09T23:54:00.593158Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "259916d53d2e233b763fd7e7ebb57576f0b90b28",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "Engadget",
-          "title": "Muse, the band, lost its social media handles to Muse, Meta's new AI agent",
-          "url": "https://www.engadget.com/2254419/muse-the-band-lost-its-social-media-handles-to-muse-meta-s-new-ai-agent",
-          "published_at": "2026-09-09T22:52:49Z",
-          "first_seen_at": "2026-09-09T23:54:00.593158Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -1421,7 +1457,7 @@
           "url": "https://reut.rs/3SyCSNC",
           "published_at": "2026-09-09T22:37:22.170000Z",
           "first_seen_at": "2026-09-09T23:54:00.593158Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -1438,7 +1474,7 @@
           "url": "https://www.ft.com/content/4fc1dc2e-f0d7-433c-8e96-bc1e8923dcbc?syn-25a6b1a6=1",
           "published_at": "2026-09-09T21:49:28.522000Z",
           "first_seen_at": "2026-09-09T23:54:00.593158Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -1472,7 +1508,7 @@
           "url": "https://on.wsj.com/4ijroIf",
           "published_at": "2026-09-09T21:33:13.136000Z",
           "first_seen_at": "2026-09-09T21:43:29.149411Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -1489,7 +1525,7 @@
           "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNR3ZCR0RlUzJ5ZDVPQXVQUk1uQ0pmR0RwWjZMLVlhSTdhQlhVY1MzQ2RDSEg2MXc2UUN4ejY3c1RsOTVzTS1RZkNrMlhVSUhKVnZxbm5zM0pVcVFNbmljTDZBYWRlU21kYzRPR0xjZWZUcDdhR2FHUlczRnkyeWo0WTZTUEMwZ1hEMTNoVGhRdjdiZFFWZU1PWTJpMzR2anFHYlR6aWlFbGNHQVBYUWIzRTlR0gG6AUFVX3lxTFB3eWR6eTNCWGdUQ25UNnBOUC1yMk1hSmdkQmI3aWwzem1VNWthREg1TkFSdXhySGdJZ3YzcnR6V2k3bERCeVZKekhZeFZlanVHSTVZSUp6U0d2VGprSlQ0c0pHUXJyV1h3SkVOdVJxcEQwZ0Fxb2R3Yzh1cGNVeHVRQ2ZJTDJmS0U4LUxRVVBnenpIQUhTME83ZzlETEowWlJmc1d1X20zMFYxY3ZoTnU0X2Nwd0FfSUc3Zw?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-09-09T21:17:21.534000Z",
           "first_seen_at": "2026-09-09T21:43:29.149411Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -1506,7 +1542,7 @@
           "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPY3JTaC1oOWFvY2xYWEI5a3VVdTlpaktkSXJud0xnbTRNY3lNVzZoTU1zX2ZuZWZlckpSM0oxbHdZcUt1WnRlUFROeW80eDQxZEpQM2RQSlppcXRpNGpBMG1pb1FweXhwZjYydGtNNjM5cDVVVlo1d184UXRlUFUtTjhJN19nTjhKd2trWFF0a0g1SHByOHd6VWJFSFpwTVRZNk1TS1dZd3VkS3JS?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-09-09T20:31:18.385000Z",
           "first_seen_at": "2026-09-09T21:43:29.149411Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -1523,7 +1559,7 @@
           "url": "https://www.businessinsider.com/air-force-is-pushing-ai-into-its-training-pipelines-2026-9",
           "published_at": "2026-09-09T20:25:55Z",
           "first_seen_at": "2026-09-09T23:54:00.593158Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "air force"
@@ -1574,7 +1610,7 @@
           "url": "https://www.businessinsider.com/us-army-special-drone-unit-always-meant-to-be-temporary-2026-9",
           "published_at": "2026-09-09T19:21:36Z",
           "first_seen_at": "2026-09-09T21:43:29.149411Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "army"
@@ -1625,7 +1661,7 @@
           "url": "https://www.wired.com/story/i-used-ai-to-hack-my-home-network",
           "published_at": "2026-09-09T18:30:00Z",
           "first_seen_at": "2026-09-09T21:43:29.149411Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1710,7 +1746,7 @@
           "url": "https://www.woshipm.com/?p=6461734",
           "published_at": null,
           "first_seen_at": "2026-09-09T15:53:43.837078Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1727,7 +1763,7 @@
           "url": "https://www.36kr.com/p/3975654852702727",
           "published_at": null,
           "first_seen_at": "2026-09-09T15:53:43.837078Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1744,7 +1780,7 @@
           "url": "https://www.bbc.co.uk/news/articles/c3d7pzyjzllo?at_medium=RSS&at_campaign=rss",
           "published_at": "2026-09-09T15:33:26.534000Z",
           "first_seen_at": "2026-09-09T15:53:43.837078Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -1795,10 +1831,27 @@
           "url": "https://www.bbc.co.uk/news/articles/c3d7pzyjzllo?at_medium=RSS&at_campaign=rss",
           "published_at": "2026-09-09T15:01:58Z",
           "first_seen_at": "2026-09-09T15:53:43.837078Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "military"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "245fbd2d97343220e521b0d95510f7c9aecdb5e3",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "日本针对中国的军事扩张正考验着劳动力、预算和政治方面的极限 - South China Morning Post",
+          "url": "https://news.google.com/read/CBMi0gFBVV95cUxQbWlLNS1zRzFaeFh0bVFZMWtUaGlVSDFkMjF2d1lsbE9KTkctb1NjNTFyWTM3dG9lczBjOEJza0ZaSDB0YVNveFc5VG4zNHZwNnpQcE5hUm5OdEpkVGRyNkF5ZUROZ2dvbGpkNG83cUNBZktyRTVJb1Q0dmk5dF9ZSi1SdlpieUZvNEtIRWtma2FHbWszSng4YXFWSl9XNlVWZmFOcjVDZXBMOUkwMzBSOHlYQXE3QklUTHF4UlVINjJRQmRwTDNlY1dzVkwtM2FSdUHSAdIBQVVfeXFMUDEzYlBhdXJjNHR0dFdoaGZ1OENVbS1ib3lXWE5zV2lUY29XYnJVUTZQdlVRbW1HOTh2THdSNnVOeERHSFl2U3F5TkdjSU5WbGp5ei0yUnZLY2RneXNMRHVpTUloRGdwUVUyNzZDQ25PMHRudjRsazNRVHJUbE9GQ2FiY19lZXhEd29PcXV0T3Bncmhhb3pPY01BZEFlSlhaaU1pdDluWlBhcV9OYW5sVXhOVWEyWi1fclByNEVqbG5KNXV5RmMtX25RZGZkbnVPMDR3?hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-09-09T15:00:09Z",
+          "first_seen_at": "2026-09-10T02:44:42.541745Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "军事"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -1965,7 +2018,7 @@
           "url": "https://www.woshipm.com/?p=6462099",
           "published_at": null,
           "first_seen_at": "2026-09-09T11:48:49.078255Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2033,7 +2086,7 @@
           "url": "https://www.aibase.com/news/30933",
           "published_at": "2026-09-09T11:48:49.078255Z",
           "first_seen_at": "2026-09-09T11:48:49.078255Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2305,7 +2358,7 @@
           "url": "https://www.bbc.co.uk/news/articles/cyvznqypz0yo?at_medium=RSS&at_campaign=rss",
           "published_at": "2026-09-09T05:50:30.021000Z",
           "first_seen_at": "2026-09-09T06:24:44.400414Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2475,7 +2528,7 @@
           "url": "https://arstechnica.com/science/2026/09/nih-to-use-part-of-its-budget-to-pay-for-department-of-defense-research",
           "published_at": "2026-09-09T02:09:29.007000Z",
           "first_seen_at": "2026-09-09T06:24:44.400414Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "国防"
@@ -2594,7 +2647,7 @@
           "url": "https://www.bbc.co.uk/news/articles/cd94j8e9n12o?at_medium=RSS&at_campaign=rss",
           "published_at": "2026-09-08T23:11:41Z",
           "first_seen_at": "2026-09-08T23:39:24.028920Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "pentagon"
@@ -2781,7 +2834,7 @@
           "url": "https://meta.slashdot.org/story/26/09/08/2012246/meta-debuts-muse-its-long-planned-personal-ai-agent",
           "published_at": "2026-09-08T21:00:00Z",
           "first_seen_at": "2026-09-08T23:39:24.028920Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2951,7 +3004,7 @@
           "url": "https://www.nytimes.com/2026/09/08/technology/meta-muse-ai-agent.html",
           "published_at": "2026-09-08T19:00:03Z",
           "first_seen_at": "2026-09-08T21:27:27.093140Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3070,7 +3123,7 @@
           "url": "https://blog.csdn.net/m0_68390957/article/details/164632225",
           "published_at": null,
           "first_seen_at": "2026-09-08T18:24:01.196249Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -3145,74 +3198,6 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "07272c1d5f1acf6dc557caf23cb7b45ec985a43f",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "基辅一栋乌克兰电视台大楼遭俄罗斯无人机袭击，造成5人死亡 - BBC",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBqczB3d0ZsWjVKSDZQOWZZTHJ5bVdqNjFDQ0FpQ29PbjFSV0swMzlHaWc0MzMzeDJrQ1N5TnpHeVhQSGRxOS14aGpXVl96ekFkdktRY3FiV0JIQQ?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-09-08T16:50:10.224000Z",
-          "first_seen_at": "2026-09-08T18:24:01.196249Z",
-          "last_seen_at": "2026-09-08T18:24:01.196249Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "a3e40f41f3d4c67c3e4f2090ff6b196cdcb869b9",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "基辅一处乌克兰电视台大楼遭俄罗斯无人机袭击，造成5人死亡 - BBC",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBqczB3d0ZsWjVKSDZQOWZZTHJ5bVdqNjFDQ0FpQ29PbjFSV0swMzlHaWc0MzMzeDJrQ1N5TnpHeVhQSGRxOS14aGpXVl96ekFkdktRY3FiV0JIQQ?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-09-08T16:50:09.186000Z",
-          "first_seen_at": "2026-09-08T18:24:01.196249Z",
-          "last_seen_at": "2026-09-08T21:27:27.093140Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "464da847eeceacbe0c31f966a144a49f928cabb4",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "www.theguardian.com",
-          "title": "五角大楼的大规模测谎测试暴露了赫格塞斯的软肋 玛格丽特·沙利文",
-          "url": "https://www.theguardian.com/commentisfree/2026/sep/08/pentagon-polygraphs-pete-hegseth-weakness",
-          "published_at": "2026-09-08T15:46:05.559000Z",
-          "first_seen_at": "2026-09-08T18:24:01.196249Z",
-          "last_seen_at": "2026-09-08T18:24:01.196249Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "五角大楼"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "fc0a20e92504a4d084633df522fc82523599232c",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "IT之家 (ITHome)",
-          "title": "消息称 WhatsApp 将支持第三方 AI 智能体，顺应时代潮流",
-          "url": "https://www.ithome.com/0/999/948.htm",
-          "published_at": "2026-09-08T15:36:33Z",
-          "first_seen_at": "2026-09-08T18:24:01.196249Z",
-          "last_seen_at": "2026-09-09T01:34:53.415353Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
@@ -3222,8 +3207,26 @@
     {
       "id": "ai-for-science",
       "name": "AI+科研",
-      "count": 27,
+      "count": 32,
       "items": [
+        {
+          "id": "25610fb1e0bd84a90be88593aaa9abfd417b3f6d",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "TechCrunch",
+          "title": "AI research startup Listen Labs scrubbed a $1.5B funding round for Salesforce talks",
+          "url": "https://techcrunch.com/2026/09/09/ai-research-startup-listen-labs-scrubbed-a-1-5b-funding-round-for-salesforce-talks",
+          "published_at": "2026-09-10T00:00:37Z",
+          "first_seen_at": "2026-09-10T02:44:42.541745Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
+          "watch_score": 4,
+          "watch_matched_terms": [
+            "ai research",
+            "combo:ai+science"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
         {
           "id": "fdf1ec36b71e189d8bd0e2da8718dc0e18ccfe7e",
           "site_id": "techurls",
@@ -3243,6 +3246,57 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "e19f4cbaef1b21250843bccbe723e44b43a61f29",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "Readhub · AI",
+          "title": "Quoting Calif Research：发布首个通过微信通话传播的零点击蠕虫 WeWorm 演示",
+          "url": "https://simonwillison.net/2026/Sep/10/calif-research",
+          "published_at": null,
+          "first_seen_at": "2026-09-10T02:44:42.541745Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
+          "watch_score": 3,
+          "watch_matched_terms": [
+            "combo:ai+science"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "9ccc0725e472fcb1ee8076b22227938e5a28f831",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Techmeme",
+          "title": "AI researcher Jacob Coxon says he quit Anthropic after four months, two months before his equity would have vested; he still has equity in prior employer OpenAI (Madison Mills/Axios)",
+          "url": "https://www.techmeme.com/260909/p52",
+          "published_at": "2026-09-10T01:55:02Z",
+          "first_seen_at": "2026-09-10T02:44:42.541745Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
+          "watch_score": 3,
+          "watch_matched_terms": [
+            "combo:ai+science"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "61947b6335c48f0329317fe0820434ccb8bbb00c",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "MakeUseOf",
+          "title": "An Anthropic researcher thinks AI could kill us all within a decade, I'm worried it won't have to",
+          "url": "https://www.makeuseof.com/an-anthropic-researcher-thinks-ai-could-kill-us-all-in-a-few-years",
+          "published_at": "2026-09-10T00:00:09Z",
+          "first_seen_at": "2026-09-10T02:44:42.541745Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
+          "watch_score": 3,
+          "watch_matched_terms": [
+            "combo:ai+science"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "85a3afb18ae6847d9e45f65458e1b9ad059e582a",
           "site_id": "techurls",
           "site_name": "TechURLs",
@@ -3251,7 +3305,7 @@
           "url": "https://www.wired.com/story/anthropic-researcher-quits-jacob-coxon-ai-fears-humanity",
           "published_at": "2026-09-09T22:11:55Z",
           "first_seen_at": "2026-09-09T23:54:00.593158Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3268,7 +3322,7 @@
           "url": "https://www.techmeme.com/260909/p45",
           "published_at": "2026-09-09T21:45:02Z",
           "first_seen_at": "2026-09-09T23:54:00.593158Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3285,7 +3339,7 @@
           "url": "https://slashdot.org/story/26/09/09/1943258/anthropic-researcher-believes-more-than-10-chance-ai-could-kill-all-humans",
           "published_at": "2026-09-09T21:00:00Z",
           "first_seen_at": "2026-09-09T21:43:29.149411Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3336,7 +3390,7 @@
           "url": "https://www.businessinsider.com/salesforce-acquire-ai-startup-listen-labs-2026-9",
           "published_at": "2026-09-09T19:01:53Z",
           "first_seen_at": "2026-09-09T21:43:29.149411Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3353,7 +3407,7 @@
           "url": "https://arstechnica.com/ai/2026/09/anthropic-researcher-quits-with-a-warning-self-improving-ai-could-kill-us-all",
           "published_at": "2026-09-09T16:59:40Z",
           "first_seen_at": "2026-09-09T19:08:45.395943Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3387,7 +3441,7 @@
           "url": "https://www.cbsnews.com/news/ai-kill-humans-anthropic-researcher-more-than-ten-percent-chance",
           "published_at": "2026-09-09T15:10:39Z",
           "first_seen_at": "2026-09-09T15:53:43.837078Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3455,7 +3509,7 @@
           "url": "https://www.bbc.co.uk/news/articles/ckgwy1k42w4o?at_medium=RSS&at_campaign=rss",
           "published_at": "2026-09-09T08:59:52Z",
           "first_seen_at": "2026-09-09T11:48:49.078255Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3651,6 +3705,23 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "5542b6fb64fe604c40c6607808dba6e78a3516db",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "phys.org",
+          "title": "蛛螨为科学研究提供助力",
+          "url": "https://phys.org/news/2026-09-trapdoor-spiders-leg-science.html",
+          "published_at": "2026-09-10T01:31:52.048000Z",
+          "first_seen_at": "2026-09-10T02:44:42.541745Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "科学研究"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "db286a0d0a7d4c79d4b350059b3f32c143df1576",
           "site_id": "tophub",
           "site_name": "TopHub",
@@ -3659,7 +3730,7 @@
           "url": "https://www.qbitai.com/2026/09/486370.html",
           "published_at": null,
           "first_seen_at": "2026-09-09T11:48:49.078255Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "ai4s"
@@ -3676,7 +3747,7 @@
           "url": "https://new.qq.com/rain/a/20260909Q05X8M00",
           "published_at": null,
           "first_seen_at": "2026-09-09T06:24:44.400414Z",
-          "last_seen_at": "2026-09-09T23:54:00.593158Z",
+          "last_seen_at": "2026-09-10T02:44:42.541745Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "科学研究"
@@ -3687,7 +3758,7 @@
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 27
+      "other_count": 32
     }
   ]
 }
