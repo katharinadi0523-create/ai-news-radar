@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-12T12:21:21.900631Z",
+  "generated_at": "2026-09-12T15:05:27.013942Z",
   "window_days": 3,
-  "source_generated_at": "2026-09-12T12:02:23.507147Z",
+  "source_generated_at": "2026-09-12T14:57:39.697645Z",
   "source_window_hours": 24,
   "source_topic_filter": "ai_tech_robotics",
   "output_name": "special-focus",
   "section_count": 6,
-  "total_items": 223,
+  "total_items": 226,
   "official_error_count": 0,
   "official_errors": [],
   "sections": [
@@ -169,8 +169,26 @@
     {
       "id": "knowledge-graph",
       "name": "知识图谱",
-      "count": 3,
+      "count": 4,
       "items": [
+        {
+          "id": "8812e12f3f4581c4ac8619759773cb76f712c452",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.ycombinator.com",
+          "title": "Novgraph：面向代码库的持久化知识图谱",
+          "url": "https://news.ycombinator.com/item?id=49672213",
+          "published_at": "2026-09-12T13:42:42.984000Z",
+          "first_seen_at": "2026-09-12T14:57:39.697645Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
+          "watch_score": 2,
+          "watch_matched_terms": [
+            "知识图谱",
+            "图谱"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
         {
           "id": "b7e23ee5247813c70bed96cf58476285ae390a03",
           "site_id": "buzzing",
@@ -225,27 +243,77 @@
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 3
+      "other_count": 4
     },
     {
       "id": "skills",
       "name": "Skills",
-      "count": 45,
+      "count": 47,
       "items": [
         {
-          "id": "4e2d99540f7aa023db1f5352959e1f27f2506dd5",
+          "id": "3f6ed2d16217abd1e638b29a3f7b7cadfcaf4cbf",
+          "site_id": "newsnow",
+          "site_name": "NewsNow",
+          "source": "juejin",
+          "title": "用 AI 做短剧出海，赚麻了！（附 Skill 及教程）",
+          "url": "https://juejin.cn/post/7684069447021035562",
+          "published_at": "2026-09-12T14:58:10.668000Z",
+          "first_seen_at": "2026-09-12T14:57:39.697645Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "skill"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "abdf1aaefdad61b10d57eb2b3129e6250632340e",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "tachyonmcp.dev",
+          "title": "Show HN: 用于虚拟线程的 Java MCP 运行时",
+          "url": "https://tachyonmcp.dev",
+          "published_at": "2026-09-12T13:42:43.282000Z",
+          "first_seen_at": "2026-09-12T14:57:39.697645Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "mcp"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "444f1f2e62221daf1727e0001354ae791e4b6476",
           "site_id": "buzzing",
           "site_name": "Buzzing",
           "source": "github.com",
-          "title": "Show HN: Tripwire——适用于 AI 技能和 MCP 服务器的沙箱式安全扫描器",
-          "url": "https://github.com/neomatrix369/tripwire",
-          "published_at": "2026-09-09T14:15:38.084000Z",
-          "first_seen_at": "2026-09-09T15:53:43.837078Z",
-          "last_seen_at": "2026-09-09T15:53:43.837078Z",
-          "watch_score": 2,
+          "title": "Show HN: ArchBench 推出的 Blender MCP",
+          "url": "https://github.com/3d-mcp/blender-mcp",
+          "published_at": "2026-09-12T13:10:31.331000Z",
+          "first_seen_at": "2026-09-12T14:57:39.697645Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
+          "watch_score": 1,
           "watch_matched_terms": [
-            "mcp",
-            "技能"
+            "mcp"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "9ce55557a7108e7e1bd8f704d6fae8050b2d21ed",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.producthunt.com",
+          "title": "QApilot MCP for Android - 在您的编码代理中进行 Android 应用测试",
+          "url": "https://www.producthunt.com/r/CHCYBUSI4J3W2B",
+          "published_at": "2026-09-12T12:08:32.901000Z",
+          "first_seen_at": "2026-09-12T14:57:39.697645Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "mcp"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -259,7 +327,7 @@
           "url": "https://www.woshipm.com/?p=6463672",
           "published_at": null,
           "first_seen_at": "2026-09-12T12:02:23.507147Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "skill"
@@ -276,7 +344,7 @@
           "url": "https://www.producthunt.com/products/qapilot",
           "published_at": "2026-09-12T11:47:12.016000Z",
           "first_seen_at": "2026-09-12T12:02:23.507147Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -293,7 +361,7 @@
           "url": "https://www.producthunt.com/r/2YCIFX5SDWGMX6",
           "published_at": "2026-09-12T10:04:37.439000Z",
           "first_seen_at": "2026-09-12T12:02:23.507147Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "mcp"
@@ -310,7 +378,7 @@
           "url": "https://www.techmeme.com/260912/p1",
           "published_at": "2026-09-12T04:50:02Z",
           "first_seen_at": "2026-09-12T07:43:16.925123Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "workflow"
@@ -514,7 +582,7 @@
           "url": "https://new.qq.com/rain/a/20260911Q0EBIN00",
           "published_at": null,
           "first_seen_at": "2026-09-11T12:26:37.596232Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "技能"
@@ -980,34 +1048,35 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "f057d8b08e9c17ff5c692544b8e989f61c06866c",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "suomiatlas.com",
-          "title": "Show HN: 利用 MCP 服务器，查看每个芬兰邮政编码的公开统计数据",
-          "url": "https://suomiatlas.com/en/mcp",
-          "published_at": "2026-09-09T14:30:26.041000Z",
-          "first_seen_at": "2026-09-09T15:53:43.837078Z",
-          "last_seen_at": "2026-09-09T15:53:43.837078Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "mcp"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
       "official_count": 0,
-      "other_count": 45
+      "other_count": 47
     },
     {
       "id": "defense-agent",
       "name": "国防类Agent",
       "count": 120,
       "items": [
+        {
+          "id": "2ef348e8a4080f2625d8d2950f1878d4aa707d16",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "伊拉克总理办公室称，一名军事指挥官因针对沙特阿拉伯的无人机袭击事件被解职 - Reuters",
+          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOX2R4RE5oY1k0NjdIODFzRjJQRk9WdC1jazVkWWs4UnMxQWdfaS1JSnVNbXRiUHdDUkxFRjhMZ05GMXdoRVgzYXExUW1kUElyeG5ZaUNaRnF0UUE5ejA1aDZ4MURaRHhpWDZNM1AxN3VXX1FZRjd3WVdXbEFVOHhKeXNaZFNIcDdSaW4zbWtXd2xxSGdrb2dEMURrUWtpd1ZYQWJTQUhzVHNRb3RrQ2otM0tmSDh4dkVYaXNKUkZLMjIyOS1XUlN5ag?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-09-12T13:42:43.650000Z",
+          "first_seen_at": "2026-09-12T14:57:39.697645Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
+          "watch_score": 2,
+          "watch_matched_terms": [
+            "军事",
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
         {
           "id": "25436d6e9132e743ef8de8819985921da2468a2e",
           "site_id": "iris",
@@ -1017,7 +1086,7 @@
           "url": "https://www.v2ex.com/t/1241569",
           "published_at": "2026-09-12T10:35:14Z",
           "first_seen_at": "2026-09-12T12:02:23.507147Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 2,
           "watch_matched_terms": [
             "agent",
@@ -1117,6 +1186,159 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "e3feeed129f4ee17f0d0edfcb17fabb7dc785cfc",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "虎扑社区 · 步行街热帖",
+          "title": "蜀汉军事能力最强的是谁？",
+          "url": "https://bbs.hupu.com/642388425.html",
+          "published_at": null,
+          "first_seen_at": "2026-09-12T14:57:39.697645Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "军事"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "b1a64a60f8175dccf38ba3895f719507219b64ce",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "在约旦河西岸定居者对峙期间，一名以色列国防军士兵被拍到向一名巴勒斯坦人腿部开枪 - The Guardian",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNTVySVVVMHB5a3JoYlZhRzFEcXFlVGJQeGE4ZUhMekZleTdkRmdIZGN1NzFEbldNVFZORV9jdTU5Y05zNGNQTDhsNDUzbFY3RTByc2dWUDhzaWFSQ1RKQWpSTzJFS0RhakpkLWZHRDhxT01pQnRuYkRVUHBYVWZyY0dKTk96V25OS1hBczdmTGZoZllFYTQ1ajRQTWlhTkxNZTk4RVcxVmZFaHdhQkN2bWdjS21iakdOeG8xa1UtN3R0UQ?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-09-12T14:46:41.879000Z",
+          "first_seen_at": "2026-09-12T14:57:39.697645Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "48ba4d0204b60f8e339276cea5b5f4bccb1d6f9e",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "乌克兰的“无人机革命”面临最严峻的考验——而这考验并非来自俄罗斯 - Newsweek",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNMmYxZy01elJYb1pIVGdteWJWTVlZUG92SDNwZngtRDBoODl3M18wdWlSODZQWUJhVjNkOFFncmloZnlyWGZrMWJOUmlBWXNjSW1mZWxrVEpmWktZR0ZFVE5YRmFHTk5kN1dYMHFNU2F5Q1BXQzlob2JtNXBJeHVsYlVRUFdZTW5OT20wRA?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-09-12T14:46:41.862000Z",
+          "first_seen_at": "2026-09-12T14:57:39.697645Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "9f79e87d33167a7cc4d0956e46833a98b37ff83e",
+          "site_id": "techurls",
+          "site_name": "TechURLs",
+          "source": "Engadget",
+          "title": "How to get started with Meta's new AI agent, Muse",
+          "url": "https://www.engadget.com/2256577/how-to-get-started-with-meta-s-new-ai-agent-muse",
+          "published_at": "2026-09-12T14:00:00Z",
+          "first_seen_at": "2026-09-12T14:57:39.697645Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "1b31bbe1cf620d27e4c38d14b3efb2ecc0c1fd9b",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.theguardian.com",
+          "title": "在约旦河西岸定居者对峙期间，一名以色列国防军士兵被拍到向一名巴勒斯坦人腿部开枪",
+          "url": "https://www.theguardian.com/world/2026/sep/12/idf-soldier-filmed-shooting-palestinian-in-leg-amid-west-bank-settler-standoff",
+          "published_at": "2026-09-12T13:59:29.494000Z",
+          "first_seen_at": "2026-09-12T14:57:39.697645Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "国防"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "eaa0acac3333068b3ab0d6bd03b302de4571215b",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "沙特阿拉伯因无人机袭击关闭关键输油管道：这意味着什么 - Al Jazeera",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxORUJVdmZzRjhhZXFCWHhYMXhRSlJQRGdySlNwQW41dkJaRXd1ZnBlbE5ZR2c5Wk5xYTNRRzJNRzUxTF9oN095Mi0taGRZaXpOZVNtYlJVSjFpNkV5NjBuQXBmb1dTWUs3RmNsQlVPWEh5WnFFc0plcDNnUDNjUVpiZUN2M0VrX0xQVXVoLXNoa2hQelVfa19LX3F2R3BwTExwV0JkLWJKNFRMd1BJX1k0VFJVUkLSAboBQVVfeXFMTktuU3M2eUZqUkt0aVBWRGpUQVQxZGNRRHVfTG9CMXlGbTljTm43SkFYVWR3UzBxSGRyR2tOQUx6M0lvdzVYcWNsNnBVNVhJR3FwRUJKRmszaE5CUUE2UWk4dDJySHcxTWpsdjJZbnVYYjRzOFpOQU0wZHVvT1BlS2V6VXpQWTUyYmhfRHJyWkFfdS1JSUlUQU5WNnQwNDYzSTdXSGV5S0xCaTNqTE83YjF4aXViNnVtMk53?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-09-12T12:55:19.411000Z",
+          "first_seen_at": "2026-09-12T14:57:39.697645Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "d84ec28b4670765e25a013da5f9805d52b329be0",
+          "site_id": "iris",
+          "site_name": "Info Flow",
+          "source": "V2EX (创意工作者社区)",
+          "title": "[程序员] 做了个做数学动画的 Coding Agent 接入了我的 Manim Workspace.",
+          "url": "https://www.v2ex.com/t/1241585",
+          "published_at": "2026-09-12T12:40:35Z",
+          "first_seen_at": "2026-09-12T14:57:39.697645Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "c6995adda98f3b0868758cd3b76d356eafcdce6c",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "www.bloomberg.com",
+          "title": "伊拉克因无人机袭击沙特输油管道一事解除了迈桑省指挥官的职务",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-12/iraq-fires-maysan-commander-after-drone-attacks-on-saudi-arabia-s-pipeline",
+          "published_at": "2026-09-12T12:24:26.096000Z",
+          "first_seen_at": "2026-09-12T14:57:39.697645Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "无人机"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "61a3459fb29e9b92753e310150a53c1f1fde5494",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "研究人员称，在Hugging Face事件发生前，OpenAI的智能体曾对RubyGems发起攻击 - reuters.com",
+          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNV2F3RkRiVXZra3BTMExtX3lNVHBEV0xTbkxBMXNwaDVIOGtkeXJEWXRxeEd3dDlLbW5kOUdrQlFnXzVZTk9YRXMxdFRRVGpfR0puUjkyYXozVHJsVXVHTlhSNDVyZjlxMkVwNnU0a2pMMzdOSTdsaTJ4d2E2R1FLbU8wb0VVbW9GUzRsa0VTYUJhN24yRDNTTmtnYkpRUHVlN002SG54czB5UzRsTEtMLUxSSVgyN19xcnRwaGowODRJMXk3ZVNwRDNB?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-09-12T12:08:33.798000Z",
+          "first_seen_at": "2026-09-12T14:57:39.697645Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "e57e86a74077a91e8ee14c59e64cc4a0b91104d8",
           "site_id": "tophub",
           "site_name": "TopHub",
@@ -1142,7 +1364,7 @@
           "url": "https://www.leiphone.com/category/industrynews/XOOL34t59O0TvCAQ.html",
           "published_at": null,
           "first_seen_at": "2026-09-12T12:02:23.507147Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1159,7 +1381,7 @@
           "url": "https://juejin.cn/post/7683448371321274404",
           "published_at": "2026-09-12T11:48:27.949000Z",
           "first_seen_at": "2026-09-12T12:02:23.507147Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1176,7 +1398,7 @@
           "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQRkF5V0hjRURGQjc2Vm9nSUYtNmRJNDNLN0Z3Nmpoa1lVZkpKQ3g4Mld2dDd0ajgwM0xvOWM2QURyUjBJbDV3SXJKZlNhN3FQT3U0cHhSSElCWTJPdlpWTTdIWWpvVnJFTHYtSGQxTXlKUTBPbUFnMEViX2xTUm83c2M3MFhFM3BzMTFoMHAtZFVrOGQxVVpRVHFwWHZFZC1IV2lGUTVmbw?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
           "published_at": "2026-09-12T11:21:26.071000Z",
           "first_seen_at": "2026-09-12T12:02:23.507147Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -1185,15 +1407,15 @@
           "monitor_class_label": "其他来源"
         },
         {
-          "id": "c61cb98023610d60fbdf5e96b115c4dbfe7cb41a",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "Hacker News (黑客新闻)",
+          "id": "f1d494e40728b9067d2a7707ef1c7daf58f96190",
+          "site_id": "zeli",
+          "site_name": "Zeli",
+          "source": "Hacker News · 24h最热",
           "title": "The Worst Spam Emails: Inside iLands' AI Agent Hustle",
           "url": "https://tedium.co/2026/09/11/ilands-agents-email-spam-kaixin-tang",
           "published_at": "2026-09-12T11:13:38Z",
-          "first_seen_at": "2026-09-12T12:02:23.507147Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "first_seen_at": "2026-09-12T14:57:39.697645Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1210,10 +1432,27 @@
           "url": "https://www.techradar.com/pro/mark-zuckerbergs-muse-personal-ai-agent-is-a-work-accessory-designed-by-people-who-dont-do-real-work",
           "published_at": "2026-09-12T11:00:00Z",
           "first_seen_at": "2026-09-12T12:02:23.507147Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
+          "id": "e0361cdd85c7f04c2538d7335ce7a1333e37753b",
+          "site_id": "buzzing",
+          "site_name": "Buzzing",
+          "source": "news.google.com",
+          "title": "报告称，中国人工智能产业正从模型转向智能体 - Bloomberg.com",
+          "url": "https://news.google.com/read/CBMisAFBVV95cUxOVWZoVUlWbWxZN3AtY3lReUx6MDFZTGlVeDcxZ0NOYkNsRHhyMUg3Q0wxVUpwVzRRYnplWVljX3lJUXV5a2QycUpkamVKLV9XaGEzRWctNERkZkdFdFhBOXlUclpRek40ZE9NM09QT1d1T3NnamN0MnVMcXgtcUFsSGJTeTN5dUZCV3BmNHNuNEgzbnY5S2JiZkotUkI3S3doRkZMOXFicUZuc3Q2WGh0aA?hl=en-US&gl=US&ceid=US%3Aen",
+          "published_at": "2026-09-12T09:37:47Z",
+          "first_seen_at": "2026-09-12T14:57:39.697645Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
+          "watch_score": 1,
+          "watch_matched_terms": [
+            "智能体"
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
@@ -1227,7 +1466,7 @@
           "url": "https://www.v2ex.com/t/1241549",
           "published_at": "2026-09-12T07:51:08Z",
           "first_seen_at": "2026-09-12T12:02:23.507147Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1244,7 +1483,7 @@
           "url": "https://blog.csdn.net/qq_41840843/article/details/164982405",
           "published_at": null,
           "first_seen_at": "2026-09-12T07:43:16.925123Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -1278,7 +1517,7 @@
           "url": "https://blog.csdn.net/2403_87933448/article/details/164821381",
           "published_at": null,
           "first_seen_at": "2026-09-12T07:43:16.925123Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1295,7 +1534,7 @@
           "url": "https://new.qq.com/rain/a/20260912Q05FEH00",
           "published_at": null,
           "first_seen_at": "2026-09-12T07:43:16.925123Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -1363,7 +1602,7 @@
           "url": "https://www.bbc.co.uk/news/articles/c62m933465eo?at_medium=RSS&at_campaign=rss",
           "published_at": "2026-09-12T05:21:33.792000Z",
           "first_seen_at": "2026-09-12T07:43:16.925123Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -1397,7 +1636,7 @@
           "url": "https://www.huxiu.com/article/4890626.html?f=rss",
           "published_at": "2026-09-12T02:55:44Z",
           "first_seen_at": "2026-09-12T07:43:16.925123Z",
-          "last_seen_at": "2026-09-12T07:43:16.925123Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1414,7 +1653,7 @@
           "url": "https://www.oschina.net/news/502428",
           "published_at": null,
           "first_seen_at": "2026-09-12T02:47:49.365190Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1516,7 +1755,7 @@
           "url": "https://www.rubyhack.ai",
           "published_at": "2026-09-12T00:24:20.561000Z",
           "first_seen_at": "2026-09-12T02:47:49.365190Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -1686,7 +1925,7 @@
           "url": "https://www.qbitai.com/2026/09/487631.html",
           "published_at": null,
           "first_seen_at": "2026-09-11T19:32:04.171421Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1720,7 +1959,7 @@
           "url": "https://blog.csdn.net/sinat_41617212/article/details/164831582",
           "published_at": null,
           "first_seen_at": "2026-09-11T19:32:04.171421Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1754,7 +1993,7 @@
           "url": "https://dev.to/devengers/dev-opportunity-radar-16-15k-ai-agent-hackathon-ai-education-fellowship-and-aws-student-rewards-4l2e",
           "published_at": "2026-09-11T17:48:05.355000Z",
           "first_seen_at": "2026-09-11T19:32:04.171421Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -1822,7 +2061,7 @@
           "url": "https://juejin.cn/post/7683481485497188403",
           "published_at": null,
           "first_seen_at": "2026-09-11T16:49:32.749362Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1856,7 +2095,7 @@
           "url": "https://www.huxiu.com/article/4890597.html?f=rss",
           "published_at": "2026-09-11T16:01:00Z",
           "first_seen_at": "2026-09-11T16:49:32.749362Z",
-          "last_seen_at": "2026-09-12T07:43:16.925123Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -1873,7 +2112,7 @@
           "url": "https://www.businessinsider.com/anthropic-says-threat-actors-used-claude-for-weapons-2026-9",
           "published_at": "2026-09-11T15:56:54.137000Z",
           "first_seen_at": "2026-09-11T16:49:32.749362Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "无人机"
@@ -1890,7 +2129,7 @@
           "url": "http://dlvr.it/TVRDDd",
           "published_at": "2026-09-11T15:56:54.133000Z",
           "first_seen_at": "2026-09-11T16:49:32.749362Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -2111,7 +2350,7 @@
           "url": "https://www.wsj.com/tech/ai/pentagon-in-talks-to-get-into-ai-infrastructure-funding-with-a-5-billion-loan-0367eeb0",
           "published_at": "2026-09-11T12:46:12.229000Z",
           "first_seen_at": "2026-09-11T16:49:32.749362Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "五角大楼"
@@ -2128,7 +2367,7 @@
           "url": "https://www.aibase.com/news/31000",
           "published_at": "2026-09-11T12:26:37.596232Z",
           "first_seen_at": "2026-09-11T12:26:37.596232Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2315,7 +2554,7 @@
           "url": "https://www.newyorker.com/news/a-reporter-at-large/the-us-was-never-going-to-win-the-war-on-terror",
           "published_at": "2026-09-11T10:24:14.453000Z",
           "first_seen_at": "2026-09-11T12:26:37.596232Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "军事"
@@ -2468,7 +2707,7 @@
           "url": "https://www.aibase.com/news/30986",
           "published_at": "2026-09-11T07:35:44.844313Z",
           "first_seen_at": "2026-09-11T07:35:44.844313Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2502,7 +2741,7 @@
           "url": "https://www.oschina.net/news/502419",
           "published_at": null,
           "first_seen_at": "2026-09-11T07:35:44.844313Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2604,7 +2843,7 @@
           "url": "https://www.aibase.com/news/30991",
           "published_at": "2026-09-11T07:35:44.844313Z",
           "first_seen_at": "2026-09-11T07:35:44.844313Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2621,7 +2860,7 @@
           "url": "https://www.aibase.com/news/30988",
           "published_at": "2026-09-11T07:35:44.844313Z",
           "first_seen_at": "2026-09-11T07:35:44.844313Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "agent"
@@ -2638,7 +2877,7 @@
           "url": "https://www.aibase.com/news/30993",
           "published_at": "2026-09-11T07:35:44.844313Z",
           "first_seen_at": "2026-09-11T07:35:44.844313Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2672,7 +2911,7 @@
           "url": "https://www.aibase.com/news/30987",
           "published_at": "2026-09-11T07:35:44.844313Z",
           "first_seen_at": "2026-09-11T07:35:44.844313Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2689,7 +2928,7 @@
           "url": "https://www.aibase.com/news/30997",
           "published_at": "2026-09-11T07:35:44.844313Z",
           "first_seen_at": "2026-09-11T07:35:44.844313Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 1,
           "watch_matched_terms": [
             "智能体"
@@ -2866,193 +3105,6 @@
           ],
           "monitor_class": "other",
           "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "8692d836f0d5f218f0885c54181def4acee2c38a",
-          "site_id": "aibase",
-          "site_name": "AIbase",
-          "source": "AIbase",
-          "title": "OpenAI正式上线GPT-Live-1 API：支持打断处理、工具调用与电话智能体",
-          "url": "https://www.aibase.com/news/30973",
-          "published_at": "2026-09-11T02:38:18.933220Z",
-          "first_seen_at": "2026-09-11T02:38:18.933220Z",
-          "last_seen_at": "2026-09-11T02:38:18.933220Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "203a015bb18d6dfeecf440e05411fab1cd878a21",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "github.com",
-          "title": "Show HN: Kern Agent——一窥代理的思维",
-          "url": "https://github.com/oguzbilgic/kern-ai",
-          "published_at": "2026-09-11T02:13:31.055000Z",
-          "first_seen_at": "2026-09-11T02:38:18.933220Z",
-          "last_seen_at": "2026-09-11T07:35:44.844313Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "a54032a0e3030fe03a496ef2035f0cabc2481e62",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "V2EX (创意工作者社区)",
-          "title": "[分享创造] 每日推广，自己每天都在用的公网 NAT 多 Agent 管理工具，求关注，求试用，求反馈",
-          "url": "https://www.v2ex.com/t/1241208",
-          "published_at": "2026-09-11T01:12:19Z",
-          "first_seen_at": "2026-09-11T02:38:18.933220Z",
-          "last_seen_at": "2026-09-11T02:38:18.933220Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "agent"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "2fc4eb3d8b081eaf61c0767a022e0a0bb67c9b0d",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "TechRadar",
-          "title": "Boeing is turning the MQ-25 Stingray drone into an electronic warfare heavyweight",
-          "url": "https://www.techradar.com/pro/boeing-is-turning-the-mq-25-stingray-drone-into-an-electronic-warfare-heavyweight",
-          "published_at": "2026-09-11T01:05:00Z",
-          "first_seen_at": "2026-09-11T02:38:18.933220Z",
-          "last_seen_at": "2026-09-11T07:35:44.844313Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "warfare"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "6b3dffb93fcaede87875ca0b537b72d851c76b4f",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "Hacker News",
-          "title": "YouTuber, or someone, wants to send nice emails to active military personnel",
-          "url": "https://mic.sandboxx.us",
-          "published_at": "2026-09-11T01:04:33Z",
-          "first_seen_at": "2026-09-11T02:38:18.933220Z",
-          "last_seen_at": "2026-09-11T07:35:44.844313Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "military"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "c265bd2b66db07fa83e39401d86367bb57dc5582",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "据业内消息人士称，俄罗斯石油公司（Rosneft）位于里亚赞的炼油厂在遭遇无人机袭击后停产 - The Moscow Times",
-          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPNURrWGVkd3lxbjctUmNVWUQ1SE5abVJDSGZQUWxUdjdrRUZJdnBNMTZSRXZ1LWlRckdzQ0lDWDhHbEw2STNMUUhnb0RWTUlxamxtWUZuTDh4UTJDZE1LVy1rS295ZThxRUFuQ2ZBaGNRYV9pallHZVRnYmxGUllvWW9JbVVJX2VFTHlHckFLczBKdE5ST09KcmlPVF9GNndzTkVFUjI1N1dLQlg0ZVAyaHlSbWloaE1iRjZSNmtWa3B5VGl3czNv?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-09-11T00:53:43.914000Z",
-          "first_seen_at": "2026-09-11T02:38:18.933220Z",
-          "last_seen_at": "2026-09-11T07:35:44.844313Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "e3ee90897d0a17c11f35aaaa09a0613d130456d8",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "news.google.com",
-          "title": "据行业消息人士称，俄罗斯石油公司（Rosneft）位于里亚赞的炼油厂在遭遇无人机袭击后停产 - The Moscow Times",
-          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPNURrWGVkd3lxbjctUmNVWUQ1SE5abVJDSGZQUWxUdjdrRUZJdnBNMTZSRXZ1LWlRckdzQ0lDWDhHbEw2STNMUUhnb0RWTUlxamxtWUZuTDh4UTJDZE1LVy1rS295ZThxRUFuQ2ZBaGNRYV9pallHZVRnYmxGUllvWW9JbVVJX2VFTHlHckFLczBKdE5ST09KcmlPVF9GNndzTkVFUjI1N1dLQlg0ZVAyaHlSbWloaE1iRjZSNmtWa3B5VGl3czNv?oc=5&hl=en-US&gl=US&ceid=US%3Aen",
-          "published_at": "2026-09-11T00:53:43.707000Z",
-          "first_seen_at": "2026-09-11T02:38:18.933220Z",
-          "last_seen_at": "2026-09-11T07:35:44.844313Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "无人机"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "51a19428b940a0867a0094b5c1da98038e0ec4b0",
-          "site_id": "buzzing",
-          "site_name": "Buzzing",
-          "source": "developers.openai.com",
-          "title": "OpenAI 智能体 API",
-          "url": "https://developers.openai.com/api/docs/guides/agents-api/overview",
-          "published_at": "2026-09-11T00:37:32.816000Z",
-          "first_seen_at": "2026-09-11T02:38:18.933220Z",
-          "last_seen_at": "2026-09-11T16:49:32.749362Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "66d4fb9c671349a07b3d4c2ba6088f56c1557921",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "IT之家 (ITHome)",
-          "title": "OpenAI 扩大实时语音模型能力：GPT-Live-1 上线 API，支持打断处理、工具调用和电话语音智能体",
-          "url": "https://www.ithome.com/1/001/091.htm",
-          "published_at": "2026-09-11T00:28:22Z",
-          "first_seen_at": "2026-09-11T02:38:18.933220Z",
-          "last_seen_at": "2026-09-11T02:38:18.933220Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "cdbc8f536562a370a92d01795d560fa5d49af70a",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "TechRadar",
-          "title": "Palantir and Anduril awarded a $192 million US Army contract to build TITAN data-gathering system",
-          "url": "https://www.techradar.com/pro/palantir-and-anduril-have-been-awarded-a-usd192-million-us-army-contract-to-build-the-titan-data-gathering-system",
-          "published_at": "2026-09-11T00:15:00Z",
-          "first_seen_at": "2026-09-11T02:38:18.933220Z",
-          "last_seen_at": "2026-09-11T07:35:44.844313Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "army"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "7fb48027c0056c582d745b6150b85d9c32d1d48e",
-          "site_id": "iris",
-          "site_name": "Info Flow",
-          "source": "IT之家 (ITHome)",
-          "title": "商汤科技 AI 办公智能体“小浣熊”移动端 App 上线，提供苹果 iOS / 安卓版本",
-          "url": "https://www.ithome.com/1/001/079.htm",
-          "published_at": "2026-09-10T23:51:32Z",
-          "first_seen_at": "2026-09-11T02:38:18.933220Z",
-          "last_seen_at": "2026-09-11T02:38:18.933220Z",
-          "watch_score": 1,
-          "watch_matched_terms": [
-            "智能体"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
         }
       ],
       "source_mode": "mixed",
@@ -3083,6 +3135,23 @@
           "monitor_class_label": "其他来源"
         },
         {
+          "id": "8d221057b5e338e4ea430fefddb838276b82a270",
+          "site_id": "tophub",
+          "site_name": "TopHub",
+          "source": "Readhub · AI",
+          "title": "Nature | AI 开始预测细胞「下一步会发生什么」：蛋白质组虚拟细胞 ProteinTalks",
+          "url": "https://bydrug.pharmcube.com/news/detail/88df44cfd3e8d922aa2a7281e3eff5d9",
+          "published_at": null,
+          "first_seen_at": "2026-09-12T14:57:39.697645Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
+          "watch_score": 3,
+          "watch_matched_terms": [
+            "combo:ai+science"
+          ],
+          "monitor_class": "other",
+          "monitor_class_label": "其他来源"
+        },
+        {
           "id": "8390d4653828a0f3ac24851c551443564567622b",
           "site_id": "techurls",
           "site_name": "TechURLs",
@@ -3091,7 +3160,7 @@
           "url": "https://www.techmeme.com/260912/p3",
           "published_at": "2026-09-12T06:30:54Z",
           "first_seen_at": "2026-09-12T07:43:16.925123Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3125,7 +3194,7 @@
           "url": "https://www.techmeme.com/260911/p32",
           "published_at": "2026-09-11T22:45:41Z",
           "first_seen_at": "2026-09-11T23:56:25.774266Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3142,7 +3211,7 @@
           "url": "https://phys.org/news/2026-09-ai-hidden-human-proteins-reveals.html",
           "published_at": "2026-09-11T21:46:07.964000Z",
           "first_seen_at": "2026-09-11T21:58:45.177145Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3278,7 +3347,7 @@
           "url": "https://www.aibase.com/news/30999",
           "published_at": "2026-09-11T12:26:37.596232Z",
           "first_seen_at": "2026-09-11T12:26:37.596232Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3346,7 +3415,7 @@
           "url": "https://www.axios.com/2026/09/11/ai-warnings-biological-research-dangerous",
           "published_at": "2026-09-11T09:53:54.249000Z",
           "first_seen_at": "2026-09-11T12:26:37.596232Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3652,7 +3721,7 @@
           "url": "https://www.makeuseof.com/an-anthropic-researcher-thinks-ai-could-kill-us-all-in-a-few-years",
           "published_at": "2026-09-10T00:00:09Z",
           "first_seen_at": "2026-09-10T02:44:42.541745Z",
-          "last_seen_at": "2026-09-12T12:02:23.507147Z",
+          "last_seen_at": "2026-09-12T14:57:39.697645Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
@@ -3806,23 +3875,6 @@
           "published_at": "2026-09-09T15:10:39Z",
           "first_seen_at": "2026-09-09T15:53:43.837078Z",
           "last_seen_at": "2026-09-10T12:45:14.774082Z",
-          "watch_score": 3,
-          "watch_matched_terms": [
-            "combo:ai+science"
-          ],
-          "monitor_class": "other",
-          "monitor_class_label": "其他来源"
-        },
-        {
-          "id": "613f2624f162715781c319d362ef82bc591d431a",
-          "site_id": "techurls",
-          "site_name": "TechURLs",
-          "source": "TechCrunch",
-          "title": "‘Gambling with our lives’: Anthropic researcher quits, warns against self-improving AI",
-          "url": "https://techcrunch.com/2026/09/09/gambling-with-our-lives-anthropic-researcher-quits-warns-against-self-improving-ai",
-          "published_at": "2026-09-09T15:02:47Z",
-          "first_seen_at": "2026-09-09T15:53:43.837078Z",
-          "last_seen_at": "2026-09-09T19:08:45.395943Z",
           "watch_score": 3,
           "watch_matched_terms": [
             "combo:ai+science"
