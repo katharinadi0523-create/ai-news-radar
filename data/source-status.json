@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-27T00:26:53.658984Z",
+  "generated_at": "2026-11-27T09:02:59.358594Z",
   "sites": [
     {
       "site_id": "techurls",
       "site_name": "TechURLs",
       "ok": true,
       "item_count": 405,
-      "duration_ms": 552,
+      "duration_ms": 496,
       "error": null
     },
     {
@@ -14,7 +14,7 @@
       "site_name": "Buzzing",
       "ok": true,
       "item_count": 744,
-      "duration_ms": 326,
+      "duration_ms": 295,
       "error": null
     },
     {
@@ -22,7 +22,7 @@
       "site_name": "Info Flow",
       "ok": false,
       "item_count": 0,
-      "duration_ms": 181329,
+      "duration_ms": 180931,
       "error": "HTTPSConnectionPool(host='iris.findtruman.io', port=443): Max retries exceeded with url: /web/info_flow (Caused by ResponseError('too many 502 error responses'))"
     },
     {
@@ -30,23 +30,23 @@
       "site_name": "BestBlogs",
       "ok": true,
       "item_count": 1,
-      "duration_ms": 319,
+      "duration_ms": 885,
       "error": null
     },
     {
       "site_id": "tophub",
       "site_name": "TopHub",
       "ok": true,
-      "item_count": 3029,
-      "duration_ms": 1291,
+      "item_count": 3038,
+      "duration_ms": 1241,
       "error": null
     },
     {
       "site_id": "zeli",
       "site_name": "Zeli",
       "ok": true,
-      "item_count": 56,
-      "duration_ms": 1060,
+      "item_count": 57,
+      "duration_ms": 2095,
       "error": null
     },
     {
@@ -54,7 +54,7 @@
       "site_name": "AI HubToday",
       "ok": false,
       "item_count": 0,
-      "duration_ms": 5594,
+      "duration_ms": 5159,
       "error": "HTTPSConnectionPool(host='ai.hubtoday.app', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1018)')))"
     },
     {
@@ -62,37 +62,36 @@
       "site_name": "AIbase",
       "ok": true,
       "item_count": 20,
-      "duration_ms": 1498,
+      "duration_ms": 962,
       "error": null
     },
     {
       "site_id": "aihot",
       "site_name": "AI今日热榜",
       "ok": true,
-      "item_count": 486,
-      "duration_ms": 887,
+      "item_count": 503,
+      "duration_ms": 448,
       "error": null
     },
     {
       "site_id": "newsnow",
       "site_name": "NewsNow",
-      "ok": false,
-      "item_count": 0,
-      "duration_ms": 10301,
-      "error": "HTTPSConnectionPool(host='newsnow.busiyi.world', port=443): Max retries exceeded with url: /api/s?id=36kr (Caused by ResponseError('too many 500 error responses'))"
+      "ok": true,
+      "item_count": 126,
+      "duration_ms": 733,
+      "error": null
     }
   ],
-  "successful_sites": 7,
+  "successful_sites": 8,
   "failed_sites": [
     "iris",
-    "aihubtoday",
-    "newsnow"
+    "aihubtoday"
   ],
   "zero_item_sites": [],
-  "fetched_raw_items": 4741,
-  "items_before_topic_filter": 3408,
-  "items_in_24h": 618,
-  "archive_trimmed_count": 905,
+  "fetched_raw_items": 4894,
+  "items_before_topic_filter": 3375,
+  "items_in_24h": 590,
+  "archive_trimmed_count": 1242,
   "rss_opml": {
     "enabled": false,
     "path": null,
